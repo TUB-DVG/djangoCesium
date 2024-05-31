@@ -1,0 +1,28 @@
+services:
+  citydb:
+    image: 3dcitydb/3dcitydb-pg
+    ports:
+      - "5001:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      SRID: 25832
+      SRSNAME: urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH
+      POSTGRES_DB: citydb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+  influxdb:
+    image: influxdb
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdata:/var/lib/influxdb
+    environment:
+      INFLUXDB_DB: citydb
+      INFLUXDB_ADMIN_USER: admin
+      INFLUXDB_ADMIN_PASSWORD: admin
+      INFLUXDB_USER: admin
+      INFLUXDB_USER_PASSWORD: admin
+volumes:
+  pgdata:
+  influxdata:

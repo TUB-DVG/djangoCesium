@@ -14,6 +14,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    container_name: djangodb
   citydb:
     image: 3dcitydb/3dcitydb-pg
     ports:

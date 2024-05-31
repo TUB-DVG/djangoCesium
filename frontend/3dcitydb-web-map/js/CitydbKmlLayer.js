@@ -46,6 +46,7 @@
         this._ctrlClickEvent = new Cesium.Event();
         this._mouseInEvent = new Cesium.Event();
         this._mouseOutEvent = new Cesium.Event();
+        this._gmlId = options.gmlId;
 
         // extended variables for CitydbKmlLayer	
         this._cesiumViewer = undefined;

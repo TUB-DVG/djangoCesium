@@ -17,7 +17,10 @@ How is checked if the database is in sync with the frontend?
 - If a building is missing in the database, the backend sends a request to the frontend to send the GML-file of the building.
 
 To make the syncing process possible a API-Endpoint in the Django-Application is needed.
-For that Django needs an Endpoint
+For that Django needs an Endpoint, which can be called by the frontend to check, if a building is present in the database.
+
+For that reason a API-Endpoint `citydb/buildings/` was created. When using the GET-HTTP method all buildings can be fetched from the database.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:

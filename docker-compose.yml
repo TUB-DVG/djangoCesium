@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:8000"
     volumes:
-      - ./frontend/3dcitydb-web-map:/var/www/3dcitydb-web-map
+      - ./frontend/3dcitydb-web-map:/var/www/3dcitydb-web-map:ro
       - ./frontend/data:/var/www/data
     container_name: frontend
 
@@ -36,6 +36,20 @@ services:
       POSTGRES_PASSWORD: admin
     container_name: citydb
 
+  # impexp:
+  #   image: 3dcitydb/3dcitydb-impexp
+  #   environment:
+  #     CITYDB_TYPE: postgresql
+  #     CITYDB_HOST: citydb
+  #     CITYDB_PORT: 5432
+  #     CITYDB_NAME: citydb
+  #     CITYDB_USER: admin
+  #     CITYDB_PASS: admin
+  #   container_name: impexp
+  #   command: 
+  #   volumes:
+  #     - ./impexp:/app
+
   districtgenerator:
     build:
       context: ./districtgenerator
@@ -52,7 +66,6 @@ services:
     volumes:
       - ./districtgenerator:/app
       - ./districtgenerator/data:/data
-
 volumes:
   pgdata:
   cesiumData:

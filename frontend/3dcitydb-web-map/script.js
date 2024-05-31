@@ -882,7 +882,8 @@ var options = {
     minLodPixels: addLayerViewModel.minLodPixels,
     maxLodPixels: addLayerViewModel.maxLodPixels == -1 ? Number.MAX_VALUE : addLayerViewModel.maxLodPixels,
     maxSizeOfCachedTiles: addLayerViewModel.maxSizeOfCachedTiles,
-    maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles
+    maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles,
+    gmldId: "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82"
 }
 _layers.push(new CitydbKmlLayer(options));
 loadLayerGroup(_layers);
@@ -1078,6 +1079,8 @@ function createInfoTable(res, citydbLayer) {
     var selectedThematicDataSource = thematicDataSourceDropdown.options[thematicDataSourceDropdown.selectedIndex].value;
     
     var gmlid = selectedThematicDataSource === "KML" ? res[1]._id : res[0];
+    // debugger;
+    
 
     if (gmlid.includes("_")) {
         var parts = gmlid.split("_");
@@ -1090,88 +1093,88 @@ function createInfoTable(res, citydbLayer) {
     // debugger;
     var cesiumEntity = res[1];
     
-    const httpRequest = new XMLHttpRequest();
-    httpRequest.open("GET", `http://127.0.0.1:3000/cityobject?gmlid=eq.${gmlid}`, true);
+    // const httpRequest = new XMLHttpRequest();
+    // httpRequest.open("GET", `http://127.0.0.1:3000/cityobject?gmlid=eq.${gmlid}`, true);
 
-    httpRequest.onreadystatechange = () => {
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200) {
-                const jsonResponse = JSON.parse(httpRequest.responseText);
-                console.log(jsonResponse);
-                console.log(jsonResponse[0].id);
-                var id = jsonResponse[0].id;
-                // debugger;
-                var url = `http://127.0.0.1:3000/ng_regulartimeseries?id=eq.${id}`;
+    // httpRequest.onreadystatechange = () => {
+    //     if (httpRequest.readyState === XMLHttpRequest.DONE) {
+    //         if (httpRequest.status === 200) {
+    //             const jsonResponse = JSON.parse(httpRequest.responseText);
+    //             console.log(jsonResponse);
+    //             console.log(jsonResponse[0].id);
+    //             var id = jsonResponse[0].id;
+    //             // debugger;
+    //             var url = `http://127.0.0.1:3000/ng_regulartimeseries?id=eq.${id}`;
 
-                fetch(url)
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log(data);
-                        var dataValuesAsStr = data[0].values_;
-                        var timeintervalStr = data[0].timeinterval;
-                        var timeintervalUnitStr = data[0].timeinterval_unit;
-                        var dateStartStr = data[0].timeperiodprop_beginposition;
-                        var dateEndStr = data[0].timeperiodproper_endposition;
-                        var unitStr = data[0].values_uom;
+    //             fetch(url)
+    //                 .then(response => response.json())
+    //                 .then(data => {
+    //                     console.log(data);
+    //                     var dataValuesAsStr = data[0].values_;
+    //                     var timeintervalStr = data[0].timeinterval;
+    //                     var timeintervalUnitStr = data[0].timeinterval_unit;
+    //                     var dateStartStr = data[0].timeperiodprop_beginposition;
+    //                     var dateEndStr = data[0].timeperiodproper_endposition;
+    //                     var unitStr = data[0].values_uom;
 
-                        // Remove first and last character of dataValuesAsStr
-                        dataValuesAsStr = dataValuesAsStr.substring(1, dataValuesAsStr.length - 1);
+    //                     // Remove first and last character of dataValuesAsStr
+    //                     dataValuesAsStr = dataValuesAsStr.substring(1, dataValuesAsStr.length - 1);
 
                         
-                        const arrayOfStr = dataValuesAsStr.split(",");
-                        var timeIntervalInt = 1;
-                        var arrayOfFloats = [];
-                        if (timeintervalUnitStr == "hours") {
-                            timeIntervalInt = parseFloat(timeintervalStr) * 36e5;
-                        }
-                        else {
-                            console.log("Can't interpret timeinterval_unit!");
-                        }
-                        dateStartStr = dateStartStr.replace(" ", "");
+    //                     const arrayOfStr = dataValuesAsStr.split(",");
+    //                     var timeIntervalInt = 1;
+    //                     var arrayOfFloats = [];
+    //                     if (timeintervalUnitStr == "hours") {
+    //                         timeIntervalInt = parseFloat(timeintervalStr) * 36e5;
+    //                     }
+    //                     else {
+    //                         console.log("Can't interpret timeinterval_unit!");
+    //                     }
+    //                     dateStartStr = dateStartStr.replace(" ", "");
 
-                        for (let i = 0; i < arrayOfStr.length; i++) {
-                            arrayOfFloats[i] = parseFloat(arrayOfStr[i]);
-                        }
+    //                     for (let i = 0; i < arrayOfStr.length; i++) {
+    //                         arrayOfFloats[i] = parseFloat(arrayOfStr[i]);
+    //                     }
 
-                        // Calculate the end date based on the start date and time difference
-                        var startDate = Date.parse(dateStartStr);
-                        var endDate = Date.parse(dateEndStr)
+    //                     // Calculate the end date based on the start date and time difference
+    //                     var startDate = Date.parse(dateStartStr);
+    //                     var endDate = Date.parse(dateEndStr)
 
-                        Highcharts.chart('tryChartContainer', {
-                            title: {
-                                text: 'Verbrauchsdaten from ng_regulartimeseries'
-                            },
-                            xAxis: {
-                                type: 'datetime',
-                                min: startDate,
-                                max: endDate
-                            },
-                            plotOptions: {
-                                series: {
-                                    pointStart: startDate,
-                                    pointInterval: timeIntervalInt
-                                }
-                            },
-                            yAxis: {
-                                title: {
-                                    text: unitStr
-                                }
-                            },
-                            series: [{
-                                data: arrayOfFloats,
-                            }],
-                        })
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            } else {
-                // Handle error response
-            }
-        }
-    };
+    //                     Highcharts.chart('tryChartContainer', {
+    //                         title: {
+    //                             text: 'Verbrauchsdaten from ng_regulartimeseries'
+    //                         },
+    //                         xAxis: {
+    //                             type: 'datetime',
+    //                             min: startDate,
+    //                             max: endDate
+    //                         },
+    //                         plotOptions: {
+    //                             series: {
+    //                                 pointStart: startDate,
+    //                                 pointInterval: timeIntervalInt
+    //                             }
+    //                         },
+    //                         yAxis: {
+    //                             title: {
+    //                                 text: unitStr
+    //                             }
+    //                         },
+    //                         series: [{
+    //                             data: arrayOfFloats,
+    //                         }],
+    //                     })
+    //                 })
+    //                 .catch(error => {
+    //                     console.error('Error:', error);
+    //                 });
+    //         } else {
+    //             // Handle error response
+    //         }
+    //     }
+    // };
 
-    httpRequest.send();
+    // httpRequest.send();
         // Process the server response here.
 
         // if (httpRequest.readyState === XMLHttpRequest.DONE) {
@@ -1266,7 +1269,20 @@ function createInfoTable(res, citydbLayer) {
         //   }    };
     console.log(gmlid);
     var thematicDataUrl = citydbLayer.thematicDataUrl;
-    cesiumEntity.description = "Loading feature information...";
+    cesiumEntity.description = "Please wait, the Database is called for information about the building...";
+    
+    fetch(`http://0.0.0.0:8000/citydb/buildings/${gmlid}`).then(response => response.json())
+    .then(json => {
+            var html = '<table class="cesium-infoBox-defaultTable" style="font-size:10.5pt"><tbody>';
+            html += "<button id='simulateButton'>Simulate the building</button>";
+            html += "<ul>";
+            for (var key in json) {
+                html += "<li>" + key + ": " + json[key] + "</li>";
+            }
+            html += "</ul>";
+            html += '</tbody></table>';
+            cesiumEntity.description = html;   
+    });
 
     citydbLayer.dataSourceController.fetchData(gmlid, function (kvp) {
         if (!kvp) {

@@ -23,3 +23,10 @@ class BuildingView(APIView):
         #     return Response(True)
         # except Building.DoesNotExist:
         #     return Response(False)
+
+    def get(self, request, gmlid):
+        """Return True of False based on the presence of the building GMLIDs."""
+
+        buildingForGMLid = Building.objects.get(gmlid=gmlid)
+        buildingSerializer = BuildingSerializer(buildingForGMLid)
+        return Response(buildingSerializer.data)

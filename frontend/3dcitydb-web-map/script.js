@@ -30,6 +30,16 @@
 // URL controller
 var jsonOfHttpResponse1 = [];
 var urlController = new UrlController();
+var fetchedBuildingObjsFromDB = [];
+// use the fetch-API to fetch all buildings from the backend:
+fetch('http://0.0.0.0:8000/citydb/buildings/')
+    .then(response => response.json())
+    .then(json => {
+        fetchedBuildingObjsFromDB = json;
+        console.log(json);
+    });
+
+
 // import Highcharts from 'highcharts';
 // // var Highcharts = require('highcharts'); 
 // require('highcharts/modules/exporting')(Highcharts);

@@ -20,3 +20,4 @@ urllib3==2.2.0
 jupyter
 lxml
 djangorestframework
+django-cors-headers

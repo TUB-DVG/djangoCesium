@@ -19,4 +19,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN python setup.py install
 
 # Set the command to run when the container starts
-CMD ["python", "vdistrict/manage.py", "runserver"]
+# CMD ["python", "vdistrict/manage.py", "runserver"]

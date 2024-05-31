@@ -6,15 +6,22 @@ services:
     ports:
       - "8080:8000"
     volumes:
+      - ./frontend/3dcitydb-web-map:/var/www/3dcitydb-web-map
       - ./frontend/data:/var/www/data
+    container_name: frontend
 
   djangodb:
     build:
       context: ./django-citydb
       dockerfile: Dockerfile
+    command: python vdistrict/manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
     container_name: djangodb
+    volumes:
+      - ./django-citydb:/app
+      - ./django-citydb:/app:ro
+
   citydb:
     image: 3dcitydb/3dcitydb-pg
     ports:
@@ -28,6 +35,7 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
     container_name: citydb
+
   districtgenerator:
     build:
       context: ./districtgenerator
@@ -42,7 +50,9 @@ services:
       CITYDB_SRID: 25832
       CITYDB_IMPORT_FILE: /data/berlin-districts.gml
     volumes:
+      - ./districtgenerator:/app
       - ./districtgenerator/data:/data
+
 volumes:
   pgdata:
   cesiumData:

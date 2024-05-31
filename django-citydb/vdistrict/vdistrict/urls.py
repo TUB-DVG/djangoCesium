@@ -23,5 +23,6 @@ from django.urls import include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("citydb/", include("citydb.urls")),
+    path("districtgenerator/", include("districtgenerator.urls")),
     # path(r'^citydb/', include('citydb.urls')),
 ]

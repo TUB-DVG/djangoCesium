@@ -1274,7 +1274,7 @@ function createInfoTable(res, citydbLayer) {
     fetch(`http://0.0.0.0:8000/citydb/buildings/${gmlid}`).then(response => response.json())
     .then(json => {
             var html = '<table class="cesium-infoBox-defaultTable" style="font-size:10.5pt"><tbody>';
-            html += "<button id='simulateButton'>Simulate the building</button>";
+            html += "<button id='simulateButton' onclick='triggerStartSimulation()'>Simulate the building</button>";
             html += "<ul>";
             for (var key in json) {
                 html += "<li>" + key + ": " + json[key] + "</li>";
@@ -1377,7 +1377,9 @@ function fetchDataFromGoogleFusionTable(gmlid, thematicDataUrl) {
     });
     return deferred.promise;
 }
-
+function triggerStartSimulation() {
+    fetch('http://0.0.0.0:8000/districtgenerator/simulate')
+}
 function showInExternalMaps() {
     var mapOptionList = document.getElementById('citydb_showinexternalmaps');
     var selectedIndex = mapOptionList.selectedIndex;

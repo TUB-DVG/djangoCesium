@@ -20,8 +20,6 @@ services:
     container_name: djangodb
     volumes:
       - ./django-citydb:/app
-      - ./django-citydb:/app:ro
-
   citydb:
     image: 3dcitydb/3dcitydb-pg
     ports:

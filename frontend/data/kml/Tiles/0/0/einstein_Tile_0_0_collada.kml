@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Written by 3D City Database Importer/Exporter, version "5.3.0" -->
+<!-- Chair of Geoinformatics, Technical University of Munich -->
+<kml xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>einstein_Tile_0_0_collada</name>
+    <open>false</open>
+    <Placemark id="COLLADA_BLDG_00030000001703a8">
+      <name>BLDG_00030000001703a8</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>13.3815978</longitude>
+          <latitude>52.5185818</latitude>
+          <altitude>33.5299988</altitude>
+        </Location>
+        <Orientation>
+          <heading>358.7279123</heading>
+        </Orientation>
+        <Link>
+          <href>1/BLDG_00030000001703a8.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_BLDG_0003000e00284ed4">
+      <name>BLDG_0003000e00284ed4</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>13.3809296</longitude>
+          <latitude>52.5183077</latitude>
+          <altitude>32.9599991</altitude>
+        </Location>
+        <Orientation>
+          <heading>358.725875</heading>
+        </Orientation>
+        <Link>
+          <href>10/BLDG_0003000e00284ed4.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_BLDG_0003000e00706648">
+      <name>BLDG_0003000e00706648</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>13.3815972</longitude>
+          <latitude>52.5188373</latitude>
+          <altitude>33.0400009</altitude>
+        </Location>
+        <Orientation>
+          <heading>358.7150967</heading>
+        </Orientation>
+        <Link>
+          <href>22/BLDG_0003000e00706648.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_BLDG_0003000a002edc88">
+      <name>BLDG_0003000a002edc88</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>13.3814082</longitude>
+          <latitude>52.51862</latitude>
+          <altitude>32.9300003</altitude>
+        </Location>
+        <Orientation>
+          <heading>358.7220543</heading>
+        </Orientation>
+        <Link>
+          <href>2/BLDG_0003000a002edc88.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_BLDG_0003000e006e260f">
+      <name>BLDG_0003000e006e260f</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>13.3810669</longitude>
+          <latitude>52.5185948</latitude>
+          <altitude>32.9500008</altitude>
+        </Location>
+        <Orientation>
+          <heading>358.7165593</heading>
+        </Orientation>
+        <Link>
+          <href>9/BLDG_0003000e006e260f.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_BLDG_0003000e00706658">
+      <name>BLDG_0003000e00706658</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>13.3805121</longitude>
+          <latitude>52.5186228</latitude>
+          <altitude>30.7800007</altitude>
+        </Location>
+        <Orientation>
+          <heading>358.7166249</heading>
+        </Orientation>
+        <Link>
+          <href>17/BLDG_0003000e00706658.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_DEB_LOD2_UUID_552d268b-f54d-483e-968a-6323f1d2730d">
+      <name>DEB_LOD2_UUID_552d268b-f54d-483e-968a-6323f1d2730d</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>13.3806943</longitude>
+          <latitude>52.5185662</latitude>
+          <altitude>34.184</altitude>
+        </Location>
+        <Orientation>
+          <heading>358.709388</heading>
+        </Orientation>
+        <Link>
+          <href>21/DEB_LOD2_UUID_552d268b-f54d-483e-968a-6323f1d2730d.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <Placemark id="COLLADA_BLDG_0003000f00248a67">
+      <name>BLDG_0003000f00248a67</name>
+      <Model>
+        <altitudeMode>absolute</altitudeMode>
+        <Location>
+          <longitude>13.3817974</longitude>
+          <latitude>52.5189481</latitude>
+          <altitude>32.8800011</altitude>
+        </Location>
+        <Orientation>
+          <heading>358.7283717</heading>
+        </Orientation>
+        <Link>
+          <href>34/BLDG_0003000f00248a67.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+    <name>einstein_Tile_0_0_collada</name>
+    <open>false</open>
+  </Document>
+</kml>

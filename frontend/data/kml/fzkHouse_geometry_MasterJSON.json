@@ -1,0 +1,16 @@
+{
+	"version": "1.0.0",
+	"layername": "fzkHouse",
+	"fileextension": ".kml",
+	"displayform": "geometry",
+	"minLodPixels": 0,
+	"maxLodPixels": -1,
+	"colnum": 1,
+	"rownum": 1,
+	"bbox":{ 
+		"xmin": 8.43667582833827,
+		"xmax": 8.436841219863338,
+		"ymin": 49.09665189530858,
+		"ymax": 49.09674264762836
+	}
+}

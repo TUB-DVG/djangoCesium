@@ -1,0 +1,21 @@
+{
+    "originalGeoDataKitMultizone": {
+        "tilesetLon": 2.436759,
+        "tilesetLat": 49.096697,
+        "tilesetAlt": 113.06
+    },
+    
+    "originalGeoDataBau445": {
+        "tilesetLon": 8.4336996,
+        "tilesetLat": 49.095834,
+        "tilesetAlt": 115.9224
+    },
+    "goalGeoData": {
+        "tilesetLon": 13.372844803742314,
+        "tilesetLat": 52.51856915631475,
+        "tilesetAlt": 2.0
+        
+        
+    },
+    "halfsquarewidth": 0.0005
+}

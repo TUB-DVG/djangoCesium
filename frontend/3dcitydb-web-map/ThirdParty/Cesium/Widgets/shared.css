@@ -1,0 +1,112 @@
+.cesium-svgPath-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cesium-button {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: none; 
+    border-radius: 6px;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: all 0.2s;
+}
+
+.cesium-button:hover {
+    color: #066ac9; /* For text buttons */
+    fill: #066ac9; /* For SVG buttons */
+    background-color: rgba(6, 106, 201, 0.1);
+}
+
+.cesium-button:disabled,
+.cesium-button-disabled,
+.cesium-button-disabled:focus,
+.cesium-button-disabled:hover,
+.cesium-button-disabled:active {
+    background: #303336;
+    border-color: #444;
+    color: #646464; /* For text buttons */
+    fill: #646464; /* For SVG buttons */
+    box-shadow: none;
+    cursor: default;
+}
+
+.cesium-button option {
+    background-color: #000;
+    color: #eee;
+}
+
+.cesium-button option:disabled {
+    color: #777;
+}
+
+.cesium-button input, .cesium-button label {
+    cursor: pointer;
+}
+
+.cesium-button input {
+    vertical-align: sub;
+}
+
+.cesium-toolbar-button {
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    background-color: #ffffff;
+    vertical-align: middle;
+    z-index: 0; /* Workaround for rounded raster image corners in Chrome */
+}
+
+.cesium-toolbar-button:hover {
+    border-color: #4c4c4c;
+    color: #ffffff;
+    background-color: #066ac9;
+    fill: #ffffff;
+}
+
+.cesium-performanceDisplay-defaultContainer {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    text-align: right;
+}
+
+.cesium-performanceDisplay {
+    background-color: rgba(40, 40, 40, 0.7);
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    font: bold 12px sans-serif;
+}
+
+.cesium-performanceDisplay-fps {
+    color: #e52;
+}
+
+.cesium-performanceDisplay-throttled {
+    color: #a42;
+}
+
+.cesium-performanceDisplay-ms {
+    color: #de3;
+}

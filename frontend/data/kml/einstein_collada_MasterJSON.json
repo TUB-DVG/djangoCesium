@@ -1,0 +1,16 @@
+{
+	"version": "1.0.0",
+	"layername": "einstein",
+	"fileextension": ".kml",
+	"displayform": "collada",
+	"minLodPixels": 0,
+	"maxLodPixels": -1,
+	"colnum": 1,
+	"rownum": 1,
+	"bbox":{ 
+		"xmin": 13.380454854298508,
+		"xmax": 13.382165993219163,
+		"ymin": 52.51827068990419,
+		"ymax": 52.51908441267763
+	}
+}

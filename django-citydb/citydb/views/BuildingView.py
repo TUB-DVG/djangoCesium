@@ -1,8 +1,20 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.core.management import call_command
 
 from citydb.modules.bldg.building import Building
-from ..serializers import BuildingSerializer
+from ..serializers import (
+    BuildingSerializer,
+    # TimeseriesSerializer,
+)
+
+from asgiref.sync import sync_to_async
+
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
+import json
 
 
 class BuildingView(APIView):
@@ -30,3 +42,28 @@ class BuildingView(APIView):
         buildingForGMLid = Building.objects.get(gmlid=gmlid)
         buildingSerializer = BuildingSerializer(buildingForGMLid)
         return Response(buildingSerializer.data)
+
+
+class TimeseriesView(APIView):
+    """This class is a class-based view that returns a list of building GMLIDs. in geht GET-route
+    and returns a list of building GMLIDs in the POST-route.
+
+    """
+
+    def get(self, request, gmlid):
+        """Return True of False based on the presence of the building GMLIDs."""
+
+        out = StringIO()
+
+        sync_to_async(call_command)(
+            "read_timeseries",
+            "EnergyDemand",
+            "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82",
+            stdout=out,
+        )
+        returnDictSerialized = out.getvalue()
+        # returnDict = json.loads(returnDictSerialized)
+
+        Response(returnDictSerialized)
+
+        # timeseriesSerializer = TimeseriesSerializer(returnDict)

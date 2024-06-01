@@ -25,6 +25,8 @@
  * limitations under the License.
  */
 
+const { response } = require("express");
+
 /**-----------------------------------------Separate Line-------------------------------------------------**/
 
 // URL controller
@@ -1283,7 +1285,9 @@ function createInfoTable(res, citydbLayer) {
             html += '</tbody></table>';
             cesiumEntity.description = html;   
     });
-
+    fetch(`http://0.0.0.0:8000/citydb/timeseries/${gmlid}`).then(response => response.json()).then(
+        json => { console.log(json) }
+    );
     citydbLayer.dataSourceController.fetchData(gmlid, function (kvp) {
         if (!kvp) {
             cesiumEntity.description = 'No feature information found';

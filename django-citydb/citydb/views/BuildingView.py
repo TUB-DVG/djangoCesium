@@ -55,7 +55,7 @@ class TimeseriesView(APIView):
 
         out = StringIO()
 
-        sync_to_async(call_command)(
+        call_command(
             "read_timeseries",
             "EnergyDemand",
             "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82",
@@ -63,7 +63,7 @@ class TimeseriesView(APIView):
         )
         returnDictSerialized = out.getvalue()
         # returnDict = json.loads(returnDictSerialized)
-
-        Response(returnDictSerialized)
+        # breakpoint()
+        return Response(returnDictSerialized)
 
         # timeseriesSerializer = TimeseriesSerializer(returnDict)

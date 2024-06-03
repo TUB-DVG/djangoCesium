@@ -1281,12 +1281,50 @@ function createInfoTable(res, citydbLayer) {
             for (var key in json) {
                 html += "<li>" + key + ": " + json[key] + "</li>";
             }
+            // html += "<div id='tryChartContainer'></div>"
             html += "</ul>";
             html += '</tbody></table>';
             cesiumEntity.description = html;   
     });
     fetch(`http://0.0.0.0:8000/citydb/timeseries/${gmlid}`).then(response => response.json()).then(
-        json => { console.log(json) }
+        json => { 
+            var jsonObject = JSON.parse(json);
+            var iterator = 0;
+            // var timeIntervalInt = parseFloat(timeintervalStr) * 36e5;
+                document.getElementById("tryChartContainer").style = "display: block; width: 400px;";
+            for (var key in jsonObject) {
+                if (iterator == 0) {
+                    // debugger;
+                    var dateStartStr = jsonObject[key]["time"][0];
+                    var chart = Highcharts.chart('tryChartContainer', {
+                        title: {
+                            text: 'Verbrauchsdaten'
+                        },
+                        xAxis: {
+                            type: 'datetime'
+                        },
+                        plotOptions: {
+                            series: {
+                                pointStart: Date.parse(dateStartStr),
+                                pointInterval: 3600000,
+                            }
+                        },
+                        series: [{
+                            name: key,
+                            data: jsonObject[key]["data"]
+                        }]
+                    });      
+                    iterator++;              
+                }
+                else  {
+                    chart.addSeries({
+                        name: key,
+                        data: jsonObject[key]["data"]
+                    });                   
+                }
+            }
+            
+            console.log(json) }
     );
     citydbLayer.dataSourceController.fetchData(gmlid, function (kvp) {
         if (!kvp) {

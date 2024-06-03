@@ -10,7 +10,7 @@
  * The 3DCityDB-Web-Map-Client is jointly developed with the following
  * cooperation partners:
  * 
- * virtualcitySYSTEMS GmbH, Berlin <http://www.virtualcitysystems.de/>
+ * virtualcitySYSTEMS GmbH, Berlin <http://www.virtualcitysystems.de />
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,14 +32,18 @@
         <!-- Tell IE to use the latest, best version (or Chrome Frame if pre-IE11). -->
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
         <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
         <title>3DCityDB-Web-Map-Client</title>
         <script src="../ThirdParty/jquery-3.3.1.min.js"></script>
         <!-- Load jquery ui datepicker FLATPICKR -->
-        <link rel="stylesheet" type="text/css" href="../ThirdParty/flatpickrv4.5.1.css">
+        <link rel="stylesheet"
+              type="text/css"
+              href="../ThirdParty/flatpickrv4.5.1.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+              rel="stylesheet">
         <script type="text/javascript" src="../ThirdParty/flatpickrv4.5.1.js"></script>
         <!-- CesiumJS -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.0/dist/chart.umd.min.js"></script>
@@ -53,7 +57,9 @@
         <script src="../ThirdParty/Cesium/Cesium.js"></script>
         <script src="../ThirdParty/Intersection/IntersectionAPI.js"></script>
         <script src="../ThirdParty/Cesium-Navigation/Cesium-Navigation.js"></script>
-        <link rel="stylesheet" type="text/css" href="../ThirdParty/Cesium-Navigation/Cesium-Navigation.css" />
+        <link rel="stylesheet"
+              type="text/css"
+              href="../ThirdParty/Cesium-Navigation/Cesium-Navigation.css" />
         <script src="../js/3dcitydb-web-map.js"></script>
         <script src="../js/CitydbUtil.js"></script>
         <script src="../js/CitydbWebworker.js"></script>
@@ -64,7 +70,8 @@
         <script src="../js/CitydbKmlLayer.js"></script>
         <script src="../js/Cesium3DTilesDataLayer.js"></script>
         <!-- Sign in utilities -->
-        <script type="text/javascript" src="https://apis.google.com/js/api:client.js?onLoad=onGoogleScriptLoaded"></script>
+        <script type="text/javascript"
+                src="https://apis.google.com/js/api:client.js?onLoad=onGoogleScriptLoaded"></script>
         <script src="utils/SigninController.js"></script>
         <!-- GPS geolocation with device orientation in real-time -->
         <script src="utils/GPSController.js"></script>
@@ -88,10 +95,8 @@
         <script src="utils/mashup-data-source-service/application/KMLDataSource.js"></script>
         <script src="utils/mashup-data-source-service/core/MashupDataSource.js"></script>
         <script src="utils/mashup-data-source-service/application/DataSourceController.js"></script>
-        
         <!-- URL controller -->
         <script src="utils/UrlController.js"></script>
-
         <style>
             @import url(../ThirdParty/Cesium/Widgets/widgets.css);
             @import url(css/GPSButtonStyles.css);
@@ -252,31 +257,35 @@
             }
         </style>
     </head>
-
     <body>
         <div id="cesiumContainer"></div>
         <div id="loadingIndicator" class="loadingIndicator"></div>
-        <img id = "citydb_loadingTilesInspector" src="../theme/img/ajax-loader.gif" style="display: none; position: absolute; bottom: 56px; right: 7px; width:30px;height:30px;">
-        <button class="modal__toggle" onclick="showToolbox()">
-            Show / Hide Toolbox
-        </button>
-
+        <img id="citydb_loadingTilesInspector"
+             src="../theme/img/ajax-loader.gif"
+             style="display: none;
+                    position: absolute;
+                    bottom: 56px;
+                    right: 7px;
+                    width:30px;
+                    height:30px">
+        <button class="modal__toggle" onclick="showToolbox()">Show / Hide Toolbox</button>
         <div id="uiMenu">
             <div id="uiMenu-content">
                 <div id="citydb_toolbox">
                     <div class="toolbox__row">
                         <!-- add layer panel -->
                         <div class="citydb_short_container" onclick="showAddLayerPanel()">
-                            <select class="cesium-button" >
+                            <select class="cesium-button">
                                 <option>Add / Configure Layer</option>
                             </select>
                             <div class="citydb_overSelect"></div>
                         </div>
                         <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="removeSelectedLayer()">Remove selected layer</button>
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="removeSelectedLayer()">Remove selected layer</button>
                         </div>
                     </div>
-
                     <div id="citydb_addlayerpanel" class="citydb_dynamic_box">
                         <table class="citydb_inputtable">
                             <tbody class="toolbox-modal">
@@ -295,7 +304,9 @@
                                 <tr class="toolbox-modal__row">
                                     <td>Layer data type</td>
                                     <td>
-                                        <select id="layerDataTypeDropdown" data-bind="value: layerDataType" onchange="layerDataTypeDropdownOnchange()">
+                                        <select id="layerDataTypeDropdown"
+                                                data-bind="value: layerDataType"
+                                                onchange="layerDataTypeDropdownOnchange()">
                                             <option value="COLLADA/KML/glTF" selected="selected">COLLADA/KML/glTF</option>
                                             <option value="Cesium 3D Tiles">Cesium 3D Tiles</option>
                                             <option value="Others">Others</option>
@@ -303,15 +314,31 @@
                                         <div id="citydb_layerlistpanel" />
                                     </td>
                                 </tr>
-                                <tr id="layerProxyAndClampToGround" style="display: none;" class="toolbox-modal__row">
+                                <tr id="layerProxyAndClampToGround"
+                                    style="display: none"
+                                    class="toolbox-modal__row">
                                     <td>
-                                        <label><input type="checkbox" id="layerProxyCheckbox" style="width:auto;" data-bind="checked: layerProxy"/> Load via proxy</label>
+                                        <label>
+                                            <input type="checkbox"
+                                                   id="layerProxyCheckbox"
+                                                   style="width:auto"
+                                                   data-bind="checked: layerProxy" />
+                                            Load via proxy
+                                        </label>
                                     </td>
                                     <td>
-                                        <label><input type="checkbox" id="layerClampToGroundCheckbox" style="width:auto;" data-bind="checked: layerClampToGround"/> KML clamp to ground</label>
+                                        <label>
+                                            <input type="checkbox"
+                                                   id="layerClampToGroundCheckbox"
+                                                   style="width:auto"
+                                                   data-bind="checked: layerClampToGround" />
+                                            KML clamp to ground
+                                        </label>
                                     </td>
                                 </tr>
-                                <tr id="gltfVersionDropdownRow" style="display: none;" class="toolbox-modal__row">
+                                <tr id="gltfVersionDropdownRow"
+                                    style="display: none"
+                                    class="toolbox-modal__row">
                                     <td>glTF version</td>
                                     <td>
                                         <select id="gltfVersionDropdown" data-bind="value: gltfVersion">
@@ -330,7 +357,9 @@
                                 <tr class="toolbox-modal__row">
                                     <td>> Thematic Data Source</td>
                                     <td>
-                                        <select id="thematicDataSourceDropdown" data-bind="value: thematicDataSource" onchange="thematicDataSourceAndTableTypeDropdownOnchange()">
+                                        <select id="thematicDataSourceDropdown"
+                                                data-bind="value: thematicDataSource"
+                                                onchange="thematicDataSourceAndTableTypeDropdownOnchange()">
                                             <option value="GoogleSheets" selected="selected">Google Sheets API</option>
                                             <option value="PostgreSQL">PostgreSQL REST API</option>
                                             <option value="KML">KML Documents</option>
@@ -340,30 +369,36 @@
                                 <tr class="toolbox-modal__row">
                                     <td>> Table type</td>
                                     <td>
-                                        <select id="tableTypeDropdown" data-bind="value: tableType" onchange="thematicDataSourceAndTableTypeDropdownOnchange()">
+                                        <select id="tableTypeDropdown"
+                                                data-bind="value: tableType"
+                                                onchange="thematicDataSourceAndTableTypeDropdownOnchange()">
                                             <option value="Horizontal" selected="selected">All object attributes in one row</option>
                                             <option value="Vertical">One row per object attribute</option>
                                         </select>
                                     </td>
                                 </tr>
-<!--                                    <tr id="rowGoogleSheetsApiKey" style="display: none;">-->
-<!--                                        <td>> Google Sheets API Key</td>-->
-<!--                                        <td>-->
-<!--                                            <input type="text" data-bind="value: googleSheetsApiKey">-->
-<!--                                        </td>-->
-<!--                                    </tr>-->
-<!--                                    <tr id="rowGoogleSheetsRanges" style="display: none;">-->
-<!--                                        <td>> Google Sheets Ranges </td>-->
-<!--                                        <td>-->
-<!--                                            <input type="text" data-bind="value: googleSheetsRanges" placeholder="'Sheet1'!A1:C2;'Sheet2'!A1:D2">-->
-<!--                                        </td>-->
-<!--                                    </tr>-->
-<!--                                    <tr id="rowGoogleSheetsClientId" style="display: none;">-->
-<!--                                        <td>> Google Sheets Client ID</td>-->
-<!--                                        <td>-->
-<!--                                            <input type="text" data-bind="value: googleSheetsClientId" placeholder="Only for OAuth2">-->
-<!--                                        </td>-->
-<!--                                    </tr>-->
+                                <!--                                    <tr id="rowGoogleSheetsApiKey" style="display: none;">-->
+                                <!--                                        <td>> Google Sheets API Key</td>-->
+                                <!--                                        <td>-->
+                                <!--                                            <input type="text" data-bind="value: googleSheetsApiKey">-->
+                                <!--                                        </td>-->
+                                <!--                                    </tr>-->
+                                <!--                                    <tr id="rowGoogleSheetsRanges" style="display: none;">-->
+                                <!--                                        <td>> Google Sheets Ranges </td>-->
+                                <!--                                        <td>-->
+                                <!--                                            <input type="text"
+                                                   data-bind="value: googleSheetsRanges"
+                                                   placeholder="'Sheet1'!A1:C2;'Sheet2'!A1:D2">-->
+                                <!--                                        </td>-->
+                                <!--                                    </tr>-->
+                                <!--                                    <tr id="rowGoogleSheetsClientId" style="display: none;">-->
+                                <!--                                        <td>> Google Sheets Client ID</td>-->
+                                <!--                                        <td>-->
+                                <!--                                            <input type="text"
+                                                   data-bind="value: googleSheetsClientId"
+                                                   placeholder="Only for OAuth2">-->
+                                <!--                                        </td>-->
+                                <!--                                    </tr>-->
                                 <tr class="toolbox-modal__row">
                                     <td>cityobjectsJsonUrl</td>
                                     <td>
@@ -397,26 +432,32 @@
                             </tbody>
                         </table>
                         <div class="citydb_short_container">
-                            <button style="width: 100%;" type="button" class="cesium-button" onclick="addNewLayer()">Add layer</button>
+                            <button style="width: 100%"
+                                    type="button"
+                                    class="cesium-button"
+                                    onclick="addNewLayer()">Add layer</button>
                         </div>
                         <div class="citydb_short_container">
-                            <button style="width: 100%;" type="button" class="cesium-button" onclick="saveLayerSettings()">Save layer settings</button>
+                            <button style="width: 100%"
+                                    type="button"
+                                    class="cesium-button"
+                                    onclick="saveLayerSettings()">Save layer settings</button>
                         </div>
                     </div>
-
                     <div class="toolbox__row">
                         <!-- add WMS panel -->
                         <div class="citydb_short_container" onclick="showAddWMSPanel()">
-                            <select class="cesium-button" >
+                            <select class="cesium-button">
                                 <option>Add WMS-Layer</option>
                             </select>
                             <div class="citydb_overSelect"></div>
                         </div>
                         <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="removeImageryProvider()">Remove WMS layer</button>
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="removeImageryProvider()">Remove WMS layer</button>
                         </div>
                     </div>
-
                     <div id="citydb_addwmspanel" class="citydb_dynamic_box">
                         <table class="citydb_inputtable">
                             <tbody class="toolbox-modal"">
@@ -465,23 +506,25 @@
                             </tbody>
                         </table>
                         <div class="citydb_long_container">
-                            <button type="button" class="cesium-button" onclick="addWebMapServiceProvider()">Add WMS layer</button>
+                            <button type="button"
+                                    class="cesium-button"
+                                    onclick="addWebMapServiceProvider()">Add WMS layer</button>
                         </div>
                     </div>
-
                     <div class="toolbox__row">
                         <!-- add Terrain panel -->
                         <div class="citydb_short_container" onclick="showAddTerrainPanel()">
-                            <select class="cesium-button" >
+                            <select class="cesium-button">
                                 <option>Add Terrain-Layer</option>
                             </select>
                             <div class="citydb_overSelect"></div>
                         </div>
                         <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="removeTerrainProvider()">Remove Terrain layer</button>
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="removeTerrainProvider()">Remove Terrain layer</button>
                         </div>
                     </div>
-
                     <div id="citydb_addterrainpanel" class="citydb_dynamic_box">
                         <table class="citydb_inputtable">
                             <tbody class="toolbox-modal">
@@ -515,89 +558,117 @@
                             <button type="button" class="cesium-button" onclick="addTerrainProvider()">Add Terrain layer</button>
                         </div>
                     </div>
-
                     <div class="toolbox__row">
                         <!-- add splash window -->
                         <div class="citydb_short_container" onclick="showAddSplashWindow()">
-                            <select class="cesium-button" >
+                            <select class="cesium-button">
                                 <option>Add Splash Window</option>
                             </select>
                             <div class="citydb_overSelect"></div>
                         </div>
                         <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="splashController.removeSplashWindow(jQuery)">Remove Splash Window</button>
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="splashController.removeSplashWindow(jQuery)">Remove Splash Window</button>
                         </div>
                     </div>
-
                     <div id="citydb_addsplashwindow" class="citydb_dynamic_box">
                         <table class="citydb_inputtable">
                             <tbody class="toolbox-modal">
-                            <tr class="toolbox-modal__row">
-                                <td>URL(*)</td>
-                                <td>
-                                    <input type="text" data-bind="value: url">
-                                </td>
-                            </tr>
-                            <tr class="toolbox-modal__row">
-                                <td>Show on start(*)</td>
-                                <td>
-                                    <input id="showOnStart_checkbox" type="checkbox" data-bind="checked: showOnStart">
-                                </td>
-                            </tr>
+                                <tr class="toolbox-modal__row">
+                                    <td>URL(*)</td>
+                                    <td>
+                                        <input type="text" data-bind="value: url">
+                                    </td>
+                                </tr>
+                                <tr class="toolbox-modal__row">
+                                    <td>Show on start(*)</td>
+                                    <td>
+                                        <input id="showOnStart_checkbox"
+                                               type="checkbox"
+                                               data-bind="checked: showOnStart">
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                         <div class="citydb_long_container">
-                            <button type="button" class="cesium-button" onclick="splashController.addSplashWindow(jQuery)">Add Splash Window</button>
+                            <button type="button"
+                                    class="cesium-button"
+                                    onclick="splashController.addSplashWindow(jQuery)">Add Splash Window</button>
                         </div>
                     </div>
-
                     <div class="citydb_long_container" onmouseover="listHighlightedObjects()">
-                        <select id = "citydb_highlightinglist" style="width: 100%;" class="cesium-button" onchange="flyToClickedObject(this)">
+                        <select id="citydb_highlightinglist"
+                                style="width: 100%"
+                                class="cesium-button"
+                                onchange="flyToClickedObject(this)">
                             <option selected="selected" disabled="disabled">Choose highlighted Object</option>
                         </select>
                     </div>
                     <div class="citydb_long_container" onmouseover="listHiddenObjects()">
-                        <select id = "citydb_hiddenlist" style="width: 100%;" class="cesium-button" onchange="flyToClickedObject(this)">
+                        <select id="citydb_hiddenlist"
+                                style="width: 100%"
+                                class="cesium-button"
+                                onchange="flyToClickedObject(this)">
                             <option selected="selected" disabled="disabled">Choose hidden Object</option>
                         </select>
                     </div>
                     <div class="toolbox__row">
                         <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="showSceneLink()">Generate Scene Link</button>
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="showSceneLink()">Generate Scene Link</button>
                         </div>
                         <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="hideSelectedObjects()">Hide selected Objects</button>
-                        </div>
-                    </div>
-                    <div class="toolbox__row">
-                        <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="clearhighlight()">Clear Highlighting</button>
-                        </div>
-                        <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="showHiddenObjects()">Show Hidden Objects</button>
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="hideSelectedObjects()">Hide selected Objects</button>
                         </div>
                     </div>
                     <div class="toolbox__row">
                         <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="createScreenshot()">Create Screenshot</button>
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="clearhighlight()">Clear Highlighting</button>
                         </div>
                         <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="printCurrentview()">Print current view</button>
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="showHiddenObjects()">Show Hidden Objects</button>
                         </div>
                     </div>
                     <div class="toolbox__row">
                         <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="toggleShadows()">Toggle Shadows</button>
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="createScreenshot()">Create Screenshot</button>
                         </div>
                         <div class="citydb_short_container">
-                            <button type="button" class="cesium-button toolbox__button" onclick="toggleTerrainShadows()">Toggle Terrain Shadows</button>
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="printCurrentview()">Print current view</button>
+                        </div>
+                    </div>
+                    <div class="toolbox__row">
+                        <div class="citydb_short_container">
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="toggleShadows()">Toggle Shadows</button>
+                        </div>
+                        <div class="citydb_short_container">
+                            <button type="button"
+                                    class="cesium-button toolbox__button"
+                                    onclick="toggleTerrainShadows()">Toggle Terrain Shadows</button>
                         </div>
                     </div>
                     <div class="citydb_long_container">
-                        <select id = "citydb_showinexternalmaps" style="width: 100%;" onchange="showInExternalMaps()" class="cesium-button">
+                        <select id="citydb_showinexternalmaps"
+                                style="width: 100%"
+                                onchange="showInExternalMaps()"
+                                class="cesium-button">
                             <option selected="selected" disabled="disabled">Show the selected object in External Maps</option>
                             <option value = "google">Google StreetView</option>
-                            <option value = "osm"> OpenStreetMap</option>
+                            <option value = "osm">OpenStreetMap</option>
                             <option value = "bing">BingMaps ObliqueView</option>
                             <option value = "dual">DualMaps</option>
                         </select>
@@ -605,21 +676,27 @@
                 </div>
             </div>
         </div>
-
         <!-- GPS button -->
         <button id="gpsButton" type="button" class="cesium-button"></button>
-
         <!-- Splash window -->
         <div class="splashscreen-buttons">
-            <input id="not_show_again_button" type="button" value="Ignore" onclick="splashController.ignoreSplashWindow(jQuery)">
-            <input id="close_button" type="button" value="Close" onclick="splashController.closeSplashWindow(jQuery)">
+            <input id="not_show_again_button"
+                   type="button"
+                   value="Ignore"
+                   onclick="splashController.ignoreSplashWindow(jQuery)">
+            <input id="close_button"
+                   type="button"
+                   value="Close"
+                   onclick="splashController.closeSplashWindow(jQuery)">
         </div>
         <div id="splashwindow_iframe" class="splash-wrapper">
             <div class="splash-iframe-container">
                 <iframe id="splashwindow_iframe_content" src="" frameborder="0"></iframe>
             </div>
         </div>
-        <div id="loadingOverlay"><h1>Loading...</h1></div>
+        <div id="loadingOverlay">
+            <h1>Loading...</h1>
+        </div>
         <!--<div id="toolbar">
             <table>
               <tbody>
@@ -659,76 +736,103 @@
                 </tr>
                 <tr>
                     <td>Search</td>
-                    <td><input data-bind="value: searchInput, valueUpdate: 'afterkeydown'" >
+                    <td><input data-bind="value: searchInput, valueUpdate: 'afterkeydown'">
                 </tr>
               </tbody>
             </table>
           </div>-->
-          <!--<input type="text" id="myInput" onkeyup="search()" placeholder="Search for names.."></td>-->
-                    <!--<td><input id="search-input" class="form-control me-1" type="search" placeholder="Suchbegriff" name='searched'></td>-->
-        
-        <button class="modal__toggle toggle__filters" onclick="showToolbar()">
-            Show / Hide Filters
-        </button>
-    
-          <div id="toolbar">
+        <!--<input type="text" id="myInput" onkeyup="search()" placeholder="Search for names.."></td>-->
+        <!--<td><input id="search-input" class="form-control me-1" type="search" placeholder="Suchbegriff" name='searched'></td>-->
+        <button class="modal__toggle toggle__filters" onclick="showToolbar()">Show / Hide Filters</button>
+        <div id="toolbar">
             <table>
-              <tbody>
-                <tr>
-                    <td>Transparent Building</td>
-                    <td><input type="checkbox" data-bind="checked: transparent"></td>
-                </tr>
-                <tr>
-                    <td>Highlight Thermal Zones</td>
-                    <td><input type="checkbox" data-bind="checked: showThermalZones"></td>
-                </tr>
-                <tr>
-                    <td>Highlight Thermal Openings</td>
-                    <td><input type="checkbox" data-bind="checked: showThermalOpenings"></td>
-                </tr>
-                <tr>
-                    <td>Highlight Usage Zones</td>
-                    <td><input type="checkbox" data-bind="checked: showUsageZones"></td>
-                </tr>
-    
-    
-                <tr>
-                    <td>Highlight Interior Walls</td>
-                    <td><input type="checkbox" data-bind="checked: showInteriorWalls"></td>
-                </tr>
-                <tr>
-                    <td>Highlight Outer Walls</td>
-                    <td><input type="checkbox" data-bind="checked: showOuterWalls"></td>
-                </tr>
-                <tr>
-                    <td>Highlight Intermediate Floors</td>
-                    <td><input type="checkbox" data-bind="checked: showIntermediateFloors"></td>
-                </tr>
-                <tr>
-                    <td>Highlight Roofs</td>
-                    <td><input type="checkbox" data-bind="checked: showRoofs"></td>
-                </tr>
-              </tbody>
+                <tbody>
+                    <tr>
+                        <td>Transparent Building</td>
+                        <td>
+                            <input type="checkbox" data-bind="checked: transparent">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Highlight Thermal Zones</td>
+                        <td>
+                            <input type="checkbox" data-bind="checked: showThermalZones">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Highlight Thermal Openings</td>
+                        <td>
+                            <input type="checkbox" data-bind="checked: showThermalOpenings">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Highlight Usage Zones</td>
+                        <td>
+                            <input type="checkbox" data-bind="checked: showUsageZones">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Highlight Interior Walls</td>
+                        <td>
+                            <input type="checkbox" data-bind="checked: showInteriorWalls">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Highlight Outer Walls</td>
+                        <td>
+                            <input type="checkbox" data-bind="checked: showOuterWalls">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Highlight Intermediate Floors</td>
+                        <td>
+                            <input type="checkbox" data-bind="checked: showIntermediateFloors">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Highlight Roofs</td>
+                        <td>
+                            <input type="checkbox" data-bind="checked: showRoofs">
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-          </div>
-    
-          
-           <div id="geolocation" style="display: none">
+        </div>
+        <div id="geolocation" style="display: none">
             <div style="margin:5%">
                 <h3>Tileset geolocation</h3>
                 <p>Lat 52.38612, Long 13.00461 bei Potsdam</p>
                 <hr>
-                <label for="longitudeInput">Longitude: </label>
-                <input style="float: right;" type="text" id="longitudeInput" name="longitudeInput" value="13.00461"><br><br>
-                <label for="latitudeInput">Latitude: </label>
-                <input style="float: right;" type="text" id="latitudeInput" name="latitudeInput" value="52.3864"><br><br>
-                <label for="heightInput">Height: </label>
-                <input style="float: right;" type="text" id="heightInput" name="heightInput" value="0"><br><br><br>
-    
-                <button style="float: right; margin-right:5%;" id="applyGeoloc">Apply</button><br>
+                <label for="longitudeInput">Longitude:</label>
+                <input style="float: right"
+                       type="text"
+                       id="longitudeInput"
+                       name="longitudeInput"
+                       value="13.00461">
+                <br>
+                <br>
+                <label for="latitudeInput">Latitude:</label>
+                <input style="float: right"
+                       type="text"
+                       id="latitudeInput"
+                       name="latitudeInput"
+                       value="52.3864">
+                <br>
+                <br>
+                <label for="heightInput">Height:</label>
+                <input style="float: right"
+                       type="text"
+                       id="heightInput"
+                       name="heightInput"
+                       value="0">
+                <br>
+                <br>
+                <br>
+                <button style="float: right; margin-right:5%;" id="applyGeoloc">Apply</button>
+                <br>
             </div>
-          </div>
-
+        </div>
+        <div id="tryChartContainer" style="display: none; width: 600px;"></div>
         <script>
             let isToolboxExpanded = false;
 

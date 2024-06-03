@@ -24,8 +24,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// const express = require('express');
-const { response } = require("express");
+
+// const { response } = require("express");
 
 /**-----------------------------------------Separate Line-------------------------------------------------**/
 
@@ -885,11 +885,12 @@ var options = {
     maxLodPixels: addLayerViewModel.maxLodPixels == -1 ? Number.MAX_VALUE : addLayerViewModel.maxLodPixels,
     maxSizeOfCachedTiles: addLayerViewModel.maxSizeOfCachedTiles,
     maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles,
-    // gmldId: "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82"
+    gmldId: "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82"
 }
 _layers.push(new CitydbKmlLayer(options));
 loadLayerGroup(_layers);
 // var dataSource = new Cesium.KmlDataSource();
+// // debugger;
 // dataSource.load("data/kml/einstein.kml").then(function() {
     
 //     var entities = dataSource.entities._entities;
@@ -1275,8 +1276,6 @@ function createInfoTable(res, citydbLayer) {
     fetch(`http://0.0.0.0:8000/citydb/buildings/${gmlid}`).then(response => response.json())
     .then(json => {
             var html = '<table class="cesium-infoBox-defaultTable" style="font-size:10.5pt"><tbody>';
-            html += "<input type='text' value='TH'>"
-            html += "<input type='number' id='buildingConstructionYear' value='2022'>"
             html += "<button id='simulateButton' onclick='triggerStartSimulation()'>Simulate the building</button>";
             html += "<ul>";
             for (var key in json) {

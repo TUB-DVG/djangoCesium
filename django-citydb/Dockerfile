@@ -16,7 +16,7 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install the package
-RUN python setup.py install
+# RUN python setup.py install
 
 RUN pip install -e districtgenerator
 # Set the command to run when the container starts

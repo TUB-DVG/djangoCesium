@@ -3,12 +3,13 @@
 from citydb.modules.core.cityobject import (
     CityObject,
     NgCityObject,
+    ObjectClass,
 )
 from django.contrib.gis.db import models
 from citydb.modules.energy.timeseries.timeseries import TimeSeries
 
 
-class EnergyDemand(models.Model):
+class EnergyDemand(CityObject):
     """Abstract ORM class for energy demand from EnergyADE.
 
     Documentation is missing.
@@ -78,6 +79,23 @@ class EnergyDemand(models.Model):
         managed = False
         db_table = "ng_energydemand"
 
+    def __init__(self, *args, **kwargs):
+        """Catch ObjectClass Forgein key for TimeSeries.
+
+        Since 3D CityDB 4.0.0 every TimeSeries has its own objectclass id.
+        Since Django does not allow overwriting inherited fields, we must catch
+        this manually.
+        """
+        
+        super(EnergyDemand, self).__init__(*args, **kwargs)
+        # breakpoint()
+        try:
+            self.objectclass_series = self.objectclass
+        except ObjectClass.DoesNotExist:
+            raise ObjectClass.DoesNotExist(
+                "You should never instantiate TimeSeries without passing "
+                "an ObjectClass"
+            )
 
 # class EnergyDemandToCityObject(models.Model):
 #     city_object = models.ForeignKey(

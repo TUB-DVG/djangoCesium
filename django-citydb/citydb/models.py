@@ -51,7 +51,7 @@ from citydb.modules.energy.schedule.schedule import (
 )
 from citydb.modules.energy.timeseries.timeseries import TimeSeries
 from citydb.modules.energy.timeseries.timeseries import RegularTimeSeries
-from citydb.modules.energy.timeseries.timeseries import IrregularTimeSeriesFile
+# from citydb.modules.energy.timeseries.timeseries import IrregularTimeSeriesFile
 
 from citydb.modules.energy.energysystems.energydemand import (
     EnergyDemand, 

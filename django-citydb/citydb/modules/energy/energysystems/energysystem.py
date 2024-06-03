@@ -63,7 +63,10 @@ class AbstractEnergySystem(CityObject):
         CityObject, through="EnergySystemToCityObject", related_name="energy_system"
     )
     provides = models.ManyToManyField(
-        CityObject, blank=True, related_name="provided_by"
+        CityObject, 
+        blank=True, 
+        related_name="provided_by",
+        db_column="provides",
     )
 
     def __init__(self, *args, **kwargs):

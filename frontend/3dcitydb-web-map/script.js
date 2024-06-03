@@ -1100,16 +1100,24 @@ function createInfoTable(res, citydbLayer) {
     
     fetch(`http://0.0.0.0:8000/citydb/buildings/${gmlid}`).then(response => response.json())
     .then(json => {
-            var html = '<table class="cesium-infoBox-defaultTable" style="font-size:10.5pt"><tbody>';
-            html += "<button id='simulateButton' onclick='triggerStartSimulation()'>Simulate the building</button>";
-            html += "<ul>";
-            for (var key in json) {
-                html += "<li>" + key + ": " + json[key] + "</li>";
-            }
-            // html += "<div id='tryChartContainer'></div>"
-            html += "</ul>";
-            html += '</tbody></table>';
-            cesiumEntity.description = html;   
+        // get the year of construction from the database:
+        var yearOfConstructionDate = json["year_of_construction"];
+        var yearOfConstruction = yearOfConstructionDate.split("-")[0];
+        var html = '<table class="cesium-infoBox-defaultTable" style="font-size:10.5pt"><tbody>';
+        html += "<ul><li><label for='areaInput'>Area of Building: </label><input type='number' min='0' value='200' id='areaInput'></li>"
+        html += "<li><label for='constructionYear'>Year of Construction: </label><input type='number' min='1860' max='2024' value='" + yearOfConstruction + "' id='constructionYear'></li>"
+        html += "<li><label for='typeOfBuilding'>Type of Building: </label><input type='number' min='1860' max='2024' value='2000' id='typeOfBuilding'></li>"
+        html += "<li><label for='retrofit'>Retrofit: </label><input type='range' min='0' max='2' value='0' id='retrofit'></li></ul>"
+
+        html += "<button id='simulateButton' onclick='triggerStartSimulation()'>Simulate the building</button>";
+        html += "<ul>";
+        for (var key in json) {
+            html += "<li>" + key + ": " + json[key] + "</li>";
+        }
+        // html += "<div id='tryChartContainer'></div>"
+        html += "</ul>";
+        html += '</tbody></table>';
+        cesiumEntity.description = html;   
     });
     fetch(`http://0.0.0.0:8000/citydb/timeseries/${gmlid}`).then(response => response.json()).then(
         json => { 
@@ -1245,7 +1253,24 @@ function fetchDataFromGoogleFusionTable(gmlid, thematicDataUrl) {
     return deferred.promise;
 }
 function triggerStartSimulation() {
-    fetch('http://0.0.0.0:8000/districtgenerator/simulate')
+    var data = {};
+    data["area"] = document.getElementById("areaInput").value;
+    data["constructionYear"] = document.getElementById("constructionYear").value;
+    data["typeOfBuilding"] = document.getElementById("typeOfBuilding").value;
+    data["retrofit"] = document.getElementById("retrofit").value;
+    
+
+    fetch('http://0.0.0.0:8000/districtgenerator/simulate', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data), // data can be `string` or {object}!
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => console.error('Error:', error));
+    // fetch('http://0.0.0.0:8000/districtgenerator/simulate')
 }
 function showInExternalMaps() {
     var mapOptionList = document.getElementById('citydb_showinexternalmaps');

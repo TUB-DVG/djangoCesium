@@ -16,15 +16,17 @@ class SimulatorView(APIView):
 
         # create a scenarios file from the provided data in the request:
         data = request.data
-
+        print(data)
         if "area" not in data or self._validateArea(data["area"]) is False:
             return Response(status=400)
 
         # validate the data:
-
+        # breakpoint()
         with open("/app/districtgenerator/data/scenarios/cesiumInput.csv",
                   "w") as file:
-            file.write("id;building;year;retrofit;area\n0;SFH;2020;1;187")
+            file.write(
+                f"id;building;year;retrofit;area\n0;{data['typeOfBuilding']};{data['constructionYear']};{data['retrofit']};{data['area']}"
+            )
 
         # create a new instance of the district generator
         data = Datahandler()
@@ -64,10 +66,13 @@ class SimulatorView(APIView):
             "interpolation_type": "averageInSucceedingInterval",
             "quality_description": "Your quality description",
         }
-        breakpoint()
-        call_command("import_timeseries", dictOfEnergyDemandData,
-                     "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82",
-                     **optionalMetaInformation)
+        # breakpoint()
+        call_command(
+            "import_timeseries",
+            dictOfEnergyDemandData,
+            "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82",
+            **optionalMetaInformation,
+        )
         return Response(status=200)
 
     def get(self, request):
@@ -111,10 +116,13 @@ class SimulatorView(APIView):
             "interpolation_type": "averageInSucceedingInterval",
             "quality_description": "Your quality description",
         }
-        breakpoint()
-        call_command("import_timeseries", dictOfEnergyDemandData,
-                     "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82",
-                     **optionalMetaInformation)
+        # breakpoint()
+        call_command(
+            "import_timeseries",
+            dictOfEnergyDemandData,
+            "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82",
+            **optionalMetaInformation,
+        )
         return Response(status=200)
 
     def _validateArea(self, areaValue):

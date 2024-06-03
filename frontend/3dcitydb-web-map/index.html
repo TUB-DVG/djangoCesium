@@ -833,6 +833,33 @@
             </div>
         </div>
         <div id="tryChartContainer" style="display: none; width: 600px;"></div>
+        <div style="background-color: grey; display: none; width: 200px;" id="formSimulateContainer">
+            <ul>
+                <li>
+                    <label for='areaInput'>Area of Building:</label>
+                    <input type='number' min='0' value='200' id='areaInput'>
+                </li>
+                <li>
+                    <label for='constructionYear'>Year of Construction:</label>
+                    <input type='number'
+                           min='1860'
+                           max='2024'
+                           value='2010'
+                           id='constructionYear'>
+                </li>
+                <li>
+                    <label for='typeOfBuilding'>Type of Building:</label>
+                    <input type='text' value='SFH' id='typeOfBuilding'>
+                </li>
+                <li>
+                    <label for='retrofit'>Retrofit:</label>
+                    <input type='range' min='0' max='2' value='0' id='retrofit'>
+                </li>
+                <li>
+                    <button id='simulateButton' onclick='triggerStartSimulation()'>Simulate the building</button>
+                </li>
+            </ul>
+        </div>
         <script>
             let isToolboxExpanded = false;
 

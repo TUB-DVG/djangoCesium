@@ -1103,13 +1103,14 @@ function createInfoTable(res, citydbLayer) {
         // get the year of construction from the database:
         var yearOfConstructionDate = json["year_of_construction"];
         var yearOfConstruction = yearOfConstructionDate.split("-")[0];
+        document.getElementById("constructionYear").value = yearOfConstruction;
         var html = '<table class="cesium-infoBox-defaultTable" style="font-size:10.5pt"><tbody>';
-        html += "<ul><li><label for='areaInput'>Area of Building: </label><input type='number' min='0' value='200' id='areaInput'></li>"
-        html += "<li><label for='constructionYear'>Year of Construction: </label><input type='number' min='1860' max='2024' value='" + yearOfConstruction + "' id='constructionYear'></li>"
-        html += "<li><label for='typeOfBuilding'>Type of Building: </label><input type='number' min='1860' max='2024' value='2000' id='typeOfBuilding'></li>"
-        html += "<li><label for='retrofit'>Retrofit: </label><input type='range' min='0' max='2' value='0' id='retrofit'></li></ul>"
+        // html += "<ul><li><label for='areaInput'>Area of Building: </label><input type='number' min='0' value='200' id='areaInput'></li>"
+        // html += "<li><label for='constructionYear'>Year of Construction: </label><input type='number' min='1860' max='2024' value='" + yearOfConstruction + "' id='constructionYear'></li>"
+        // html += "<li><label for='typeOfBuilding'>Type of Building: </label><input type='text' value='SFH' id='typeOfBuilding'></li>"
+        // html += "<li><label for='retrofit'>Retrofit: </label><input type='range' min='0' max='2' value='0' id='retrofit'></li></ul>"
 
-        html += "<button id='simulateButton' onclick='triggerStartSimulation()'>Simulate the building</button>";
+        // html += "<button id='simulateButton' onclick='window.parent.triggerStartSimulation()'>Simulate the building</button>";
         html += "<ul>";
         for (var key in json) {
             html += "<li>" + key + ": " + json[key] + "</li>";
@@ -1125,6 +1126,9 @@ function createInfoTable(res, citydbLayer) {
             var iterator = 0;
             // var timeIntervalInt = parseFloat(timeintervalStr) * 36e5;
                 document.getElementById("tryChartContainer").style = "display: block; width: 400px;";
+    
+                document.getElementById("formSimulateContainer").style.display = "block";
+                
             for (var key in jsonObject) {
                 if (iterator == 0) {
                     // debugger;
@@ -1258,14 +1262,14 @@ function triggerStartSimulation() {
     data["constructionYear"] = document.getElementById("constructionYear").value;
     data["typeOfBuilding"] = document.getElementById("typeOfBuilding").value;
     data["retrofit"] = document.getElementById("retrofit").value;
-    
 
+    debugger;
     fetch('http://0.0.0.0:8000/districtgenerator/simulate', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data), // data can be `string` or {object}!
+        body: data, // data can be `string` or {object}!
     })
     .then(response => response.json())
     .then(data => console.log(data))

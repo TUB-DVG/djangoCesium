@@ -21,6 +21,13 @@ For that Django needs an Endpoint, which can be called by the frontend to check,
 
 For that reason a API-Endpoint `citydb/buildings/` was created. When using the GET-HTTP method all buildings can be fetched from the database.
 
+Starting a Simulation
+---------------------
+
+To start a simulation a building visulisation needs to be clicked in the frontend. 
+It should open a card, where it is possible to click the "Simulate"-button. 
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:

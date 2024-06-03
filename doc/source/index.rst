@@ -23,10 +23,20 @@ For that reason a API-Endpoint `citydb/buildings/` was created. When using the G
 
 Starting a Simulation
 ---------------------
+To start a simulation a building visulization needs to be clicked in the frontend. 
+It should open a card, where it is possible to click the "Simulate"-button. Simultaniously the timeseries data together with the building meta-data 
+should be loaded into the frontend. 
 
-To start a simulation a building visulisation needs to be clicked in the frontend. 
-It should open a card, where it is possible to click the "Simulate"-button. 
+To load the timeseries- and building data into the frontend 2 GET-API-Endpoints are created:
+ - Timeseries-data for a Building with the GMLID `gmlid` can be fetched by calling the API-Endpoint `citydb/timeseries/<gmlid>`.
+ - Building-data for a Building with the GMLID `gmlid` can be fetched by calling the API-Endpoint `citydb/building/<gmlid>`.
 
+The response contains the data in JSON-format. The frontend can use the data to visualize the building and the timeseries data.
+The timeseries data is visulized in the highcharts-graph. The building data is used to show the building meta-data.
+This data is just the serialized data from the Building-Model in the Django-Application.
+
+The simulation is started by clicking the "Simulate"-button. The frontend sends a POST-Request to the API-Endpoint `districtgenerator/simulate/`,
+whereby the data to generate the district, is taken from the frontend input-form fields. The data is sent in JSON-format. 
 
 .. toctree::
    :maxdepth: 2

@@ -1264,12 +1264,15 @@ function triggerStartSimulation() {
     data["retrofit"] = document.getElementById("retrofit").value;
 
     debugger;
-    fetch('http://0.0.0.0:8000/districtgenerator/simulate', {
-        method: 'POST', // or 'PUT'
+    fetch('http://0.0.0.0:8000/districtgenerator/simulate/', {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            // 'Access-Control-Allow-Origin': '*', // Set the allowed origin
+            // 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE', // Set the allowed methods
+            // 'Access-Control-Allow-Headers': 'Content-Type', // Set the allowed headers
         },
-        body: data, // data can be `string` or {object}!
+        body: JSON.stringify(data),
     })
     .then(response => response.json())
     .then(data => console.log(data))

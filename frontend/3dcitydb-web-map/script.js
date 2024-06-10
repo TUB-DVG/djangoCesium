@@ -25,11 +25,23 @@
  * limitations under the License.
  */
 
+// const { response } = require("express");
+
 /**-----------------------------------------Separate Line-------------------------------------------------**/
 
 // URL controller
 var jsonOfHttpResponse1 = [];
 var urlController = new UrlController();
+var fetchedBuildingObjsFromDB = [];
+// use the fetch-API to fetch all buildings from the backend:
+fetch('http://0.0.0.0:8000/citydb/buildings/')
+    .then(response => response.json())
+    .then(json => {
+        fetchedBuildingObjsFromDB = json;
+        console.log(json);
+    });
+
+
 // import Highcharts from 'highcharts';
 // // var Highcharts = require('highcharts'); 
 // require('highcharts/modules/exporting')(Highcharts);
@@ -872,7 +884,8 @@ var options = {
     minLodPixels: addLayerViewModel.minLodPixels,
     maxLodPixels: addLayerViewModel.maxLodPixels == -1 ? Number.MAX_VALUE : addLayerViewModel.maxLodPixels,
     maxSizeOfCachedTiles: addLayerViewModel.maxSizeOfCachedTiles,
-    maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles
+    maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles,
+    gmldId: "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82"
 }
 _layers.push(new CitydbKmlLayer(options));
 loadLayerGroup(_layers);
@@ -1068,6 +1081,8 @@ function createInfoTable(res, citydbLayer) {
     var selectedThematicDataSource = thematicDataSourceDropdown.options[thematicDataSourceDropdown.selectedIndex].value;
     
     var gmlid = selectedThematicDataSource === "KML" ? res[1]._id : res[0];
+    // debugger;
+    
 
     if (gmlid.includes("_")) {
         var parts = gmlid.split("_");
@@ -1076,188 +1091,78 @@ function createInfoTable(res, citydbLayer) {
         }
         gmlid = parts.join("_");
     }
-    console.log(gmlid);
-    // debugger;
+    // console.log(gmlid);
     var cesiumEntity = res[1];
     
-    const httpRequest = new XMLHttpRequest();
-    httpRequest.open("GET", `http://127.0.0.1:3000/cityobject?gmlid=eq.${gmlid}`, true);
-
-    httpRequest.onreadystatechange = () => {
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200) {
-                const jsonResponse = JSON.parse(httpRequest.responseText);
-                console.log(jsonResponse);
-                console.log(jsonResponse[0].id);
-                var id = jsonResponse[0].id;
-                // debugger;
-                var url = `http://127.0.0.1:3000/ng_regulartimeseries?id=eq.${id}`;
-
-                fetch(url)
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log(data);
-                        var dataValuesAsStr = data[0].values_;
-                        var timeintervalStr = data[0].timeinterval;
-                        var timeintervalUnitStr = data[0].timeinterval_unit;
-                        var dateStartStr = data[0].timeperiodprop_beginposition;
-                        var dateEndStr = data[0].timeperiodproper_endposition;
-                        var unitStr = data[0].values_uom;
-
-                        // Remove first and last character of dataValuesAsStr
-                        dataValuesAsStr = dataValuesAsStr.substring(1, dataValuesAsStr.length - 1);
-
-                        
-                        const arrayOfStr = dataValuesAsStr.split(",");
-                        var timeIntervalInt = 1;
-                        var arrayOfFloats = [];
-                        if (timeintervalUnitStr == "hours") {
-                            timeIntervalInt = parseFloat(timeintervalStr) * 36e5;
-                        }
-                        else {
-                            console.log("Can't interpret timeinterval_unit!");
-                        }
-                        dateStartStr = dateStartStr.replace(" ", "");
-
-                        for (let i = 0; i < arrayOfStr.length; i++) {
-                            arrayOfFloats[i] = parseFloat(arrayOfStr[i]);
-                        }
-
-                        // Calculate the end date based on the start date and time difference
-                        var startDate = Date.parse(dateStartStr);
-                        var endDate = Date.parse(dateEndStr)
-
-                        Highcharts.chart('tryChartContainer', {
-                            title: {
-                                text: 'Verbrauchsdaten from ng_regulartimeseries'
-                            },
-                            xAxis: {
-                                type: 'datetime',
-                                min: startDate,
-                                max: endDate
-                            },
-                            plotOptions: {
-                                series: {
-                                    pointStart: startDate,
-                                    pointInterval: timeIntervalInt
-                                }
-                            },
-                            yAxis: {
-                                title: {
-                                    text: unitStr
-                                }
-                            },
-                            series: [{
-                                data: arrayOfFloats,
-                            }],
-                        })
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            } else {
-                // Handle error response
-            }
-        }
-    };
-
-    httpRequest.send();
-        // Process the server response here.
-
-        // if (httpRequest.readyState === XMLHttpRequest.DONE) {
-        //     // debugger;
-            
-        //     if (httpRequest.status === 200) {
-        //         // var jsonOfHttpResponse = JSON.parse(httpRequest.responseText);
-        //         // if (jsonOfHttpResponse.rows.length > 1) {
-
-        //         // }
-        //         var jsonOfHttpResponse = JSON.parse(httpRequest.responseText);
-        //         // jsonOfHttpResponse1 = jsonOfHttpResponse;
-        //         let timeseriesSelect = document.getElementById('timeseriesSelect'); 
-        //         let options = timeseriesSelect.getElementsByTagName('option');
-        //         // for (var i=options.length; i--;) {
-        //         //     timeseriesSelect.removeChild(options[i]);
-        //         // }
-        //         // for (let j = 0; j < jsonOfHttpResponse.rows.length; j++) {
-        //         //     var newOption = document.createElement("option");
-        //         //     newOption.text = "Timeseries " + j;
-        //         //     timeseriesSelect.add(newOption); 
-        //         // }
-        //         console.log(jsonOfHttpResponse);
-        //         console.log(jsonOfHttpResponse.id);
-        //         var id = jsonOfHttpResponse.id;
-        //         // debugger;
-        //         var url = `http://127.0.0.1:3000/ng_regulartimeseries?id=eq.${id}`;
-
-        //         fetch(url)
-        //             .then(response => response.json())
-        //             .then(data => {
-        //                 console.log(data);
-        //                 var dataValuesAsStr = data.rows[0].values_;
-        //                 var timeintervalStr = data.rows[0].timeinterval;
-        //                 var timeintervalUnitStr = data.rows[0].timeinterval_unit;
-        //                 var dateStartStr = data.rows[0].timeperiodprop_beginposition;
-        //                 var unitStr = data.rows[0].values_uom;
-        //                 const arrayOfStr = dataValuesAsStr.split(" ");
-        //                 var timeIntervalInt = 1;
-        //                 var arrayOfFloats = [];
-        //                 if (timeintervalUnitStr == "hour") {
-        //                     timeIntervalInt = parseFloat(timeintervalStr) * 36e5;
-        //                 }
-        //                 else {
-        //                     console.log("Cant interpret timeinterval_unit!");
-        //                 }
-        //                 dateStartStr = dateStartStr.replace(" ", "");
-        //                 // dateStartStr = dateStartStr.split(" ")[0]
-        
-        //                 for (let i = 0; i < arrayOfStr.length; i++) {
-        //                     arrayOfFloats[i] = parseFloat(arrayOfStr[i]);
-        //                 }
-        //                 // debugger;
-        //                 Highcharts.chart('tryChartContainer', {
-        //                     title: {
-        //                         text: 'Verbrauchsdaten from ng_regulartimeseries id=74'
-        //                     },
-        //                     xAxis: {
-        //                         type: 'datetime'
-        //                     },                
-        //                     plotOptions: {
-        //                         series: {
-        //                             pointStart: Date.parse(dateStartStr),
-        //                             pointInterval: timeIntervalInt, // one hour
-        //                         }
-        //                     },
-        //                     yAxis: {
-        //                         title: {
-        //                             text: unitStr
-        //                         }
-        //                     },
-        //                             /*subtitle: {
-        //                         text: 'Subtitle'
-        //                     },*/
-        //                     series: [{
-        //                     data: arrayOfFloats,
-        //                     }],
-        //                 })
-        //                 // Process the JSON data here
-                        
-        //                 // Further processing of the data
-        //             })
-        //             .catch(error => {
-        //                 console.error('Error:', error);
-        //             });
-
-
-        //     //   alert(httpRequest.responseText);
-        //     } else {
-        //       alert("There was a problem with the request.");
-        //     }
-        //   }    };
     console.log(gmlid);
     var thematicDataUrl = citydbLayer.thematicDataUrl;
-    cesiumEntity.description = "Loading feature information...";
+    cesiumEntity.description = "Please wait, the Database is called for information about the building...";
+    
+    fetch(`http://0.0.0.0:8000/citydb/buildings/${gmlid}`).then(response => response.json())
+    .then(json => {
+        // get the year of construction from the database:
+        var yearOfConstructionDate = json["year_of_construction"];
+        var yearOfConstruction = yearOfConstructionDate.split("-")[0];
+        document.getElementById("constructionYear").value = yearOfConstruction;
+        var html = '<table class="cesium-infoBox-defaultTable" style="font-size:10.5pt"><tbody>';
+        // html += "<ul><li><label for='areaInput'>Area of Building: </label><input type='number' min='0' value='200' id='areaInput'></li>"
+        // html += "<li><label for='constructionYear'>Year of Construction: </label><input type='number' min='1860' max='2024' value='" + yearOfConstruction + "' id='constructionYear'></li>"
+        // html += "<li><label for='typeOfBuilding'>Type of Building: </label><input type='text' value='SFH' id='typeOfBuilding'></li>"
+        // html += "<li><label for='retrofit'>Retrofit: </label><input type='range' min='0' max='2' value='0' id='retrofit'></li></ul>"
 
+        // html += "<button id='simulateButton' onclick='window.parent.triggerStartSimulation()'>Simulate the building</button>";
+        html += "<ul>";
+        for (var key in json) {
+            html += "<li>" + key + ": " + json[key] + "</li>";
+        }
+        // html += "<div id='tryChartContainer'></div>"
+        html += "</ul>";
+        html += '</tbody></table>';
+        cesiumEntity.description = html;   
+    });
+    fetch(`http://0.0.0.0:8000/citydb/timeseries/${gmlid}`).then(response => response.json()).then(
+        json => { 
+            var jsonObject = JSON.parse(json);
+            var iterator = 0;
+            // var timeIntervalInt = parseFloat(timeintervalStr) * 36e5;
+                document.getElementById("tryChartContainer").style = "display: block; width: 400px;";
+    
+                document.getElementById("formSimulateContainer").style.display = "block";
+                
+            for (var key in jsonObject) {
+                if (iterator == 0) {
+                    // debugger;
+                    var dateStartStr = jsonObject[key]["time"][0];
+                    var chart = Highcharts.chart('tryChartContainer', {
+                        title: {
+                            text: 'Verbrauchsdaten'
+                        },
+                        xAxis: {
+                            type: 'datetime'
+                        },
+                        plotOptions: {
+                            series: {
+                                pointStart: Date.parse(dateStartStr),
+                                pointInterval: 3600000,
+                            }
+                        },
+                        series: [{
+                            name: key,
+                            data: jsonObject[key]["data"]
+                        }]
+                    });      
+                    iterator++;              
+                }
+                else  {
+                    chart.addSeries({
+                        name: key,
+                        data: jsonObject[key]["data"]
+                    });                   
+                }
+            }
+            
+            console.log(json) }
+    );
     citydbLayer.dataSourceController.fetchData(gmlid, function (kvp) {
         if (!kvp) {
             cesiumEntity.description = 'No feature information found';
@@ -1351,7 +1256,29 @@ function fetchDataFromGoogleFusionTable(gmlid, thematicDataUrl) {
     });
     return deferred.promise;
 }
+function triggerStartSimulation() {
+    var data = {};
+    data["area"] = document.getElementById("areaInput").value;
+    data["constructionYear"] = document.getElementById("constructionYear").value;
+    data["typeOfBuilding"] = document.getElementById("typeOfBuilding").value;
+    data["retrofit"] = document.getElementById("retrofit").value;
 
+    debugger;
+    fetch('http://0.0.0.0:8000/districtgenerator/simulate/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            // 'Access-Control-Allow-Origin': '*', // Set the allowed origin
+            // 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE', // Set the allowed methods
+            // 'Access-Control-Allow-Headers': 'Content-Type', // Set the allowed headers
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => console.error('Error:', error));
+    // fetch('http://0.0.0.0:8000/districtgenerator/simulate')
+}
 function showInExternalMaps() {
     var mapOptionList = document.getElementById('citydb_showinexternalmaps');
     var selectedIndex = mapOptionList.selectedIndex;
@@ -1794,8 +1721,6 @@ fetchTryDataAsString().then(tryDataString => {
 });
 
 var pickedFeature = viewer.scene.pick(movement.endPosition);
-// debugger;
-
 
 function updateChart(optionElement) {
     var text = optionElement.options[optionElement.selectedIndex].text;

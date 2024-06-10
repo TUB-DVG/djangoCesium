@@ -1,0 +1,23 @@
+asgiref==3.7.2
+certifi==2023.11.17
+charset-normalizer==3.3.2
+Django==5.0.1
+# -e git+ssh://git@git.tu-berlin.de/bf_digi/django-citydb.git@0db0eb66c41ee968d350863a90875283a2ad1223#egg=django_citydb
+idna==3.6
+influxdb==5.3.1
+msgpack==1.0.7
+numpy==1.26.3
+pandas==2.2.0
+psycopg2==2.9.9
+python-dateutil==2.8.2
+pytz==2023.4
+requests==2.31.0
+six==1.16.0
+sqlparse==0.4.4
+typing_extensions==4.9.0
+tzdata==2023.4
+urllib3==2.2.0
+jupyter
+lxml
+djangorestframework
+django-cors-headers

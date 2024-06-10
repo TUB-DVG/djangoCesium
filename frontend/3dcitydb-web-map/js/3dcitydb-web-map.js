@@ -151,11 +151,13 @@
 
     WebMap3DCityDB.prototype.clearHighlight = function (object) {
         var layers = this._layers;
+        document.getElementById("tryChartContainer").style.display = "none";
         for (var i = 0; i < layers.length; i++) {
             if (layers[i].active && (object.id && layers[i].id != object.id.layerId)) {
                 layers[i].unHighlightAllObjects();
             }
         }
+        
     };
 
     /**

@@ -4,9 +4,9 @@ services:
       context: ./frontend/3dcitydb-web-map
       dockerfile: Dockerfile
     ports:
-      - "8080:8000"
+      - "8080:8080"
     volumes:
-      - ./frontend/3dcitydb-web-map:/var/www/3dcitydb-web-map:ro
+      - ./frontend/3dcitydb-web-map:/var/www/
       - ./frontend/data:/var/www/data
     container_name: frontend
 

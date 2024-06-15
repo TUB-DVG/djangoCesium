@@ -1263,7 +1263,7 @@ function triggerStartSimulation() {
     data["typeOfBuilding"] = document.getElementById("typeOfBuilding").value;
     data["retrofit"] = document.getElementById("retrofit").value;
 
-    debugger;
+    // debugger;
     fetch('http://0.0.0.0:8000/districtgenerator/simulate/', {
         method: 'POST',
         headers: {
@@ -1275,7 +1275,17 @@ function triggerStartSimulation() {
         body: JSON.stringify(data),
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+        var chart = Highcharts.Chart.get('tryChartContainer');
+        for (var key in data) {
+            chart.addSeries({
+                name: key,
+                data: data[key]
+            });
+        }
+
+    
+    })
     .catch((error) => console.error('Error:', error));
     // fetch('http://0.0.0.0:8000/districtgenerator/simulate')
 }

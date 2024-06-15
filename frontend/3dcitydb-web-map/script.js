@@ -30,9 +30,11 @@
 /**-----------------------------------------Separate Line-------------------------------------------------**/
 
 // URL controller
+var chart = {}; // global variable for charts
 var jsonOfHttpResponse1 = [];
 var urlController = new UrlController();
 var fetchedBuildingObjsFromDB = [];
+var simulatedTimeseriesData;
 // use the fetch-API to fetch all buildings from the backend:
 fetch('http://0.0.0.0:8000/citydb/buildings/')
     .then(response => response.json())
@@ -1133,7 +1135,7 @@ function createInfoTable(res, citydbLayer) {
                 if (iterator == 0) {
                     // debugger;
                     var dateStartStr = jsonObject[key]["time"][0];
-                    var chart = Highcharts.chart('tryChartContainer', {
+                    chart = Highcharts.chart('tryChartContainer', {
                         title: {
                             text: 'Verbrauchsdaten'
                         },
@@ -1276,14 +1278,22 @@ function triggerStartSimulation() {
     })
     .then(response => response.json())
     .then(data => {
-        var chart = Highcharts.Chart.get('tryChartContainer');
-        for (var key in data) {
-            chart.addSeries({
-                name: key,
-                data: data[key]
-            });
-        }
+        // debugger;
+        // var chart = Highcharts.Chart.get('tryChartContainer');
 
+        simulatedTimeseriesData = JSON.parse(data);
+        debugger;
+        for (var key in simulatedTimeseriesData) {
+            if (key != "DATE") {
+            chart.addSeries({
+                name: key + "_new",
+                data: simulatedTimeseriesData[key]
+            });
+            }   
+        }
+        // change the content of the simulate container so it shows an dialog, which asks 
+        // if the simulated data should be written into the database or be discarded
+        document.getElementById("formSimulateContainer").innerHTML = "<h2>Simulation erfolgreich</h2><p>Die Simulation war erfolgreich. Möchten Sie die simulierten Daten in die Datenbank schreiben?</p><button id='writeToDatabaseButton' onclick='window.parent.writeToDatabase()'>In Datenbank schreiben</button><button id='discardDataButton' onclick='window.parent.discardData()'>Daten verwerfen</button>";
     
     })
     .catch((error) => console.error('Error:', error));
@@ -1443,6 +1453,15 @@ function toggleSetGeoLoc() {
     } else {
         geoLocDiv.style.display = "none";
     }
+}
+/* 
+    This function is toggled when the user clicks the write into database button 
+    on the simulaton-options container. It sends a post-request to the timeseries endpoint to 
+    write the timeseries data into the database.
+    At the moment the building gmld-id is still hardcoded into the API-Call.
+*/
+function writeToDatabase() {
+    fetch("http://127.0.0.1:8000/citydb/timeseries/UUID_d281adfc-4901-0f52-540b-4cc1a9325f82")
 }
 
 /**
@@ -1758,7 +1777,7 @@ function updateChart(optionElement) {
         arrayOfFloats[i] = parseFloat(arrayOfStr[i]);
     }
     // debugger;
-    Highcharts.chart('tryChartContainer', {
+    window.chart = Highcharts.chart('tryChartContainer', {
         title: {
             text: 'Verbrauchsdaten from ng_regulartimeseries id=74'
         },

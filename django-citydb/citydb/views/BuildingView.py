@@ -71,8 +71,8 @@ class TimeseriesView(APIView):
 
     def post(self, request, gmlid):
         """Post endpoint to add timeseries for a building with the specified GML-ID"""
-
-        loadedJsonData = json.loads(request.data)
+        # breakpoint()
+        loadedJsonData = request.data
         timeseriesDict = loadedJsonData["timeseriesDict"]
         metaDataDict = loadedJsonData["metaDataDict"]
 

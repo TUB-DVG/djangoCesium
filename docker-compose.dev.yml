@@ -1,0 +1,14 @@
+djangodb:
+  build:
+    context: ./django-citydb
+    dockerfile: Dockerfile
+  env_file: ".env"
+  command: bash -c "python manage.py runserver 0.0.0.0:8000"
+  ports:
+    - "8000:8000"
+  container_name: djangodb
+  volumes:
+    - ./django-citydb:/app
+  depends_on:
+    - citydb
+    - frontend

@@ -4,37 +4,42 @@ services:
       context: ./frontend/3dcitydb-web-map
       dockerfile: Dockerfile
     ports:
-      - "8080:8000"
+      - "8080:8080"
     volumes:
-      - ./frontend/3dcitydb-web-map:/var/www/3dcitydb-web-map:ro
+      - ./frontend/3dcitydb-web-map:/var/www/
       - ./frontend/data:/var/www/data
     container_name: frontend
-
+    networks:
+      - webcentral_default
   djangodb:
     build:
       context: ./django-citydb
       dockerfile: Dockerfile
-    command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    env_file: ".env"
+    command: bash -c "uwsgi --socket :9001 --chdir=/app/vdistrict --master --processes 4 --threads 2 --module=wsgi:application"
     ports:
-      - "8000:8000"
+      - "8001:8000"
     container_name: djangodb
-    volumes:
-      - ./django-citydb:/app
+    # volumes:
+    #   - ./django-citydb:/app
     depends_on:
       - citydb
+      - frontend
+    networks:
+      - webcentral_default
   citydb:
     image: 3dcitydb/3dcitydb-pg
-    ports:
-      - "5001:5432"
+    # ports:
+    #   - "5001:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    env_file: ".env"
     environment:
       SRID: 25832
       SRSNAME: urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH
-      POSTGRES_DB: citydb
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
     container_name: citydb
+    networks:
+    - webcentral_default
   # impexp:
   #   image: 3dcitydb/3dcitydb-impexp
   #   environment:
@@ -68,3 +73,8 @@ services:
 volumes:
   pgdata:
   cesiumData:
+
+
+networks:
+  webcentral_default:
+    external: true

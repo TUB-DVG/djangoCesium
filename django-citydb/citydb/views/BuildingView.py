@@ -1,5 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import status
 from django.core.management import call_command
 
 from citydb.modules.bldg.building import Building
@@ -67,3 +68,21 @@ class TimeseriesView(APIView):
         return Response(returnDictSerialized)
 
         # timeseriesSerializer = TimeseriesSerializer(returnDict)
+
+    def post(self, request, gmlid):
+        """Post endpoint to add timeseries for a building with the specified GML-ID"""
+        # breakpoint()
+        loadedJsonData = request.data
+        timeseriesDict = loadedJsonData["timeseriesDict"]
+        metaDataDict = loadedJsonData["metaDataDict"]
+
+        call_command(
+            "import_timeseries",
+            timeseriesDict,
+            gmlid,
+            **metaDataDict,
+        )
+
+        # add here check if import was sucessfull later
+
+        return Response(status=status.HTTP_200_OK)

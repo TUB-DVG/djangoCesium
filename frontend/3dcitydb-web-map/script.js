@@ -1257,6 +1257,12 @@ function fetchDataFromGoogleFusionTable(gmlid, thematicDataUrl) {
     return deferred.promise;
 }
 function triggerStartSimulation() {
+    const loader = document.getElementById('simulateLoader');
+    const button = document.getElementById('simulateButton');
+
+    loader.classList.add('simulate-button__loader--visible');
+    button.disabled = true;
+
     var data = {};
     data["area"] = document.getElementById("areaInput").value;
     data["constructionYear"] = document.getElementById("constructionYear").value;
@@ -1274,7 +1280,11 @@ function triggerStartSimulation() {
         },
         body: JSON.stringify(data),
     })
-    .then(response => response.json())
+    .then((response) => {
+        response.json();
+        loader.classList.remove('simulate-button__loader--visible');
+        button.disabled = false;
+    })
     .then(data => console.log(data))
     .catch((error) => console.error('Error:', error));
     // fetch('http://0.0.0.0:8000/districtgenerator/simulate')

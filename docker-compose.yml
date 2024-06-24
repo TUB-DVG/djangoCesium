@@ -16,9 +16,9 @@ services:
       context: ./django-citydb
       dockerfile: Dockerfile
     env_file: ".env"
-    command: bash -c "uwsgi --socket :9001 --chdir=/app/vdistrict --master --processes 4 --threads 2 --module=vdistrict.wsgi:application"
+    command: bash -c "uwsgi --socket :9001 --chdir=/app/vdistrict --master --processes 4 --threads 2 --module=wsgi:application"
     ports:
-      - "8000:8000"
+      - "8001:8000"
     container_name: djangodb
     # volumes:
     #   - ./django-citydb:/app
@@ -38,6 +38,8 @@ services:
       SRID: 25832
       SRSNAME: urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH
     container_name: citydb
+    networks:
+    - webcentral_default
   # impexp:
   #   image: 3dcitydb/3dcitydb-impexp
   #   environment:

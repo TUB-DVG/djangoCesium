@@ -39,7 +39,7 @@ var urlController = new UrlController();
 var fetchedBuildingObjsFromDB = [];
 var simulatedTimeseriesData;
 // use the fetch-API to fetch all buildings from the backend:
-fetch('http://127.0.0.1:8000/citydb/buildings/')
+fetch('http://127.0.0.1:8001/citydb/buildings/')
     .then(response => response.json())
     .then(json => {
         fetchedBuildingObjsFromDB = json;
@@ -1103,7 +1103,7 @@ function createInfoTable(res, citydbLayer) {
     var thematicDataUrl = citydbLayer.thematicDataUrl;
     cesiumEntity.description = "Please wait, the Database is called for information about the building...";
     
-    fetch(`http://127.0.0.1:8000/citydb/buildings/${gmlid}`).then(response => response.json())
+    fetch(`http://127.0.0.1:8001/citydb/buildings/${gmlid}`).then(response => response.json())
     .then(json => {
         // get the year of construction from the database:
         var yearOfConstructionDate = json["year_of_construction"];
@@ -1268,7 +1268,7 @@ function triggerStartSimulation() {
     data["retrofit"] = document.getElementById("retrofit").value;
 
     // debugger;
-    fetch('http://127.0.0.1:8000/districtgenerator/simulate/', {
+    fetch('http://127.0.0.1:8001/districtgenerator/simulate/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -1464,7 +1464,7 @@ function writeToDatabase() {
         interpolation_type: "averageInSucceedingInterval",
         quality_description: "Your quality description", 
     };
-    fetch("http://127.0.0.1:8000/citydb/timeseries/UUID_d281adfc-4901-0f52-540b-4cc1a9325f82", {
+    fetch("http://127.0.0.1:8001/citydb/timeseries/UUID_d281adfc-4901-0f52-540b-4cc1a9325f82", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -1826,7 +1826,7 @@ function updateChart(optionElement) {
 };
 
 function fetchTimeseriesForBuilding(gmlid) {
-    fetch(`http://127.0.0.1:8000/citydb/timeseries/${gmlid}`).then(response => response.json()).then(
+    fetch(`http://127.0.0.1:8001/citydb/timeseries/${gmlid}`).then(response => response.json()).then(
         json => { 
             var jsonObject = JSON.parse(json);
             var iterator = 0;

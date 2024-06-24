@@ -88,3 +88,17 @@ body {
     width: 16px;
     height: 11px;
 }
+
+.building-box__description {
+    font-size: 15px;
+    color: #000000;
+}
+            
+.building-box__description ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    margin: 0;
+    padding: 10px;
+    list-style-type: none;
+}

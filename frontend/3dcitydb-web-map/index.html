@@ -123,6 +123,7 @@
                 position: absolute;
                 top: calc(55px + 0.5rem);
                 left: 25px;
+                max-height: 85vh;
                 padding: 10px;
                 border: 1px solid #4c4c4c;
                 border-radius: 14px;
@@ -131,6 +132,7 @@
                 z-index: 99980;
                 opacity: 0;
                 visibility: hidden;
+                overflow: scroll;
                 transition: all 0.2s;
             }
 
@@ -833,7 +835,7 @@
             </div>
         </div>
         <div id="tryChartContainer" style="display: none; width: 600px;"></div>
-        <div style="background-color: grey; display: none; width: 200px;" id="formSimulateContainer">
+        <div id="formSimulateContainer">
             <ul>
                 <li>
                     <label for='areaInput'>Area of Building:</label>

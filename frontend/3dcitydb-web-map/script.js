@@ -1263,7 +1263,7 @@ function triggerStartSimulation() {
     data["typeOfBuilding"] = document.getElementById("typeOfBuilding").value;
     data["retrofit"] = document.getElementById("retrofit").value;
 
-    debugger;
+    //  debugger;
     fetch('http://0.0.0.0:8000/districtgenerator/simulate/', {
         method: 'POST',
         headers: {

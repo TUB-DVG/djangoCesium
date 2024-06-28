@@ -9,6 +9,9 @@ services:
       - ./frontend/3dcitydb-web-map:/var/www/
       - ./frontend/data:/var/www/data
     container_name: frontend
+    environment:
+      NODE_ENV: development
+      command: /usr/src/app/entrypoint.sh
     # networks:
     #   - webcentral_default
   djangodb:

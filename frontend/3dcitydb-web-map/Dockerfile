@@ -1,38 +1,33 @@
-# following code is taken from:
-# https://docs.docker.com/language/nodejs/containerize/
+# Use an argument to define the base image tag
 ARG baseimage_tag='21.7.0-bookworm-slim'
-FROM "node:${baseimage_tag}"
+FROM node:${baseimage_tag}
 
-# Use production node environment by default.
-ENV NODE_ENV production
+# Use production node environment by default
+ENV NODE_ENV=production
 
-WORKDIR /var/www/  
+# Create and define the node_modules's cache directory
+RUN mkdir -p /usr/src/cache
+WORKDIR /usr/src/cache
 
-# Download dependencies as a separate step to take advantage of Docker's caching.
-# Leverage a cache mount to /root/.npm to speed up subsequent builds.
-# Leverage a bind mounts to package.json and package-lock.json to avoid having to copy them into
-# into this layer.
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --omit=dev
+# Install the application's dependencies into the node_modules's cache directory
+COPY package.json package-lock.json ./
+RUN npm install --only=production
 
-# RUN npm install --save highcharts
-# RUN npm install cors
+# Create and define the application's working directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
+# Switch to a non-root user (assuming node user is created in the base image)
 USER node
 
-COPY . .
+# Copy application source code
+COPY --chown=node:node . .
 
+# Copy node_modules from cache to app directory
+RUN cp -r /usr/src/cache/node_modules /usr/src/app/
 
-# RUN npm install body-parser
-# COPY ./3dcitydb-web-map /var/www/
-# COPY server.js ./
-# RUN set -x \
-#   && npm install --production
-
-
-# USER node
-# USER node
+# Expose the application port
 EXPOSE 8080
-CMD [ "node", "server.js", "--public"]
+
+# Define the command to run the application
+CMD ["npm", "start"]

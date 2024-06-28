@@ -1,0 +1,5 @@
+# Ignore .env file
+.env
+
+# Ignore node_modules directory
+frontend/3dcitydb-web-map/node_modules

@@ -6,9 +6,9 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./frontend/3dcitydb-web-map:/usr/src/app
-      - ./frontend/data:/usr/src/app/data
-      - node_modules:/usr/src/app/node_modules
+      - "./frontend/3dcitydb-web-map:/usr/src/app"
+      - "./frontend/data:/usr/src/app/data"
+      - "node_modules:/usr/src/app/node_modules"
     container_name: frontend
     environment:
       NODE_ENV: production

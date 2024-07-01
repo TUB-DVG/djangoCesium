@@ -21,3 +21,4 @@ jupyter
 lxml
 djangorestframework
 django-cors-headers
+uwsgi

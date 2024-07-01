@@ -27,14 +27,19 @@
 
 // const { response } = require("express");
 
+// const { response } = require("express");
+
 /**-----------------------------------------Separate Line-------------------------------------------------**/
 
 // URL controller
+var formContentOfSimulateInputContainer;
+var chart = {}; // global variable for charts
 var jsonOfHttpResponse1 = [];
 var urlController = new UrlController();
 var fetchedBuildingObjsFromDB = [];
+var simulatedTimeseriesData;
 // use the fetch-API to fetch all buildings from the backend:
-fetch('http://0.0.0.0:8000/citydb/buildings/')
+fetch('http://127.0.0.1:8001/citydb/buildings/')
     .then(response => response.json())
     .then(json => {
         fetchedBuildingObjsFromDB = json;
@@ -1098,7 +1103,7 @@ function createInfoTable(res, citydbLayer) {
     var thematicDataUrl = citydbLayer.thematicDataUrl;
     cesiumEntity.description = "Please wait, the Database is called for information about the building...";
     
-    fetch(`http://0.0.0.0:8000/citydb/buildings/${gmlid}`).then(response => response.json())
+    fetch(`http://127.0.0.1:8001/citydb/buildings/${gmlid}`).then(response => response.json())
     .then(json => {
         // get the year of construction from the database:
         var yearOfConstructionDate = json["year_of_construction"];
@@ -1120,49 +1125,48 @@ function createInfoTable(res, citydbLayer) {
         html += '</tbody></table>';
         cesiumEntity.description = html;   
     });
-    fetch(`http://0.0.0.0:8000/citydb/timeseries/${gmlid}`).then(response => response.json()).then(
-        json => { 
-            var jsonObject = JSON.parse(json);
-            var iterator = 0;
-            // var timeIntervalInt = parseFloat(timeintervalStr) * 36e5;
-                document.getElementById("tryChartContainer").style = "display: block; width: 400px;";
+    fetchTimeseriesForBuilding(gmlid);
+    // fetch(`http://0.0.0.0:8000/citydb/timeseries/${gmlid}`).then(response => response.json()).then(
+    //     json => { 
+    //         var jsonObject = JSON.parse(json);
+    //         var iterator = 0;
+    //         // var timeIntervalInt = parseFloat(timeintervalStr) * 36e5;
+    //             document.getElementById("tryChartContainer").style = "display: block; width: 400px;";
     
-                document.getElementById("formSimulateContainer").style.display = "block";
+    //             document.getElementById("formSimulateContainer").style.display = "block";
                 
-            for (var key in jsonObject) {
-                if (iterator == 0) {
-                    // debugger;
-                    var dateStartStr = jsonObject[key]["time"][0];
-                    var chart = Highcharts.chart('tryChartContainer', {
-                        title: {
-                            text: 'Verbrauchsdaten'
-                        },
-                        xAxis: {
-                            type: 'datetime'
-                        },
-                        plotOptions: {
-                            series: {
-                                pointStart: Date.parse(dateStartStr),
-                                pointInterval: 3600000,
-                            }
-                        },
-                        series: [{
-                            name: key,
-                            data: jsonObject[key]["data"]
-                        }]
-                    });      
-                    iterator++;              
-                }
-                else  {
-                    chart.addSeries({
-                        name: key,
-                        data: jsonObject[key]["data"]
-                    });                   
-                }
-            }
-            
-            console.log(json) }
-    );
+    //         for (var key in jsonObject) {
+    //             if (iterator == 0) {
+    //                 // debugger;
+    //                 var dateStartStr = jsonObject[key]["time"][0];
+    //                 chart = Highcharts.chart('tryChartContainer', {
+    //                     title: {
+    //                         text: 'Verbrauchsdaten'
+    //                     },
+    //                     xAxis: {
+    //                         type: 'datetime'
+    //                     },
+    //                     plotOptions: {
+    //                         series: {
+    //                             pointStart: Date.parse(dateStartStr),
+    //                             pointInterval: 3600000,
+    //                         }
+    //                     },
+    //                     series: [{
+    //                         name: key,
+    //                         data: jsonObject[key]["data"]
+    //                     }]
+    //                 });      
+    //                 iterator++;              
+    //             }
+    //             else  {
+    //                 chart.addSeries({
+    //                     name: key,
+    //                     data: jsonObject[key]["data"]
+    //                 });                   
+    //             }
+    //         }}
+    // );
     citydbLayer.dataSourceController.fetchData(gmlid, function (kvp) {
         if (!kvp) {
             cesiumEntity.description = 'No feature information found';
@@ -1269,8 +1273,8 @@ function triggerStartSimulation() {
     data["typeOfBuilding"] = document.getElementById("typeOfBuilding").value;
     data["retrofit"] = document.getElementById("retrofit").value;
 
-    //  debugger;
-    fetch('http://0.0.0.0:8000/districtgenerator/simulate/', {
+    // debugger;
+    fetch('http://127.0.0.1:8001/districtgenerator/simulate/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -1280,12 +1284,28 @@ function triggerStartSimulation() {
         },
         body: JSON.stringify(data),
     })
-    .then((response) => {
-        response.json();
-        loader.classList.remove('simulate-button__loader--visible');
-        button.disabled = false;
+    .then(response => response.json())
+    .then(data => {
+        // debugger;
+        // var chart = Highcharts.Chart.get('tryChartContainer');
+
+        simulatedTimeseriesData = JSON.parse(data);
+        debugger;
+        for (var key in simulatedTimeseriesData) {
+            if (key != "DATE") {
+            chart.addSeries({
+                name: key + "_new",
+                data: simulatedTimeseriesData[key]
+            });
+            }   
+        }
+        // change the content of the simulate container so it shows an dialog, which asks 
+        // if the simulated data should be written into the database or be discarded
+        
+        
+        document.getElementById("formSimulateContainer").innerHTML = "<h2>Simulation erfolgreich</h2><p>Die Simulation war erfolgreich. Möchten Sie die simulierten Daten in die Datenbank schreiben?</p><button id='writeToDatabaseButton' onclick='window.parent.writeToDatabase()'>In Datenbank schreiben</button><button id='discardDataButton' onclick='window.parent.discardData()'>Daten verwerfen</button>";
+        
     })
-    .then(data => console.log(data))
     .catch((error) => console.error('Error:', error));
     // fetch('http://0.0.0.0:8000/districtgenerator/simulate')
 }
@@ -1358,16 +1378,6 @@ function thematicDataSourceAndTableTypeDropdownOnchange() {
 
         addLayerViewModel["thematicDataSource"] = selectedThematicDataSource;
         addLayerViewModel["tableType"] = selectedTableType;
-
-        // if (selectedThematicDataSource == "GoogleSheets") {
-        //     document.getElementById("rowGoogleSheetsApiKey").style.display = "table-row";
-        //     document.getElementById("rowGoogleSheetsRanges").style.display = "table-row";
-        //     document.getElementById("rowGoogleSheetsClientId").style.display = "table-row";
-        // } else {
-        //     document.getElementById("rowGoogleSheetsApiKey").style.display = "none";
-        //     document.getElementById("rowGoogleSheetsRanges").style.display = "none";
-        //     document.getElementById("rowGoogleSheetsClientId").style.display = "none";
-        // }
 
         var options = getDataSourceControllerOptions(webMap._activeLayer);
         // Mashup Data Source Service
@@ -1444,7 +1454,42 @@ function toggleSetGeoLoc() {
         geoLocDiv.style.display = "none";
     }
 }
+/* 
+    This function is toggled when the user clicks the write into database button 
+    on the simulaton-options container. It sends a post-request to the timeseries endpoint to 
+    write the timeseries data into the database.
+    At the moment the building gmld-id is still hardcoded into the API-Call.
+*/
+function writeToDatabase() {
+    debugger;
+    var objToSend = {};
+    objToSend["timeseriesDict"] = simulatedTimeseriesData;
+    objToSend["metaDataDict"] = {
+        acquisition_method: "estimation",
+        source: "VDistrict",
+        interpolation_type: "averageInSucceedingInterval",
+        quality_description: "Your quality description", 
+    };
+    fetch("http://127.0.0.1:8001/citydb/timeseries/UUID_d281adfc-4901-0f52-540b-4cc1a9325f82", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(objToSend),
+    }).then(response => response.json()).then(data => console.log(data));
 
+    // after writing data, fetch the data again to update the chart
+    fetchTimeseriesForBuilding("UUID_d281adfc-4901-0f52-540b-4cc1a9325f82");
+    document.getElementById("formSimulateContainer").innerHTML = formContentOfSimulateInputContainer;
+
+}
+
+function discardData() {
+    fetchTimeseriesForBuilding(gmlid);
+    document.getElementById("formSimulateContainer").innerHTML = formContentOfSimulateInputContainer;
+    // update simulate container to show input-mask for starting a simulation
+
+}
 /**
  * Toggles the weatherdata chart panel.-
  * @function toggleTryChartData
@@ -1758,7 +1803,7 @@ function updateChart(optionElement) {
         arrayOfFloats[i] = parseFloat(arrayOfStr[i]);
     }
     // debugger;
-    Highcharts.chart('tryChartContainer', {
+    chart = Highcharts.chart('tryChartContainer', {
         title: {
             text: 'Verbrauchsdaten from ng_regulartimeseries id=74'
         },
@@ -1784,4 +1829,48 @@ function updateChart(optionElement) {
         }],
     })    
     console.log(text);
+};
+
+function fetchTimeseriesForBuilding(gmlid) {
+    fetch(`http://127.0.0.1:8001/citydb/timeseries/${gmlid}`).then(response => response.json()).then(
+        json => { 
+            var jsonObject = JSON.parse(json);
+            var iterator = 0;
+            // var timeIntervalInt = parseFloat(timeintervalStr) * 36e5;
+                document.getElementById("tryChartContainer").style = "display: block; width: 400px;";
+    
+                document.getElementById("formSimulateContainer").style.display = "block";
+                
+            for (var key in jsonObject) {
+                if (iterator == 0) {
+                    // debugger;
+                    var dateStartStr = jsonObject[key]["time"][0];
+                    chart = Highcharts.chart('tryChartContainer', {
+                        title: {
+                            text: 'Verbrauchsdaten'
+                        },
+                        xAxis: {
+                            type: 'datetime'
+                        },
+                        plotOptions: {
+                            series: {
+                                pointStart: Date.parse(dateStartStr),
+                                pointInterval: 3600000,
+                            }
+                        },
+                        series: [{
+                            name: key,
+                            data: jsonObject[key]["data"]
+                        }]
+                    });      
+                    iterator++;              
+                }
+                else  {
+                    chart.addSeries({
+                        name: key,
+                        data: jsonObject[key]["data"]
+                    });                   
+                }
+            }}
+    )
 };

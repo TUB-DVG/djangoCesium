@@ -1,6 +1,9 @@
+import json
+
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+
 from django.core.management import call_command
 from asgiref.sync import sync_to_async
 
@@ -60,20 +63,20 @@ class SimulatorView(APIView):
             dictOfEnergyDemandData["domesticHotWater_kWh"] = list(
                 domesticHotWaterProfile[:8760])
 
-        optionalMetaInformation = {
-            "acquisition_method": "estimation",
-            "source": "VDistrict",
-            "interpolation_type": "averageInSucceedingInterval",
-            "quality_description": "Your quality description",
-        }
+        # optionalMetaInformation = {
+        #     "acquisition_method": "estimation",
+        #     "source": "VDistrict",
+        #     "interpolation_type": "averageInSucceedingInterval",
+        #     "quality_description": "Your quality description",
+        # }
         # breakpoint()
-        call_command(
-            "import_timeseries",
-            dictOfEnergyDemandData,
-            "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82",
-            **optionalMetaInformation,
-        )
-        return Response(status=200)
+        # call_command(
+        #     "import_timeseries",
+        #     dictOfEnergyDemandData,
+        #     "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82",
+        #     **optionalMetaInformation,
+        # )
+        return Response(json.dumps(dictOfEnergyDemandData), status=200)
 
     # def get(self, request):
     #     """Start the district generator simulation."""

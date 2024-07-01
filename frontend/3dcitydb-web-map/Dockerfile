@@ -1,25 +1,33 @@
-FROM node:current-alpine3.18
+# Use an argument to define the base image tag
+ARG baseimage_tag='21.7.0-bookworm-slim'
+FROM node:${baseimage_tag}
 
-WORKDIR /var/www/  
-COPY package*.json ./
+# Use production node environment by default
+ENV NODE_ENV=production
 
-# ENV PYTHONUNBUFFERED=1
-# RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
-# RUN python3 -m ensurepip
-# RUN pip3 install --no-cache --upgrade pip setuptools
-# RUN npm install postgrest
-RUN npm install
-RUN npm install --save highcharts
-RUN npm install cors
-COPY --chown=node:node . .
-# COPY ./3dcitydb-web-map /var/www/
-# COPY server.js ./
-# RUN set -x \
-#   && npm install --production
+# Create and define the node_modules's cache directory
+RUN mkdir -p /usr/src/cache
+WORKDIR /usr/src/cache
 
-RUN set -x \
-  && chown -R node:node /var/www/
+# Install the application's dependencies into the node_modules's cache directory
+COPY package.json package-lock.json ./
+RUN npm install --only=production
+
+# Create and define the application's working directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# Copy application source code
+COPY . .
+
+# Copy node_modules from cache to app directory
+RUN cp -r /usr/src/cache/node_modules /usr/src/app/
+
+# Switch to a non-root user (assuming node user is created in the base image)
 USER node
-# USER node
-EXPOSE 8000
-CMD [ "node", "server.js", "--public"]
+
+# Expose the application port
+EXPOSE 8080
+
+# Define the command to run the application
+CMD ["node", "server.js", "--public"]

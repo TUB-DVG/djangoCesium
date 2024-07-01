@@ -4,67 +4,81 @@ services:
       context: ./frontend/3dcitydb-web-map
       dockerfile: Dockerfile
     ports:
-      - "8080:8000"
+      - "8080:8080"
     volumes:
-      - ./frontend/3dcitydb-web-map:/var/www
-      - ./frontend/data:/var/www/data
+      - "./frontend/3dcitydb-web-map:/usr/src/app"
+      - "./frontend/data:/usr/src/app/data"
+      - "node_modules:/usr/src/app/node_modules"
     container_name: frontend
-
+    environment:
+      NODE_ENV: production
+      # command: sh -c "node server.js"
+      # networks:
+      #   - webcentral_default
   djangodb:
     build:
       context: ./django-citydb
       dockerfile: Dockerfile
-    command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    env_file: ".env"
+    command: bash -c "uwsgi --socket :9001 --chdir=/app/vdistrict --master --processes 4 --threads 2 --module=wsgi:application"
     ports:
-      - "8000:8000"
+      - "8001:8000"
     container_name: djangodb
-    volumes:
-      - ./django-citydb:/app
+    # volumes:
+    #   - ./django-citydb:/app
     depends_on:
       - citydb
+      - frontend
+    # networks:
+    #   - webcentral_default
   citydb:
     image: 3dcitydb/3dcitydb-pg
     ports:
       - "5001:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    env_file: ".env"
     environment:
       SRID: 25832
       SRSNAME: urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH
-      POSTGRES_DB: citydb
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
     container_name: citydb
-  # impexp:
-  #   image: 3dcitydb/3dcitydb-impexp
-  #   environment:
-  #     CITYDB_TYPE: postgresql
-  #     CITYDB_HOST: citydb
-  #     CITYDB_PORT: 5432
-  #     CITYDB_NAME: citydb
-  #     CITYDB_USER: admin
-  #     CITYDB_PASS: admin
-  #   container_name: impexp
-  #   command: 
-  #   volumes:
-  #     - ./impexp:/app
+    # networks:
+    #   - webcentral_default
+    # impexp:
+    #   image: 3dcitydb/3dcitydb-impexp
+    #   environment:
+    #     CITYDB_TYPE: postgresql
+    #     CITYDB_HOST: citydb
+    #     CITYDB_PORT: 5432
+    #     CITYDB_NAME: citydb
+    #     CITYDB_USER: admin
+    #     CITYDB_PASS: admin
+    #   container_name: impexp
+    #   command: 
+    #   volumes:
+    #     - ./impexp:/app
 
-  # districtgenerator:
-  #   build:
-  #     context: ./districtgenerator
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "5000:5000"
-  #   environment:
-  #     CITYDB_URL: "jdbc:postgresql://citydb:5432/citydb"
-  #     CITYDB_USER: admin
-  #     CITYDB_PASS: admin
-  #     CITYDB_SRSNAME: urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH
-  #     CITYDB_SRID: 25832
-  #     CITYDB_IMPORT_FILE: /data/berlin-districts.gml
-  #   volumes:
-  #     - ./districtgenerator:/app
-  #     - ./districtgenerator/data:/data
+    # districtgenerator:
+    #   build:
+    #     context: ./districtgenerator
+    #     dockerfile: Dockerfile
+    #   ports:
+    #     - "5000:5000"
+    #   environment:
+    #     CITYDB_URL: "jdbc:postgresql://citydb:5432/citydb"
+    #     CITYDB_USER: admin
+    #     CITYDB_PASS: admin
+    #     CITYDB_SRSNAME: urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH
+    #     CITYDB_SRID: 25832
+    #     CITYDB_IMPORT_FILE: /data/berlin-districts.gml
+    #   volumes:
+    #     - ./districtgenerator:/app
+    #     - ./districtgenerator/data:/data
 volumes:
   pgdata:
   cesiumData:
+  node_modules:
+
+    # networks:
+    #   webcentral_default:
+    #     external: true

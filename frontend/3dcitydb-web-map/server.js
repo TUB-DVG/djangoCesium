@@ -29,7 +29,7 @@
  * A simple JavaScript based HTTP server forked from the cesium-starter-app project at https://github.com/pjcozzi/cesium-starter-app.
  **/
 var bodyParser = require('body-parser')
-const { Client } = require('pg');
+// const { Client } = require('pg');
 var cors = require('cors');
 require('dotenv').config();
 (function() {
@@ -46,7 +46,7 @@ require('dotenv').config();
 
     var yargs = require('yargs').options({
         'port' : {
-            'default' : 8000,
+            'default' : 8080,
             'description' : 'Port to listen on.'
         },
         'public' : {
@@ -96,47 +96,47 @@ require('dotenv').config();
             extended: true,
           })
     );
-    app.post("/database", function (req, res)  {
-        const bodyContent = req.body;
-        const { gmlID } = req.body;
-        const gmlSplitedList = gmlID.split('_');
-        var gmlWithoutLastString = "";
-        for (let i = 0; i < gmlSplitedList.length - 1; i++) {
-            if (gmlWithoutLastString == "") {
-                gmlWithoutLastString = gmlSplitedList[i];
-            }
-            else {
-                gmlWithoutLastString = gmlWithoutLastString + "_" + gmlSplitedList[i];
-            }
-        }
-        console.log(gmlWithoutLastString);
-        // console.log(gmlID);
-        (async () => {
-            const client = new Client({
-              host: process.env.PG_HOST,
-              port: process.env.PG_PORT,
-              user: process.env.POSTGRES_USER,
-              password: process.env.POSTGRES_PASSWORD,
-              database: process.env.POSTGRES_DB,
-              ssl: false,
-            });
-            await client.connect();
-            const res1 = await client.query(`SELECT id, name from cityobject WHERE gmlid=$1`, [gmlWithoutLastString]);
-            if (res1.rows.length > 0) {
-                const idInCityobject = res1.rows[0].id;
-                console.log(idInCityobject);
-                const constResEnergyValues = await client.query(`SELECT timeinterval, timeinterval_unit, timeperiodprop_beginposition, values_, values_uom from ng_regulartimeseries WHERE id IN (SELECT energyamount_id FROM ng_energydemand WHERE cityobject_demands_id=$1);`, [parseInt(idInCityobject)]);
-                console.log(constResEnergyValues);
-                res.send(constResEnergyValues);
-            }
-            else {
-                res.send({});
-            }
-            // const resultQueryIn
-            console.log(res1);
-            await client.end();
-          })();
-    });
+    // app.post("/database", function (req, res)  {
+    //     const bodyContent = req.body;
+    //     const { gmlID } = req.body;
+    //     const gmlSplitedList = gmlID.split('_');
+    //     var gmlWithoutLastString = "";
+    //     for (let i = 0; i < gmlSplitedList.length - 1; i++) {
+    //         if (gmlWithoutLastString == "") {
+    //             gmlWithoutLastString = gmlSplitedList[i];
+    //         }
+    //         else {
+    //             gmlWithoutLastString = gmlWithoutLastString + "_" + gmlSplitedList[i];
+    //         }
+    //     }
+    //     console.log(gmlWithoutLastString);
+    //     // console.log(gmlID);
+    //     (async () => {
+    //         const client = new Client({
+    //           host: process.env.PG_HOST,
+    //           port: process.env.PG_PORT,
+    //           user: process.env.POSTGRES_USER,
+    //           password: process.env.POSTGRES_PASSWORD,
+    //           database: process.env.POSTGRES_DB,
+    //           ssl: false,
+    //         });
+    //         await client.connect();
+    //         const res1 = await client.query(`SELECT id, name from cityobject WHERE gmlid=$1`, [gmlWithoutLastString]);
+    //         if (res1.rows.length > 0) {
+    //             const idInCityobject = res1.rows[0].id;
+    //             console.log(idInCityobject);
+    //             const constResEnergyValues = await client.query(`SELECT timeinterval, timeinterval_unit, timeperiodprop_beginposition, values_, values_uom from ng_regulartimeseries WHERE id IN (SELECT energyamount_id FROM ng_energydemand WHERE cityobject_demands_id=$1);`, [parseInt(idInCityobject)]);
+    //             console.log(constResEnergyValues);
+    //             res.send(constResEnergyValues);
+    //         }
+    //         else {
+    //             res.send({});
+    //         }
+    //         // const resultQueryIn
+    //         console.log(res1);
+    //         await client.end();
+    //       })();
+    // });
     // const port = 8000;
     // appDatabase.listen(port, ()=> {
     //     console.log(`Example app listening at http://localhost:${port}`);

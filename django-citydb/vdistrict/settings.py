@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 from influxdb import DataFrameClient
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,10 +25,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-z^@$t^4i3)t9zqxw()3-4z=b(8p_e(4os=z68!a!03&t+bzf6k"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get("DEBUG", 1))
 
-ALLOWED_HOSTS = ["0.0.0.0"]
-
+ALLOWED_HOSTS = [
+    "0.0.0.0",
+    "127.0.0.1",
+    "wissen-digital-ewb.de",
+    "85.214.114.204",
+]
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8080",
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -53,7 +62,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = "vdistrict.urls"
 
@@ -80,11 +89,11 @@ WSGI_APPLICATION = "vdistrict.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
-        "NAME": "citydb",
-        "USER": "admin",
-        "PASSWORD": "admin",
-        "HOST": "citydb",
-        "PORT": "5432",
+        "NAME": os.environ.get("POSTGRES_DB"),
+        "USER": os.environ.get("POSTGRES_USER"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
+        "HOST": os.environ.get("POSTGRES_HOST"),
+        "PORT": os.environ.get("POSTGRES_PORT"),
     }
 }
 

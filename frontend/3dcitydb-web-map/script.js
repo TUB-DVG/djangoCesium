@@ -1261,6 +1261,12 @@ function fetchDataFromGoogleFusionTable(gmlid, thematicDataUrl) {
     return deferred.promise;
 }
 function triggerStartSimulation() {
+    const loader = document.getElementById('simulateLoader');
+    const button = document.getElementById('simulateButton');
+
+    loader.classList.add('simulate-button__loader--visible');
+    button.disabled = true;
+
     var data = {};
     data["area"] = document.getElementById("areaInput").value;
     data["constructionYear"] = document.getElementById("constructionYear").value;

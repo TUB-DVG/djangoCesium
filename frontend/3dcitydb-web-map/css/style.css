@@ -110,6 +110,7 @@ body {
 .toolbar--expanded {
     opacity: 1 !important;
     visibility: visible !important;
+    z-index: 2;
 }
 
 .infoPanel {
@@ -133,6 +134,94 @@ body {
     font-size: 14px;
 }
 
+#formSimulateContainer {
+    position: absolute;
+    bottom: 150px;
+    left: 25px;
+    max-width: fit-content;
+    padding: 10px;
+    border: 1px solid #4c4c4c;
+    border-radius: 14px;
+    font-size: 14px;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+#formSimulateContainer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#formSimulateContainer input {
+    margin-top: 4px;
+    padding: 4px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#tryChartContainer {
+    position: absolute;
+    left: 25px;
+    top: 135px;
+    display: none;
+    width: 600px;
+    border-radius: 8px;
+}
+
+#simulateButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    padding: 4px 8px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+#simulateButton:hover {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #066ac9;
+}
+
+#simulateButton:disabled {
+    pointer-events: none;
+}
+
+.simulate-button__loader {
+    display: none;
+    width: 20px;
+    height: 20px;
+}
+
+.simulate-button__loader--visible {
+    display: inline;
+}
+
+.simulate-button__label {
+    height: 20px;
+    margin-top: 3px;
+}
 /*#longitudeInput, #latitudeInput, #heightInput {
     font-size: 14px;
 }*/

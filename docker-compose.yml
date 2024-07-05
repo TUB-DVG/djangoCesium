@@ -6,11 +6,15 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./frontend/3dcitydb-web-map:/var/www/
-      - ./frontend/data:/var/www/data
+      - "./frontend/3dcitydb-web-map:/usr/src/app"
+      - "./frontend/data:/usr/src/app/data"
+      - "node_modules:/usr/src/app/node_modules"
     container_name: frontend
-    # networks:
-    #   - webcentral_default
+    environment:
+      NODE_ENV: production
+      # command: sh -c "node server.js"
+      # networks:
+      #   - webcentral_default
   djangodb:
     build:
       context: ./django-citydb
@@ -73,6 +77,7 @@ services:
 volumes:
   pgdata:
   cesiumData:
+  node_modules:
 
     # networks:
     #   webcentral_default:

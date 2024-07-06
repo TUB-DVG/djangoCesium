@@ -1,0 +1,3 @@
+[submodule "django-citydb/districtgenerator/districtgenerator"]
+	path = django-citydb/districtgenerator/districtgenerator
+	url = git@github.com:c0nb4/districtgenerator.git

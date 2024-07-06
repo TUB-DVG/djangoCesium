@@ -8,7 +8,10 @@ from django.core.management import call_command
 from asgiref.sync import sync_to_async
 
 # import the districtgenerator classes
-from classes import *
+try:
+    from classes import *
+except:
+    from districtgenerator import *
 import datetime
 
 

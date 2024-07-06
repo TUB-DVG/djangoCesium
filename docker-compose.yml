@@ -42,6 +42,15 @@ services:
       SRID: 25832
       SRSNAME: urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH
     container_name: citydb
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - djangodb
+      - frontend
     # networks:
     #   - webcentral_default
     # impexp:

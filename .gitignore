@@ -1,3 +1,9 @@
+# ignore venv, if used
+venv/
+
+# exclude the build directory of the sphinx-doc
+doc/build/
+
 # Ignore .env file
 .env
 

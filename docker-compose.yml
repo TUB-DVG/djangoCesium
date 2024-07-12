@@ -20,7 +20,7 @@ services:
       context: ./django-citydb
       dockerfile: Dockerfile
     env_file: ".env"
-    command: bash -c "uwsgi --socket :9001 --chdir=/app/vdistrict --master --processes 4 --threads 2 --module=wsgi:application"
+    command: bash -c "uwsgi --socket :9001 --chdir=/app/ --master --processes 4 --threads 2 --module=vdistrict.wsgi:application"
     ports:
       - "8001:8000"
     container_name: djangodb
@@ -48,6 +48,7 @@ services:
       - "80:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/uwsgi_conf:/etc/nginx/uwsgi_conf
     depends_on:
       - djangodb
       - frontend

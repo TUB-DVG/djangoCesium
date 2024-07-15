@@ -13,14 +13,14 @@ services:
     environment:
       NODE_ENV: production
       # command: sh -c "node server.js"
-      # networks:
-      #   - webcentral_default
+    networks:
+        - webcentral_default
   djangodb:
     build:
       context: ./django-citydb
       dockerfile: Dockerfile
     env_file: ".env"
-    command: bash -c "uwsgi --socket :9001 --chdir=/app/vdistrict --master --processes 4 --threads 2 --module=wsgi:application"
+    command: bash -c "uwsgi --socket :9001 --chdir=/app/ --master --processes 4 --threads 2 --module=vdistrict.wsgi:application"
     ports:
       - "8001:8000"
     container_name: djangodb
@@ -29,12 +29,12 @@ services:
     depends_on:
       - citydb
       - frontend
-    # networks:
-    #   - webcentral_default
+    networks:
+      - webcentral_default
   citydb:
     image: 3dcitydb/3dcitydb-pg
     ports:
-      - "5001:5432"
+      - "5002:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     env_file: ".env"
@@ -42,7 +42,19 @@ services:
       SRID: 25832
       SRSNAME: urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH
     container_name: citydb
-    # networks:
+    networks:
+      - webcentral_default
+  # nginx:
+  #   image: nginx:latest
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+  #     - ./nginx/uwsgi_conf:/etc/nginx/uwsgi_conf
+  #   depends_on:
+  #     - djangodb
+  #     - frontend
+  #   # networks:
     #   - webcentral_default
     # impexp:
     #   image: 3dcitydb/3dcitydb-impexp
@@ -79,6 +91,6 @@ volumes:
   cesiumData:
   node_modules:
 
-    # networks:
-    #   webcentral_default:
-    #     external: true
+networks:
+  webcentral_default:
+    external: true

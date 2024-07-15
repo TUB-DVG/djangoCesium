@@ -39,7 +39,7 @@ var urlController = new UrlController();
 var fetchedBuildingObjsFromDB = [];
 var simulatedTimeseriesData;
 // use the fetch-API to fetch all buildings from the backend:
-fetch('http://127.0.0.1:8001/citydb/buildings/')
+fetch('http://127.0.0.1/citydb/buildings/')
     .then(response => response.json())
     .then(json => {
         fetchedBuildingObjsFromDB = json;
@@ -873,13 +873,13 @@ function zoomToObjectById(gmlId, callBackFunc, errorCallbackFunc) {
 
 var _layers = new Array();
 var options = {
-    url: "/data/kml/fzkHouse.kml",
+    url: "/cesium/data/kml/fzkHouse.kml",
     name: "FZKHouse",
     layerDataType: "COLLADA/KML/glTF",
     layerProxy: (addLayerViewModel.layerProxy === true),
     layerClampToGround: (addLayerViewModel.layerClampToGround === true),
     gltfVersion: "2.0",
-    thematicDataUrl: "http://127.0.0.1:3000/cityobject",
+    //thematicDataUrl: "http://127.0.0.1/cityobject",
     thematicDataSource: "PostgreSQL",
     tableType: addLayerViewModel.tableType.trim(),
     // googleSheetsApiKey: addLayerViewModel.googleSheetsApiKey.trim(),
@@ -895,7 +895,6 @@ var options = {
 _layers.push(new CitydbKmlLayer(options));
 loadLayerGroup(_layers);
 // var dataSource = new Cesium.KmlDataSource();
-// // debugger;
 // dataSource.load("data/kml/einstein.kml").then(function() {
     
 //     var entities = dataSource.entities._entities;
@@ -903,7 +902,6 @@ loadLayerGroup(_layers);
         
 //     //     k.position = Cesium.Cartesian3.fromDegrees(13.00461+0.00065, 52.38612+0.00035, 12);
 //     // }
-//     // debugger;
 //     // for (var k in entities.values) {
 
 //     // }
@@ -1086,7 +1084,6 @@ function createInfoTable(res, citydbLayer) {
     var selectedThematicDataSource = thematicDataSourceDropdown.options[thematicDataSourceDropdown.selectedIndex].value;
     
     var gmlid = selectedThematicDataSource === "KML" ? res[1]._id : res[0];
-    // debugger;
     
 
     if (gmlid.includes("_")) {
@@ -1137,7 +1134,6 @@ function createInfoTable(res, citydbLayer) {
                 
     //         for (var key in jsonObject) {
     //             if (iterator == 0) {
-    //                 // debugger;
     //                 var dateStartStr = jsonObject[key]["time"][0];
     //                 chart = Highcharts.chart('tryChartContainer', {
     //                     title: {
@@ -1273,7 +1269,6 @@ function triggerStartSimulation() {
     data["typeOfBuilding"] = document.getElementById("typeOfBuilding").value;
     data["retrofit"] = document.getElementById("retrofit").value;
 
-    // debugger;
     fetch('http://127.0.0.1/districtgenerator/simulate/', {
         method: 'POST',
         headers: {
@@ -1286,7 +1281,6 @@ function triggerStartSimulation() {
     })
     .then(response => response.json())
     .then(data => {
-        // debugger;
         var chart = Highcharts.chart('tryChartContainer', {
         // your chart options here
         });
@@ -1462,7 +1456,6 @@ function toggleSetGeoLoc() {
     At the moment the building gmld-id is still hardcoded into the API-Call.
 */
 function writeToDatabase() {
-    debugger;
     var objToSend = {};
     objToSend["timeseriesDict"] = simulatedTimeseriesData;
     objToSend["metaDataDict"] = {
@@ -1803,7 +1796,6 @@ function updateChart(optionElement) {
     for (let i = 0; i < arrayOfStr.length; i++) {
         arrayOfFloats[i] = parseFloat(arrayOfStr[i]);
     }
-    // debugger;
     chart = Highcharts.chart('tryChartContainer', {
         title: {
             text: 'Verbrauchsdaten from ng_regulartimeseries id=74'
@@ -1844,7 +1836,6 @@ function fetchTimeseriesForBuilding(gmlid) {
                 
             for (var key in jsonObject) {
                 if (iterator == 0) {
-                    // debugger;
                     var dateStartStr = jsonObject[key]["time"][0];
                     chart = Highcharts.chart('tryChartContainer', {
                         title: {

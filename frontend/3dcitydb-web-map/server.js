@@ -84,10 +84,14 @@ require('dotenv').config();
     var app = express();
     app.use(cors({ origin: true, credentials: true }));
     app.use(compression());
-    app.use(express.static(__dirname));
+    app.use("/cesium", express.static(__dirname));
     app.use('/data', express.static('data'), serveIndex('data', {'icons': true, 'view': 'details'}));
     
     app.use('/examples', express.static('examples'), serveIndex('examples', {'icons': true, 'view': 'details'}));
+    app.get('/cesium', function(req, res) {
+        res.sendFile(__dirname + '.');
+    });
+    
 
     // var appDatabase = express();
     app.use(bodyParser.json());

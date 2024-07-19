@@ -13,8 +13,8 @@ services:
     environment:
       NODE_ENV: production
       # command: sh -c "node server.js"
-    networks:
-        - webcentral_default
+    # networks:
+        # - webcentral_default
   djangodb:
     build:
       context: ./django-citydb
@@ -29,8 +29,8 @@ services:
     depends_on:
       - citydb
       - frontend
-    networks:
-      - webcentral_default
+    # networks:
+      # - webcentral_default
   citydb:
     image: 3dcitydb/3dcitydb-pg
     ports:
@@ -42,8 +42,8 @@ services:
       SRID: 25832
       SRSNAME: urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH
     container_name: citydb
-    networks:
-      - webcentral_default
+    # networks:
+      # - webcentral_default
   # nginx:
   #   image: nginx:latest
   #   ports:
@@ -91,6 +91,6 @@ volumes:
   cesiumData:
   node_modules:
 
-networks:
-  webcentral_default:
-    external: true
+# networks:
+#   webcentral_default:
+#     external: true

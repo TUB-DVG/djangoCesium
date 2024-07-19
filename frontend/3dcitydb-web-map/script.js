@@ -30,6 +30,7 @@
 // const { response } = require("express");
 
 /**-----------------------------------------Separate Line-------------------------------------------------**/
+var mode = "development"
 
 // URL controller
 var formContentOfSimulateInputContainer;
@@ -39,7 +40,7 @@ var urlController = new UrlController();
 var fetchedBuildingObjsFromDB = [];
 var simulatedTimeseriesData;
 // use the fetch-API to fetch all buildings from the backend:
-fetch('http://127.0.0.1/citydb/buildings/')
+fetch('${baseURL()}/citydb/buildings/')
     .then(response => response.json())
     .then(json => {
         fetchedBuildingObjsFromDB = json;
@@ -1079,6 +1080,15 @@ function isValidUrl(str) {
     return regexp.test(str);
 }
 
+function baseURL() {
+  if (mode == "development") {
+    return "http://127.0.0.1:8001"
+  }
+  else {
+    return "http://127.0.0.1"
+  }
+}
+
 function createInfoTable(res, citydbLayer) {
     var thematicDataSourceDropdown = document.getElementById("thematicDataSourceDropdown");
     var selectedThematicDataSource = thematicDataSourceDropdown.options[thematicDataSourceDropdown.selectedIndex].value;
@@ -1100,7 +1110,7 @@ function createInfoTable(res, citydbLayer) {
     var thematicDataUrl = citydbLayer.thematicDataUrl;
     cesiumEntity.description = "Please wait, the Database is called for information about the building...";
     
-    fetch(`http://127.0.0.1/citydb/buildings/${gmlid}`).then(response => response.json())
+    fetch(`${baseURL()}/citydb/buildings/${gmlid}`).then(response => response.json())
     .then(json => {
         // get the year of construction from the database:
         var yearOfConstructionDate = json["year_of_construction"];
@@ -1269,7 +1279,7 @@ function triggerStartSimulation() {
     data["typeOfBuilding"] = document.getElementById("typeOfBuilding").value;
     data["retrofit"] = document.getElementById("retrofit").value;
 
-    fetch('http://127.0.0.1/districtgenerator/simulate/', {
+    fetch('${baseURL()}/districtgenerator/simulate/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -1464,7 +1474,7 @@ function writeToDatabase() {
         interpolation_type: "averageInSucceedingInterval",
         quality_description: "Your quality description", 
     };
-    fetch("http://127.0.0.1/citydb/timeseries/UUID_d281adfc-4901-0f52-540b-4cc1a9325f82", {
+    fetch("${baseURL()}/citydb/timeseries/UUID_d281adfc-4901-0f52-540b-4cc1a9325f82", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -1825,7 +1835,7 @@ function updateChart(optionElement) {
 };
 
 function fetchTimeseriesForBuilding(gmlid) {
-    fetch(`http://127.0.0.1/citydb/timeseries/${gmlid}`).then(response => response.json()).then(
+    fetch(`${baseURL()}/citydb/timeseries/${gmlid}`).then(response => response.json()).then(
         json => { 
             var jsonObject = JSON.parse(json);
             var iterator = 0;

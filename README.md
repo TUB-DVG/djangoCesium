@@ -1,6 +1,6 @@
 # CesiumDistrictDjangoCityDB
 
-
+This repo conatains code for the CityGML Modeling and visualization by TU-Berlins DVG institute. 
 
 ## Getting started
 

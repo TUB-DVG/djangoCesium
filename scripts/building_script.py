@@ -28,7 +28,8 @@ def update_gml_id(file_path):
 
         if end_index != -1:
             updated_data = data[: start_index + 8] + new_uuid + data[end_index:]
-            with open(file_path, "w", encoding="utf-8") as file:
+            new_file_path = file_path.replace(".gml", f"_{new_uuid}.gml")
+            with open(new_file_path, "w", encoding="utf-8") as file:
                 file.write(updated_data)
             return True
 
@@ -53,7 +54,7 @@ def process_directory(directory):
     if processed_files > 0:
         print(f"Processed {processed_files} file(s).")
     else:
-        print("No files found to process.")
+        print(f"No files found to process in the directory: {directory}")
 
 
 if __name__ == "__main__":

@@ -41,7 +41,10 @@ whereby the data to generate the district, is taken from the frontend input-form
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   
+   projectStructure
+   integrationOfSubmodule
+   
 
 
 Indices and tables

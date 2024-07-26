@@ -20,5 +20,8 @@
     },
     "engines": {
         "node": ">=21.x.x"
-    }
+    },
+    "scripts": {
+          "start": "node server.js"
+        }
 }

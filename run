@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Check if an argument is provided
+if [ -z "$1" ]; then
+  echo "No argument provided. Please provide an argument."
+  exit 1
+fi
+
+# source the .env-file:
+source .env
+
+# Get the argument
+ARG=$1
+
+# Execute different commands based on the argument
+case $ARG in
+  load_energy_ade)
+    echo "Starting 3D-Importer-Exporter and load energy-ade-2.0"
+    docker run --rm --name impexp --network=${COMPOSE_PROJECT_NAME}_default \
+    -e CITYDB_TYPE=postgresql \
+    -e CITYDB_HOST=$CITYDB_HOST \
+    -e CITYDB_PORT=$CITYDB_PORT \
+    -e CITYDB_NAME=$CITYDB_NAME \
+    -e CITYDB_USERNAME=$CITYDB_USERNAME \
+    -e CITYDB_PASSWORD=$CITYDB_PASSWORD \
+    -v ./impexp/:/data \
+  3dcitydb/impexp --ade-extensions=/data/ade-extensions/
+    ;;
+  *)
+    echo "Invalid argument. Use start, stop, restart, or status."
+    exit 1
+    ;;
+esac
+

@@ -8,7 +8,11 @@ from django.core.management import call_command
 from asgiref.sync import sync_to_async
 
 # import the districtgenerator classes
-from classes import *
+try:
+    from classes import *
+except:
+    from districtgenerator.districtgenerator import *
+    from districtgenerator.datahandler import Datahandler
 import datetime
 
 
@@ -25,7 +29,7 @@ class SimulatorView(APIView):
 
         # validate the data:
         # breakpoint()
-        with open("/app/districtgenerator/data/scenarios/cesiumInput.csv",
+        with open("/app/districtgenerator/districtgenerator/data/scenarios/cesiumInput.csv",
                   "w") as file:
             file.write(
                 f"id;building;year;retrofit;area\n0;{data['typeOfBuilding']};{data['constructionYear']};{data['retrofit']};{data['area']}"

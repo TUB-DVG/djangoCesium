@@ -1,6 +1,7 @@
 # Use an official Python runtime as the base image
 FROM python:3.10
 
+ENV PYTHONUNBUFFERED=1
 # Set the working directory in the container
 WORKDIR /app
 
@@ -16,8 +17,10 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install the package
-RUN python setup.py install
+RUN python districtgenerator/districtgenerator/setup.py install
 
-RUN pip install -e districtgenerator
+
+
+RUN pip install -e districtgenerator/districtgenerator
 # Set the command to run when the container starts
 # CMD ["python", "vdistrict/manage.py", "runserver"]

@@ -1,0 +1,6 @@
+# Transform location of building
+The scripts located in the current directory were used to transform the location of the FZKHouse to the field in front of the bundestag. Internally the python package `pymap3d` is used. In the file `moveHouseToNewLocation.py` the geodetic-coordinates (spherical coordinates) are transformed into the north-east-down (NED)-frame (cartesian coordinates). That is done for each point specified in the KML-file.
+To calculate the new posistion, the new location has to be specified in spherical-coordinates in the `moveToLocation`-list structure. These coordinates can be obtained from the cesium-viewer or from goolge-maps. As the `referencePoint` the current coordinates at which the building is located can be inserted. 
+Since we had problems understanding the coordinate system in which the FZK-House was, we did a iterative process and changed the `moveToLocation`-coordinates as long until the house was at the desired location.
+
+The FZK-house was also located above the ground. To change used the transformAltitudeScript.py. The number of meters to move the building down can be specified in the variable `meterToMoveDown`. The script can also be executed multiple times until the building is located on the ground. 

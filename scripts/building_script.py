@@ -45,7 +45,7 @@ def process_directory(directory):
 
     # Iterate through files in the directory
     for filename in os.listdir(directory):
-        if filename == "FZK-Haus-LoD3-MultiZone-ADE.gml":
+        if filename == "FZKHouseLoD3-ADE20.gml":
             file_path = os.path.join(directory, filename)
 
             if update_gml_id(file_path):

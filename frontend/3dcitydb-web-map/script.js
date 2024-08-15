@@ -893,7 +893,47 @@ var options = {
     maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles,
     gmldId: "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82"
 }
+var optionsHouse2 = {
+    url: "/cesium/data/Moved.kml",
+    name: "FZKHouse",
+    layerDataType: "COLLADA/KML/glTF",
+    layerProxy: (addLayerViewModel.layerProxy === true),
+    layerClampToGround: (addLayerViewModel.layerClampToGround === true),
+    gltfVersion: "2.0",
+    //thematicDataUrl: "http://127.0.0.1/cityobject",
+    thematicDataSource: "PostgreSQL",
+    tableType: addLayerViewModel.tableType.trim(),
+    // googleSheetsApiKey: addLayerViewModel.googleSheetsApiKey.trim(),
+    // googleSheetsRanges: addLayerViewModel.googleSheetsRanges.trim(),
+    // googleSheetsClientId: addLayerViewModel.googleSheetsClientId.trim(),
+    cityobjectsJsonUrl: addLayerViewModel.cityobjectsJsonUrl.trim(),
+    minLodPixels: addLayerViewModel.minLodPixels,
+    maxLodPixels: addLayerViewModel.maxLodPixels == -1 ? Number.MAX_VALUE : addLayerViewModel.maxLodPixels,
+    maxSizeOfCachedTiles: addLayerViewModel.maxSizeOfCachedTiles,
+    maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles,
+}
+var optionsHouse3 = {
+    url: "/cesium/data/Moved2.kml",
+    name: "FZKHouse",
+    layerDataType: "COLLADA/KML/glTF",
+    layerProxy: (addLayerViewModel.layerProxy === true),
+    layerClampToGround: (addLayerViewModel.layerClampToGround === true),
+    gltfVersion: "2.0",
+    //thematicDataUrl: "http://127.0.0.1/cityobject",
+    thematicDataSource: "PostgreSQL",
+    tableType: addLayerViewModel.tableType.trim(),
+    // googleSheetsApiKey: addLayerViewModel.googleSheetsApiKey.trim(),
+    // googleSheetsRanges: addLayerViewModel.googleSheetsRanges.trim(),
+    // googleSheetsClientId: addLayerViewModel.googleSheetsClientId.trim(),
+    cityobjectsJsonUrl: addLayerViewModel.cityobjectsJsonUrl.trim(),
+    minLodPixels: addLayerViewModel.minLodPixels,
+    maxLodPixels: addLayerViewModel.maxLodPixels == -1 ? Number.MAX_VALUE : addLayerViewModel.maxLodPixels,
+    maxSizeOfCachedTiles: addLayerViewModel.maxSizeOfCachedTiles,
+    maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles,
+}
 _layers.push(new CitydbKmlLayer(options));
+_layers.push(new CitydbKmlLayer(optionsHouse2));
+_layers.push(new CitydbKmlLayer(optionsHouse3));
 loadLayerGroup(_layers);
 // var dataSource = new Cesium.KmlDataSource();
 // dataSource.load("data/kml/einstein.kml").then(function() {

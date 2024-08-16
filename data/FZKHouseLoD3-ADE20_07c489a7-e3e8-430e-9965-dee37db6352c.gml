@@ -12,7 +12,7 @@
  xmlns:group="http://www.opengis.net/citygml/cityobjectgroup/2.0"
  xmlns:energy="http://www.sig3d.org/citygml/2.0/energy/2.0"
  xmlns:bldg="http://www.opengis.net/citygml/building/2.0"
- gml:id="d0873af6-b6a8-4bbe-8e91-f92fdf92d83c">
+ gml:id="GML_43a4f2be-d7c4-4f8f-8e11-055ff6d57d74">
   <gml:boundedBy>
     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
       <gml:lowerCorner>458877 5438353 111.8</gml:lowerCorner>
@@ -20,7 +20,7 @@
     </gml:Envelope>
   </gml:boundedBy>
   <core:cityObjectMember>
-    <bldg:Building gml:id="UUID_d281adfc-4901-0f52-540b-4cc1a9325f82">
+    <bldg:Building gml:id="UUID_22203790-120c-48e0-9359-f9192f7f645b">
       <gml:description>FZK-Haus (Forschungszentrum Karlsruhe, now KIT), created by Karl-Heinz
                 Haefele </gml:description>
       <gml:name>AC14-FZK-Haus</gml:name>
@@ -38,7 +38,7 @@
       <bldg:storeysAboveGround>2</bldg:storeysAboveGround>
       <bldg:storeysBelowGround>0</bldg:storeysBelowGround>
       <bldg:boundedBy>
-        <bldg:WallSurface gml:id="GML_5856d7ad-5e34-498a-817b-9544bfbb1475">
+        <bldg:WallSurface gml:id="GML_c5d76b2a-b9cc-4324-8138-ba14f3707b01">
           <gml:name>Outer Wall 1 (West)</gml:name>
           <gml:boundedBy>
             <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -47,33 +47,33 @@
             </gml:Envelope>
           </gml:boundedBy>
           <bldg:lod3MultiSurface>
-            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_b9ec697a-919b-4c49-ad40-1a9d44b1acfb">
+            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_5d55e74d-e712-4e79-a65a-8262e4b2a4b4">
               <gml:surfaceMember>
-                <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_e9240361-e956-421c-bff5-1f1f6d9b59aa">
+                <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_b09e7348-d9cf-4b59-adfe-c6e6d325796d">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58802_1543_379123_11561">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58802_fcfd5736-dc0f-4433-be38-e497eacfed8b">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58802_1543_379123_11561_0">
+                        <gml:LinearRing gml:id="PolyID58802_570ab939-b86d-4d7e-879e-71f060f0880b">
                           <gml:posList srsDimension="3" count="6">458877 5438358 118.3176914 458877 5438363 115.4309401 458877 5438363 111.8 458877 5438353 111.8 458877 5438353 115.4309401 458877 5438358 118.3176914 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58802_1543_379123_11561_1">
+                        <gml:LinearRing gml:id="PolyID58802_979de221-29ed-465c-8149-d83a0d2b4ea5">
                           <gml:posList srsDimension="3" count="73">458877 5438358.4829629 116.1294095 458877 5438358.4698463 116.1710100 458877 5438358.4531538 116.2113091 458877 5438358.4330127 116.25 458877 5438358.4095760 116.2867882 458877 5438358.3830222 116.3213938 458877 5438358.3535533 116.3535533 458877 5438358.3213938 116.3830222 458877 5438358.2867882 116.4095760 458877 5438358.25 116.4330127 458877 5438358.2113091 116.4531538 458877 5438358.1710100 116.4698463 458877 5438358.1294095 116.4829629 458877 5438358.0868240 116.4924038 458877 5438358.0435778 116.4980973 458877 5438358 116.5 458877 5438357.9564221 116.4980973 458877 5438357.9131759 116.4924038 458877 5438357.8705904 116.4829629 458877 5438357.8289899 116.4698463 458877 5438357.7886908 116.4531538 458877 5438357.75 116.4330127 458877 5438357.7132117 116.4095760 458877 5438357.6786062 116.3830222 458877 5438357.6464466 116.3535533 458877 5438357.6169777 116.3213938 458877 5438357.5904239 116.2867882 458877 5438357.5669873 116.25 458877 5438357.5468461 116.2113091 458877 5438357.5301536 116.1710100 458877 5438357.5170370 116.1294095 458877 5438357.5075961 116.0868240 458877 5438357.5019026 116.0435778 458877 5438357.5 116 458877 5438357.5019026 115.9564221 458877 5438357.5075961 115.9131759 458877 5438357.5170370 115.8705904 458877 5438357.5301536 115.8289899 458877 5438357.5468461 115.7886908 458877 5438357.5669873 115.75 458877 5438357.5904239 115.7132117 458877 5438357.6169777 115.6786061 458877 5438357.6464466 115.6464466 458877 5438357.6786062 115.6169777 458877 5438357.7132117 115.5904239 458877 5438357.75 115.5669872 458877 5438357.7886908 115.5468461 458877 5438357.8289899 115.5301536 458877 5438357.8705904 115.5170370 458877 5438357.9131759 115.5075961 458877 5438357.9564221 115.5019026 458877 5438358 115.5 458877 5438358.0435778 115.5019026 458877 5438358.0868240 115.5075961 458877 5438358.1294095 115.5170370 458877 5438358.1710100 115.5301536 458877 5438358.2113091 115.5468461 458877 5438358.25 115.5669872 458877 5438358.2867882 115.5904239 458877 5438358.3213938 115.6169777 458877 5438358.3535533 115.6464466 458877 5438358.3830222 115.6786061 458877 5438358.4095760 115.7132117 458877 5438358.4330127 115.75 458877 5438358.4531538 115.7886908 458877 5438358.4698463 115.8289899 458877 5438358.4829629 115.8705904 458877 5438358.4924038 115.9131759 458877 5438358.4980973 115.9564221 458877 5438358.5 116 458877 5438358.4980973 116.0435778 458877 5438358.4924038 116.0868240 458877 5438358.4829629 116.1294095 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58802_1543_379123_11561_2">
+                        <gml:LinearRing gml:id="PolyID58802_86de703a-57f3-49e0-b7b8-ea253ac3e4dc">
                           <gml:posList srsDimension="3" count="5">458877 5438357.495 114.01 458877 5438357.495 112 458877 5438358.505 112 458877 5438358.505 114.01 458877 5438357.495 114.01 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58802_1543_379123_11561_3">
+                        <gml:LinearRing gml:id="PolyID58802_d87dad42-bd49-43bf-84b9-37f07da40c4b">
                           <gml:posList srsDimension="3" count="5">458877 5438359.495 114 458877 5438359.495 112.8 458877 5438361.495 112.8 458877 5438361.495 114 458877 5438359.495 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58802_1543_379123_11561_4">
+                        <gml:LinearRing gml:id="PolyID58802_db4e07d1-f9f4-4a72-b154-af7a845db71e">
                           <gml:posList srsDimension="3" count="5">458877 5438356.205 114 458877 5438354.205 114 458877 5438354.205 112.8 458877 5438356.205 112.8 458877 5438356.205 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
@@ -84,7 +84,7 @@
             </gml:MultiSurface>
           </bldg:lod3MultiSurface>
           <bldg:opening>
-            <bldg:Window gml:id="GML_356b85c1-25a0-49f9-b39e-013fbbafcce4">
+            <bldg:Window gml:id="GML_eba240b8-bae2-4641-a2d2-8d20d8d27b41">
               <gml:name>Window Round</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -93,11 +93,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_d9e87764-2d45-4fb7-87e9-b5afa3b70f62">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_d849b2b3-611e-4b58-b249-83bc22f437de">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58803_371_698036_77126">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58803_316e5a19-42fa-49e6-bc87-7f17bdeda370">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58803_371_698036_77126_0">
+                        <gml:LinearRing gml:id="PolyID58803_93d15577-b3de-4f67-bf10-40c53143db43">
                           <gml:posList srsDimension="3" count="73">458877 5438358.4095760 116.2867882 458877 5438358.4330127 116.25 458877 5438358.4531538 116.2113091 458877 5438358.4698463 116.1710100 458877 5438358.4829629 116.1294095 458877 5438358.4924038 116.0868240 458877 5438358.4980973 116.0435778 458877 5438358.5 116 458877 5438358.4980973 115.9564221 458877 5438358.4924038 115.9131759 458877 5438358.4829629 115.8705904 458877 5438358.4698463 115.8289899 458877 5438358.4531538 115.7886908 458877 5438358.4330127 115.75 458877 5438358.4095760 115.7132117 458877 5438358.3830222 115.6786061 458877 5438358.3535533 115.6464466 458877 5438358.3213938 115.6169777 458877 5438358.2867882 115.5904239 458877 5438358.25 115.5669872 458877 5438358.2113091 115.5468461 458877 5438358.1710100 115.5301536 458877 5438358.1294095 115.5170370 458877 5438358.0868240 115.5075961 458877 5438358.0435778 115.5019026 458877 5438358 115.5 458877 5438357.9564221 115.5019026 458877 5438357.9131759 115.5075961 458877 5438357.8705904 115.5170370 458877 5438357.8289899 115.5301536 458877 5438357.7886908 115.5468461 458877 5438357.75 115.5669872 458877 5438357.7132117 115.5904239 458877 5438357.6786062 115.6169777 458877 5438357.6464466 115.6464466 458877 5438357.6169777 115.6786061 458877 5438357.5904239 115.7132117 458877 5438357.5669873 115.75 458877 5438357.5468461 115.7886908 458877 5438357.5301536 115.8289899 458877 5438357.5170370 115.8705904 458877 5438357.5075961 115.9131759 458877 5438357.5019026 115.9564221 458877 5438357.5 116 458877 5438357.5019026 116.0435778 458877 5438357.5075961 116.0868240 458877 5438357.5170370 116.1294095 458877 5438357.5301536 116.1710100 458877 5438357.5468461 116.2113091 458877 5438357.5669873 116.25 458877 5438357.5904239 116.2867882 458877 5438357.6169777 116.3213938 458877 5438357.6464466 116.3535533 458877 5438357.6786062 116.3830222 458877 5438357.7132117 116.4095760 458877 5438357.75 116.4330127 458877 5438357.7886908 116.4531538 458877 5438357.8289899 116.4698463 458877 5438357.8705904 116.4829629 458877 5438357.9131759 116.4924038 458877 5438357.9564221 116.4980973 458877 5438358 116.5 458877 5438358.0435778 116.4980973 458877 5438358.0868240 116.4924038 458877 5438358.1294095 116.4829629 458877 5438358.1710100 116.4698463 458877 5438358.2113091 116.4531538 458877 5438358.25 116.4330127 458877 5438358.2867882 116.4095760 458877 5438358.3213938 116.3830222 458877 5438358.3535533 116.3535533 458877 5438358.3830222 116.3213938 458877 5438358.4095760 116.2867882 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -108,7 +108,7 @@
             </bldg:Window>
           </bldg:opening>
           <bldg:opening>
-            <bldg:Window gml:id="GML_868be7d3-16c7-4dec-9ac6-5bb8ceb545bb">
+            <bldg:Window gml:id="GML_1dc84539-1746-4ece-b686-031351f4558b">
               <gml:name>Window North</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -117,11 +117,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_90f97e64-b4cd-482f-87b2-579254365509">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_42e10bc0-b57e-452e-8ac5-ff9397a7925c">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58804_647_880710_163324">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58804_b882a953-e7b9-47b2-852f-9b24a26bae05">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58804_647_880710_163324_0">
+                        <gml:LinearRing gml:id="PolyID58804_425d3e60-4410-4361-a463-c70a3dd4dae9">
                           <gml:posList srsDimension="3" count="5">458877 5438359.495 114 458877 5438361.495 114 458877 5438361.495 112.8 458877 5438359.495 112.8 458877 5438359.495 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -132,7 +132,7 @@
             </bldg:Window>
           </bldg:opening>
           <bldg:opening>
-            <bldg:Door gml:id="GML_c137f11d-9a8c-4126-9aeb-9a6c9b4e1cbd">
+            <bldg:Door gml:id="GML_3d9f1158-668d-43cc-8f37-d97e4f016587">
               <gml:name>Door West</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -141,11 +141,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_c25be26a-e518-41a6-a90d-a762a9e70afc">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_67ab124d-6bc1-4f30-aabc-e5fb94aee92f">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58805_1881_773628_351228">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58805_b36c51e3-25fd-456c-86b5-0bcff362e92b">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58805_1881_773628_351228_0">
+                        <gml:LinearRing gml:id="PolyID58805_65e42c1f-0da8-4962-b104-fd76e6d96c5d">
                           <gml:posList srsDimension="3" count="5">458877 5438357.495 114.01 458877 5438358.505 114.01 458877 5438358.505 112 458877 5438357.495 112 458877 5438357.495 114.01 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -156,7 +156,7 @@
             </bldg:Door>
           </bldg:opening>
           <bldg:opening>
-            <bldg:Window gml:id="GML_9e0e6137-a907-4e4b-bc30-a6b95641f4c0">
+            <bldg:Window gml:id="GML_7cde0d2f-a138-495a-8645-926cbfe3bcad">
               <gml:name>Window South</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -165,11 +165,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_7d279b97-3cfc-4a18-9138-1ed2e19babc8">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_351abe9c-c038-41c6-a111-5eb90c80d0b9">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58806_328_642559_374120">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58806_5cf11dbb-6e96-4214-829d-bca08b97bf17">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58806_328_642559_374120_0">
+                        <gml:LinearRing gml:id="PolyID58806_1927557a-08fe-48d1-a52e-2f4c56c7239b">
                           <gml:posList srsDimension="3" count="5">458877 5438356.205 112.8 458877 5438354.205 112.8 458877 5438354.205 114 458877 5438356.205 114 458877 5438356.205 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -182,7 +182,7 @@
         </bldg:WallSurface>
       </bldg:boundedBy>
       <bldg:boundedBy>
-        <bldg:WallSurface gml:id="GML_d38cf762-c29d-4491-88c9-bdc89e141978">
+        <bldg:WallSurface gml:id="GML_4630744b-4a4a-406b-9c1a-d741b8fc5867">
           <gml:name>Outer Wall 2 (South)</gml:name>
           <gml:boundedBy>
             <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -191,28 +191,28 @@
             </gml:Envelope>
           </gml:boundedBy>
           <bldg:lod3MultiSurface>
-            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_cc47bec4-34c4-4f7b-82e3-9029c13d92e8">
+            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_e7343cd8-6b2b-4b2a-a9e4-4589a1747290">
               <gml:surfaceMember>
-                <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_4726d5c0-dfa2-4777-b1da-24798d72c27a">
+                <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_5bca6a7f-dee4-4595-9544-168cba4ba967">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58819_65_364244_211813">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58819_c197713b-3b18-4a59-9a2e-08a9f9695ad1">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58819_65_364244_211813_0">
+                        <gml:LinearRing gml:id="PolyID58819_7b48b02d-6020-4139-94dc-29289944ab68">
                           <gml:posList srsDimension="3" count="5">458889 5438353 115.4309401 458877 5438353 115.4309401 458877 5438353 111.8 458889 5438353 111.8 458889 5438353 115.4309401 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58819_65_364244_211813_1">
+                        <gml:LinearRing gml:id="PolyID58819_a582c745-28ed-42f8-a84a-f8835f6ed57e">
                           <gml:posList srsDimension="3" count="5">458884.005 5438353 114.375 458884.005 5438353 112 458881.995 5438353 112 458881.995 5438353 114.375 458884.005 5438353 114.375 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58819_65_364244_211813_2">
+                        <gml:LinearRing gml:id="PolyID58819_484a8bac-103d-4265-8ff1-4d78ab5dc292">
                           <gml:posList srsDimension="3" count="5">458885.21 5438353 114 458887.21 5438353 114 458887.21 5438353 112.8 458885.21 5438353 112.8 458885.21 5438353 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58819_65_364244_211813_3">
+                        <gml:LinearRing gml:id="PolyID58819_31f79706-46d4-48c3-9612-b809a8a2ffac">
                           <gml:posList srsDimension="3" count="5">458880.79 5438353 112.8 458878.79 5438353 112.8 458878.79 5438353 114 458880.79 5438353 114 458880.79 5438353 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
@@ -223,7 +223,7 @@
             </gml:MultiSurface>
           </bldg:lod3MultiSurface>
           <bldg:opening>
-            <bldg:Window gml:id="GML_98d9c4f5-9e47-4f0b-95f3-cf31e7520142">
+            <bldg:Window gml:id="GML_f60cfc5d-da6b-473c-8d3e-da711a09164e">
               <gml:name>Window East</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -232,11 +232,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_13f934c1-ba65-416b-894b-edd5d9d48e79">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_7637a7c0-639b-4118-adc9-4d4f1c8f5488">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58820_1568_227087_210505">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58820_df0100af-8047-4e17-9917-b6f459e4beea">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58820_1568_227087_210505_0">
+                        <gml:LinearRing gml:id="PolyID58820_ea78f97a-a03f-483c-8280-9f205baa6c5f">
                           <gml:posList srsDimension="3" count="5">458887.21 5438353 112.8 458887.21 5438353 114 458885.21 5438353 114 458885.21 5438353 112.8 458887.21 5438353 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -247,7 +247,7 @@
             </bldg:Window>
           </bldg:opening>
           <bldg:opening>
-            <bldg:Window gml:id="GML_d0f329f3-5b05-428d-87c3-945b3868337f">
+            <bldg:Window gml:id="GML_d56ae516-5b34-4f47-bfad-3b863adecf0a">
               <gml:name>Window West</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -256,11 +256,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_0a2312a7-cf7f-4ad7-b252-ae725c6e3253">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_74374157-7b3a-4306-8d72-eae229a61b8f">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58821_1939_612838_272028">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58821_dc22045e-9c49-4467-9718-9b51634e600b">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58821_1939_612838_272028_0">
+                        <gml:LinearRing gml:id="PolyID58821_78d92ec5-5d9f-4c88-a947-39c6d17f3ab0">
                           <gml:posList srsDimension="3" count="5">458878.79 5438353 112.8 458880.79 5438353 112.8 458880.79 5438353 114 458878.79 5438353 114 458878.79 5438353 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -271,7 +271,7 @@
             </bldg:Window>
           </bldg:opening>
           <bldg:opening>
-            <bldg:Door gml:id="GML_2d6ddf04-ee56-42a1-a9b1-b47e4181a629">
+            <bldg:Door gml:id="GML_700dc27b-a015-41bc-9543-25a65675646f">
               <gml:name>Door South</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -280,11 +280,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_8fc77f6d-091a-40d3-a15e-38c694e914eb">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_9e0f6a6d-3a4b-46d8-950c-f107662aa9ff">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58822_551_84845_215911">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58822_0b945ccc-f501-49db-97a9-ec389bf85e1e">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58822_551_84845_215911_0">
+                        <gml:LinearRing gml:id="PolyID58822_328fbe48-5eec-4ec3-84a7-27b7e321663b">
                           <gml:posList srsDimension="3" count="5">458884.005 5438353 112 458884.005 5438353 114.375 458881.995 5438353 114.375 458881.995 5438353 112 458884.005 5438353 112 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -297,7 +297,7 @@
         </bldg:WallSurface>
       </bldg:boundedBy>
       <bldg:boundedBy>
-        <bldg:WallSurface gml:id="GML_8e5db638-e46a-4739-a98a-2fc2d39c9069">
+        <bldg:WallSurface gml:id="GML_6be52ee5-23ca-481c-a0fb-1254816fee57">
           <gml:name>Outer Wall 3 (East)</gml:name>
           <gml:boundedBy>
             <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -306,28 +306,28 @@
             </gml:Envelope>
           </gml:boundedBy>
           <bldg:lod3MultiSurface>
-            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_953c5f37-3805-46c0-9e24-fc88bb970243">
+            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_fe68f515-136f-4cad-a3d1-33167048b8e6">
               <gml:surfaceMember>
-                <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_d5729847-0aaf-4fec-8ed4-84a5300e510f">
+                <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_9172037e-9abc-447d-ae18-4405619d111d">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58903_1839_642244_370862">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58903_4650567f-49c7-4929-b2cb-945d1e8311ff">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58903_1839_642244_370862_0">
+                        <gml:LinearRing gml:id="PolyID58903_16e75b92-ccfa-4f2c-b7e2-9fc7cb9a86ee">
                           <gml:posList srsDimension="3" count="6">458889 5438358 118.3176914 458889 5438353 115.4309401 458889 5438353 111.8 458889 5438363 111.8 458889 5438363 115.4309401 458889 5438358 118.3176914 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58903_1839_642244_370862_1">
+                        <gml:LinearRing gml:id="PolyID58903_daa087ae-58de-429f-b0b3-528edef1f478">
                           <gml:posList srsDimension="3" count="73">458889 5438357.5170370 116.1294095 458889 5438357.5301536 116.1710100 458889 5438357.5468461 116.2113091 458889 5438357.5669873 116.25 458889 5438357.5904239 116.2867882 458889 5438357.6169777 116.3213938 458889 5438357.6464466 116.3535533 458889 5438357.6786062 116.3830222 458889 5438357.7132117 116.4095760 458889 5438357.75 116.4330127 458889 5438357.7886908 116.4531538 458889 5438357.8289899 116.4698463 458889 5438357.8705904 116.4829629 458889 5438357.9131759 116.4924038 458889 5438357.9564221 116.4980973 458889 5438358 116.5 458889 5438358.0435778 116.4980973 458889 5438358.0868240 116.4924038 458889 5438358.1294095 116.4829629 458889 5438358.1710100 116.4698463 458889 5438358.2113091 116.4531538 458889 5438358.25 116.4330127 458889 5438358.2867882 116.4095760 458889 5438358.3213938 116.3830222 458889 5438358.3535533 116.3535533 458889 5438358.3830222 116.3213938 458889 5438358.4095760 116.2867882 458889 5438358.4330127 116.25 458889 5438358.4531538 116.2113091 458889 5438358.4698463 116.1710100 458889 5438358.4829629 116.1294095 458889 5438358.4924038 116.0868240 458889 5438358.4980973 116.0435778 458889 5438358.5 116 458889 5438358.4980973 115.9564221 458889 5438358.4924038 115.9131759 458889 5438358.4829629 115.8705904 458889 5438358.4698463 115.8289899 458889 5438358.4531538 115.7886908 458889 5438358.4330127 115.75 458889 5438358.4095760 115.7132117 458889 5438358.3830222 115.6786061 458889 5438358.3535533 115.6464466 458889 5438358.3213938 115.6169777 458889 5438358.2867882 115.5904239 458889 5438358.25 115.5669872 458889 5438358.2113091 115.5468461 458889 5438358.1710100 115.5301536 458889 5438358.1294095 115.5170370 458889 5438358.0868240 115.5075961 458889 5438358.0435778 115.5019026 458889 5438358 115.5 458889 5438357.9564221 115.5019026 458889 5438357.9131759 115.5075961 458889 5438357.8705904 115.5170370 458889 5438357.8289899 115.5301536 458889 5438357.7886908 115.5468461 458889 5438357.75 115.5669872 458889 5438357.7132117 115.5904239 458889 5438357.6786062 115.6169777 458889 5438357.6464466 115.6464466 458889 5438357.6169777 115.6786061 458889 5438357.5904239 115.7132117 458889 5438357.5669873 115.75 458889 5438357.5468461 115.7886908 458889 5438357.5301536 115.8289899 458889 5438357.5170370 115.8705904 458889 5438357.5075961 115.9131759 458889 5438357.5019026 115.9564221 458889 5438357.5 116 458889 5438357.5019026 116.0435778 458889 5438357.5075961 116.0868240 458889 5438357.5170370 116.1294095 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58903_1839_642244_370862_2">
+                        <gml:LinearRing gml:id="PolyID58903_ff708d0a-020c-469f-a099-f51713f0dc3e">
                           <gml:posList srsDimension="3" count="5">458889 5438361.5023937 114 458889 5438361.5023937 112.8 458889 5438359.5023937 112.8 458889 5438359.5023937 114 458889 5438361.5023937 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58903_1839_642244_370862_3">
+                        <gml:LinearRing gml:id="PolyID58903_17b45b0d-63c6-4467-9e8f-1fcf0b88021c">
                           <gml:posList srsDimension="3" count="5">458889 5438354.205 112.8 458889 5438354.205 114 458889 5438356.205 114 458889 5438356.205 112.8 458889 5438354.205 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
@@ -338,7 +338,7 @@
             </gml:MultiSurface>
           </bldg:lod3MultiSurface>
           <bldg:opening>
-            <bldg:Window gml:id="GML_ef2a1635-4f3c-48b5-afda-53c920f3132b">
+            <bldg:Window gml:id="GML_27be3921-428c-4750-819e-9b0a17e6bf67">
               <gml:name>Window South</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -347,11 +347,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_4fe147de-0e8a-4cc2-a104-660e982e8c74">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_5daa3abf-2c21-4769-b54e-40e54db120b6">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58904_926_485070_129763">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58904_49be3bf9-6a38-4dc2-87aa-fd53dee7d8ec">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58904_926_485070_129763_0">
+                        <gml:LinearRing gml:id="PolyID58904_d436c38e-80b5-4f2b-a87c-ce6167061bf1">
                           <gml:posList srsDimension="3" count="5">458889 5438356.205 112.8 458889 5438356.205 114 458889 5438354.205 114 458889 5438354.205 112.8 458889 5438356.205 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -362,7 +362,7 @@
             </bldg:Window>
           </bldg:opening>
           <bldg:opening>
-            <bldg:Window gml:id="GML_a216460a-3326-41f2-b867-6846d81724a4">
+            <bldg:Window gml:id="GML_92f39f2b-7f49-4816-94d9-41bc03ecce51">
               <gml:name>Window North</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -371,11 +371,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_eebb37fe-f529-4cad-ba35-ec5c081cbcf9">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_653c3660-b49f-4fd4-a62f-aa46f0e306ba">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58905_883_830507_79018">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58905_26751350-911a-4ca4-a8af-04de25784c3d">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58905_883_830507_79018_0">
+                        <gml:LinearRing gml:id="PolyID58905_ebd6abe1-7e7f-4a6b-a716-8c829f2f4685">
                           <gml:posList srsDimension="3" count="5">458889 5438361.5023937 114 458889 5438359.5023937 114 458889 5438359.5023937 112.8 458889 5438361.5023937 112.8 458889 5438361.5023937 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -386,7 +386,7 @@
             </bldg:Window>
           </bldg:opening>
           <bldg:opening>
-            <bldg:Window gml:id="GML_23030a94-ccbc-4ce5-a0a4-9280c5b3f287">
+            <bldg:Window gml:id="GML_42405812-b4f3-4bbd-a25f-39269e50d39a">
               <gml:name>Window Round</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -395,11 +395,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_163d4e68-b611-431a-819f-aa698853453b">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_15d30ee1-6c62-4832-baa6-38753d81e68f">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58906_886_364949_26381">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58906_a93c2cc3-e39e-400d-afad-26c997a05f23">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58906_886_364949_26381_0">
+                        <gml:LinearRing gml:id="PolyID58906_c50c3fc2-e0ad-4d86-aacc-0ecb8fd0ec4c">
                           <gml:posList srsDimension="3" count="73">458889 5438357.6169777 116.3213938 458889 5438357.5904239 116.2867882 458889 5438357.5669873 116.25 458889 5438357.5468461 116.2113091 458889 5438357.5301536 116.1710100 458889 5438357.5170370 116.1294095 458889 5438357.5075961 116.0868240 458889 5438357.5019026 116.0435778 458889 5438357.5 116 458889 5438357.5019026 115.9564221 458889 5438357.5075961 115.9131759 458889 5438357.5170370 115.8705904 458889 5438357.5301536 115.8289899 458889 5438357.5468461 115.7886908 458889 5438357.5669873 115.75 458889 5438357.5904239 115.7132117 458889 5438357.6169777 115.6786061 458889 5438357.6464466 115.6464466 458889 5438357.6786062 115.6169777 458889 5438357.7132117 115.5904239 458889 5438357.75 115.5669872 458889 5438357.7886908 115.5468461 458889 5438357.8289899 115.5301536 458889 5438357.8705904 115.5170370 458889 5438357.9131759 115.5075961 458889 5438357.9564221 115.5019026 458889 5438358 115.5 458889 5438358.0435778 115.5019026 458889 5438358.0868240 115.5075961 458889 5438358.1294095 115.5170370 458889 5438358.1710100 115.5301536 458889 5438358.2113091 115.5468461 458889 5438358.25 115.5669872 458889 5438358.2867882 115.5904239 458889 5438358.3213938 115.6169777 458889 5438358.3535533 115.6464466 458889 5438358.3830222 115.6786061 458889 5438358.4095760 115.7132117 458889 5438358.4330127 115.75 458889 5438358.4531538 115.7886908 458889 5438358.4698463 115.8289899 458889 5438358.4829629 115.8705904 458889 5438358.4924038 115.9131759 458889 5438358.4980973 115.9564221 458889 5438358.5 116 458889 5438358.4980973 116.0435778 458889 5438358.4924038 116.0868240 458889 5438358.4829629 116.1294095 458889 5438358.4698463 116.1710100 458889 5438358.4531538 116.2113091 458889 5438358.4330127 116.25 458889 5438358.4095760 116.2867882 458889 5438358.3830222 116.3213938 458889 5438358.3535533 116.3535533 458889 5438358.3213938 116.3830222 458889 5438358.2867882 116.4095760 458889 5438358.25 116.4330127 458889 5438358.2113091 116.4531538 458889 5438358.1710100 116.4698463 458889 5438358.1294095 116.4829629 458889 5438358.0868240 116.4924038 458889 5438358.0435778 116.4980973 458889 5438358 116.5 458889 5438357.9564221 116.4980973 458889 5438357.9131759 116.4924038 458889 5438357.8705904 116.4829629 458889 5438357.8289899 116.4698463 458889 5438357.7886908 116.4531538 458889 5438357.75 116.4330127 458889 5438357.7132117 116.4095760 458889 5438357.6786062 116.3830222 458889 5438357.6464466 116.3535533 458889 5438357.6169777 116.3213938 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -412,7 +412,7 @@
         </bldg:WallSurface>
       </bldg:boundedBy>
       <bldg:boundedBy>
-        <bldg:RoofSurface gml:id="GML_875d470b-32b4-4985-a4c8-0f02caa342a2">
+        <bldg:RoofSurface gml:id="GML_2a58a5a9-68a9-4230-bdde-c366cac9d956">
           <gml:name>Roof 1 (North)</gml:name>
           <gml:boundedBy>
             <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -421,11 +421,11 @@
             </gml:Envelope>
           </gml:boundedBy>
           <bldg:lod3MultiSurface>
-            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_f30a7d1b-27fb-4494-8002-8b317a2b3ec4">
+            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_60941bb8-80cc-474c-8273-98e88e5f8fd7">
               <gml:surfaceMember>
-                <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58907_1126_884498_121000">
+                <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58907_f0bc7b6f-582c-4d4c-945f-894ce98124c3">
                   <gml:exterior>
-                    <gml:LinearRing gml:id="PolyID58907_1126_884498_121000_0">
+                    <gml:LinearRing gml:id="PolyID58907_67279995-97cc-4e8b-87d5-f98f9b49cf16">
                       <gml:posList srsDimension="3" count="5">458877 5438358 118.3176914 458889 5438358 118.3176914 458889 5438363 115.4309401 458877 5438363 115.4309401 458877 5438358 118.3176914 </gml:posList>
                     </gml:LinearRing>
                   </gml:exterior>
@@ -436,7 +436,7 @@
         </bldg:RoofSurface>
       </bldg:boundedBy>
       <bldg:boundedBy>
-        <bldg:WallSurface gml:id="GML_0f30f604-e70d-4dfe-ba35-853bc69609cc">
+        <bldg:WallSurface gml:id="GML_01e20d14-c684-4e45-8215-63a4304fdf9c">
           <gml:name>Outer Wall 4 (North)</gml:name>
           <gml:boundedBy>
             <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -445,28 +445,28 @@
             </gml:Envelope>
           </gml:boundedBy>
           <bldg:lod3MultiSurface>
-            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_55e883b3-4b6b-4112-9a6e-0a6bd25f6ebc">
+            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_21c77ec6-5c75-46cb-9bc2-7227b95ab847">
               <gml:surfaceMember>
-                <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_b01f8d66-c797-49d3-b089-31349e167e4d">
+                <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_eff8a0ce-d1ef-44a6-8d01-69fe976cc09b">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58910_338_408556_67913">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58910_a75f4b10-e815-461d-bfd9-c100a80cd322">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58910_338_408556_67913_0">
+                        <gml:LinearRing gml:id="PolyID58910_0de19a8b-449e-4bd6-8742-d590e6deeb66">
                           <gml:posList srsDimension="3" count="5">458877 5438363 115.4309401 458889 5438363 115.4309401 458889 5438363 111.8 458877 5438363 111.8 458877 5438363 115.4309401 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58910_338_408556_67913_1">
+                        <gml:LinearRing gml:id="PolyID58910_96e72fe4-62e1-4e02-9ebd-e9d57a721f3a">
                           <gml:posList srsDimension="3" count="5">458878.05 5438363 114 458878.05 5438363 112.8 458880.05 5438363 112.8 458880.05 5438363 114 458878.05 5438363 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58910_338_408556_67913_2">
+                        <gml:LinearRing gml:id="PolyID58910_dfc117c6-d81d-4677-9d13-1a398db6afd1">
                           <gml:posList srsDimension="3" count="5">458887.795 5438363 114 458885.795 5438363 114 458885.795 5438363 112.8 458887.795 5438363 112.8 458887.795 5438363 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="PolyID58910_338_408556_67913_3">
+                        <gml:LinearRing gml:id="PolyID58910_267fe494-6238-4ea6-a0ee-c0333b01da06">
                           <gml:posList srsDimension="3" count="5">458881.66 5438363 114 458881.66 5438363 112.8 458883.66 5438363 112.8 458883.66 5438363 114 458881.66 5438363 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
@@ -477,7 +477,7 @@
             </gml:MultiSurface>
           </bldg:lod3MultiSurface>
           <bldg:opening>
-            <bldg:Window gml:id="GML_2297f8d4-f302-464c-8e7d-a26fd5dbd755">
+            <bldg:Window gml:id="GML_a7e9fe95-ea20-4d20-b631-923c99b51771">
               <gml:name>Window East</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -486,11 +486,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_8a3fa9d9-184e-4c88-9aab-0e16f310b23c">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_9af2b053-2e9d-42c9-9529-172005c6d986">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58918_1666_508104_106792">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58918_505fc850-a7ee-4bbd-b100-bb44835ce0f5">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58918_1666_508104_106792_0">
+                        <gml:LinearRing gml:id="PolyID58918_d5e23b2a-73ce-4f96-90be-245387870427">
                           <gml:posList srsDimension="3" count="5">458887.795 5438363 112.8 458885.795 5438363 112.8 458885.795 5438363 114 458887.795 5438363 114 458887.795 5438363 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -501,7 +501,7 @@
             </bldg:Window>
           </bldg:opening>
           <bldg:opening>
-            <bldg:Window gml:id="GML_6087187b-284d-4064-9abf-85f9ba9b2c89">
+            <bldg:Window gml:id="GML_d68d0957-ffc9-414a-abdc-af7c4479f8b4">
               <gml:name>Window Middle</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -510,11 +510,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_3f7a9e10-36f0-46be-bd30-de6c71e40c52">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_a704143d-d63f-4bb8-a8ef-3fc32156ee02">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58919_293_365452_56524">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58919_1283e980-970e-4351-9e39-2d5c5ecd90d5">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID58919_293_365452_56524_0">
+                        <gml:LinearRing gml:id="PolyID58919_f7c93c4e-2a20-4b21-8ec1-3da86240f31d">
                           <gml:posList srsDimension="3" count="5">458883.66 5438363 114 458883.66 5438363 112.8 458881.66 5438363 112.8 458881.66 5438363 114 458883.66 5438363 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -525,7 +525,7 @@
             </bldg:Window>
           </bldg:opening>
           <bldg:opening>
-            <bldg:Window gml:id="GML_5397681c-8367-4e9b-a989-60caec316f86">
+            <bldg:Window gml:id="GML_604e5e09-2a33-4a13-ae9d-243808e3c2be">
               <gml:name>Window West</gml:name>
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -534,11 +534,11 @@
                 </gml:Envelope>
               </gml:boundedBy>
               <bldg:lod3MultiSurface>
-                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_579a7240-d608-4c00-8a87-64421cd45b2f">
+                <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_abbbfeb4-6e62-46b3-a1ba-9755bc8edb2b">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID45494_1549_894355_77993">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID45494_ba7d82f7-0e57-46d3-b43c-4ce1558a1f35">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="PolyID45494_1549_894355_77993_0">
+                        <gml:LinearRing gml:id="PolyID45494_d067038f-c26d-4a0e-a91b-2a1235a5b5e5">
                           <gml:posList srsDimension="3" count="5">458878.05 5438363 112.8 458878.05 5438363 114 458880.05 5438363 114 458880.05 5438363 112.8 458878.05 5438363 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -551,7 +551,7 @@
         </bldg:WallSurface>
       </bldg:boundedBy>
       <bldg:boundedBy>
-        <bldg:RoofSurface gml:id="GML_eeb6796a-e261-4d3b-a6f2-475940cca80a">
+        <bldg:RoofSurface gml:id="GML_318ddd02-ca41-4eab-a473-94e636014f44">
           <gml:name>Roof 2 (South)</gml:name>
           <gml:boundedBy>
             <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
@@ -560,11 +560,11 @@
             </gml:Envelope>
           </gml:boundedBy>
           <bldg:lod3MultiSurface>
-            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_1e12cddb-9cf8-4e09-a3a9-07169704a0a2">
+            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_911ef512-fac7-476e-9e81-3a04fd2ed76b">
               <gml:surfaceMember>
-                <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58921_472_579834_340993">
+                <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58921_c857f446-b350-4408-9828-9356e9d807db">
                   <gml:exterior>
-                    <gml:LinearRing gml:id="PolyID58921_472_579834_340993_0">
+                    <gml:LinearRing gml:id="PolyID58921_35e2aae2-25ee-4a08-a6fc-a47d6e1076d2">
                       <gml:posList srsDimension="3" count="5">458889 5438353 115.4309401 458889 5438358 118.3176914 458877 5438358 118.3176914 458877 5438353 115.4309401 458889 5438353 115.4309401 </gml:posList>
                     </gml:LinearRing>
                   </gml:exterior>
@@ -575,7 +575,7 @@
         </bldg:RoofSurface>
       </bldg:boundedBy>
       <bldg:boundedBy>
-        <bldg:GroundSurface gml:id="GML_257a8dde-8194-4ca3-b581-abd591dcd6a3">
+        <bldg:GroundSurface gml:id="GML_6fc3bb0c-ab0a-41e0-a852-f0c87867263f">
           <gml:description>Bodenplatte</gml:description>
           <gml:name>Base Surface</gml:name>
           <gml:boundedBy>
@@ -585,11 +585,11 @@
             </gml:Envelope>
           </gml:boundedBy>
           <bldg:lod3MultiSurface>
-            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_3eee83ca-1a0c-4467-90e4-383a03509584">
+            <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_92f14ed9-f70d-4632-abfd-2dc887cee42d">
               <gml:surfaceMember>
-                <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58922_1541_340473_350668">
+                <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="PolyID58922_88644160-73ac-445e-890c-283706e3906b">
                   <gml:exterior>
-                    <gml:LinearRing gml:id="PolyID58922_1541_340473_350668_0">
+                    <gml:LinearRing gml:id="PolyID58922_8fa334e3-21fa-47df-92e0-a7a688a34923">
                       <gml:posList srsDimension="3" count="5">458889 5438353 111.8 458877 5438353 111.8 458877 5438363 111.8 458889 5438363 111.8 458889 5438353 111.8 </gml:posList>
                     </gml:LinearRing>
                   </gml:exterior>
@@ -600,29 +600,29 @@
         </bldg:GroundSurface>
       </bldg:boundedBy>
       <bldg:lod3Solid>
-        <gml:Solid gml:id="GML_bb52903d-6b6f-45bd-9417-566ce3f9e6f6">
+        <gml:Solid gml:id="GML_148f674e-88fc-4f15-9065-2c17a6cd9424">
           <gml:exterior>
-            <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_e93c08a2-3e3e-4774-9c5d-5483cfea983a">
-              <gml:surfaceMember xlink:href="#PolyID58907_1126_884498_121000" />
-              <gml:surfaceMember xlink:href="#PolyID58921_472_579834_340993" />
-              <gml:surfaceMember xlink:href="#PolyID58922_1541_340473_350668" />
-              <gml:surfaceMember xlink:href="#GML_b01f8d66-c797-49d3-b089-31349e167e4d" />
-              <gml:surfaceMember xlink:href="#PolyID58918_1666_508104_106792" />
-              <gml:surfaceMember xlink:href="#PolyID58919_293_365452_56524" />
-              <gml:surfaceMember xlink:href="#PolyID45494_1549_894355_77993" />
-              <gml:surfaceMember xlink:href="#GML_d5729847-0aaf-4fec-8ed4-84a5300e510f" />
-              <gml:surfaceMember xlink:href="#PolyID58906_886_364949_26381" />
-              <gml:surfaceMember xlink:href="#PolyID58905_883_830507_79018" />
-              <gml:surfaceMember xlink:href="#PolyID58904_926_485070_129763" />
-              <gml:surfaceMember xlink:href="#GML_e9240361-e956-421c-bff5-1f1f6d9b59aa" />
-              <gml:surfaceMember xlink:href="#PolyID58803_371_698036_77126" />
-              <gml:surfaceMember xlink:href="#PolyID58804_647_880710_163324" />
-              <gml:surfaceMember xlink:href="#PolyID58805_1881_773628_351228" />
-              <gml:surfaceMember xlink:href="#PolyID58806_328_642559_374120" />
-              <gml:surfaceMember xlink:href="#GML_4726d5c0-dfa2-4777-b1da-24798d72c27a" />
-              <gml:surfaceMember xlink:href="#PolyID58820_1568_227087_210505" />
-              <gml:surfaceMember xlink:href="#PolyID58821_1939_612838_272028" />
-              <gml:surfaceMember xlink:href="#PolyID58822_551_84845_215911" />
+            <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_ee37d922-9bd5-41c2-8563-c659c879fd71">
+              <gml:surfaceMember xlink:href="#PolyID58907_f0bc7b6f-582c-4d4c-945f-894ce98124c3" />
+              <gml:surfaceMember xlink:href="#PolyID58921_c857f446-b350-4408-9828-9356e9d807db" />
+              <gml:surfaceMember xlink:href="#PolyID58922_88644160-73ac-445e-890c-283706e3906b" />
+              <gml:surfaceMember xlink:href="#GML_eff8a0ce-d1ef-44a6-8d01-69fe976cc09b" />
+              <gml:surfaceMember xlink:href="#PolyID58918_505fc850-a7ee-4bbd-b100-bb44835ce0f5" />
+              <gml:surfaceMember xlink:href="#PolyID58919_1283e980-970e-4351-9e39-2d5c5ecd90d5" />
+              <gml:surfaceMember xlink:href="#PolyID45494_ba7d82f7-0e57-46d3-b43c-4ce1558a1f35" />
+              <gml:surfaceMember xlink:href="#GML_9172037e-9abc-447d-ae18-4405619d111d" />
+              <gml:surfaceMember xlink:href="#PolyID58906_a93c2cc3-e39e-400d-afad-26c997a05f23" />
+              <gml:surfaceMember xlink:href="#PolyID58905_26751350-911a-4ca4-a8af-04de25784c3d" />
+              <gml:surfaceMember xlink:href="#PolyID58904_49be3bf9-6a38-4dc2-87aa-fd53dee7d8ec" />
+              <gml:surfaceMember xlink:href="#GML_b09e7348-d9cf-4b59-adfe-c6e6d325796d" />
+              <gml:surfaceMember xlink:href="#PolyID58803_316e5a19-42fa-49e6-bc87-7f17bdeda370" />
+              <gml:surfaceMember xlink:href="#PolyID58804_b882a953-e7b9-47b2-852f-9b24a26bae05" />
+              <gml:surfaceMember xlink:href="#PolyID58805_b36c51e3-25fd-456c-86b5-0bcff362e92b" />
+              <gml:surfaceMember xlink:href="#PolyID58806_5cf11dbb-6e96-4214-829d-bca08b97bf17" />
+              <gml:surfaceMember xlink:href="#GML_5bca6a7f-dee4-4595-9544-168cba4ba967" />
+              <gml:surfaceMember xlink:href="#PolyID58820_df0100af-8047-4e17-9917-b6f459e4beea" />
+              <gml:surfaceMember xlink:href="#PolyID58821_dc22045e-9c49-4467-9718-9b51634e600b" />
+              <gml:surfaceMember xlink:href="#PolyID58822_0b945ccc-f501-49db-97a9-ec389bf85e1e" />
             </gml:CompositeSurface>
           </gml:exterior>
         </gml:Solid>
@@ -636,19 +636,19 @@
         </energy:VolumeType>
       </energy:volume>
       <energy:referencePoint>
-        <gml:Point srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_484210f7-e505-43ec-b3b9-8ba8074fae95">
+        <gml:Point srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_3cd54fd2-b194-44b1-912e-8b81cae34843">
           <gml:pos>458883 5438358 115.06</gml:pos>
         </gml:Point>
       </energy:referencePoint>
       <energy:thermalZone>
-        <energy:ThermalZone gml:id="GML_96f8e66a-7a55-4860-82a4-07f10e93094b">
+        <energy:ThermalZone gml:id="GML_83600033-7b51-4daf-9514-9c301f8e71dc">
           <gml:boundedBy>
             <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
               <gml:lowerCorner>458877 5438353 111.8</gml:lowerCorner>
               <gml:upperCorner>458889 5438363 118.3176914</gml:upperCorner>
             </gml:Envelope>
           </gml:boundedBy>
-          <energy:contains xlink:href="#GML_0edb2654-d21d-47a5-8c58-05e88cc0b983" />
+          <energy:contains xlink:href="#GML_e08f7048-f963-4ee7-b4d3-1c9d92ace365" />
           <energy:floorArea>
             <energy:FloorArea>
               <energy:type>netFloorArea</energy:type>
@@ -665,35 +665,35 @@
           <energy:isHeated>true</energy:isHeated>
           <energy:isMechanicallyVentilated>true</energy:isMechanicallyVentilated>
           <energy:volumeGeometry>
-            <gml:Solid gml:id="GML_f7eae8e1-141f-4f9a-b99c-7cb6d20af868">
+            <gml:Solid gml:id="GML_e0dd232b-f3f8-4c20-8666-c33b5bae75eb">
               <gml:exterior>
-                <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_04386920-b2ab-4fb4-8151-f61acbb024b9">
-                  <gml:surfaceMember xlink:href="#PolyID58907_1126_884498_121000" />
-                  <gml:surfaceMember xlink:href="#PolyID58921_472_579834_340993" />
-                  <gml:surfaceMember xlink:href="#PolyID58922_1541_340473_350668" />
-                  <gml:surfaceMember xlink:href="#GML_b01f8d66-c797-49d3-b089-31349e167e4d" />
-                  <gml:surfaceMember xlink:href="#PolyID58918_1666_508104_106792" />
-                  <gml:surfaceMember xlink:href="#PolyID58919_293_365452_56524" />
-                  <gml:surfaceMember xlink:href="#PolyID45494_1549_894355_77993" />
-                  <gml:surfaceMember xlink:href="#GML_d5729847-0aaf-4fec-8ed4-84a5300e510f" />
-                  <gml:surfaceMember xlink:href="#PolyID58906_886_364949_26381" />
-                  <gml:surfaceMember xlink:href="#PolyID58905_883_830507_79018" />
-                  <gml:surfaceMember xlink:href="#PolyID58904_926_485070_129763" />
-                  <gml:surfaceMember xlink:href="#GML_e9240361-e956-421c-bff5-1f1f6d9b59aa" />
-                  <gml:surfaceMember xlink:href="#PolyID58803_371_698036_77126" />
-                  <gml:surfaceMember xlink:href="#PolyID58804_647_880710_163324" />
-                  <gml:surfaceMember xlink:href="#PolyID58805_1881_773628_351228" />
-                  <gml:surfaceMember xlink:href="#PolyID58806_328_642559_374120" />
-                  <gml:surfaceMember xlink:href="#GML_4726d5c0-dfa2-4777-b1da-24798d72c27a" />
-                  <gml:surfaceMember xlink:href="#PolyID58820_1568_227087_210505" />
-                  <gml:surfaceMember xlink:href="#PolyID58821_1939_612838_272028" />
-                  <gml:surfaceMember xlink:href="#PolyID58822_551_84845_215911" />
+                <gml:CompositeSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_8b9a954a-dd40-40ce-825c-5d96f2e91aad">
+                  <gml:surfaceMember xlink:href="#PolyID58907_f0bc7b6f-582c-4d4c-945f-894ce98124c3" />
+                  <gml:surfaceMember xlink:href="#PolyID58921_c857f446-b350-4408-9828-9356e9d807db" />
+                  <gml:surfaceMember xlink:href="#PolyID58922_88644160-73ac-445e-890c-283706e3906b" />
+                  <gml:surfaceMember xlink:href="#GML_eff8a0ce-d1ef-44a6-8d01-69fe976cc09b" />
+                  <gml:surfaceMember xlink:href="#PolyID58918_505fc850-a7ee-4bbd-b100-bb44835ce0f5" />
+                  <gml:surfaceMember xlink:href="#PolyID58919_1283e980-970e-4351-9e39-2d5c5ecd90d5" />
+                  <gml:surfaceMember xlink:href="#PolyID45494_ba7d82f7-0e57-46d3-b43c-4ce1558a1f35" />
+                  <gml:surfaceMember xlink:href="#GML_9172037e-9abc-447d-ae18-4405619d111d" />
+                  <gml:surfaceMember xlink:href="#PolyID58906_a93c2cc3-e39e-400d-afad-26c997a05f23" />
+                  <gml:surfaceMember xlink:href="#PolyID58905_26751350-911a-4ca4-a8af-04de25784c3d" />
+                  <gml:surfaceMember xlink:href="#PolyID58904_49be3bf9-6a38-4dc2-87aa-fd53dee7d8ec" />
+                  <gml:surfaceMember xlink:href="#GML_b09e7348-d9cf-4b59-adfe-c6e6d325796d" />
+                  <gml:surfaceMember xlink:href="#PolyID58803_316e5a19-42fa-49e6-bc87-7f17bdeda370" />
+                  <gml:surfaceMember xlink:href="#PolyID58804_b882a953-e7b9-47b2-852f-9b24a26bae05" />
+                  <gml:surfaceMember xlink:href="#PolyID58805_b36c51e3-25fd-456c-86b5-0bcff362e92b" />
+                  <gml:surfaceMember xlink:href="#PolyID58806_5cf11dbb-6e96-4214-829d-bca08b97bf17" />
+                  <gml:surfaceMember xlink:href="#GML_5bca6a7f-dee4-4595-9544-168cba4ba967" />
+                  <gml:surfaceMember xlink:href="#PolyID58820_df0100af-8047-4e17-9917-b6f459e4beea" />
+                  <gml:surfaceMember xlink:href="#PolyID58821_dc22045e-9c49-4467-9718-9b51634e600b" />
+                  <gml:surfaceMember xlink:href="#PolyID58822_0b945ccc-f501-49db-97a9-ec389bf85e1e" />
                 </gml:CompositeSurface>
               </gml:exterior>
             </gml:Solid>
           </energy:volumeGeometry>
           <energy:boundedBy>
-            <energy:ThermalBoundary gml:id="GML_b353dd2d-abc4-4fbb-a023-a74cc270d1bc">
+            <energy:ThermalBoundary gml:id="GML_da3d1ce9-c8c8-4941-b961-e31a96b12273">
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                   <gml:lowerCorner>458877 5438363 111.8</gml:lowerCorner>
@@ -705,53 +705,53 @@
               <energy:inclination uom="grad">90</energy:inclination>
               <energy:area uom="m2">43.571281292110257</energy:area>
               <energy:surfaceGeometry>
-                <gml:MultiSurface gml:id="GML_2f322faa-1f94-4e0e-be80-d7741247963a">
+                <gml:MultiSurface gml:id="GML_2937a8e8-16bc-40da-b5f3-826c9c00a3c3">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_67f671d8-d05d-41bc-93d5-81934f5ffde7">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_e599fc32-4e30-48b5-885e-2cc02b529799">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_2ea9901c-14fc-4556-bab2-3ea8682151db">
+                        <gml:LinearRing gml:id="GML_a7a7e7be-bac3-4e4e-a2ef-7a604af98514">
                           <gml:posList srsDimension="3" count="5">458877 5438363 115.4309401 458889 5438363 115.4309401 458889 5438363 111.8 458877 5438363 111.8 458877 5438363 115.4309401 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_037f1884-3c5e-41b8-abef-c4d5b26aac90">
+                        <gml:LinearRing gml:id="GML_d9238a78-b959-4903-9004-4390a9ddd49c">
                           <gml:posList srsDimension="3" count="5">458878.05 5438363 114 458878.05 5438363 112.8 458880.05 5438363 112.8 458880.05 5438363 114 458878.05 5438363 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_6e1fd17b-6769-40ea-a9b0-5339bbf20d8e">
+                        <gml:LinearRing gml:id="GML_92249560-f0b1-40f9-b162-ada418854b29">
                           <gml:posList srsDimension="3" count="5">458887.795 5438363 114 458885.795 5438363 114 458885.795 5438363 112.8 458887.795 5438363 112.8 458887.795 5438363 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_24c0487c-0dc7-4818-ab4f-25c41863adb1">
+                        <gml:LinearRing gml:id="GML_7dfb0d79-0e4b-41d6-9104-c9177a5206be">
                           <gml:posList srsDimension="3" count="5">458881.66 5438363 114 458881.66 5438363 112.8 458883.66 5438363 112.8 458883.66 5438363 114 458881.66 5438363 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_5ef4a18b-7519-4d70-8ac6-bc62521d9185">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_f844546a-9877-48d5-b3cb-f6b82bc60db3">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_1aa330b1-6476-4275-b656-3d8cdcf73a01">
+                        <gml:LinearRing gml:id="GML_d35cea44-d497-484a-a7ab-3176ff986e3a">
                           <gml:posList srsDimension="3" count="5">458887.795 5438363 112.8 458885.795 5438363 112.8 458885.795 5438363 114 458887.795 5438363 114 458887.795 5438363 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_211c0380-89e2-4d8d-ba33-532828f0a459">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_47e37517-6205-413c-8967-51e41509392b">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_9943e57f-3c90-4d3a-ba8f-fa9db2a7ecd9">
+                        <gml:LinearRing gml:id="GML_03247642-150d-444e-9e2b-426580932d3e">
                           <gml:posList srsDimension="3" count="5">458883.66 5438363 114 458883.66 5438363 112.8 458881.66 5438363 112.8 458881.66 5438363 114 458883.66 5438363 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_a66e0cf1-780c-4522-9257-1744cfe7d31a">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_3b6069da-ed67-43c8-9ae9-96d19310c2e9">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_46120364-0540-453d-81cf-5d48b8fad8f1">
+                        <gml:LinearRing gml:id="GML_fc4acc8e-b30f-4b5b-9778-389b9a29a6e2">
                           <gml:posList srsDimension="3" count="5">458878.05 5438363 112.8 458878.05 5438363 114 458880.05 5438363 114 458880.05 5438363 112.8 458878.05 5438363 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -759,9 +759,9 @@
                   </gml:surfaceMember>
                 </gml:MultiSurface>
               </energy:surfaceGeometry>
-              <energy:construction xlink:href="#KIT-FZK-Haus-Aussenwand" />
+              <energy:construction xlink:href="#KIT-FZK-Haus-Aussenwand_74b54684-972b-45a9-a37f-8ac6552c5025" />
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_6117f9cc-982a-442a-832a-1ab235bf62da">
+                <energy:ThermalOpening gml:id="GML_425041bf-4e7a-4f16-aab3-5badbdb199c3">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458885.795 5438363 112.8</gml:lowerCorner>
@@ -769,13 +769,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">2.4000000000000057</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_f7c9fb29-85c8-4b39-bc40-d734e012e399">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_ab682663-de41-4601-aebc-42ba3fd629f4">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_09de90f5-c2fc-43e1-a8aa-cc7d2ada0d18">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_614464ce-fc08-4f33-8254-206d1ee3c126">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_f51bcb94-f67d-47ac-bf4c-9e957d09243c">
+                            <gml:LinearRing gml:id="GML_1da34db4-b339-4e0e-b3e1-84964c741a76">
                               <gml:posList srsDimension="3" count="5">458887.795 5438363 112.8 458885.795 5438363 112.8 458885.795 5438363 114 458887.795 5438363 114 458887.795 5438363 112.8 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -786,7 +786,7 @@
                 </energy:ThermalOpening>
               </energy:contains>
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_efda25f0-b2f9-4d72-9e2b-15ad21fb92e0">
+                <energy:ThermalOpening gml:id="GML_592fe37c-4263-44b0-96fb-34130d7177a2">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458881.66 5438363 112.8</gml:lowerCorner>
@@ -794,13 +794,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">2.4000000000000057</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_07cb08ff-1329-4a72-922c-8e7fe934b8cb">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_344d87eb-ead8-4068-9c97-11cd143d84ad">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_0864f97a-7de4-4ba4-bc7f-a8b7ba33fb65">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_6192f745-caa0-460b-8b1f-c905419e7697">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_c7f2cf04-bffc-401a-8ea2-45a0c479340b">
+                            <gml:LinearRing gml:id="GML_91883d6a-2cee-46f4-aebc-b7dc4aca79e2">
                               <gml:posList srsDimension="3" count="5">458883.66 5438363 114 458883.66 5438363 112.8 458881.66 5438363 112.8 458881.66 5438363 114 458883.66 5438363 114 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -811,7 +811,7 @@
                 </energy:ThermalOpening>
               </energy:contains>
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_8aff50f2-a032-42f4-a0fe-0e7189465b68">
+                <energy:ThermalOpening gml:id="GML_2d0bae6e-355b-4c56-b49d-207c1b1038ec">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458878.05 5438363 112.8</gml:lowerCorner>
@@ -819,13 +819,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">2.4000000000000057</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_3615e104-d9f8-4234-a8a4-0450ef3b0df6">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_9512bfcd-7c1c-4f65-9a9a-de0796fd8265">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_c127ad26-13aa-464e-9f13-e2cd1c43f398">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_36bebdda-2f1c-4aaa-9a4b-91613a8bae29">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_b94dd646-1ac5-4705-b151-93e06cf2774e">
+                            <gml:LinearRing gml:id="GML_203e8754-6df4-4842-aac7-13a773ddd584">
                               <gml:posList srsDimension="3" count="5">458878.05 5438363 112.8 458878.05 5438363 114 458880.05 5438363 114 458880.05 5438363 112.8 458878.05 5438363 112.8 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -838,7 +838,7 @@
             </energy:ThermalBoundary>
           </energy:boundedBy>
           <energy:boundedBy>
-            <energy:ThermalBoundary gml:id="GML_6dcb620f-7824-4ffc-8ca5-680c349eda33">
+            <energy:ThermalBoundary gml:id="GML_393fb687-2a3c-4755-8c73-6d657f6a736c">
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                   <gml:lowerCorner>458877 5438353 111.8</gml:lowerCorner>
@@ -850,67 +850,67 @@
               <energy:inclination uom="grad">90</energy:inclination>
               <energy:area uom="m2">50.743157806499184</energy:area>
               <energy:surfaceGeometry>
-                <gml:MultiSurface gml:id="GML_469837e9-2a0e-400b-acb0-a496691396ce">
+                <gml:MultiSurface gml:id="GML_056db803-8d9a-4e59-8df5-0b4c768c2b28">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_fa428896-5dd4-4f1a-b771-2b03e24b21e1">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_46131ee4-a711-4b0e-b3dd-d167afe6aa3a">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_34e67f07-ad69-42a3-ac35-e6118502a5ab">
+                        <gml:LinearRing gml:id="GML_054d4702-fa57-41ee-9c82-3d1da1e2adc2">
                           <gml:posList srsDimension="3" count="6">458877 5438358 118.3176914 458877 5438363 115.4309401 458877 5438363 111.8 458877 5438353 111.8 458877 5438353 115.4309401 458877 5438358 118.3176914 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_5d9b0e1e-72f2-4402-b96e-9f9d3226bba4">
+                        <gml:LinearRing gml:id="GML_16ef088f-1f25-4e17-9ab0-780d32f595fc">
                           <gml:posList srsDimension="3" count="73">458877 5438358.4829629 116.1294095 458877 5438358.4698463 116.1710100 458877 5438358.4531538 116.2113091 458877 5438358.4330127 116.25 458877 5438358.4095760 116.2867882 458877 5438358.3830222 116.3213938 458877 5438358.3535533 116.3535533 458877 5438358.3213938 116.3830222 458877 5438358.2867882 116.4095760 458877 5438358.25 116.4330127 458877 5438358.2113091 116.4531538 458877 5438358.1710100 116.4698463 458877 5438358.1294095 116.4829629 458877 5438358.0868240 116.4924038 458877 5438358.0435778 116.4980973 458877 5438358 116.5 458877 5438357.9564221 116.4980973 458877 5438357.9131759 116.4924038 458877 5438357.8705904 116.4829629 458877 5438357.8289899 116.4698463 458877 5438357.7886908 116.4531538 458877 5438357.75 116.4330127 458877 5438357.7132117 116.4095760 458877 5438357.6786062 116.3830222 458877 5438357.6464466 116.3535533 458877 5438357.6169777 116.3213938 458877 5438357.5904239 116.2867882 458877 5438357.5669873 116.25 458877 5438357.5468461 116.2113091 458877 5438357.5301536 116.1710100 458877 5438357.5170370 116.1294095 458877 5438357.5075961 116.0868240 458877 5438357.5019026 116.0435778 458877 5438357.5 116 458877 5438357.5019026 115.9564221 458877 5438357.5075961 115.9131759 458877 5438357.5170370 115.8705904 458877 5438357.5301536 115.8289899 458877 5438357.5468461 115.7886908 458877 5438357.5669873 115.75 458877 5438357.5904239 115.7132117 458877 5438357.6169777 115.6786061 458877 5438357.6464466 115.6464466 458877 5438357.6786062 115.6169777 458877 5438357.7132117 115.5904239 458877 5438357.75 115.5669872 458877 5438357.7886908 115.5468461 458877 5438357.8289899 115.5301536 458877 5438357.8705904 115.5170370 458877 5438357.9131759 115.5075961 458877 5438357.9564221 115.5019026 458877 5438358 115.5 458877 5438358.0435778 115.5019026 458877 5438358.0868240 115.5075961 458877 5438358.1294095 115.5170370 458877 5438358.1710100 115.5301536 458877 5438358.2113091 115.5468461 458877 5438358.25 115.5669872 458877 5438358.2867882 115.5904239 458877 5438358.3213938 115.6169777 458877 5438358.3535533 115.6464466 458877 5438358.3830222 115.6786061 458877 5438358.4095760 115.7132117 458877 5438358.4330127 115.75 458877 5438358.4531538 115.7886908 458877 5438358.4698463 115.8289899 458877 5438358.4829629 115.8705904 458877 5438358.4924038 115.9131759 458877 5438358.4980973 115.9564221 458877 5438358.5 116 458877 5438358.4980973 116.0435778 458877 5438358.4924038 116.0868240 458877 5438358.4829629 116.1294095 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_e1eaf0da-2ee1-480f-bb60-55f94f344810">
+                        <gml:LinearRing gml:id="GML_3671b878-2ffc-45d9-b2c6-ed3b83bceeea">
                           <gml:posList srsDimension="3" count="5">458877 5438357.495 114.01 458877 5438357.495 112 458877 5438358.505 112 458877 5438358.505 114.01 458877 5438357.495 114.01 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_ee2bde51-09d2-4d00-9b4b-2ed92dbee204">
+                        <gml:LinearRing gml:id="GML_c6b8e06c-3018-47d1-b2c5-8a02e349da16">
                           <gml:posList srsDimension="3" count="5">458877 5438359.495 114 458877 5438359.495 112.8 458877 5438361.495 112.8 458877 5438361.495 114 458877 5438359.495 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_a636c244-0df7-4c3a-93f8-10df70085093">
+                        <gml:LinearRing gml:id="GML_9f5b8190-c50d-4389-9805-6ccea7381dc9">
                           <gml:posList srsDimension="3" count="5">458877 5438356.205 114 458877 5438354.205 114 458877 5438354.205 112.8 458877 5438356.205 112.8 458877 5438356.205 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_3d4239dd-b67d-4a3c-92d6-d11cf312d040">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_d02f2a1f-6256-4a5f-a6c3-bb3ec209b260">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_be2ef6fc-6117-48c7-bc9c-f3533e6502f5">
+                        <gml:LinearRing gml:id="GML_d4eacc99-e81a-4ac9-afc7-053c5ec5336e">
                           <gml:posList srsDimension="3" count="73">458877 5438358.4095760 116.2867882 458877 5438358.4330127 116.25 458877 5438358.4531538 116.2113091 458877 5438358.4698463 116.1710100 458877 5438358.4829629 116.1294095 458877 5438358.4924038 116.0868240 458877 5438358.4980973 116.0435778 458877 5438358.5 116 458877 5438358.4980973 115.9564221 458877 5438358.4924038 115.9131759 458877 5438358.4829629 115.8705904 458877 5438358.4698463 115.8289899 458877 5438358.4531538 115.7886908 458877 5438358.4330127 115.75 458877 5438358.4095760 115.7132117 458877 5438358.3830222 115.6786061 458877 5438358.3535533 115.6464466 458877 5438358.3213938 115.6169777 458877 5438358.2867882 115.5904239 458877 5438358.25 115.5669872 458877 5438358.2113091 115.5468461 458877 5438358.1710100 115.5301536 458877 5438358.1294095 115.5170370 458877 5438358.0868240 115.5075961 458877 5438358.0435778 115.5019026 458877 5438358 115.5 458877 5438357.9564221 115.5019026 458877 5438357.9131759 115.5075961 458877 5438357.8705904 115.5170370 458877 5438357.8289899 115.5301536 458877 5438357.7886908 115.5468461 458877 5438357.75 115.5669872 458877 5438357.7132117 115.5904239 458877 5438357.6786062 115.6169777 458877 5438357.6464466 115.6464466 458877 5438357.6169777 115.6786061 458877 5438357.5904239 115.7132117 458877 5438357.5669873 115.75 458877 5438357.5468461 115.7886908 458877 5438357.5301536 115.8289899 458877 5438357.5170370 115.8705904 458877 5438357.5075961 115.9131759 458877 5438357.5019026 115.9564221 458877 5438357.5 116 458877 5438357.5019026 116.0435778 458877 5438357.5075961 116.0868240 458877 5438357.5170370 116.1294095 458877 5438357.5301536 116.1710100 458877 5438357.5468461 116.2113091 458877 5438357.5669873 116.25 458877 5438357.5904239 116.2867882 458877 5438357.6169777 116.3213938 458877 5438357.6464466 116.3535533 458877 5438357.6786062 116.3830222 458877 5438357.7132117 116.4095760 458877 5438357.75 116.4330127 458877 5438357.7886908 116.4531538 458877 5438357.8289899 116.4698463 458877 5438357.8705904 116.4829629 458877 5438357.9131759 116.4924038 458877 5438357.9564221 116.4980973 458877 5438358 116.5 458877 5438358.0435778 116.4980973 458877 5438358.0868240 116.4924038 458877 5438358.1294095 116.4829629 458877 5438358.1710100 116.4698463 458877 5438358.2113091 116.4531538 458877 5438358.25 116.4330127 458877 5438358.2867882 116.4095760 458877 5438358.3213938 116.3830222 458877 5438358.3535533 116.3535533 458877 5438358.3830222 116.3213938 458877 5438358.4095760 116.2867882 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_a87f61ae-b624-478b-8807-246d16eb46ac">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_1507580d-3c33-4b69-8eae-e331c6fdf082">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_3bdf92e1-f6b3-40c0-beeb-e6e88e7d468b">
+                        <gml:LinearRing gml:id="GML_19c08a55-860a-4e46-9850-a67a8b7d66f3">
                           <gml:posList srsDimension="3" count="5">458877 5438359.495 114 458877 5438361.495 114 458877 5438361.495 112.8 458877 5438359.495 112.8 458877 5438359.495 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_ecd485f4-6657-422f-81fc-11ff80222316">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_970fc3bc-4b3c-4d6c-8863-e6fe4c4e1387">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_503cbddd-9a30-462f-91fc-aed0ece96e3e">
+                        <gml:LinearRing gml:id="GML_7a76a9f5-3a2e-40ef-99e6-ae1be77972ee">
                           <gml:posList srsDimension="3" count="5">458877 5438357.495 114.01 458877 5438358.505 114.01 458877 5438358.505 112 458877 5438357.495 112 458877 5438357.495 114.01 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_b330b545-4a77-4c83-8c7d-d1769e55c1a2">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_fb85c8a5-e65a-4daf-a97a-8feabd5c6e13">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_70934ed6-f97b-4a73-aee5-337380555347">
+                        <gml:LinearRing gml:id="GML_f564b074-45fe-446f-8783-6b177d2b510b">
                           <gml:posList srsDimension="3" count="5">458877 5438356.205 112.8 458877 5438354.205 112.8 458877 5438354.205 114 458877 5438356.205 114 458877 5438356.205 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -918,9 +918,9 @@
                   </gml:surfaceMember>
                 </gml:MultiSurface>
               </energy:surfaceGeometry>
-              <energy:construction xlink:href="#KIT-FZK-Haus-Aussenwand" />
+              <energy:construction xlink:href="#KIT-FZK-Haus-Aussenwand_74b54684-972b-45a9-a37f-8ac6552c5025" />
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_f0829374-5ce5-4728-a23b-c6e2728bc69a">
+                <energy:ThermalOpening gml:id="GML_ac38e992-459b-4231-a747-37255e0b9e09">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458877 5438357.5 115.5</gml:lowerCorner>
@@ -928,13 +928,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">0.78440168270290977</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_843a5648-c23d-4aa9-8269-61c31fa5a4dc">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_f1957760-2214-4c8a-9971-8ad01800e1e0">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_43e5fb17-fd98-48db-9f79-d5b19959bf7f">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_994b9985-5b7b-498a-9429-4a4acffdef4e">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_12c4101d-c990-4b48-8769-50f33d2cb04c">
+                            <gml:LinearRing gml:id="GML_51912e93-c0a3-4a59-be72-f3756427a313">
                               <gml:posList srsDimension="3" count="73">458877 5438358.4095760 116.2867882 458877 5438358.4330127 116.25 458877 5438358.4531538 116.2113091 458877 5438358.4698463 116.1710100 458877 5438358.4829629 116.1294095 458877 5438358.4924038 116.0868240 458877 5438358.4980973 116.0435778 458877 5438358.5 116 458877 5438358.4980973 115.9564221 458877 5438358.4924038 115.9131759 458877 5438358.4829629 115.8705904 458877 5438358.4698463 115.8289899 458877 5438358.4531538 115.7886908 458877 5438358.4330127 115.75 458877 5438358.4095760 115.7132117 458877 5438358.3830222 115.6786061 458877 5438358.3535533 115.6464466 458877 5438358.3213938 115.6169777 458877 5438358.2867882 115.5904239 458877 5438358.25 115.5669872 458877 5438358.2113091 115.5468461 458877 5438358.1710100 115.5301536 458877 5438358.1294095 115.5170370 458877 5438358.0868240 115.5075961 458877 5438358.0435778 115.5019026 458877 5438358 115.5 458877 5438357.9564221 115.5019026 458877 5438357.9131759 115.5075961 458877 5438357.8705904 115.5170370 458877 5438357.8289899 115.5301536 458877 5438357.7886908 115.5468461 458877 5438357.75 115.5669872 458877 5438357.7132117 115.5904239 458877 5438357.6786062 115.6169777 458877 5438357.6464466 115.6464466 458877 5438357.6169777 115.6786061 458877 5438357.5904239 115.7132117 458877 5438357.5669873 115.75 458877 5438357.5468461 115.7886908 458877 5438357.5301536 115.8289899 458877 5438357.5170370 115.8705904 458877 5438357.5075961 115.9131759 458877 5438357.5019026 115.9564221 458877 5438357.5 116 458877 5438357.5019026 116.0435778 458877 5438357.5075961 116.0868240 458877 5438357.5170370 116.1294095 458877 5438357.5301536 116.1710100 458877 5438357.5468461 116.2113091 458877 5438357.5669873 116.25 458877 5438357.5904239 116.2867882 458877 5438357.6169777 116.3213938 458877 5438357.6464466 116.3535533 458877 5438357.6786062 116.3830222 458877 5438357.7132117 116.4095760 458877 5438357.75 116.4330127 458877 5438357.7886908 116.4531538 458877 5438357.8289899 116.4698463 458877 5438357.8705904 116.4829629 458877 5438357.9131759 116.4924038 458877 5438357.9564221 116.4980973 458877 5438358 116.5 458877 5438358.0435778 116.4980973 458877 5438358.0868240 116.4924038 458877 5438358.1294095 116.4829629 458877 5438358.1710100 116.4698463 458877 5438358.2113091 116.4531538 458877 5438358.25 116.4330127 458877 5438358.2867882 116.4095760 458877 5438358.3213938 116.3830222 458877 5438358.3535533 116.3535533 458877 5438358.3830222 116.3213938 458877 5438358.4095760 116.2867882 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -945,7 +945,7 @@
                 </energy:ThermalOpening>
               </energy:contains>
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_8da8d446-2912-4dd2-9b8a-9026287fa610">
+                <energy:ThermalOpening gml:id="GML_103b63ed-1fda-45fa-9af3-3d5668a6dc24">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458877 5438359.495 112.8</gml:lowerCorner>
@@ -953,13 +953,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">2.4000000000000057</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_c0678d42-0ed9-44c3-a242-7f145eced910">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_4a48df8b-435c-48ae-92c4-5376edfb461a">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_c0ec5c97-11b4-4705-8ac7-0a48c03fa52e">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_802664da-aa4a-4246-80f9-d891da38e844">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_47003894-9133-4847-ae08-d0212862ef30">
+                            <gml:LinearRing gml:id="GML_a112521e-7c56-4701-a585-a35bf049f566">
                               <gml:posList srsDimension="3" count="5">458877 5438359.495 114 458877 5438361.495 114 458877 5438361.495 112.8 458877 5438359.495 112.8 458877 5438359.495 114 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -970,7 +970,7 @@
                 </energy:ThermalOpening>
               </energy:contains>
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_5654fe8b-1afd-47ec-9ed8-0d3a61071de7">
+                <energy:ThermalOpening gml:id="GML_30daf99d-dd9c-4ec3-b922-a23599aa95dd">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458877 5438354.205 112.8</gml:lowerCorner>
@@ -978,13 +978,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">2.4000000000000057</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_8bdf957c-e942-4dd8-b37e-d20223195185">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_c76684fe-f9f2-4ea4-95f6-2e05290ce300">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_e538bd91-8718-4952-b41b-7fd2b1f79fe5">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_a87ffbd8-48b0-48b2-bca6-ac4489af67b3">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_ddf920e1-3d71-4899-9045-8ac1828c24d3">
+                            <gml:LinearRing gml:id="GML_b4e858b5-70fd-4056-85cc-fb6e248e5a66">
                               <gml:posList srsDimension="3" count="5">458877 5438356.205 112.8 458877 5438354.205 112.8 458877 5438354.205 114 458877 5438356.205 114 458877 5438356.205 112.8 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -995,7 +995,7 @@
                 </energy:ThermalOpening>
               </energy:contains>
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_257c4f94-14fb-4825-a0e1-ffc59c843fef">
+                <energy:ThermalOpening gml:id="GML_dd294ec7-aea1-4062-b511-a1d652d499e9">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458877 5438357.495 112</gml:lowerCorner>
@@ -1003,13 +1003,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">2.0300999995507349</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Haustuer" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Haustuer_5619e933-dee1-4b39-99e2-a5d4dafb0e0d" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_5b541591-fbae-4382-9b5e-ae094e50860c">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_ddd716da-296b-4750-a626-728aed2845a7">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_fe494b6c-090f-4a60-aa78-93eaad9d6b59">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_367eb1ad-753e-42a4-a28c-c6749c4e28da">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_3f935a71-aafa-4f81-aa73-89f0c9484c70">
+                            <gml:LinearRing gml:id="GML_12ddf84a-5da3-40cf-990f-f8c75de5d3e3">
                               <gml:posList srsDimension="3" count="5">458877 5438357.495 114.01 458877 5438358.505 114.01 458877 5438358.505 112 458877 5438357.495 112 458877 5438357.495 114.01 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -1022,7 +1022,7 @@
             </energy:ThermalBoundary>
           </energy:boundedBy>
           <energy:boundedBy>
-            <energy:ThermalBoundary gml:id="GML_eeff4367-b1bd-4d25-9df0-6e94b92508d4">
+            <energy:ThermalBoundary gml:id="GML_63d56c83-ab34-47e4-b79f-a28fb49e0118">
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                   <gml:lowerCorner>458889 5438353 111.8</gml:lowerCorner>
@@ -1034,53 +1034,53 @@
               <energy:inclination uom="grad">90</energy:inclination>
               <energy:area uom="m2">50.743157806499184</energy:area>
               <energy:surfaceGeometry>
-                <gml:MultiSurface gml:id="GML_3d5b599f-9caf-42a2-9600-6235d5934c3f">
+                <gml:MultiSurface gml:id="GML_53ad7cfb-8888-43dd-aff3-5510f043153f">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_22d79c3a-9fee-439e-9852-7b6bf8377119">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_533ea115-c3d9-4369-8f1d-ea882e59ad74">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_657a4587-d3e3-4d07-b946-b2de1909c654">
+                        <gml:LinearRing gml:id="GML_32722648-3311-4edb-8a57-a0237e6ae119">
                           <gml:posList srsDimension="3" count="6">458889 5438358 118.3176914 458889 5438353 115.4309401 458889 5438353 111.8 458889 5438363 111.8 458889 5438363 115.4309401 458889 5438358 118.3176914 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_32bc8e50-fe4b-4c80-aaad-9cd860de6935">
+                        <gml:LinearRing gml:id="GML_8ea1a69c-c2a2-4ff5-add0-8371562d2932">
                           <gml:posList srsDimension="3" count="73">458889 5438357.5170370 116.1294095 458889 5438357.5301536 116.1710100 458889 5438357.5468461 116.2113091 458889 5438357.5669873 116.25 458889 5438357.5904239 116.2867882 458889 5438357.6169777 116.3213938 458889 5438357.6464466 116.3535533 458889 5438357.6786062 116.3830222 458889 5438357.7132117 116.4095760 458889 5438357.75 116.4330127 458889 5438357.7886908 116.4531538 458889 5438357.8289899 116.4698463 458889 5438357.8705904 116.4829629 458889 5438357.9131759 116.4924038 458889 5438357.9564221 116.4980973 458889 5438358 116.5 458889 5438358.0435778 116.4980973 458889 5438358.0868240 116.4924038 458889 5438358.1294095 116.4829629 458889 5438358.1710100 116.4698463 458889 5438358.2113091 116.4531538 458889 5438358.25 116.4330127 458889 5438358.2867882 116.4095760 458889 5438358.3213938 116.3830222 458889 5438358.3535533 116.3535533 458889 5438358.3830222 116.3213938 458889 5438358.4095760 116.2867882 458889 5438358.4330127 116.25 458889 5438358.4531538 116.2113091 458889 5438358.4698463 116.1710100 458889 5438358.4829629 116.1294095 458889 5438358.4924038 116.0868240 458889 5438358.4980973 116.0435778 458889 5438358.5 116 458889 5438358.4980973 115.9564221 458889 5438358.4924038 115.9131759 458889 5438358.4829629 115.8705904 458889 5438358.4698463 115.8289899 458889 5438358.4531538 115.7886908 458889 5438358.4330127 115.75 458889 5438358.4095760 115.7132117 458889 5438358.3830222 115.6786061 458889 5438358.3535533 115.6464466 458889 5438358.3213938 115.6169777 458889 5438358.2867882 115.5904239 458889 5438358.25 115.5669872 458889 5438358.2113091 115.5468461 458889 5438358.1710100 115.5301536 458889 5438358.1294095 115.5170370 458889 5438358.0868240 115.5075961 458889 5438358.0435778 115.5019026 458889 5438358 115.5 458889 5438357.9564221 115.5019026 458889 5438357.9131759 115.5075961 458889 5438357.8705904 115.5170370 458889 5438357.8289899 115.5301536 458889 5438357.7886908 115.5468461 458889 5438357.75 115.5669872 458889 5438357.7132117 115.5904239 458889 5438357.6786062 115.6169777 458889 5438357.6464466 115.6464466 458889 5438357.6169777 115.6786061 458889 5438357.5904239 115.7132117 458889 5438357.5669873 115.75 458889 5438357.5468461 115.7886908 458889 5438357.5301536 115.8289899 458889 5438357.5170370 115.8705904 458889 5438357.5075961 115.9131759 458889 5438357.5019026 115.9564221 458889 5438357.5 116 458889 5438357.5019026 116.0435778 458889 5438357.5075961 116.0868240 458889 5438357.5170370 116.1294095 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_016e7c94-ca41-4c79-b8e4-22f694b055cd">
+                        <gml:LinearRing gml:id="GML_b3b2e3a3-cf55-4df1-afc0-103bb46cf1eb">
                           <gml:posList srsDimension="3" count="5">458889 5438361.5023937 114 458889 5438361.5023937 112.8 458889 5438359.5023937 112.8 458889 5438359.5023937 114 458889 5438361.5023937 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_5596ee43-996d-4d50-bfe2-043a2dedcf83">
+                        <gml:LinearRing gml:id="GML_59d319ec-5b7c-49e2-9384-c8a9a12e9762">
                           <gml:posList srsDimension="3" count="5">458889 5438354.205 112.8 458889 5438354.205 114 458889 5438356.205 114 458889 5438356.205 112.8 458889 5438354.205 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_71882a32-14c3-4732-8471-e80fe59e5109">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_eff3aa3d-2750-4229-8869-0cd131a9506f">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_1de6fbea-0845-483f-886c-8025f344c639">
+                        <gml:LinearRing gml:id="GML_31361bbe-60b9-411d-80bb-a097171ad856">
                           <gml:posList srsDimension="3" count="5">458889 5438356.205 112.8 458889 5438356.205 114 458889 5438354.205 114 458889 5438354.205 112.8 458889 5438356.205 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_6047d181-cd53-4c8c-97e6-30c273cd6414">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_adf07a64-8c63-44e8-bfd0-c78b8b5ad18e">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_0404789c-050c-42fe-b118-8e1ce9443065">
+                        <gml:LinearRing gml:id="GML_d1d3b617-311d-4f47-845b-e9f3c2625e8a">
                           <gml:posList srsDimension="3" count="5">458889 5438361.5023937 114 458889 5438359.5023937 114 458889 5438359.5023937 112.8 458889 5438361.5023937 112.8 458889 5438361.5023937 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_fb0753e2-ff0a-4951-ab05-1e23b82a274c">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_f0c333e6-d60d-42bf-bf86-1820b8f441f6">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_4d43d98b-b5c2-4074-bc5d-5798d61c68b7">
+                        <gml:LinearRing gml:id="GML_7cecf700-4802-41bc-a6b1-1774d04c5a79">
                           <gml:posList srsDimension="3" count="73">458889 5438357.6169777 116.3213938 458889 5438357.5904239 116.2867882 458889 5438357.5669873 116.25 458889 5438357.5468461 116.2113091 458889 5438357.5301536 116.1710100 458889 5438357.5170370 116.1294095 458889 5438357.5075961 116.0868240 458889 5438357.5019026 116.0435778 458889 5438357.5 116 458889 5438357.5019026 115.9564221 458889 5438357.5075961 115.9131759 458889 5438357.5170370 115.8705904 458889 5438357.5301536 115.8289899 458889 5438357.5468461 115.7886908 458889 5438357.5669873 115.75 458889 5438357.5904239 115.7132117 458889 5438357.6169777 115.6786061 458889 5438357.6464466 115.6464466 458889 5438357.6786062 115.6169777 458889 5438357.7132117 115.5904239 458889 5438357.75 115.5669872 458889 5438357.7886908 115.5468461 458889 5438357.8289899 115.5301536 458889 5438357.8705904 115.5170370 458889 5438357.9131759 115.5075961 458889 5438357.9564221 115.5019026 458889 5438358 115.5 458889 5438358.0435778 115.5019026 458889 5438358.0868240 115.5075961 458889 5438358.1294095 115.5170370 458889 5438358.1710100 115.5301536 458889 5438358.2113091 115.5468461 458889 5438358.25 115.5669872 458889 5438358.2867882 115.5904239 458889 5438358.3213938 115.6169777 458889 5438358.3535533 115.6464466 458889 5438358.3830222 115.6786061 458889 5438358.4095760 115.7132117 458889 5438358.4330127 115.75 458889 5438358.4531538 115.7886908 458889 5438358.4698463 115.8289899 458889 5438358.4829629 115.8705904 458889 5438358.4924038 115.9131759 458889 5438358.4980973 115.9564221 458889 5438358.5 116 458889 5438358.4980973 116.0435778 458889 5438358.4924038 116.0868240 458889 5438358.4829629 116.1294095 458889 5438358.4698463 116.1710100 458889 5438358.4531538 116.2113091 458889 5438358.4330127 116.25 458889 5438358.4095760 116.2867882 458889 5438358.3830222 116.3213938 458889 5438358.3535533 116.3535533 458889 5438358.3213938 116.3830222 458889 5438358.2867882 116.4095760 458889 5438358.25 116.4330127 458889 5438358.2113091 116.4531538 458889 5438358.1710100 116.4698463 458889 5438358.1294095 116.4829629 458889 5438358.0868240 116.4924038 458889 5438358.0435778 116.4980973 458889 5438358 116.5 458889 5438357.9564221 116.4980973 458889 5438357.9131759 116.4924038 458889 5438357.8705904 116.4829629 458889 5438357.8289899 116.4698463 458889 5438357.7886908 116.4531538 458889 5438357.75 116.4330127 458889 5438357.7132117 116.4095760 458889 5438357.6786062 116.3830222 458889 5438357.6464466 116.3535533 458889 5438357.6169777 116.3213938 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -1088,9 +1088,9 @@
                   </gml:surfaceMember>
                 </gml:MultiSurface>
               </energy:surfaceGeometry>
-              <energy:construction xlink:href="#KIT-FZK-Haus-Aussenwand" />
+              <energy:construction xlink:href="#KIT-FZK-Haus-Aussenwand_74b54684-972b-45a9-a37f-8ac6552c5025" />
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_a8333dca-9a91-4de4-8a61-b736a6c85fd5">
+                <energy:ThermalOpening gml:id="GML_8abc81cc-7c27-4f7e-9b0c-51e426bdfadf">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458889 5438354.205 112.8</gml:lowerCorner>
@@ -1098,13 +1098,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">2.4000000000000057</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_9af6ad33-2615-4d49-9b15-7b072f36ef95">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_c4df1f98-4bdb-4c2e-830d-4033c310e6fe">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_e59ba744-7eae-4abc-a54e-956c1cd51a66">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_1afdfa74-ddeb-43c2-8d55-234962589037">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_6d994d4e-1ecc-4d97-a90a-68c60a63d334">
+                            <gml:LinearRing gml:id="GML_70192cfc-1545-4271-8c5e-66ba0917504f">
                               <gml:posList srsDimension="3" count="5">458889 5438356.205 112.8 458889 5438356.205 114 458889 5438354.205 114 458889 5438354.205 112.8 458889 5438356.205 112.8 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -1115,7 +1115,7 @@
                 </energy:ThermalOpening>
               </energy:contains>
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_3466c54f-6106-4cda-8095-71bc07996560">
+                <energy:ThermalOpening gml:id="GML_ce6eaf4f-b82c-4b0e-8104-db6f57954deb">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458889 5438359.5023937 112.8</gml:lowerCorner>
@@ -1123,13 +1123,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">2.4000000000000057</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_5976cefa-f3e3-4970-903c-e4c342b723c1">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_ee9315bd-a140-4172-8ecb-15deb35874ef">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_0fe79b37-0b4f-4cdd-9c70-62eb1f96378a">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_f7754db2-8a14-4f01-8734-1a00d5f8e620">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_961cf72d-c8a2-4cb0-9f51-12b1f577c27e">
+                            <gml:LinearRing gml:id="GML_e74b6781-df0e-44bd-aae9-8cf19ab6ab01">
                               <gml:posList srsDimension="3" count="5">458889 5438361.5023937 114 458889 5438359.5023937 114 458889 5438359.5023937 112.8 458889 5438361.5023937 112.8 458889 5438361.5023937 114 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -1140,7 +1140,7 @@
                 </energy:ThermalOpening>
               </energy:contains>
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_bb3b5cb6-ecce-4732-8cac-ac52ea3b894a">
+                <energy:ThermalOpening gml:id="GML_ba719ef8-e4bc-4643-af18-fcb63ce45462">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458889 5438357.5 115.5</gml:lowerCorner>
@@ -1148,13 +1148,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">0.78440168270290989</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_54ef381c-05a0-41e1-b2e8-58be575e9ad4">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_a11b127e-977b-4c31-8cfc-b37c46478cb7">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_d89740b2-918c-4494-b9e5-530fb6f5f0fa">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_aec3b05f-b8b9-421c-a62b-323bbacd78e3">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_f68164e4-1885-45f8-91d2-33dc2190c7cc">
+                            <gml:LinearRing gml:id="GML_aa12ea65-7284-4664-a914-e0666be0f5bb">
                               <gml:posList srsDimension="3" count="73">458889 5438357.6169777 116.3213938 458889 5438357.5904239 116.2867882 458889 5438357.5669873 116.25 458889 5438357.5468461 116.2113091 458889 5438357.5301536 116.1710100 458889 5438357.5170370 116.1294095 458889 5438357.5075961 116.0868240 458889 5438357.5019026 116.0435778 458889 5438357.5 116 458889 5438357.5019026 115.9564221 458889 5438357.5075961 115.9131759 458889 5438357.5170370 115.8705904 458889 5438357.5301536 115.8289899 458889 5438357.5468461 115.7886908 458889 5438357.5669873 115.75 458889 5438357.5904239 115.7132117 458889 5438357.6169777 115.6786061 458889 5438357.6464466 115.6464466 458889 5438357.6786062 115.6169777 458889 5438357.7132117 115.5904239 458889 5438357.75 115.5669872 458889 5438357.7886908 115.5468461 458889 5438357.8289899 115.5301536 458889 5438357.8705904 115.5170370 458889 5438357.9131759 115.5075961 458889 5438357.9564221 115.5019026 458889 5438358 115.5 458889 5438358.0435778 115.5019026 458889 5438358.0868240 115.5075961 458889 5438358.1294095 115.5170370 458889 5438358.1710100 115.5301536 458889 5438358.2113091 115.5468461 458889 5438358.25 115.5669872 458889 5438358.2867882 115.5904239 458889 5438358.3213938 115.6169777 458889 5438358.3535533 115.6464466 458889 5438358.3830222 115.6786061 458889 5438358.4095760 115.7132117 458889 5438358.4330127 115.75 458889 5438358.4531538 115.7886908 458889 5438358.4698463 115.8289899 458889 5438358.4829629 115.8705904 458889 5438358.4924038 115.9131759 458889 5438358.4980973 115.9564221 458889 5438358.5 116 458889 5438358.4980973 116.0435778 458889 5438358.4924038 116.0868240 458889 5438358.4829629 116.1294095 458889 5438358.4698463 116.1710100 458889 5438358.4531538 116.2113091 458889 5438358.4330127 116.25 458889 5438358.4095760 116.2867882 458889 5438358.3830222 116.3213938 458889 5438358.3535533 116.3535533 458889 5438358.3213938 116.3830222 458889 5438358.2867882 116.4095760 458889 5438358.25 116.4330127 458889 5438358.2113091 116.4531538 458889 5438358.1710100 116.4698463 458889 5438358.1294095 116.4829629 458889 5438358.0868240 116.4924038 458889 5438358.0435778 116.4980973 458889 5438358 116.5 458889 5438357.9564221 116.4980973 458889 5438357.9131759 116.4924038 458889 5438357.8705904 116.4829629 458889 5438357.8289899 116.4698463 458889 5438357.7886908 116.4531538 458889 5438357.75 116.4330127 458889 5438357.7132117 116.4095760 458889 5438357.6786062 116.3830222 458889 5438357.6464466 116.3535533 458889 5438357.6169777 116.3213938 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -1167,7 +1167,7 @@
             </energy:ThermalBoundary>
           </energy:boundedBy>
           <energy:boundedBy>
-            <energy:ThermalBoundary gml:id="GML_54ba6b1b-33eb-403c-bfed-bc94383e3e2e">
+            <energy:ThermalBoundary gml:id="GML_14bfeba9-51fb-4c24-904f-98d2af537a41">
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                   <gml:lowerCorner>458877 5438353 111.8</gml:lowerCorner>
@@ -1179,53 +1179,53 @@
               <energy:inclination uom="grad">90</energy:inclination>
               <energy:area uom="m2">43.571281292110257</energy:area>
               <energy:surfaceGeometry>
-                <gml:MultiSurface gml:id="GML_2b92fb4f-aefb-40e9-aeea-96b6b6ba63b1">
+                <gml:MultiSurface gml:id="GML_25ef0411-d9db-45db-971c-c9928936dd1a">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_a2639750-6d8e-4397-8010-50d8ccb89614">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_8afc6a50-e974-4802-a9c8-48edf0016559">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_269d95f9-28ff-4c28-b9a1-cd8a18b35344">
+                        <gml:LinearRing gml:id="GML_fc846445-328e-4492-ab15-5e9fa20ef91d">
                           <gml:posList srsDimension="3" count="5">458889 5438353 115.4309401 458877 5438353 115.4309401 458877 5438353 111.8 458889 5438353 111.8 458889 5438353 115.4309401 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_ecf877d2-c7c3-4a71-9139-18fe2a7967f2">
+                        <gml:LinearRing gml:id="GML_4eb05fe2-0107-4d8e-bdc3-ddb1d620b0c5">
                           <gml:posList srsDimension="3" count="5">458884.005 5438353 114.375 458884.005 5438353 112 458881.995 5438353 112 458881.995 5438353 114.375 458884.005 5438353 114.375 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_a5bd0529-a1cf-4a5f-91f9-1ec2229d4823">
+                        <gml:LinearRing gml:id="GML_c29d42e2-12fb-4f3e-b41d-e4b7340fa96f">
                           <gml:posList srsDimension="3" count="5">458885.21 5438353 114 458887.21 5438353 114 458887.21 5438353 112.8 458885.21 5438353 112.8 458885.21 5438353 114 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                       <gml:interior>
-                        <gml:LinearRing gml:id="GML_81d7d334-a823-438f-825f-1e7a95a84924">
+                        <gml:LinearRing gml:id="GML_688818ee-030b-4adf-be5b-c6bc8f1e98a6">
                           <gml:posList srsDimension="3" count="5">458880.79 5438353 112.8 458878.79 5438353 112.8 458878.79 5438353 114 458880.79 5438353 114 458880.79 5438353 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:interior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_5a53dda2-0f3d-4fed-a77e-3ac6e49c72d1">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_4d952902-69ff-4dbc-a71f-b7db3115f967">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_197db7d5-3f41-483f-a03c-ad2a990c61eb">
+                        <gml:LinearRing gml:id="GML_65f330a7-1ebe-4f29-aeff-637e88e3f392">
                           <gml:posList srsDimension="3" count="5">458887.21 5438353 112.8 458887.21 5438353 114 458885.21 5438353 114 458885.21 5438353 112.8 458887.21 5438353 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_72eee1cc-4d7a-48c9-aff1-916be97984a6">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_49f1f1d6-282c-4632-8d5f-561f2ad421a2">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_d2d0f32f-9ebb-4576-8533-9beae1f1e2f2">
+                        <gml:LinearRing gml:id="GML_cdc72236-7764-4ff9-86df-f1e410839089">
                           <gml:posList srsDimension="3" count="5">458878.79 5438353 112.8 458880.79 5438353 112.8 458880.79 5438353 114 458878.79 5438353 114 458878.79 5438353 112.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
                     </gml:Polygon>
                   </gml:surfaceMember>
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_186354e5-b34c-4fe1-be76-9bf54b9cbb48">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_55ea969d-b36f-4bc5-85e5-97481dff8b06">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_b6037b71-06b7-431a-9c8f-311e773cd684">
+                        <gml:LinearRing gml:id="GML_e694598f-c2da-4c63-9d1d-027ee18fa49d">
                           <gml:posList srsDimension="3" count="5">458884.005 5438353 112 458884.005 5438353 114.375 458881.995 5438353 114.375 458881.995 5438353 112 458884.005 5438353 112 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -1233,9 +1233,9 @@
                   </gml:surfaceMember>
                 </gml:MultiSurface>
               </energy:surfaceGeometry>
-              <energy:construction xlink:href="#KIT-FZK-Haus-Aussenwand" />
+              <energy:construction xlink:href="#KIT-FZK-Haus-Aussenwand_74b54684-972b-45a9-a37f-8ac6552c5025" />
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_58b9bfbf-3963-45b5-bc61-ae3912c35f8a">
+                <energy:ThermalOpening gml:id="GML_f29a4648-14de-4bb5-a129-50e8b5db75e7">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458885.21 5438353 112.8</gml:lowerCorner>
@@ -1243,13 +1243,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">2.4000000000000057</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_4ab1edb0-8401-48f7-8de8-38e4c6f7dea3">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_99dddd0b-e1b1-4297-b941-f5f1cd2b3105">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_f4e16eea-9926-4551-9739-18434cf01557">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_c7b851e1-1303-44fa-88ec-ed24705a1771">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_c95ba81c-9b26-4920-8a09-a592f3156b6c">
+                            <gml:LinearRing gml:id="GML_fcbd7441-abbd-4d4f-822c-cfe1ff030516">
                               <gml:posList srsDimension="3" count="5">458887.21 5438353 112.8 458887.21 5438353 114 458885.21 5438353 114 458885.21 5438353 112.8 458887.21 5438353 112.8 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -1260,7 +1260,7 @@
                 </energy:ThermalOpening>
               </energy:contains>
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_b15c5842-a86f-4a05-b12e-824605cd735f">
+                <energy:ThermalOpening gml:id="GML_3e5aa952-f04f-417c-af72-244da689a4ce">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458878.79 5438353 112.8</gml:lowerCorner>
@@ -1268,13 +1268,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">2.4000000000000057</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_54cd57c5-a2d6-4945-829a-94f41fb7a990">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_998f48e8-747c-4f93-b761-391a670609c3">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_12adb482-73a4-448e-9576-206e10b8daac">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_ec8e5036-0087-4066-94c8-de2da1192ea7">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_f34b87ed-b476-455f-8e2c-1f988f558d7b">
+                            <gml:LinearRing gml:id="GML_faab9497-0ae7-450b-a454-49e1a7d96604">
                               <gml:posList srsDimension="3" count="5">458878.79 5438353 112.8 458880.79 5438353 112.8 458880.79 5438353 114 458878.79 5438353 114 458878.79 5438353 112.8 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -1285,7 +1285,7 @@
                 </energy:ThermalOpening>
               </energy:contains>
               <energy:contains>
-                <energy:ThermalOpening gml:id="GML_66a90300-245c-4e62-9a33-c5eb7de4f2c8">
+                <energy:ThermalOpening gml:id="GML_94deab6c-2c66-4539-9848-29d446a3a114">
                   <gml:boundedBy>
                     <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                       <gml:lowerCorner>458881.995 5438353 112</gml:lowerCorner>
@@ -1293,13 +1293,13 @@
                     </gml:Envelope>
                   </gml:boundedBy>
                   <energy:area uom="m2">4.7737500000221189</energy:area>
-                  <energy:construction xlink:href="#KIT-FZK-Haus-Terrassentuer" />
+                  <energy:construction xlink:href="#KIT-FZK-Haus-Terrassentuer_481c9658-ccab-4228-9e1f-196c7ba229c7" />
                   <energy:surfaceGeometry>
-                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_7cebfffa-1958-402d-942b-f6e3b4036411">
+                    <gml:MultiSurface srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_c74fb4bf-cf66-4a66-9548-a0b5bc97ce7d">
                       <gml:surfaceMember>
-                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_9df243da-e5d1-4b8b-bba9-2f1533207878">
+                        <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_e2a41c05-7b9e-4a93-9ee8-92c335287a9d">
                           <gml:exterior>
-                            <gml:LinearRing gml:id="GML_da814dfb-7ef4-426a-a2ce-a45074e45209">
+                            <gml:LinearRing gml:id="GML_2a279ccd-861b-41fe-8e7b-3acaa64f150d">
                               <gml:posList srsDimension="3" count="5">458884.005 5438353 112 458884.005 5438353 114.375 458881.995 5438353 114.375 458881.995 5438353 112 458884.005 5438353 112 </gml:posList>
                             </gml:LinearRing>
                           </gml:exterior>
@@ -1312,7 +1312,7 @@
             </energy:ThermalBoundary>
           </energy:boundedBy>
           <energy:boundedBy>
-            <energy:ThermalBoundary gml:id="GML_dc2d7197-6902-4a5f-a5a5-13583dccf544">
+            <energy:ThermalBoundary gml:id="GML_9f6a88db-e1c5-4f05-8d13-c137f46ae1fa">
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                   <gml:lowerCorner>458877 5438358 115.4309401</gml:lowerCorner>
@@ -1324,11 +1324,11 @@
               <energy:inclination uom="grad">29.999999999999947</energy:inclination>
               <energy:area uom="m2">69.282032288610935</energy:area>
               <energy:surfaceGeometry>
-                <gml:MultiSurface gml:id="GML_0095b1bc-e273-4818-aafc-dfeb9933f271">
+                <gml:MultiSurface gml:id="GML_5c211569-d729-4441-81a6-f1c05293c65d">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_a77725ae-6335-47b9-8dbd-bdcc208928b4">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_0462f7e7-67d9-41d3-928a-3bd0e8b4b4e8">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_58d5faa3-f760-4377-853d-d59950b392b8">
+                        <gml:LinearRing gml:id="GML_79a5d8c5-1163-44b1-84d9-9412d1a82598">
                           <gml:posList srsDimension="3" count="5">458877 5438358 118.3176914 458889 5438358 118.3176914 458889 5438363 115.4309401 458877 5438363 115.4309401 458877 5438358 118.3176914 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -1336,11 +1336,11 @@
                   </gml:surfaceMember>
                 </gml:MultiSurface>
               </energy:surfaceGeometry>
-              <energy:construction xlink:href="#KIT-FZK-Haus-Dach" />          
+              <energy:construction xlink:href="#KIT-FZK-Haus-Dach_0da7b6cb-44ac-4f10-aaae-638bcd72b964" />          
             </energy:ThermalBoundary>
           </energy:boundedBy>
           <energy:boundedBy>
-            <energy:ThermalBoundary gml:id="GML_1b247e18-0fba-4392-aab1-d20dc59a8bc3">
+            <energy:ThermalBoundary gml:id="GML_66c9ea2b-c1aa-4686-b84b-3728813abd88">
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                   <gml:lowerCorner>458877 5438353 115.4309401</gml:lowerCorner>
@@ -1352,11 +1352,11 @@
               <energy:inclination uom="grad">29.999999999999947</energy:inclination>
               <energy:area uom="m2">69.282032288610935</energy:area>
               <energy:surfaceGeometry>
-                <gml:MultiSurface gml:id="GML_c8aafb1e-14ab-4a76-be2e-5baed0df8b08">
+                <gml:MultiSurface gml:id="GML_dc964547-c851-413f-a1d2-029ececfaf8a">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_6c4354a7-3ffb-431e-a4d7-e615b107e71e">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_8009b37c-aa8d-418a-a5ff-51de4416ffe2">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_e6c53b8b-0ad7-48b8-8185-67d1395eec2a">
+                        <gml:LinearRing gml:id="GML_736aae80-5ee2-4cc5-85ac-6ad8123a6848">
                           <gml:posList srsDimension="3" count="5">458889 5438353 115.4309401 458889 5438358 118.3176914 458877 5438358 118.3176914 458877 5438353 115.4309401 458889 5438353 115.4309401 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -1364,11 +1364,11 @@
                   </gml:surfaceMember>
                 </gml:MultiSurface>
               </energy:surfaceGeometry>
-              <energy:construction xlink:href="#KIT-FZK-Haus-Dach" />           
+              <energy:construction xlink:href="#KIT-FZK-Haus-Dach_0da7b6cb-44ac-4f10-aaae-638bcd72b964" />           
             </energy:ThermalBoundary>
           </energy:boundedBy>
           <energy:boundedBy>
-            <energy:ThermalBoundary gml:id="GML_23ba194f-4a08-4135-a96d-a6f831af950f">
+            <energy:ThermalBoundary gml:id="GML_7ba79823-ce13-4afb-b3f9-ba7d2cf424e9">
               <gml:boundedBy>
                 <gml:Envelope srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH">
                   <gml:lowerCorner>458877 5438353 111.8</gml:lowerCorner>
@@ -1380,11 +1380,11 @@
               <energy:inclination uom="grad">180</energy:inclination>
               <energy:area uom="m2">120</energy:area>
               <energy:surfaceGeometry>
-                <gml:MultiSurface gml:id="GML_f818713a-14e6-424b-9f23-a6106f963c3e">
+                <gml:MultiSurface gml:id="GML_1bb54a82-3011-4a18-b34f-49ea6ac19520">
                   <gml:surfaceMember>
-                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_5437b60e-3973-4dd4-b5f7-dbd1f301a37b">
+                    <gml:Polygon srsName="urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH" gml:id="GML_6a503861-117f-44cf-9f7f-f87d371ee56a">
                       <gml:exterior>
-                        <gml:LinearRing gml:id="GML_f31060a2-55f0-4afb-8093-a9dbc238ed71">
+                        <gml:LinearRing gml:id="GML_eae1e6b3-63fa-4178-9481-7aa11af23fa2">
                           <gml:posList srsDimension="3" count="5">458889 5438353 111.8 458877 5438353 111.8 458877 5438363 111.8 458889 5438363 111.8 458889 5438353 111.8 </gml:posList>
                         </gml:LinearRing>
                       </gml:exterior>
@@ -1392,15 +1392,15 @@
                   </gml:surfaceMember>
                 </gml:MultiSurface>
               </energy:surfaceGeometry>
-              <energy:construction xlink:href="#KIT-FZK-Haus-Bodenplatte" />            
+              <energy:construction xlink:href="#KIT-FZK-Haus-Bodenplatte_678034a3-7643-4029-bf2a-f81b65910826" />            
             </energy:ThermalBoundary>
           </energy:boundedBy>
         </energy:ThermalZone>
       </energy:thermalZone>
       <energy:usageZone>
-        <energy:UsageZone gml:id="GML_0edb2654-d21d-47a5-8c58-05e88cc0b983">
+        <energy:UsageZone gml:id="GML_e08f7048-f963-4ee7-b4d3-1c9d92ace365">
           <energy:coolingSchedule>
-            <energy:DailyPatternSchedule gml:id="GML_3511c0e8-cab0-4e5a-bf41-8dab810e1b6f">
+            <energy:DailyPatternSchedule gml:id="GML_228b54d7-3686-4aca-be1d-e8dc92a8e6f7">
               <gml:name>KIT-FZK-Haus-Kuehlung</gml:name>
               <energy:periodOfYear>
                 <energy:PeriodOfYear>
@@ -1439,7 +1439,7 @@
             </energy:DailyPatternSchedule>
           </energy:coolingSchedule>
           <energy:coolingAvailabilitySchedule>
-            <energy:DailyPatternSchedule gml:id="GML_039625db-f9d3-48c4-bfe5-2636288061a0">
+            <energy:DailyPatternSchedule gml:id="GML_58741707-1a9c-4ac8-b0a5-3736a92fbb40">
               <gml:name>VollzeitbetriebKuehlung</gml:name>
               <energy:periodOfYear>
                 <energy:PeriodOfYear>
@@ -1478,7 +1478,7 @@
           </energy:coolingAvailabilitySchedule>
           
           <energy:heatingSchedule>
-            <energy:DailyPatternSchedule gml:id="GML_498831c6-7b28-4f0d-85de-e26f4f5fc434">
+            <energy:DailyPatternSchedule gml:id="GML_704db0cc-8a72-4add-811e-008b97c419f4">
               <gml:name>KIT-FZK-Haus-Heizung</gml:name>
               <energy:periodOfYear>
                 <energy:PeriodOfYear>
@@ -1518,7 +1518,7 @@
           </energy:heatingSchedule>
           
           <energy:heatingAvailabilitySchedule>
-            <energy:DailyPatternSchedule gml:id="GML_b46024da-4e82-45da-9003-cc92056024b1">
+            <energy:DailyPatternSchedule gml:id="GML_920463ff-6a64-4ac4-9c5b-70ee2f2e8ec2">
               <gml:name>VollzeitbetriebHeizung</gml:name>
               <energy:periodOfYear>
                 <energy:PeriodOfYear>
@@ -1559,7 +1559,7 @@
           <energy:usageZoneType>Residential usage</energy:usageZoneType>
           
           <energy:ventilationSchedule>
-            <energy:DailyPatternSchedule gml:id="GML_0a7ef3a2-2aea-4d88-81d4-c3ae7c100414">
+            <energy:DailyPatternSchedule gml:id="GML_47f7f328-4bb6-42e1-8c1f-8db1356e4329">
               <gml:name>KIT-FZK-Haus-Lueftung</gml:name>
               <energy:periodOfYear>
                 <energy:PeriodOfYear>
@@ -1599,9 +1599,9 @@
           </energy:ventilationSchedule>
           
           <energy:equippedWith>
-            <energy:ElectricalAppliances gml:id="GML_892b4aa7-b9bc-4c79-a523-8c506d234ae2">
+            <energy:ElectricalAppliances gml:id="GML_bb2c4617-a21e-4bab-9a79-9df32442c876">
               <energy:operationSchedule>
-                <energy:DailyPatternSchedule gml:id="GML_c6e96936-2e89-4c43-840d-c485133770c7">
+                <energy:DailyPatternSchedule gml:id="GML_eb5bf692-ce33-4377-b66f-a51037133337">
                   <gml:name>KIT-FZK-Haus-Geraete</gml:name>
                   <energy:periodOfYear>
                     <energy:PeriodOfYear>
@@ -1660,39 +1660,39 @@
   </core:cityObjectMember>
   
   <gml:featureMember>
-    <energy:Construction gml:id="KIT-FZK-Haus-Aussenwand">
+    <energy:Construction gml:id="KIT-FZK-Haus-Aussenwand_74b54684-972b-45a9-a37f-8ac6552c5025">
       <gml:description>KIT-FZK-Haus-Aussenwand</gml:description>
       <gml:name>KIT-FZK-Haus-Aussenwand</gml:name>
       <energy:uValue uom="W/K*m2">0.4</energy:uValue>
       <energy:layer>
-        <energy:Layer gml:id="GML_6c92d51f-9073-436b-a16f-19b5ba0add68">
+        <energy:Layer gml:id="GML_bfb8e345-4dbd-4e9e-a4ba-6e5aa18e9325">
           <energy:thickness uom="m">0.02</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_ed4fe543-a3bf-4aa3-b031-6e9727febff5">
+            <energy:LayerComponent gml:id="GML_c1c7e00f-c661-48bf-a9dd-465ab3b8a66c">
               <energy:areaFraction uom="scale">1</energy:areaFraction>             
-              <energy:material xlink:href="#KIT-FZK-Haus-Putz-Aussen" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Putz-Aussen_06b76c81-afd5-4c31-a0c8-4d3b9a8d7092" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_44b2fd77-3e44-4fec-af14-c7c984bf0de3">
+        <energy:Layer gml:id="GML_c629c16c-f46e-4648-b3d0-8f982f36a727">
           <energy:thickness uom="m">0.2</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_ef928a55-9c5a-46e2-b939-cb0b5aa4d54f">
+            <energy:LayerComponent gml:id="GML_7a60e666-682f-4d81-93da-cbd9a5b1f966">
               <energy:areaFraction uom="scale">1</energy:areaFraction>            
-              <energy:material xlink:href="#KIT-FZK-Haus-Porenbeton" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Porenbeton_99746c78-7dc4-4778-a813-2b240e17ac18" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_d4cf58c2-ac28-43e7-ba8f-d9bc01da4050">
+        <energy:Layer gml:id="GML_9efc840e-2a4f-4c1a-910f-271898d7cfb2">
           <energy:thickness uom="m">0.015</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_46f6e793-1d56-45fd-937f-d324e7afd115">
+            <energy:LayerComponent gml:id="GML_d4b36299-ff59-415c-ac70-4e32caa93856">
               <energy:areaFraction uom="scale">1</energy:areaFraction>             
-              <energy:material xlink:href="#KIT-FZK-Haus-Putz-Innen" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Putz-Innen_1bd5db10-76ad-41a6-bc53-5240b28b825d" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
@@ -1701,72 +1701,72 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:Construction gml:id="KIT-FZK-Haus-Bodenplatte">
+    <energy:Construction gml:id="KIT-FZK-Haus-Bodenplatte_678034a3-7643-4029-bf2a-f81b65910826">
       <gml:description>KIT-FZK-Haus-Bodenplatte</gml:description>
       <gml:name>KIT-FZK-Haus-Bodenplatte</gml:name>
       <energy:uValue uom="W/K*m2">0.26</energy:uValue>
       <energy:layer>
-        <energy:Layer gml:id="GML_f553ea6c-842f-4eaf-994e-dcb40c85aee0">
+        <energy:Layer gml:id="GML_b7bc667f-e3a7-4c05-b579-1ebb0017afb5">
           <energy:thickness uom="m">0.12</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_6003a6bc-d108-4e3b-8735-dba1bd58dab5">
+            <energy:LayerComponent gml:id="GML_6c835cc6-651a-4a93-9710-cd92f239cfc9">
               <energy:areaFraction uom="scale">1</energy:areaFraction>             
-              <energy:material xlink:href="#KIT-FZK-Haus-Polystyrol-Extruderschaum" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Polystyrol-Extruderschaum_34f64f2f-0f8b-470a-a278-798eb231c8a2" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_2f49ecfb-02e1-4fe2-a303-e3164437bccd">
+        <energy:Layer gml:id="GML_56bec5b1-aa83-43e5-ad50-f0b7b1a6da42">
           <energy:thickness uom="m">0.0005</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_26c899b3-2da7-41cc-a637-55c4137b33a4">
+            <energy:LayerComponent gml:id="GML_aa72c2bf-a725-4299-ace6-862dc3ca758b">
               <energy:areaFraction uom="scale">1</energy:areaFraction>             
-              <energy:material xlink:href="#KIT-FZK-Haus-Bitumendachbahn" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Bitumendachbahn_9013d6b3-1786-4e6f-80e0-c86eb2d5a9ac" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_b2390473-37a2-4389-83a8-06bdefe5cb8d">
+        <energy:Layer gml:id="GML_1d0c85ab-62c0-4270-9bb3-bb4ca4654043">
           <energy:thickness uom="m">0.1</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_2d650380-8739-47b3-8336-3ec1115edc17">
+            <energy:LayerComponent gml:id="GML_9bbc2da2-b3e5-4830-beb3-39f87b3153d3">
               <energy:areaFraction uom="scale">1</energy:areaFraction>            
-              <energy:material xlink:href="#KIT-FZK-Haus-Beton-Bodenplatte" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Beton-Bodenplatte_3850e8cf-5223-4ab3-97c6-fd34e20b5dc8" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_d2694ea7-3f70-4193-9518-b13653fe78bf">
+        <energy:Layer gml:id="GML_3648cfd6-181a-4664-8653-36ca8b225fad">
           <energy:thickness uom="m">0.01</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_645c43ce-066e-429b-8bd4-2f42c12780c2">
+            <energy:LayerComponent gml:id="GML_58125d77-bae5-4f90-b729-e546eff9836d">
               <energy:areaFraction uom="scale">1</energy:areaFraction>            
-              <energy:material xlink:href="#KIT-FZK-Haus-Polystyrol-Partikelschaum" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Polystyrol-Partikelschaum_b7d98733-d38a-4892-ab05-181a831c3788" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_b1869304-28ad-4256-9993-7f6f0ef4aefb">
+        <energy:Layer gml:id="GML_dac4333d-361b-4921-b62d-785259a5be95">
           <energy:thickness uom="m">0.0002</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_3b18db6d-58c5-47cd-a0e6-ef9067db559e">
+            <energy:LayerComponent gml:id="GML_e5692f09-de5e-49bd-8cfe-d3f9e43f29a5">
               <energy:areaFraction uom="scale">1</energy:areaFraction>             
-              <energy:material xlink:href="#KIT-FZK-Haus-Polyethylenfolie" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Polyethylenfolie_32199d56-7925-4128-a782-13fe05a2b4ee" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_91cfbce1-9d1a-4331-94ec-f0f2e11fe8f5">
+        <energy:Layer gml:id="GML_1b7d2363-2a93-4b70-8de8-a731697f705c">
           <energy:thickness uom="m">0.02</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_81afba8d-3401-4ab5-a6b9-2c3ba6ac2e8c">
+            <energy:LayerComponent gml:id="GML_fa4764fc-1da6-41a1-8271-c1efd7418278">
               <energy:areaFraction uom="scale">1</energy:areaFraction>             
-              <energy:material xlink:href="#KIT-FZK-Haus-ZementEstrich" />
+              <energy:material xlink:href="#KIT-FZK-Haus-ZementEstrich_72f772c8-199d-43fa-955d-cce27a0d0d38" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
@@ -1775,83 +1775,83 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:Construction gml:id="KIT-FZK-Haus-Dach">
+    <energy:Construction gml:id="KIT-FZK-Haus-Dach_0da7b6cb-44ac-4f10-aaae-638bcd72b964">
       <gml:description>KIT-FZK-Haus-Dach</gml:description>
       <gml:name>KIT-FZK-Haus-Dach</gml:name>
       <energy:uValue uom="W/K*m2">0.4</energy:uValue>
       <energy:layer>
-        <energy:Layer gml:id="GML_dec991df-4a44-4248-98f5-90dfb8d58087">
+        <energy:Layer gml:id="GML_a8018efb-1397-4776-98f9-fb7e40090896">
           <energy:thickness uom="m">0.02</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_2e1824cb-2bd2-461c-81b4-4ab6752a0ec4">
+            <energy:LayerComponent gml:id="GML_f29be0e7-c572-4af8-9d7c-c427411afc94">
               <energy:areaFraction uom="scale">1</energy:areaFraction>            
-              <energy:material xlink:href="#KIT-FZK-Haus-Ziegel" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Ziegel_07c489a7-e3e8-430e-9965-dee37db6352c" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_8c79e647-4261-4549-bb2f-4ddb9411ad3c">
+        <energy:Layer gml:id="GML_ada34526-00c3-43de-b98f-ccc6aec65b27">
           <energy:thickness uom="m">0.04</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_fbe9981e-ab47-4e38-a8dd-7e50c571028a">
+            <energy:LayerComponent gml:id="GML_044d7732-8722-434a-acdc-213f7c409105">
               <energy:areaFraction uom="scale">1</energy:areaFraction>            
-              <energy:material xlink:href="#KIT-FZK-Haus-Holz-Dach" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Holz-Dach_26d4d130-feec-460d-b538-8f0dd752bef5" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_0618b3e7-16c9-49eb-a459-13e6a11c21e3">
+        <energy:Layer gml:id="GML_a317505a-94bf-439f-8cc6-d15818e661a5">
           <energy:thickness uom="m">0.04</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_9a4ccebc-ce27-4385-8ae3-50accf9a880a">
+            <energy:LayerComponent gml:id="GML_a680aa80-0b4a-4a52-a7a1-f4deb6d7b249">
               <energy:areaFraction uom="scale">1</energy:areaFraction>            
-              <energy:material xlink:href="#KIT-FZK-Haus-Luftschicht" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Luftschicht_a13abf80-f84d-4e3a-b41d-37184c2e1460" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_da58c4db-8035-409a-a38b-393595363912">
+        <energy:Layer gml:id="GML_43fe60fe-f867-4e75-914c-088fad87196f">
           <energy:thickness uom="m">0.08</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_4ffdb364-68b4-4967-ba3f-e570b2bd49c7">
+            <energy:LayerComponent gml:id="GML_461aa444-9b43-46fc-be3b-915ab98da24e">
               <energy:areaFraction uom="scale">1</energy:areaFraction>             
-              <energy:material xlink:href="#KIT-FZK-Haus-Polystyrol-Partikelschaum" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Polystyrol-Partikelschaum_b7d98733-d38a-4892-ab05-181a831c3788" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_46ede05d-0ef6-4af5-9483-329526b2b2f4">
+        <energy:Layer gml:id="GML_84d6b6a9-b8ae-4e2f-a5d9-c5b7a1083b8c">
           <energy:thickness uom="m">0.0005</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_2fa72423-11e3-465f-b8af-b4879ad15190">
+            <energy:LayerComponent gml:id="GML_43b412d5-c376-46f3-9edb-b55e152f473f">
               <energy:areaFraction uom="scale">1</energy:areaFraction>             
-              <energy:material xlink:href="#KIT-FZK-Haus-Polyethylenfolie" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Polyethylenfolie_32199d56-7925-4128-a782-13fe05a2b4ee" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_0acc50e9-c523-485c-9ebb-0d6a8625c370">
+        <energy:Layer gml:id="GML_8e5008ed-bdd7-464c-a981-e39b3d537464">
           <energy:thickness uom="m">0.06</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_9c3804a5-0d9e-47c4-94da-d6c6fd298e1f">
+            <energy:LayerComponent gml:id="GML_44854438-adac-4e6f-b12d-0035e43546dd">
               <energy:areaFraction uom="scale">1</energy:areaFraction>            
-              <energy:material xlink:href="#KIT-FZK-Haus-Polystyrol-Partikelschaum" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Polystyrol-Partikelschaum_b7d98733-d38a-4892-ab05-181a831c3788" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
       </energy:layer>
       <energy:layer>
-        <energy:Layer gml:id="GML_b3505a84-0de9-40e5-b55b-8e047881b60b">
+        <energy:Layer gml:id="GML_4bc16701-d465-4e06-b011-dc4cf77da628">
           <energy:thickness uom="m">0.025</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_b6460fe6-00f8-4967-8fa2-d7603b1fbc9a">
+            <energy:LayerComponent gml:id="GML_8c3186b7-152c-4b7d-bb79-00bef7c1681a">
               <energy:areaFraction uom="scale">1</energy:areaFraction>            
-              <energy:material xlink:href="#KIT-FZK-Haus-Gipskarton" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Gipskarton_6b3a0e09-088a-494b-8032-3582a194f9c6" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
@@ -1860,7 +1860,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:Construction gml:id="KIT-FZK-Haus-Fenster">
+    <energy:Construction gml:id="KIT-FZK-Haus-Fenster_4c18f3df-d47b-480f-9bdc-96d1f986828c">
       <gml:description>KIT-FZK-Haus-Fenster</gml:description>
       <gml:name>KIT-FZK-Haus-Fenster</gml:name>
       <energy:uValue uom="W/K*m2">1.2</energy:uValue>
@@ -1879,17 +1879,17 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:Construction gml:id="KIT-FZK-Haus-Haustuer">
+    <energy:Construction gml:id="KIT-FZK-Haus-Haustuer_5619e933-dee1-4b39-99e2-a5d4dafb0e0d">
       <gml:description>KIT-FZK-Haus-Haustuer</gml:description>
       <gml:name>KIT-FZK-Haus-Haustuer</gml:name>
       <energy:uValue uom="W/K*m2">1.99</energy:uValue>
       <energy:layer>
-        <energy:Layer gml:id="GML_241ab01d-fe12-42ee-8099-6b2811d9d827">
+        <energy:Layer gml:id="GML_08b06c29-f9de-43a6-9aef-d98c1bfc3a41">
           <energy:thickness uom="m">0.06</energy:thickness>
           <energy:layerComponent>
-            <energy:LayerComponent gml:id="GML_02719b5d-cdfd-4347-a48d-ec715c526496">
+            <energy:LayerComponent gml:id="GML_4fb765ca-fbb1-4a57-a6c6-e6384d5de5c7">
               <energy:areaFraction uom="scale">1</energy:areaFraction>             
-              <energy:material xlink:href="#KIT-FZK-Haus-Holz-Tuer" />
+              <energy:material xlink:href="#KIT-FZK-Haus-Holz-Tuer_a71ae817-2e63-4f39-a002-8848bebf2421" />
             </energy:LayerComponent>
           </energy:layerComponent>
         </energy:Layer>
@@ -1898,7 +1898,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:Construction gml:id="KIT-FZK-Haus-Terrassentuer">
+    <energy:Construction gml:id="KIT-FZK-Haus-Terrassentuer_481c9658-ccab-4228-9e1f-196c7ba229c7">
       <gml:description>KIT-FZK-Haus-Terrassentuer</gml:description>
       <gml:name>KIT-FZK-Haus-Terrassentuer</gml:name>
       <energy:uValue uom="W/K*m2">1.2</energy:uValue>
@@ -1917,7 +1917,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Beton-Bodenplatte">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Beton-Bodenplatte_3850e8cf-5223-4ab3-97c6-fd34e20b5dc8">
       <gml:description>Beton Bodenplatte</gml:description>
       <gml:name>KIT-FZK-Haus-Beton-Bodenplatte</gml:name>
       <energy:conductivity uom="W/K*m">2</energy:conductivity>
@@ -1927,7 +1927,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Bitumendachbahn">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Bitumendachbahn_9013d6b3-1786-4e6f-80e0-c86eb2d5a9ac">
       <gml:description>Bitumendachbahn</gml:description>
       <gml:name>KIT-FZK-Haus-Bitumendachbahn</gml:name>
       <energy:conductivity uom="W/K*m">0.17</energy:conductivity>
@@ -1937,7 +1937,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Gipskarton">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Gipskarton_6b3a0e09-088a-494b-8032-3582a194f9c6">
       <gml:description>Gipskartonplatte</gml:description>
       <gml:name>KIT-FZK-Haus-Gipskarton</gml:name>
       <energy:conductivity uom="W/K*m">0.25</energy:conductivity>
@@ -1947,7 +1947,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Holz-Dach">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Holz-Dach_26d4d130-feec-460d-b538-8f0dd752bef5">
       <gml:description>Konstruktionsholz Dach</gml:description>
       <gml:name>KIT-FZK-Haus-Holz-Dach</gml:name>
       <energy:conductivity uom="W/K*m">0.13</energy:conductivity>
@@ -1957,7 +1957,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Holz-Tuer">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Holz-Tuer_a71ae817-2e63-4f39-a002-8848bebf2421">
       <gml:description>Konstruktionsholz Tür</gml:description>
       <gml:name>KIT-FZK-Haus-Holz-Tuer</gml:name>
       <energy:conductivity uom="W/K*m">0.18</energy:conductivity>
@@ -1967,7 +1967,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:Gas gml:id="KIT-FZK-Haus-Luftschicht">
+    <energy:Gas gml:id="KIT-FZK-Haus-Luftschicht_a13abf80-f84d-4e3a-b41d-37184c2e1460">
       <gml:description>Luftschicht</gml:description>
       <gml:name>KIT-FZK-Haus-Luftschicht</gml:name>
       <energy:isVentilated>false</energy:isVentilated>
@@ -1976,7 +1976,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Polyethylenfolie">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Polyethylenfolie_32199d56-7925-4128-a782-13fe05a2b4ee">
       <gml:description>Polyethylenfolie</gml:description>
       <gml:name>KIT-FZK-Haus-Polyethylenfolie</gml:name>
       <energy:conductivity uom="W/K*m">0.33</energy:conductivity>
@@ -1986,7 +1986,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Polystyrol-Extruderschaum">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Polystyrol-Extruderschaum_34f64f2f-0f8b-470a-a278-798eb231c8a2">
       <gml:description>Polystyrol-Extruderschaum</gml:description>
       <gml:name>KIT-FZK-Haus-Polystyrol-Extruderschaum</gml:name>
       <energy:conductivity uom="W/K*m">0.035</energy:conductivity>
@@ -1996,7 +1996,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Polystyrol-Partikelschaum">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Polystyrol-Partikelschaum_b7d98733-d38a-4892-ab05-181a831c3788">
       <gml:description>Polystyrol-Partikelschaum</gml:description>
       <gml:name>KIT-FZK-Haus-Polystyrol-Partikelschaum</gml:name>
       <energy:conductivity uom="W/K*m">0.04</energy:conductivity>
@@ -2006,7 +2006,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Porenbeton">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Porenbeton_99746c78-7dc4-4778-a813-2b240e17ac18">
       <gml:description>Porenbeton</gml:description>
       <gml:name>KIT-FZK-Haus-Porenbeton</gml:name>
       <energy:conductivity uom="W/K*m">0.13</energy:conductivity>
@@ -2015,7 +2015,7 @@
     </energy:SolidMaterial>
   </gml:featureMember>
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Putz-Aussen">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Putz-Aussen_06b76c81-afd5-4c31-a0c8-4d3b9a8d7092">
       <gml:description>Normalmörtel</gml:description>
       <gml:name>KIT-FZK-Haus-Putz-Aussen</gml:name>
       <energy:conductivity uom="W/K*m">1.2</energy:conductivity>
@@ -2025,7 +2025,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Putz-Innen">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Putz-Innen_1bd5db10-76ad-41a6-bc53-5240b28b825d">
       <gml:description>Putzmörtel (Kalkgips)</gml:description>
       <gml:name>KIT-FZK-Haus-Putz-Innen</gml:name>
       <energy:conductivity uom="W/K*m">0.7</energy:conductivity>
@@ -2035,7 +2035,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-ZementEstrich">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-ZementEstrich_72f772c8-199d-43fa-955d-cce27a0d0d38">
       <gml:description>Zement-Estrich</gml:description>
       <gml:name>KIT-FZK-Haus-ZementEstrich</gml:name>
       <energy:conductivity uom="W/K*m">1.4</energy:conductivity>
@@ -2045,7 +2045,7 @@
   </gml:featureMember>
   
   <gml:featureMember>
-    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Ziegel">
+    <energy:SolidMaterial gml:id="KIT-FZK-Haus-Ziegel_07c489a7-e3e8-430e-9965-dee37db6352c">
       <gml:description>Dachziegel</gml:description>
       <gml:name>KIT-FZK-Haus-Ziegel</gml:name>
       <energy:conductivity uom="W/K*m">1</energy:conductivity>

@@ -875,7 +875,7 @@ function zoomToObjectById(gmlId, callBackFunc, errorCallbackFunc) {
 var _layers = new Array();
 var options = {
     url: "/cesium/data/kml/fzkHouse.kml",
-    name: "FZKHouse",
+    name: "FZKHouse 1",
     layerDataType: "COLLADA/KML/glTF",
     layerProxy: (addLayerViewModel.layerProxy === true),
     layerClampToGround: (addLayerViewModel.layerClampToGround === true),
@@ -895,7 +895,7 @@ var options = {
 }
 var optionsHouse2 = {
     url: "/cesium/data/Moved.kml",
-    name: "FZKHouse",
+    name: "FZKHouse 2",
     layerDataType: "COLLADA/KML/glTF",
     layerProxy: (addLayerViewModel.layerProxy === true),
     layerClampToGround: (addLayerViewModel.layerClampToGround === true),
@@ -914,7 +914,7 @@ var optionsHouse2 = {
 }
 var optionsHouse3 = {
     url: "/cesium/data/Moved2.kml",
-    name: "FZKHouse",
+    name: "FZKHouse 3",
     layerDataType: "COLLADA/KML/glTF",
     layerProxy: (addLayerViewModel.layerProxy === true),
     layerClampToGround: (addLayerViewModel.layerClampToGround === true),

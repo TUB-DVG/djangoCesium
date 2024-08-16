@@ -1,21 +1,21 @@
 import xmltodict
 import pymap3d
  
-moveToLocation = [
+referencePoint = [
     52.518828169293485, 
     13.373371958193164,
     0.0,
 ] 
 # lon, lat
-referencePoint = [
-    49.09669727146847,
-    8.436758524100803,
+moveToLocation = [
+    52.51887236065563, 
+    13.37264807051817,
     0.0,
 ]
 
 
 
-file=open("/home/tobias/projects/cesiumDistrictDjangoCityDB/frontend/data/UUID_d281adfc-4901-0f52-540b-4cc1a9325f82_geometry.kml","r")
+file=open("/home/tobias/projects/cesiumDistrictDjangoCityDB/frontend/data/Moved2.kml","r")
 xml_string=file.read()
 print("The XML string is:")
 python_dict=xmltodict.parse(xml_string)

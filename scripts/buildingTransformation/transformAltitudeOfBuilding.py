@@ -8,7 +8,7 @@ python_dict=xmltodict.parse(xml_string)
 # breakpoint()
 
 print("move Building down...")
-meterToMoveDown = 12.0
+meterToMoveDown = 20.0
 # iterate over all Placemark:
 for placemark in python_dict["kml:kml"]["kml:Document"]["kml:Placemark"]:
     # breakpoint()
@@ -51,7 +51,6 @@ for placemark in python_dict["kml:kml"]["kml:Document"]["kml:Placemark"]:
 
 
 
-print("saving to file einstein_Tile_0_0_geometry_mod.kml")
 file=open("/home/tobias/projects/cesiumDistrictDjangoCityDB/frontend/data/Moved2.kml","w")
 xmltodict.unparse(python_dict,file)
 file.close()

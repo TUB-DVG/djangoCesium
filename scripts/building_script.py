@@ -4,11 +4,12 @@ a) modifying a file
 b) reading from argument input
 c) generating a UUID
 """
-
 import os
 import argparse
 import uuid
+from collections import deque
 
+from lxml import etree
 
 def update_gml_id(file_path):
     """
@@ -18,20 +19,32 @@ def update_gml_id(file_path):
     """
     with open(file_path, encoding="utf-8") as file:
         data = file.read()
+    
+    start_index = data.find('gml:id="', 0)
+    while start_index != -1:
+        if start_index != -1:
+            end_index = data.find('"', start_index + 8)
+        
+        currentGmlId = data[start_index + 8:end_index]
+        
+        gmlPrefix = currentGmlId.split("_")[0]
+        newUuid = str(uuid.uuid4())
+        newGmlId = gmlPrefix + "_" + newUuid
+        data = data[: start_index + 8] + newGmlId + data[end_index:]
+        
+        # check if the gml-id is referenced in a href:
+        startIndexHref = data.find(f'xlink:href="#{currentGmlId}"')
+        while startIndexHref != -1:
+            endIndexHref = data.find('"', startIndexHref + 15)
+            data = data[: startIndexHref + 13] + newGmlId + data[endIndexHref:]
+            startIndexHref = data.find(f'xlink:href="#{currentGmlId}"', endIndexHref+1)
 
-    # Find the first occurrence of gml:id="something" and replace the value inside the quotes
-    new_uuid = str(uuid.uuid4())
-    start_index = data.find('gml:id="')
-
-    if start_index != -1:
-        end_index = data.find('"', start_index + 8)
-
-        if end_index != -1:
-            updated_data = data[: start_index + 8] + new_uuid + data[end_index:]
-            new_file_path = file_path.replace(".gml", f"_{new_uuid}.gml")
-            with open(new_file_path, "w", encoding="utf-8") as file:
-                file.write(updated_data)
-            return True
+        start_index = data.find('gml:id="', end_index+1)
+    
+    new_file_path = file_path.replace(".gml", f"_{newUuid}.gml")
+    with open(new_file_path, "w", encoding="utf-8") as file:
+        file.write(data)
+        return True
 
     return False
 
@@ -45,7 +58,7 @@ def process_directory(directory):
 
     # Iterate through files in the directory
     for filename in os.listdir(directory):
-        if filename == "FZK-Haus-LoD3-MultiZone-ADE.gml":
+        if filename == "FZKHouseLoD3-ADE20.gml":
             file_path = os.path.join(directory, filename)
 
             if update_gml_id(file_path):

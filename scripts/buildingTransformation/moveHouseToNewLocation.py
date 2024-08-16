@@ -1,37 +1,37 @@
 import xmltodict
 import pymap3d
  
-moveToLocation = [
-    52.51305574311657, 
-    13.41174692340283,
+referencePoint = [
+    52.518828169293485, 
+    13.373371958193164,
     0.0,
 ] 
 # lon, lat
-referencePoint = [
-    52.51867755129091,
-    7.381310423758853,
+moveToLocation = [
+    52.51887236065563, 
+    13.37264807051817,
     0.0,
 ]
 
 
 
-file=open("/home/tobias/repos/buildingwithwebmapclient/data/kml/Tiles/0/0/test3_Tile_0_0_geometry.kml","r")
+file=open("/home/tobias/projects/cesiumDistrictDjangoCityDB/frontend/data/Moved2.kml","r")
 xml_string=file.read()
 print("The XML string is:")
-print(xml_string)
 python_dict=xmltodict.parse(xml_string)
 # breakpoint()
 
 
 print("move Building 20m down...")
 # iterate over all Placemark:
-for placemark in python_dict["kml"]["Document"]["Placemark"]:
+breakpoint()
+for placemark in python_dict["kml:kml"]["kml:Document"]["kml:Placemark"]:
     # breakpoint()
-    placemarkName = placemark["name"]
-    if isinstance(placemark["MultiGeometry"]["Polygon"], list):
-        for polygon in placemark["MultiGeometry"]["Polygon"]:
+    placemarkName = placemark["kml:name"]
+    if isinstance(placemark["kml:MultiGeometry"]["kml:Polygon"], list):
+        for polygon in placemark["kml:MultiGeometry"]["kml:Polygon"]:
             strOfCoordinates = ""
-            coordinates = polygon["outerBoundaryIs"]["LinearRing"]["coordinates"].split(" ")
+            coordinates = polygon["kml:outerBoundaryIs"]["kml:LinearRing"]["kml:coordinates"].split(" ")
             for coordinate in coordinates:
             
                 coordinate3D = coordinate.split(",")
@@ -63,11 +63,11 @@ for placemark in python_dict["kml"]["Document"]["Placemark"]:
                 
                 strOfCoordinates += stringifiedList[0:-1] + " "
             strOfCoordinates = strOfCoordinates[0:-1]
-            polygon["outerBoundaryIs"]["LinearRing"]["coordinates"] = strOfCoordinates
+            polygon["kml:outerBoundaryIs"]["kml:LinearRing"]["kml:coordinates"] = strOfCoordinates
 
-    elif isinstance(placemark["MultiGeometry"]["Polygon"], dict):
+    elif isinstance(placemark["kml:MultiGeometry"]["kml:Polygon"], dict):
 
-        coordinates = placemark["MultiGeometry"]["Polygon"]["outerBoundaryIs"]["LinearRing"]["coordinates"].split(" ")
+        coordinates = placemark["kml:MultiGeometry"]["kml:Polygon"]["kml:outerBoundaryIs"]["kml:LinearRing"]["kml:coordinates"].split(" ")
         strOfCoordinates = ""
         for coordinate in coordinates:
         
@@ -97,14 +97,14 @@ for placemark in python_dict["kml"]["Document"]["Placemark"]:
             
             strOfCoordinates += stringifiedList[0:-1] + " "
         strOfCoordinates = strOfCoordinates[0:-1]
-        placemark["MultiGeometry"]["Polygon"]["outerBoundaryIs"]["LinearRing"]["coordinates"] = strOfCoordinates
+        placemark["kml:MultiGeometry"]["kml:Polygon"]["kml:outerBoundaryIs"]["kml:LinearRing"]["kml:coordinates"] = strOfCoordinates
     else:
         breakpoint()
 
 
 
 # print("saving to file einstein_Tile_0_0_geometry_mod.kml")
-file=open("test3_Tile_0_0_geometry.kml","w")
+file=open("/home/tobias/projects/cesiumDistrictDjangoCityDB/frontend/data/Moved2.kml","w")
 xmltodict.unparse(python_dict,file)
 file.close()
 # print(python_dict)

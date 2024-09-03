@@ -94,7 +94,7 @@ var cesiumViewer = new Cesium.Viewer('cesiumContainer', cesiumViewerOptions);
 
 // Create a tileset object
 const tileset = new Cesium.Cesium3DTileset({
-    url: 'data/Tiles/Mierendorff.kml',
+    url: 'data/Tiles/tileset.json',
     maximumScreenSpaceError: 16,
     maximumMemoryUsage: 1024
 });
@@ -107,6 +107,16 @@ tileset.readyPromise.then(function(tileset) {
     cesiumViewer.zoomTo(tileset);
 }).otherwise(function(error) {
     console.log('Error loading tileset:', error);
+    
+    // Check if the error is related to JSON parsing
+    if (error instanceof SyntaxError && error.message.includes('JSON.parse')) {
+        console.log('The error appears to be related to JSON parsing. This could indicate that the tileset file is not in the expected format.');
+        console.log('Please check the following:');
+        console.log('1. Ensure that the URL points to a valid 3D Tiles tileset.json file.');
+        console.log('2. Verify that the server is correctly serving the tileset files.');
+        console.log('3. Check if there are any CORS issues preventing the file from being loaded.');
+        console.log('4. Inspect the network tab in your browser\'s developer tools to see the actual server response.');
+    }
 });
 
 adjustIonFeatures();

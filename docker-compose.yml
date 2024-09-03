@@ -9,7 +9,7 @@ services:
       - "./frontend/3dcitydb-web-map:/usr/src/app"
       - "./frontend/data:/usr/src/app/data"
       - "node_modules:/usr/src/app/node_modules"
-    container_name: frontend
+    container_name: frontend_mierendorff
     environment:
       NODE_ENV: production
       # command: sh -c "node server.js"
@@ -23,7 +23,7 @@ services:
     command: bash -c "uwsgi --socket :9001 --chdir=/app/ --master --processes 4 --threads 2 --module=vdistrict.wsgi:application"
     ports:
       - "8001:8000"
-    container_name: djangodb
+    container_name: djangodb_mierendorff
     # volumes:
     #   - ./django-citydb:/app
     depends_on:
@@ -41,7 +41,7 @@ services:
     environment:
       SRID: 25832
       SRSNAME: urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH
-    container_name: citydb
+    container_name: citydb_mierendorff
     # networks:
       # - webcentral_default
   # nginx:

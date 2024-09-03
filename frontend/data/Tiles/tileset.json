@@ -1,0 +1,20 @@
+{
+    "asset": {
+      "version": "1.0"
+    },
+    "geometricError": 500,
+    "root": {
+      "boundingVolume": {
+        "region": [
+          7.289737624688933, 52.51775652464755,
+          7.321777487301052, 52.53664237373514,
+          0, 1000
+        ]
+      },
+      "geometricError": 100,
+      "refine": "ADD",
+      "content": {
+        "uri": "0/0/Mierendorff_Tile_0_0_collada.kml"
+      }
+    }
+  }

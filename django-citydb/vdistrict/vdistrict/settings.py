@@ -35,7 +35,8 @@ ALLOWED_HOSTS = [
 ]
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8080",
-]
+    "http://85.214.114.204",
+    ]
 # Application definition
 
 INSTALLED_APPS = [
@@ -89,11 +90,11 @@ WSGI_APPLICATION = "vdistrict.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
-        "NAME": os.environ.get("POSTGRES_DB"),
-        "USER": os.environ.get("POSTGRES_USER"),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
-        "HOST": os.environ.get("POSTGRES_HOST"),
-        "PORT": os.environ.get("POSTGRES_PORT"),
+        "NAME": os.environ.get("POSTGRES_DB_CITYDB"),
+        "USER": os.environ.get("POSTGRES_USER_CITYDB"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD_CITYDB"),
+        "HOST": os.environ.get("POSTGRES_HOST_CITYDB"),
+        "PORT": os.environ.get("POSTGRES_PORT_CITYDB"),
     }
 }
 

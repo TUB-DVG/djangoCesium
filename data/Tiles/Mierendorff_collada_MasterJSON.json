@@ -1,0 +1,16 @@
+{
+	"version": "1.0.0",
+	"layername": "Mierendorff",
+	"fileextension": ".kml",
+	"displayform": "collada",
+	"minLodPixels": 0,
+	"maxLodPixels": -1,
+	"colnum": 1,
+	"rownum": 1,
+	"bbox":{ 
+		"xmin": 7.289737624688933,
+		"xmax": 7.321777487301052,
+		"ymin": 52.51775652464755,
+		"ymax": 52.53664237373514
+	}
+}

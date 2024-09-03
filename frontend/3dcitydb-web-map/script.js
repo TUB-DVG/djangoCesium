@@ -40,12 +40,13 @@ var urlController = new UrlController();
 var fetchedBuildingObjsFromDB = [];
 var simulatedTimeseriesData;
 // use the fetch-API to fetch all buildings from the backend:
-fetch('${baseURL()}/citydb/buildings/')
+fetch(`${baseURL()}/citydb/buildings/`)
     .then(response => response.json())
     .then(json => {
         fetchedBuildingObjsFromDB = json;
         console.log(json);
-    });
+    })
+    .catch(error => console.error('Error fetching buildings:', error));
 
 
 // import Highcharts from 'highcharts';
@@ -91,7 +92,22 @@ if ((!Cesium.defined(Cesium.BingMapsApi.defaultKey) || Cesium.BingMapsApi.defaul
 
 var cesiumViewer = new Cesium.Viewer('cesiumContainer', cesiumViewerOptions);
 
+// Create a tileset object
+const tileset = new Cesium.Cesium3DTileset({
+    url: 'data/Tiles/Mierendorff.kml',
+    maximumScreenSpaceError: 16,
+    maximumMemoryUsage: 1024
+});
 
+// Add the tileset to the scene
+cesiumViewer.scene.primitives.add(tileset);
+
+// Optional: Zoom to the tileset once it's loaded
+tileset.readyPromise.then(function(tileset) {
+    cesiumViewer.zoomTo(tileset);
+}).otherwise(function(error) {
+    console.log('Error loading tileset:', error);
+});
 
 adjustIonFeatures();
 // Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4YTE0NTIzMi1lMTliLTRjOGEtYTM4ZS1mMjg4M2M0MjFlZTkiLCJpZCI6MTA0ODc0LCJpYXQiOjE2NjA2Mzk3OTF9.Lm4W-OMkHeemsxdP1QK657psEs3MWMWpQd-ZNLD_isc';
@@ -372,7 +388,7 @@ function adjustIonFeatures() {
 
             console.warn("Due to invalid or missing Bing access token from user, all Bing Maps have been removed. Please enter your Bing Maps API token using the URL-parameter \"bingToken=<your-token>\" and refresh the page if you wish to use Bing Maps.");
         } else {
-            console.error("A Bing token has been detected. This requires an ion token to display the terrain correctly. Please either remove the Bing token in the URL to use the default terrain and imagery, or insert an ion token in addition to the existing Bing token to use Cesium World Terrain and Bing Maps.")
+            console.error("A Bing token has been detected. This requires an ion token to display the terrain correctly. Please either remove the Bing token in the URL to use the default terrain and imagery, or insert an ion token in addition to the existing Bing token to use Cesium World Terrain and Bing Maps. Please refer to <a href='https://github.com/3dcitydb/3dcitydb-web-map/releases/tag/v1.9.0' target='_blank'>https://github.com/3dcitydb/3dcitydb-web-map/releases/tag/v1.9.0</a> for more information.");
             CitydbUtil.showAlertWindow("OK", "Error loading terrain", "A Bing token has been detected. This requires an ion token to display the terrain correctly. Please either remove the Bing token in the URL to use the default terrain and imagery, or insert an ion token in addition to the existing Bing token to use Cesium World Terrain and Bing Maps. Please refer to <a href='https://github.com/3dcitydb/3dcitydb-web-map/releases/tag/v1.9.0' target='_blank'>https://github.com/3dcitydb/3dcitydb-web-map/releases/tag/v1.9.0</a> for more information.");
         }
     }
@@ -873,6 +889,8 @@ function zoomToObjectById(gmlId, callBackFunc, errorCallbackFunc) {
 }
 
 var _layers = new Array();
+
+// Comment this to not load the kml-files
 var options = {
     url: "/cesium/data/kml/fzkHouse.kml",
     name: "FZKHouse 1",

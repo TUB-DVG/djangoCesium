@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Written by 3D City Database Importer/Exporter, version "5.4.0" -->
+<!-- Chair of Geoinformatics, Technical University of Munich -->
+<kml xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>Mierendorff</name>
+    <open>true</open>
+    <LookAt>
+      <longitude>13.424949649999999</longitude>
+      <latitude>52.50631605</latitude>
+      <altitude>0.0</altitude>
+      <heading>0.0</heading>
+      <tilt>60.0</tilt>
+      <range>970.0</range>
+    </LookAt>
+    <Folder>
+      <name>Mierendorff_Tile_0_0</name>
+      <NetworkLink>
+        <name>Display as geometry</name>
+        <Region>
+          <LatLonAltBox>
+            <north>52.7907213</north>
+            <south>52.2219108</south>
+            <east>13.9347839</east>
+            <west>12.9151154</west>
+          </LatLonAltBox>
+          <Lod>
+            <minLodPixels>0.0</minLodPixels>
+            <maxLodPixels>0.0</maxLodPixels>
+          </Lod>
+        </Region>
+        <Link>
+          <href>Tiles/0/0/Mierendorff_Tile_0_0_geometry.kml</href>
+          <viewRefreshMode>onRegion</viewRefreshMode>
+          <viewFormat/>
+        </Link>
+      </NetworkLink>
+      <NetworkLink>
+        <name>Display as collada</name>
+        <Region>
+          <LatLonAltBox>
+            <north>52.7907213</north>
+            <south>52.2219108</south>
+            <east>13.9347839</east>
+            <west>12.9151154</west>
+          </LatLonAltBox>
+          <Lod>
+            <minLodPixels>0.0</minLodPixels>
+            <maxLodPixels>-1.0</maxLodPixels>
+          </Lod>
+        </Region>
+        <Link>
+          <href>Tiles/0/0/Mierendorff_Tile_0_0_collada.kml</href>
+          <viewRefreshMode>onRegion</viewRefreshMode>
+          <viewFormat/>
+        </Link>
+      </NetworkLink>
+    </Folder>
+  </Document>
+</kml>

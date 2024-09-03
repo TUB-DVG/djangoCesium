@@ -1,0 +1,35 @@
+{
+  "asset": {
+    "version": "1.0"
+  },
+  "geometricError": 500,
+  "root": {
+    "boundingVolume": {
+      "region": [
+        0.22539861, 0.91176738,
+        0.24315386, 0.92143172,
+        0, 1000
+      ]
+    },
+    "geometricError": 100,
+    "refine": "ADD",
+    "content": {
+      "uri": "/data/Mierendorff.kml"
+    },
+    "children": [
+      {
+        "boundingVolume": {
+          "region": [
+            0.22539861, 0.91176738,
+            0.24315386, 0.92143172,
+            0, 1000
+          ]
+        },
+        "geometricError": 0,
+        "content": {
+          "uri": "/data/Tiles/0/0/Mierendorff_Tile_0_0_collada.kml"
+        }
+      }
+    ]
+  }
+}

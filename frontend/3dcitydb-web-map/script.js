@@ -94,7 +94,7 @@ var cesiumViewer = new Cesium.Viewer('cesiumContainer', cesiumViewerOptions);
 
 // Create a tileset object
 const tileset = new Cesium.Cesium3DTileset({
-    url: 'data/Tiles/tileset.json',
+    url: 'data/tileset.json',
     maximumScreenSpaceError: 16,
     maximumMemoryUsage: 1024
 });

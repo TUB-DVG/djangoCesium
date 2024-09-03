@@ -1,0 +1,16 @@
+{
+	"version": "1.0.0",
+	"layername": "Mierendorff",
+	"fileextension": ".kml",
+	"displayform": "geometry",
+	"minLodPixels": 0,
+	"maxLodPixels": 0,
+	"colnum": 1,
+	"rownum": 1,
+	"bbox":{ 
+		"xmin": 12.9151154,
+		"xmax": 13.9347839,
+		"ymin": 52.2219108,
+		"ymax": 52.7907213
+	}
+}

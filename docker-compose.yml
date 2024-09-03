@@ -39,8 +39,8 @@ services:
       - pgdata:/var/lib/postgresql/data
     env_file: ".env"
     environment:
-      SRID: 25832
-      SRSNAME: urn:adv:crs:ETRS89_UTM32*DE_DHHN92_NH
+      SRID: 25833
+      SRSNAME: ETRS:89
     container_name: citydb_mierendorff
     # networks:
       # - webcentral_default

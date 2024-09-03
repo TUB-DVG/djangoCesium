@@ -64,6 +64,10 @@ body {
     align-items: center;
 }
 
+.toolbox-modal__row-buildings {
+    align-items: flex-start;
+}
+
 .modal__toggle {
     position: absolute;
     top: 25px;

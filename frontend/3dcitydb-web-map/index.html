@@ -220,12 +220,36 @@
             }
 
             #citydb_layerlistpanel {
-                width: 97.5%;
-                background: rgba(42, 42, 42, 0.8);
-                text-align: left;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                margin-top: 4px;
+                padding: 6px;
+                border-radius: 4px;
+                background-color: #ffffff;
+            }
+
+            #citydb_layerlistpanel label {
+                margin-top: 4px;
+                padding: 2px 4px;
+            }
+
+            #citydb_layerlistpanel div {
+                padding-bottom: 5px;
+                border-bottom: 1px solid gray;
+            }
+
+            #citydb_layerlistpanel div:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            #citydb_layerlistpanel input {
+                margin-right: 6px;
             }
 
             #citydb_layerlistpanel label:hover {
+                border-radius: 2px;
                 background-color: #1e90ff;
             }
 
@@ -304,7 +328,7 @@
                                         <input type="text" data-bind="value: name">
                                     </td>
                                 </tr>
-                                <tr class="toolbox-modal__row">
+                                <tr class="toolbox-modal__row toolbox-modal__row-buildings">
                                     <td>Layer data type</td>
                                     <td>
                                         <select id="layerDataTypeDropdown"

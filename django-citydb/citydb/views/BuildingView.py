@@ -24,26 +24,21 @@ class BuildingView(APIView):
 
     """
 
-    def get(self, request):
-        """Return True of False based on the presence of the building GMLIDs."""
+    def get(self, request, gmlid=None):
+        """Return a list of buildings or a specific building based on the presence of the GMLID argument."""
 
-        buildingObjs = Building.objects.all()
-        buildingSerializer = BuildingSerializer(buildingObjs, many=True)
+        if gmlid:  # If a GMLID is passed, return data for the specific building
+            try:
+                building = Building.objects.get(gmlid=gmlid)
+                buildingSerializer = BuildingSerializer(building)
+                return Response(buildingSerializer.data)
+            except Building.DoesNotExist:
+                return Response({"detail": "Building not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        # If no GMLID is passed, return a list of all buildings
+        buildings = Building.objects.all()
+        buildingSerializer = BuildingSerializer(buildings, many=True)
         return Response(buildingSerializer.data)
-        # gmldID = request.GET.get("gmlid")
-        # try:
-        #     buildingForGMLid = Building.objects.get(gmlid=gmldID)
-        #     return Response(True)
-        # except Building.DoesNotExist:
-        #     return Response(False)
-
-    def get(self, request, gmlid):
-        """Return True of False based on the presence of the building GMLIDs."""
-
-        buildingForGMLid = Building.objects.get(gmlid=gmlid)
-        buildingSerializer = BuildingSerializer(buildingForGMLid)
-        return Response(buildingSerializer.data)
-
 
 class TimeseriesView(APIView):
     """This class is a class-based view that returns a list of building GMLIDs. in geht GET-route

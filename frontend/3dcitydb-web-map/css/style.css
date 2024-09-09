@@ -65,7 +65,7 @@ body {
 }
 
 .toolbox-modal__row-buildings {
-    align-items: flex-start;
+    flex-direction: column;
 }
 
 .modal__toggle {

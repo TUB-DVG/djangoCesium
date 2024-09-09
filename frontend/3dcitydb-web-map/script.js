@@ -1401,6 +1401,43 @@ function showInExternalMaps() {
     window.open(mapLink);
 }
 
+const residential = document.getElementById("filterBuildingResidential");
+const nonResidential = document.getElementById("filterBuildingNonResidential");
+const statusFilter = document.getElementById("filterStatus");
+const area = document.getElementById("filterArea");
+const year = document.getElementById("filterYear");
+
+function onBuildingYearChange(event) {
+    document.getElementById('filterYearValue').textContent = event.target.value;
+    year.value = event.target.value;
+}
+
+function onBuildingResidentialChange(event) {
+    residential.value = event.target.value;
+}
+
+function onBuildingStatusChange(event) {
+    statusFilter.value = event.target.value;
+}
+
+function onBuildingNonResidentialChange(event) {
+    nonResidential.value = event.target.value;
+}
+
+function onBuildingAreaChange(event) {
+    const value = event.target.value;
+
+    if (!/^\d*\.?\d*$/.test(value)) {
+        event.target.value = value.replace(/[^0-9.]/g, ''); 
+    }
+
+    area.value = event.target.value;
+}
+
+function onFiltersApply(event) {
+    console.log(residential.value, nonResidential.value, statusFilter.value, area.value, year.value);
+}
+
 function layerDataTypeDropdownOnchange() {
     var layerDataTypeDropdown = document.getElementById("layerDataTypeDropdown");
     if (layerDataTypeDropdown.options[layerDataTypeDropdown.selectedIndex].value !== "COLLADA/KML/glTF") {

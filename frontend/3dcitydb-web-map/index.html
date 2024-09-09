@@ -294,10 +294,6 @@
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
-                margin-top: 4px;
-                padding: 8px;
-                border-radius: 4px;
-                background-color: #ffffff;
             }
 
             .row__filters-item {
@@ -331,6 +327,23 @@
 
             #layerDataTypeDropdown {
                 max-width: fit-content;
+            }
+
+            #formSimulateContainer {
+                display: flex;
+                flex-direction: column;
+                width: 200px;
+                padding: 10px;
+                border: 1px solid #4c4c4c;
+                border-radius: 14px;
+                background-color: rgba(255, 255, 255, 0.5);
+                backdrop-filter: blur(10px);
+            }
+
+            .row__title {
+                margin-bottom: 12px;
+                font-size: 16px;
+                font-weight: 500;
             }
         </style>
     </head>
@@ -392,74 +405,6 @@
                                     <td class="row">
                                         <span>Buildings</span>
                                         <div id="citydb_layerlistpanel" />
-                                    </td>
-                                    <td class="row">
-                                        <span>Filters</span>
-                                        <div class="row__filters">
-                                            <div class="row__filters-item">
-                                                <label for="filterBuildingResidential">Residential buildings</label>
-                                                <select id="filterBuildingResidential" onchange="onBuildingResidentialChange(event)">
-                                                    <option value="">Select an option</option>
-                                                    <option value="sfh">SFH</option>
-                                                    <option value="th">TH</option>
-                                                    <option value="mfh">MFH</option>
-                                                    <option value="ab">AB</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="row__filters-item">
-                                                <label for="filterBuildingNonResidential">Non-residential buildings</label>
-                                                <select id="filterBuildingNonResidential" onchange="onBuildingNonResidentialChange(event)">
-                                                    <option value="">Select an option</option>
-                                                    <option value="hotels">IWU Hotels</option>
-                                                    <option value="boarding">Boarding</option>
-                                                    <option value="restaurants">Restaurants or Catering</option>
-                                                    <option value="administrative">Administrative or Government</option>
-                                                    <option value="technical">IWU Technical and Utility</option>
-                                                </select>
-                                            </div>
-                                            
-                                            <div class="row__filters-item">
-                                                <label for="filterStatus">Residential status</label>
-                                                <select id="filterStatus" onchange="onBuildingStatusChange(event)">
-                                                    <option value="">Select an option</option>
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="row__filters-item">
-                                                <label for="filterArea">Area m&sup2; (0 - 10 000 000)</label>
-                                                <input
-                                                    id="filterArea"
-                                                    placeholder="1000"
-                                                    oninput="onBuildingAreaChange(event)"
-                                                />
-                                            </div>
-
-                                            <div class="row__filters-item">
-                                                <div
-                                                    style="display: flex; align-items: center; justify-content: space-between; gap: 8px;"
-                                                >
-                                                    <label for="filterYear">Select year</label>
-                                                    <span id="filterYearValue">2024</span>
-                                                </div>
-                                                <input
-                                                    type="range"
-                                                    id="filterYear"
-                                                    min="1000"
-                                                    max="2030"
-                                                    step="1"
-                                                    value="2024"
-                                                    oninput="onBuildingYearChange(event)"
-                                                />
-                                            </div>
-
-                                            <button onclick="onFiltersApply(event)" class="row__filters-submit">
-                                                Apply filters
-                                            </button>
-                                        </div>
                                     </td>
                                 </tr>
                                 <tr id="layerProxyAndClampToGround"
@@ -981,37 +926,76 @@
             </div>
         </div>
         <div id="tryChartContainer" style="display: none; width: 600px;"></div>
-        <div style="background-color: blue; display: none; width: 200px;" id="formSimulateContainer">
-            <ul>
-                <li>
-                    <label for='areaInput'>Area of Building:</label>
-                    <input type='number' min='0' value='200' id='areaInput'>
-                </li>
-                <li>
-                    <label for='constructionYear'>Year of Construction:</label>
-                    <input type='number'
-                           min='1860'
-                           max='2024'
-                           value='2010'
-                           id='constructionYear'>
-                </li>
-                <li>
-                    <label for='typeOfBuilding'>Type of Building:</label>
-                    <input type='text' value='SFH' id='typeOfBuilding'>
-                </li>
-                <li>
-                    <label for='retrofit'>Retrofit:</label>
-                    <input type='range' min='0' max='2' value='0' id='retrofit'>
-                </li>
-                <li>
-                    <button id='simulateButton' onclick='triggerStartSimulation()'>
-                        <svg id='simulateLoader' class="simulate-button__loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#066AC9"></stop><stop offset=".3" stop-color="#066AC9" stop-opacity=".9"></stop><stop offset=".6" stop-color="#066AC9" stop-opacity=".6"></stop><stop offset=".8" stop-color="#066AC9" stop-opacity=".3"></stop><stop offset="1" stop-color="#066AC9" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#066AC9" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>
-                        <span class="simulate-button__label">
-                            Simulate the building
-                        </span>
-                    </button>
-                </li>
-            </ul>
+        <div id="formSimulateContainer">
+            <span class="row__title">Parameters</span>
+            <div class="row__filters">
+                <div class="row__filters-item">
+                    <label for="filterBuildingResidential">Residential buildings</label>
+                    <select id="filterBuildingResidential" onchange="onBuildingResidentialChange(event)">
+                        <option value="">Select an option</option>
+                        <option value="sfh">SFH</option>
+                        <option value="th">TH</option>
+                        <option value="mfh">MFH</option>
+                        <option value="ab">AB</option>
+                    </select>
+                </div>
+
+                <div class="row__filters-item">
+                    <label for="filterBuildingNonResidential">Non-residential buildings</label>
+                    <select id="filterBuildingNonResidential" onchange="onBuildingNonResidentialChange(event)">
+                        <option value="">Select an option</option>
+                        <option value="hotels">IWU Hotels</option>
+                        <option value="boarding">Boarding</option>
+                        <option value="restaurants">Restaurants or Catering</option>
+                        <option value="administrative">Administrative or Government</option>
+                        <option value="technical">IWU Technical and Utility</option>
+                    </select>
+                </div>
+                
+                <div class="row__filters-item">
+                    <label for="filterStatus">Residential status</label>
+                    <select id="filterStatus" onchange="onBuildingStatusChange(event)">
+                        <option value="">Select an option</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+
+                <div class="row__filters-item">
+                    <label for="filterArea">Area m&sup2; (0 - 10 000 000)</label>
+                    <input
+                        id="filterArea"
+                        placeholder="1000"
+                        oninput="onBuildingAreaChange(event)"
+                    />
+                </div>
+
+                <div class="row__filters-item">
+                    <div
+                        style="display: flex; align-items: center; justify-content: space-between; gap: 8px;"
+                    >
+                        <label for="filterYear">Select year</label>
+                        <span id="filterYearValue">2024</span>
+                    </div>
+                    <input
+                        type="range"
+                        id="filterYear"
+                        min="1000"
+                        max="2030"
+                        step="1"
+                        value="2024"
+                        oninput="onBuildingYearChange(event)"
+                    />
+                </div>
+
+                <button id='simulateButton' onclick='triggerStartSimulation()'>
+                    <svg id='simulateLoader' class="simulate-button__loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#066AC9"></stop><stop offset=".3" stop-color="#066AC9" stop-opacity=".9"></stop><stop offset=".6" stop-color="#066AC9" stop-opacity=".6"></stop><stop offset=".8" stop-color="#066AC9" stop-opacity=".3"></stop><stop offset="1" stop-color="#066AC9" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#066AC9" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>
+                    <span class="simulate-button__label">
+                        Simulate the building
+                    </span>
+                </button>
+            </div>
         </div>
         <script>
             let isToolboxExpanded = false;

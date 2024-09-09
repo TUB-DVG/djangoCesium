@@ -1309,10 +1309,12 @@ function triggerStartSimulation() {
     button.disabled = true;
 
     var data = {};
-    data["area"] = document.getElementById("areaInput").value;
-    data["constructionYear"] = document.getElementById("constructionYear").value;
-    data["typeOfBuilding"] = document.getElementById("typeOfBuilding").value;
-    data["retrofit"] = document.getElementById("retrofit").value;
+    data["area"] = document.getElementById("filterArea").value;
+    data["status"] = document.getElementById("filterStatus").value;
+    data["constructionYear"] = document.getElementById("filterYear").value;
+    data["typeOfBuilding"] = document.getElementById("filterBuildingResidential").value;
+    data["typeOfBuildingNonResidential"] = document.getElementById("filterBuildingNonResidential").value;
+    //  data["retrofit"] = document.getElementById("retrofit").value;
 
     fetch('${baseURL()}/districtgenerator/simulate/', {
         method: 'POST',
@@ -1427,10 +1429,6 @@ function onBuildingAreaChange(event) {
     }
 
     area.value = event.target.value;
-}
-
-function onFiltersApply(event) {
-    console.log(residential.value, nonResidential.value, statusFilter.value, area.value, year.value);
 }
 
 function layerDataTypeDropdownOnchange() {

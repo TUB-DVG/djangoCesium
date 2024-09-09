@@ -224,7 +224,7 @@
                 flex-direction: column;
                 gap: 6px;
                 margin-top: 4px;
-                padding: 6px;
+                padding: 8px;
                 border-radius: 4px;
                 background-color: #ffffff;
             }
@@ -282,6 +282,56 @@
                 bottom: 10px !important;
                 left: 0 !important;
             }
+
+            .row {
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+
+            .row__filters {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                margin-top: 4px;
+                padding: 8px;
+                border-radius: 4px;
+                background-color: #ffffff;
+            }
+
+            .row__filters-item {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .row__filters-item input {
+                border: 1px solid #b0b0b0;
+                border-radius: 4px;
+            }
+
+            .row__filters-item input:not(:placeholder-shown):invalid {
+                border-color: #f84747;
+            }
+
+            .row__filters-submit {
+                padding: 2px;
+                outline: none;
+                border: 1px solid #b0b0b0;
+                border-radius: 4px;
+                background: #ffffff;
+                transition: all 0.2s;
+            }
+
+            .row__filters-submit:hover {
+                border-color: transparent;
+                background-color: #1e90ff;
+            }
+
+            #layerDataTypeDropdown {
+                max-width: fit-content;
+            }
         </style>
     </head>
     <body>
@@ -329,8 +379,8 @@
                                     </td>
                                 </tr>
                                 <tr class="toolbox-modal__row toolbox-modal__row-buildings">
-                                    <td>Layer data type</td>
-                                    <td>
+                                    <td class="row">
+                                        <span>Layer data type</span>
                                         <select id="layerDataTypeDropdown"
                                                 data-bind="value: layerDataType"
                                                 onchange="layerDataTypeDropdownOnchange()">
@@ -338,7 +388,78 @@
                                             <option value="Cesium 3D Tiles">Cesium 3D Tiles</option>
                                             <option value="Others">Others</option>
                                         </select>
+                                    </td>
+                                    <td class="row">
+                                        <span>Buildings</span>
                                         <div id="citydb_layerlistpanel" />
+                                    </td>
+                                    <td class="row">
+                                        <span>Filters</span>
+                                        <div class="row__filters">
+                                            <div class="row__filters-item">
+                                                <label for="filterBuildingResidential">Residential buildings</label>
+                                                <select id="filterBuildingResidential" onchange="onBuildingResidentialChange(event)">
+                                                    <option value="">Select an option</option>
+                                                    <option value="option 1">SFH</option>
+                                                    <option value="option 2">TH</option>
+                                                    <option value="option 3">MFH</option>
+                                                    <option value="option 4">AB</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="row__filters-item">
+                                                <label for="filterBuildingNonResidential">Non-residential buildings</label>
+                                                <select id="filterBuildingNonResidential" onchange="onBuildingNonResidentialChange(event)">
+                                                    <option value="">Select an option</option>
+                                                    <option value="option 1">IWU Hotels</option>
+                                                    <option value="option 2">Boarding</option>
+                                                    <option value="option 3">Restaurants or Catering</option>
+                                                    <option value="option 4">Administrative or Government</option>
+                                                    <option value="option 5">IWU Technical and Utility</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="row__filters-item">
+                                                <label for="filterStatus">Residential status</label>
+                                                <select id="filterStatus" onchange="onBuildingStatusChange(event)">
+                                                    <option value="">Select an option</option>
+                                                    <option value="option 1">0</option>
+                                                    <option value="option 2">1</option>
+                                                    <option value="option 3">2</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="row__filters-item">
+                                                <label for="filterArea">Area m&sup2; (0 - 10 000 000)</label>
+                                                <input
+                                                    id="filterArea"
+                                                    placeholder="1000"
+                                                    oninput="onBuildingAreaChange(event)"
+                                                />
+                                            </div>
+
+                                            <div class="row__filters-item">
+                                                <div
+                                                    style="display: flex; align-items: center; justify-content: space-between; gap: 8px;"
+                                                >
+                                                    <label for="filterYear">Select year</label>
+                                                    <span id="filterYearValue">2024</span>
+                                                </div>
+                                                <input
+                                                    type="range"
+                                                    id="filterYear"
+                                                    min="1000"
+                                                    max="2030"
+                                                    step="1"
+                                                    value="2024"
+                                                    oninput="onBuildingYearChange(event)"
+                                                />
+                                            </div>
+
+                                            <button onclick="onFiltersApply(event)" class="row__filters-submit">
+                                                Apply filters
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr id="layerProxyAndClampToGround"

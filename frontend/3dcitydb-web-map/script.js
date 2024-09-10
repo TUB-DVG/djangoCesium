@@ -1309,14 +1309,15 @@ function triggerStartSimulation() {
     button.disabled = true;
 
     var data = {};
-    data["area"] = document.getElementById("filterArea").value;
-    data["status"] = document.getElementById("filterStatus").value;
-    data["constructionYear"] = document.getElementById("filterYear").value;
+    data["area"] = parseInt(document.getElementById("filterArea").value);
+    data["retrofit"] = document.getElementById("filterStatus").value;
+    data["constructionYear"] = parseInt(document.getElementById("filterYear").value);
     data["typeOfBuilding"] = document.getElementById("filterBuildingResidential").value;
-    data["typeOfBuildingNonResidential"] = document.getElementById("filterBuildingNonResidential").value;
+
+    //  data["typeOfBuildingNonResidential"] = document.getElementById("filterBuildingNonResidential").value;
     //  data["retrofit"] = document.getElementById("retrofit").value;
 
-    fetch('${baseURL()}/districtgenerator/simulate/', {
+    fetch(`${baseURL()}/districtgenerator/simulate/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -1328,6 +1329,10 @@ function triggerStartSimulation() {
     })
     .then(response => response.json())
     .then(data => {
+        console.log("====================")
+        console.log("Simulation response:")
+        console.log(data);
+        console.log("====================")
         var chart = Highcharts.chart('tryChartContainer', {
         // your chart options here
         });
@@ -1415,10 +1420,6 @@ function onBuildingResidentialChange(event) {
 
 function onBuildingStatusChange(event) {
     statusFilter.value = event.target.value;
-}
-
-function onBuildingNonResidentialChange(event) {
-    nonResidential.value = event.target.value;
 }
 
 function onBuildingAreaChange(event) {
@@ -1733,31 +1734,6 @@ var raumKlimaDaten= cesiumViewer.entities.add({
      
  });
 
- var selectFeatureBillboard= cesiumViewer.entities.add({
-    id: "selectFeatureBillboard",
-    name: "Select Attic Billboard",
-    position: Cesium.Cartesian3.fromDegrees(goalLoc.tilesetLon +0.00065+0.00010, goalLoc.tilesetLat+0.00035+0.00005, 8),
-    billboard :  {
-        image : '/data/icons/gebaeudedaten_outline.png',
-        width : 40,
-        height : 40,
-        color: Cesium.Color.WHITE,
-        height: 40,
-    },
-    label : {
-        text : 'Attic Feature',
-        font : '14pt monospace',
-        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-        outlineWidth: 2.5,
-        outlineColor: new Cesium.Color(0.0, 0.0, 0.0, 1.0),
-        verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
-        pixelOffset : new Cesium.Cartesian2(0, 34),
-        backgroundColor: new Cesium.Color(0.0, 0.0, 0.0, 0.8),
-    },  
-     
- });
-
-  
     raumKlimaDaten.description = 
     '\
         <p>\
@@ -1775,7 +1751,6 @@ var raumKlimaDaten= cesiumViewer.entities.add({
             href="https://www.energiewendebauen.de/publikationen">Weitere Informationen</a>\
                 </p>';
 
-    selectFeatureBillboard.description = ''
 
 document.getElementById("applyGeoloc").onclick = ()=>{
     const lon = Number(document.getElementById("longitudeInput").value);

@@ -332,12 +332,26 @@
             #formSimulateContainer {
                 display: flex;
                 flex-direction: column;
-                width: 200px;
+                width: 280px;
                 padding: 10px;
                 border: 1px solid #4c4c4c;
                 border-radius: 14px;
                 background-color: rgba(255, 255, 255, 0.5);
                 backdrop-filter: blur(10px);
+            }
+
+            #formSimulateContainer select,
+            #formSimulateContainer input {
+                padding: 4px 8px;
+                border: none;
+                border-radius: 4px;
+                outline: none;
+                text-overflow: ellipsis;
+                background-color: #ffffff;
+            }
+
+            #formSimulateContainer label {
+                margin-bottom: 2px;
             }
 
             .row__title {
@@ -933,32 +947,35 @@
                     <label for="filterBuildingResidential">Residential buildings</label>
                     <select id="filterBuildingResidential" onchange="onBuildingResidentialChange(event)">
                         <option value="">Select an option</option>
-                        <option value="sfh">SFH</option>
-                        <option value="th">TH</option>
-                        <option value="mfh">MFH</option>
-                        <option value="ab">AB</option>
+                        <option value="SFH">Single Family Home</option>
+                        <option value="TH">Terraced House</option>
+                        <option value="MFH">Multi Family Home</option>
+                        <option value="AB">Apparment Block</option>
+                        <option value="IWU Hotels Boarding Restaurants or Catering">IWU Hotels, Boarding, Restaurants or Catering</option>
+                        <option value="IWU Office Administrative or Government Buildings">IWU Office, Administrative or Government Buildings</option>
+                        <option value="IWU Technical and Utility">IWU Technical and Utility</option>
+                        <option value="IWU Trade Buildings">IWU Trade Buildings</option>
+                        <option value="IWU Technical and Utility supply and disposal">IWU Technical and Utility (supply and disposal)</option>
+                        <option value="IWU School Day Nursery and other Care">IWU School, Day Nursery and other Care</option>
+                        <option value="IWU Transport">IWU Transport</option>
+                        <option value="IWU Health and Care">IWU Health and Care</option>
+                        <option value="IWU Sports Facilities">IWU Sports Facilities</option>
+                        <option value="IWU Culture and Leisure">IWU Culture and Leisure</option>
+                        <option value="IWU Research and University Teaching">IWU Research and University Teaching</option>
+                        <option value="IWU Technical and Utility supply and disposal">IWU Technical and Utility (supply and disposal)</option>
+                        <option value="IWU Generalized 1 Services building">IWU Generalized (1) Services building</option>
+                        <option value="IWU Generalized 2 Production buildings">IWU Generalized (2) Production buildings</option>
+                        <option value="IWU Production Workshop Warehouse or Operations">IWU Production, Workshop, Warehouse or Operations</option>
                     </select>
                 </div>
 
                 <div class="row__filters-item">
-                    <label for="filterBuildingNonResidential">Non-residential buildings</label>
-                    <select id="filterBuildingNonResidential" onchange="onBuildingNonResidentialChange(event)">
-                        <option value="">Select an option</option>
-                        <option value="hotels">IWU Hotels</option>
-                        <option value="boarding">Boarding</option>
-                        <option value="restaurants">Restaurants or Catering</option>
-                        <option value="administrative">Administrative or Government</option>
-                        <option value="technical">IWU Technical and Utility</option>
-                    </select>
-                </div>
-                
-                <div class="row__filters-item">
-                    <label for="filterStatus">Residential status</label>
+                    <label for="filterStatus">Refurbishment status of residential buildings</label>
                     <select id="filterStatus" onchange="onBuildingStatusChange(event)">
                         <option value="">Select an option</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
+                        <option value="0">No Refurbishment</option>
+                        <option value="1">Medium Refurbishment</option>
+                        <option value="2">Advanced Refurbishment</option>
                     </select>
                 </div>
 

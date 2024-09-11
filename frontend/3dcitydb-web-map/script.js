@@ -1160,7 +1160,11 @@ function createInfoTable(res, citydbLayer) {
         // html += "<button id='simulateButton' onclick='window.parent.triggerStartSimulation()'>Simulate the building</button>";
         html += "<ul>";
         for (var key in json) {
-            html += "<li>" + key + ": " + json[key] + "</li>";
+            if (json[key] === null) {
+                delete json[key];
+            } else {
+                html += "<li>" + key + ": " + json[key] + "</li>";
+            }
         }
         // html += "<div id='tryChartContainer'></div>"
         html += "</ul>";

@@ -1121,12 +1121,7 @@ function isValidUrl(str) {
 }
 
 function baseURL() {
-  if (mode == "development") {
-    return "http://127.0.0.1:8001"
-  }
-  else {
-    return "http://127.0.0.1"
-  }
+  return window.env.API_ADDRESS; 
 }
 
 function createInfoTable(res, citydbLayer) {

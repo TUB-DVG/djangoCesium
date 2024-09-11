@@ -96,11 +96,11 @@ WSGI_APPLICATION = "vdistrict.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
-        "NAME": os.environ.get("POSTGRES_DB_CITYDB"),
-        "USER": os.environ.get("POSTGRES_USER_CITYDB"),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD_CITYDB"),
-        "HOST": os.environ.get("POSTGRES_HOST_CITYDB"),
-        "PORT": os.environ.get("POSTGRES_PORT_CITYDB"),
+        "NAME": os.environ.get("CITYDB_NAME"),
+        "USER": os.environ.get("CITYDB_USER"),
+        "PASSWORD": os.environ.get("CITYDB_PASSWORD"),
+        "HOST": os.environ.get("CITYDB_HOST"),
+        "PORT": os.environ.get("CITYDB_PORT"),
     }
 }
 

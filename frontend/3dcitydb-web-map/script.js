@@ -874,7 +874,7 @@ function zoomToObjectById(gmlId, callBackFunc, errorCallbackFunc) {
 
 var _layers = new Array();
 var options = {
-    url: "/cesium/data/kml/fzkHouse.kml",
+    url: "/cesium/data/fzkResultsOneHeight0.kml",
     name: "FZKHouse 1",
     layerDataType: "COLLADA/KML/glTF",
     layerProxy: (addLayerViewModel.layerProxy === true),
@@ -891,10 +891,10 @@ var options = {
     maxLodPixels: addLayerViewModel.maxLodPixels == -1 ? Number.MAX_VALUE : addLayerViewModel.maxLodPixels,
     maxSizeOfCachedTiles: addLayerViewModel.maxSizeOfCachedTiles,
     maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles,
-    gmldId: "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82"
+    //gmldId: "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82"
 }
 var optionsHouse2 = {
-    url: "/cesium/data/Moved.kml",
+    url: "/cesium/data/fzkResultsTwoHeight0.kml",
     name: "FZKHouse 2",
     layerDataType: "COLLADA/KML/glTF",
     layerProxy: (addLayerViewModel.layerProxy === true),
@@ -913,7 +913,7 @@ var optionsHouse2 = {
     maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles,
 }
 var optionsHouse3 = {
-    url: "/cesium/data/Moved2.kml",
+    url: "/cesium/data/fzkResultsThreeHeight0.kml",
     name: "FZKHouse 3",
     layerDataType: "COLLADA/KML/glTF",
     layerProxy: (addLayerViewModel.layerProxy === true),

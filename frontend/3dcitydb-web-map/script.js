@@ -1740,29 +1740,6 @@ var raumKlimaDaten= cesiumViewer.entities.add({
      
  });
 
- var selectFeatureBillboard= cesiumViewer.entities.add({
-    id: "selectFeatureBillboard",
-    name: "Select Attic Billboard",
-    position: Cesium.Cartesian3.fromDegrees(goalLoc.tilesetLon +0.00065+0.00010, goalLoc.tilesetLat+0.00035+0.00005, 8),
-    billboard :  {
-        image : '/data/icons/gebaeudedaten_outline.png',
-        width : 40,
-        height : 40,
-        color: Cesium.Color.WHITE,
-        height: 40,
-    },
-    label : {
-        text : 'Attic Feature',
-        font : '14pt monospace',
-        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-        outlineWidth: 2.5,
-        outlineColor: new Cesium.Color(0.0, 0.0, 0.0, 1.0),
-        verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
-        pixelOffset : new Cesium.Cartesian2(0, 34),
-        backgroundColor: new Cesium.Color(0.0, 0.0, 0.0, 0.8),
-    },  
-     
- });
 
   
     raumKlimaDaten.description = 

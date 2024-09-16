@@ -1,21 +1,21 @@
 import xmltodict
 import pymap3d
- 
+
 referencePoint = [
-    52.518828169293485, 
-    13.373371958193164,
+    49.09674264762836,
+    8.436841219863338,
     0.0,
 ] 
 # lon, lat
 moveToLocation = [
-    52.51887236065563, 
-    13.37264807051817,
+    52.51855226721241,
+    13.372884550081352,
     0.0,
 ]
 
 
 
-file=open("/home/tobias/projects/cesiumDistrictDjangoCityDB/frontend/data/Moved2.kml","r")
+file=open("UUID_f96a624b-d98e-4d1f-944f-d1113bebe049_geometry.kml","r")
 xml_string=file.read()
 print("The XML string is:")
 python_dict=xmltodict.parse(xml_string)
@@ -104,7 +104,7 @@ for placemark in python_dict["kml:kml"]["kml:Document"]["kml:Placemark"]:
 
 
 # print("saving to file einstein_Tile_0_0_geometry_mod.kml")
-file=open("/home/tobias/projects/cesiumDistrictDjangoCityDB/frontend/data/Moved2.kml","w")
+file=open("fzkResultsThree.kml","w")
 xmltodict.unparse(python_dict,file)
 file.close()
 # print(python_dict)

@@ -588,6 +588,7 @@ function addLayerToList(layer) {
 
     var layerOption = document.createElement('div');
     layerOption.id = layer.id;
+    layerOption.className = "gml__building";
     layerOption.appendChild(radio);
     layerOption.appendChild(checkbox);
     layerOption.appendChild(label);
@@ -601,6 +602,13 @@ function addLayerToList(layer) {
 
     var layerlistpanel = document.getElementById("citydb_layerlistpanel")
     layerlistpanel.appendChild(layerOption);
+
+    const buildings = document.getElementsByClassName("gml__building");
+
+    if (buildings.length) {
+        var citydbLayer = webMap.getLayerbyId(buildings[0].id);
+        citydbLayer && citydbLayer.zoomToStartPosition();
+    }
 }
 
 function addEventListeners(layer) {
@@ -874,7 +882,7 @@ function zoomToObjectById(gmlId, callBackFunc, errorCallbackFunc) {
 
 var _layers = new Array();
 var options = {
-    url: "/cesium/data/kml/fzkHouse.kml",
+    url: "/cesium/data/fzkResultsOneHeight0.kml",
     name: "FZKHouse 1",
     layerDataType: "COLLADA/KML/glTF",
     layerProxy: (addLayerViewModel.layerProxy === true),
@@ -891,10 +899,10 @@ var options = {
     maxLodPixels: addLayerViewModel.maxLodPixels == -1 ? Number.MAX_VALUE : addLayerViewModel.maxLodPixels,
     maxSizeOfCachedTiles: addLayerViewModel.maxSizeOfCachedTiles,
     maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles,
-    gmldId: "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82"
+    //gmldId: "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82"
 }
 var optionsHouse2 = {
-    url: "/cesium/data/Moved.kml",
+    url: "/cesium/data/fzkResultsTwoHeight0.kml",
     name: "FZKHouse 2",
     layerDataType: "COLLADA/KML/glTF",
     layerProxy: (addLayerViewModel.layerProxy === true),
@@ -913,7 +921,7 @@ var optionsHouse2 = {
     maxCountOfVisibleTiles: addLayerViewModel.maxCountOfVisibleTiles,
 }
 var optionsHouse3 = {
-    url: "/cesium/data/Moved2.kml",
+    url: "/cesium/data/fzkResultsThreeHeight0.kml",
     name: "FZKHouse 3",
     layerDataType: "COLLADA/KML/glTF",
     layerProxy: (addLayerViewModel.layerProxy === true),
@@ -1121,12 +1129,7 @@ function isValidUrl(str) {
 }
 
 function baseURL() {
-  if (mode == "development") {
-    return "http://127.0.0.1:8001"
-  }
-  else {
-    return "http://127.0.0.1"
-  }
+  return window.env.API_ADDRESS; 
 }
 
 function createInfoTable(res, citydbLayer) {
@@ -1155,7 +1158,7 @@ function createInfoTable(res, citydbLayer) {
         // get the year of construction from the database:
         var yearOfConstructionDate = json["year_of_construction"];
         var yearOfConstruction = yearOfConstructionDate.split("-")[0];
-        document.getElementById("constructionYear").value = yearOfConstruction;
+        document.getElementById("filterYear").value = yearOfConstruction;
         var html = '<table class="cesium-infoBox-defaultTable" style="font-size:10.5pt"><tbody>';
         // html += "<ul><li><label for='areaInput'>Area of Building: </label><input type='number' min='0' value='200' id='areaInput'></li>"
         // html += "<li><label for='constructionYear'>Year of Construction: </label><input type='number' min='1860' max='2024' value='" + yearOfConstruction + "' id='constructionYear'></li>"
@@ -1165,7 +1168,11 @@ function createInfoTable(res, citydbLayer) {
         // html += "<button id='simulateButton' onclick='window.parent.triggerStartSimulation()'>Simulate the building</button>";
         html += "<ul>";
         for (var key in json) {
-            html += "<li>" + key + ": " + json[key] + "</li>";
+            if (json[key] === null) {
+                delete json[key];
+            } else {
+                html += "<li>" + key + ": " + json[key] + "</li>";
+            }
         }
         // html += "<div id='tryChartContainer'></div>"
         html += "</ul>";
@@ -1314,12 +1321,15 @@ function triggerStartSimulation() {
     button.disabled = true;
 
     var data = {};
-    data["area"] = document.getElementById("areaInput").value;
-    data["constructionYear"] = document.getElementById("constructionYear").value;
-    data["typeOfBuilding"] = document.getElementById("typeOfBuilding").value;
-    data["retrofit"] = document.getElementById("retrofit").value;
+    data["area"] = parseInt(document.getElementById("filterArea").value);
+    data["retrofit"] = document.getElementById("filterStatus").value;
+    data["constructionYear"] = parseInt(document.getElementById("filterYear").value);
+    data["typeOfBuilding"] = document.getElementById("filterBuildingResidential").value;
 
-    fetch('${baseURL()}/districtgenerator/simulate/', {
+    //  data["typeOfBuildingNonResidential"] = document.getElementById("filterBuildingNonResidential").value;
+    //  data["retrofit"] = document.getElementById("retrofit").value;
+
+    fetch(`${baseURL()}/districtgenerator/simulate/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -1331,6 +1341,10 @@ function triggerStartSimulation() {
     })
     .then(response => response.json())
     .then(data => {
+        console.log("====================")
+        console.log("Simulation response:")
+        console.log(data);
+        console.log("====================")
         var chart = Highcharts.chart('tryChartContainer', {
         // your chart options here
         });
@@ -1420,10 +1434,6 @@ function onBuildingStatusChange(event) {
     statusFilter.value = event.target.value;
 }
 
-function onBuildingNonResidentialChange(event) {
-    nonResidential.value = event.target.value;
-}
-
 function onBuildingAreaChange(event) {
     const value = event.target.value;
 
@@ -1432,10 +1442,6 @@ function onBuildingAreaChange(event) {
     }
 
     area.value = event.target.value;
-}
-
-function onFiltersApply(event) {
-    console.log(residential.value, nonResidential.value, statusFilter.value, area.value, year.value);
 }
 
 function layerDataTypeDropdownOnchange() {
@@ -1740,8 +1746,6 @@ var raumKlimaDaten= cesiumViewer.entities.add({
      
  });
 
-
-  
     raumKlimaDaten.description = 
     '\
         <p>\
@@ -1759,7 +1763,6 @@ var raumKlimaDaten= cesiumViewer.entities.add({
             href="https://www.energiewendebauen.de/publikationen">Weitere Informationen</a>\
                 </p>';
 
-    selectFeatureBillboard.description = ''
 
 document.getElementById("applyGeoloc").onclick = ()=>{
     const lon = Number(document.getElementById("longitudeInput").value);

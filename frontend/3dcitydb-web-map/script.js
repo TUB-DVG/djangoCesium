@@ -588,6 +588,7 @@ function addLayerToList(layer) {
 
     var layerOption = document.createElement('div');
     layerOption.id = layer.id;
+    layerOption.className = "gml__building";
     layerOption.appendChild(radio);
     layerOption.appendChild(checkbox);
     layerOption.appendChild(label);
@@ -601,6 +602,13 @@ function addLayerToList(layer) {
 
     var layerlistpanel = document.getElementById("citydb_layerlistpanel")
     layerlistpanel.appendChild(layerOption);
+
+    const buildings = document.getElementsByClassName("gml__building");
+
+    if (buildings.length) {
+        var citydbLayer = webMap.getLayerbyId(buildings[0].id);
+        citydbLayer && citydbLayer.zoomToStartPosition();
+    }
 }
 
 function addEventListeners(layer) {

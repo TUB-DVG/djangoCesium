@@ -359,6 +359,10 @@
                 font-size: 16px;
                 font-weight: 500;
             }
+
+            .toggle-weather {
+                top: 125px;
+            }
         </style>
     </head>
     <body>
@@ -939,6 +943,7 @@
                 <br>
             </div>
         </div>
+        <button class="modal__toggle toggle-weather" onclick="toggleWeather()">Show / Hide Weather</button>
         <div id="tryChartContainer" style="display: none; width: 600px;"></div>
         <div id="formSimulateContainer">
             <span class="row__title">Parameters</span>
@@ -1089,6 +1094,20 @@
                     citydb_addsplashwindow.style.display = "none";
                     expanded5 = false;
                 }
+            }
+
+            let isChartOpened = true;
+
+            function toggleWeather() {
+                const chart = document.getElementById("tryChartContainer");
+
+                if (isChartOpened) {
+                    chart.style.display = 'none';
+                } else {
+                    chart.style.display = 'block';
+                }
+
+                isChartOpened = !isChartOpened;
             }
         </script>
         <script src="/cesium/env.js"></script>

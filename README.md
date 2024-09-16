@@ -1,61 +1,72 @@
 # CesiumDistrictDjangoCityDB
 
-This repository contains code for CityGML Modeling and visualization developed by the DVG institute at TU Berlin.
+This project aims to display the effects of data availability on simulation in an interactive way, utilizing DistrictGenerator, Cesium JS, and three FZK Houses.
 
-## Project Description
+## Project Overview
 
-CesiumDistrictDjangoCityDB is a project that focuses on modeling and visualizing urban environments using CityGML standards. It combines the power of Cesium for 3D visualization, Django for web application development, and CityDB for efficient storage and management of 3D city models.
+CesiumDistrictDjangoCityDB is developed by the DVG institute at TU Berlin for CityGML modeling and visualization. It combines various technologies to create an interactive platform for urban simulation and data visualization.
 
 ## Features
 
-- CityGML data modeling and storage
-- 3D visualization using Cesium
-- Web-based interface powered by Django
-- Integration with CityDB for efficient data management
+- Interactive 3D visualization using Cesium JS
+- Integration with DistrictGenerator for urban simulation
+- Utilization of three FZK Houses for demonstration
+- Database integration for storing and managing CityGML data
 
-## Requirements
+## Prerequisites
 
-- We use [docker](https://www.docker.com/) to manage the project. 
-- We use [docker-compose](https://docs.docker.com/compose/) to manage the containers.
+- Docker
+- Git
 
-## Installation
+## Installation and Setup
 
 1. Clone the repository:
+   ```bash
+   git clone https://git.tu-berlin.de/bf_digi/cesiumDistrictDjangoCityDB.git
+   cd cesiumDistrictDjangoCityDB
+   ```
 
-`git clone https://github.com/dvg-tu-berlin/CesiumDistrictDjangoCityDB.git`
+2. Configure the environment:
+   - Copy the `.env.example` file to `.env`
+   - Modify the `.env` file with your specific settings
 
+3. Build and run the Docker containers:
+   ```bash
+   docker-compose build
+   docker-compose up
+   ```
 
-2.  Create a .env-file from the.env.example-file. On linux, that can be done with the cp-command. From within the project-folder execute the following command in a shell:
+4. Import CityGML data:
+   - Use the 3D City Importer tool to load GML data into the database
 
-   `cp .env.example .env`
+## Usage
 
-3. Run the docker-compose-file to start the project. From within the project-folder execute the following command in a shell:
+After setting up the project, you can access the interactive visualization through your web browser at:
 
-    In developement: 
-   `docker-compose -f docker-compose.dev.yml up --build`
+http://localhost:8080/cesium/
 
-   In production:
-   `docker-compose -f docker-compose.yml up --build`
-
-4. Importing GML data in the CityDB:
-
-    For this you can use the [3D City Database Importer/Exporter](https://www.3dcitydb.org/3dcitydb/3dimpexp/).
-
-5. Importing KML data into Cesium:
-
-    Export the CityGML data from CityDB into GML and convert it into KML using  [3D City Database Importer/Exporter](https://www.3dcitydb.org/3dcitydb/3dimpexp/). 
-
-
-    
 ## Contributing
 
-We welcome contributions to the project. Please feel free to submit a pull request.
+We welcome contributions to the CesiumDistrictDjangoCityDB project. Please read our contributing guidelines (link to CONTRIBUTING.md if available) for more information on how to get started.
+
+## Authors and Acknowledgment
+
+This project is developed and maintained by the DVG institute at TU Berlin.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. 
 
-## Info 
+Please note that the 3D CityDB Web Map component is licensed under the Apache License.
 
-This project is a part of the [DVG institute](https://www.dvg.tu-berlin.de/) at the Technical University of Berlin. You can contact us via info@dvg.tu-berlin.de. 
+## Project Status
 
+This project is currently under active development. For any questions or support, please open an issue in the project's GitLab repository.
+
+---
+
+For more detailed information about the project structure, components, or advanced usage, please refer to the documentation in the `docs` folder (if available) or contact the project maintainers.
+
+## Contact
+
+For any questions or support, please contact us via [mail](mailto:info@dvg.tu-berlin.de).

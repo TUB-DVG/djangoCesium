@@ -1150,7 +1150,7 @@ function createInfoTable(res, citydbLayer) {
         // get the year of construction from the database:
         var yearOfConstructionDate = json["year_of_construction"];
         var yearOfConstruction = yearOfConstructionDate.split("-")[0];
-        document.getElementById("constructionYear").value = yearOfConstruction;
+        document.getElementById("filterYear").value = yearOfConstruction;
         var html = '<table class="cesium-infoBox-defaultTable" style="font-size:10.5pt"><tbody>';
         // html += "<ul><li><label for='areaInput'>Area of Building: </label><input type='number' min='0' value='200' id='areaInput'></li>"
         // html += "<li><label for='constructionYear'>Year of Construction: </label><input type='number' min='1860' max='2024' value='" + yearOfConstruction + "' id='constructionYear'></li>"

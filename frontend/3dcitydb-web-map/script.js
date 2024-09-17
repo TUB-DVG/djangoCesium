@@ -484,7 +484,6 @@ function saveLayerSettings() {
     applySaving('maxLodPixels', activeLayer);
     applySaving('maxSizeOfCachedTiles', activeLayer);
     applySaving('maxCountOfVisibleTiles', activeLayer);
-    console.log(activeLayer);
 
     // Update Data Source
     thematicDataSourceAndTableTypeDropdownOnchange();
@@ -1319,8 +1318,6 @@ function triggerStartSimulation() {
     data["retrofit"] = document.getElementById("filterStatus").value;
     data["constructionYear"] = parseInt(document.getElementById("filterYear").value);
     data["typeOfBuilding"] = document.getElementById("filterBuildingResidential").value;
-
-    console.log(data)
 
     if (data["area"] === "" || data["area"] === undefined || Number.isNaN(data["area"]) || data["retrofit"] === "" || !data["constructionYear"] || !data["typeOfBuilding"]) { 
         alert("Please fill out simulation parameters.");

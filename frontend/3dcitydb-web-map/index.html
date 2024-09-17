@@ -336,7 +336,7 @@
                 padding: 10px;
                 border: 1px solid #4c4c4c;
                 border-radius: 14px;
-                background-color: rgba(255, 255, 255, 0.5);
+                background-color: rgba(255, 255, 255, 0.7);
                 backdrop-filter: blur(10px);
             }
 
@@ -362,6 +362,13 @@
 
             .toggle-weather {
                 top: 125px;
+            }
+
+            .error-field {
+                margin-top: 2px;
+                margin-bottom: 6px;
+                font-weight: 500;
+                color: rgb(212, 0, 0);
             }
         </style>
     </head>
@@ -423,74 +430,6 @@
                                     <td class="row">
                                         <span>Buildings</span>
                                         <div id="citydb_layerlistpanel" />
-                                    </td>
-                                    <td class="row">
-                                        <span>Filters</span>
-                                        <div class="row__filters">
-                                            <div class="row__filters-item">
-                                                <label for="filterBuildingResidential">Residential buildings</label>
-                                                <select id="filterBuildingResidential" onchange="onBuildingResidentialChange(event)">
-                                                    <option value="">Select an option</option>
-                                                    <option value="sfh">SFH</option>
-                                                    <option value="th">TH</option>
-                                                    <option value="mfh">MFH</option>
-                                                    <option value="ab">AB</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="row__filters-item">
-                                                <label for="filterBuildingNonResidential">Non-residential buildings</label>
-                                                <select id="filterBuildingNonResidential" onchange="onBuildingNonResidentialChange(event)">
-                                                    <option value="">Select an option</option>
-                                                    <option value="hotels">IWU Hotels</option>
-                                                    <option value="boarding">Boarding</option>
-                                                    <option value="restaurants">Restaurants or Catering</option>
-                                                    <option value="administrative">Administrative or Government</option>
-                                                    <option value="technical">IWU Technical and Utility</option>
-                                                </select>
-                                            </div>
-                                            
-                                            <div class="row__filters-item">
-                                                <label for="filterStatus">Residential status</label>
-                                                <select id="filterStatus" onchange="onBuildingStatusChange(event)">
-                                                    <option value="">Select an option</option>
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="row__filters-item">
-                                                <label for="filterArea">Area m&sup2; (0 - 10 000 000)</label>
-                                                <input
-                                                    id="filterArea"
-                                                    placeholder="1000"
-                                                    oninput="onBuildingAreaChange(event)"
-                                                />
-                                            </div>
-
-                                            <div class="row__filters-item">
-                                                <div
-                                                    style="display: flex; align-items: center; justify-content: space-between; gap: 8px;"
-                                                >
-                                                    <label for="filterYear">Select year</label>
-                                                    <span id="filterYearValue">2024</span>
-                                                </div>
-                                                <input
-                                                    type="range"
-                                                    id="filterYear"
-                                                    min="1000"
-                                                    max="2030"
-                                                    step="1"
-                                                    value="2024"
-                                                    oninput="onBuildingYearChange(event)"
-                                                />
-                                            </div>
-
-                                            <button onclick="onFiltersApply(event)" class="row__filters-submit">
-                                                Apply filters
-                                            </button>
-                                        </div>
                                     </td>
                                 </tr>
                                 <tr id="layerProxyAndClampToGround"
@@ -1053,30 +992,22 @@
                 </div>
 
                 <div class="row__filters-item">
-                    <label for="filterArea">Area m&sup2; (0 - 10 000 000)</label>
+                    <label for="filterArea">Area m&sup2; (0 - 10 000)</label>
                     <input
                         id="filterArea"
                         placeholder="1000"
                         oninput="onBuildingAreaChange(event)"
                     />
+                    <div id="filterAreaErrorMessage" class="error-field" />
                 </div>
 
                 <div class="row__filters-item">
-                    <div
-                        style="display: flex; align-items: center; justify-content: space-between; gap: 8px;"
-                    >
-                        <label for="filterYear">Select year</label>
-                        <span id="filterYearValue">2024</span>
-                    </div>
+                    <label for="filterYear">Enter year</label>
                     <input
-                        type="range"
                         id="filterYear"
-                        min="1000"
-                        max="2030"
-                        step="1"
-                        value="2024"
                         oninput="onBuildingYearChange(event)"
                     />
+                    <div id="filterYearErrorMessage" class="error-field" />
                 </div>
 
                 <button id='simulateButton' onclick='triggerStartSimulation()'>

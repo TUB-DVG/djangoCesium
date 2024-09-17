@@ -1314,17 +1314,27 @@ function fetchDataFromGoogleFusionTable(gmlid, thematicDataUrl) {
     return deferred.promise;
 }
 function triggerStartSimulation() {
-    const loader = document.getElementById('simulateLoader');
-    const button = document.getElementById('simulateButton');
-
-    loader.classList.add('simulate-button__loader--visible');
-    button.disabled = true;
-
     var data = {};
     data["area"] = parseInt(document.getElementById("filterArea").value);
     data["retrofit"] = document.getElementById("filterStatus").value;
     data["constructionYear"] = parseInt(document.getElementById("filterYear").value);
     data["typeOfBuilding"] = document.getElementById("filterBuildingResidential").value;
+
+    if (data["area"] === "" || data["area"] === undefined || data["area"] === "null" || !data["retrofit"] || !data["constructionYear"] || !data["typeOfBuilding"]) { 
+        alert("Please fill out simulation parameters.");
+        return;
+    }
+
+    if (!isFieldAreaValid || !isFieldYearValid) {
+        alert("Please enter corect values.");
+        return;
+    }
+
+    const loader = document.getElementById('simulateLoader');
+    const button = document.getElementById('simulateButton');
+
+    loader.classList.add('simulate-button__loader--visible');
+    button.disabled = true;
 
     //  data["typeOfBuildingNonResidential"] = document.getElementById("filterBuildingNonResidential").value;
     //  data["retrofit"] = document.getElementById("retrofit").value;
@@ -1421,9 +1431,36 @@ const statusFilter = document.getElementById("filterStatus");
 const area = document.getElementById("filterArea");
 const year = document.getElementById("filterYear");
 
+const errorFieldYear = document.getElementById('filterYearErrorMessage');
+let isFieldYearValid = false;
+
 function onBuildingYearChange(event) {
-    document.getElementById('filterYearValue').textContent = event.target.value;
-    year.value = event.target.value;
+    const input = event.target;
+    const value = input.value;
+
+    // Check if the value is a valid integer
+    if (!/^\d*$/.test(value)) {
+        errorFieldYear.textContent = "Please enter only numbers.";
+        input.style.border = "1px solid rgb(212, 0, 0)";
+        isFieldYearValid = false;
+        input.value = value.slice(0, -1);
+        return;
+    }
+
+    // Convert to integer
+    const yearValue = parseInt(value, 10);
+
+    // Ensure the value is between 1830 and 2030
+    if (yearValue < 1830 || yearValue > 2030) {
+        errorFieldYear.textContent = "Please enter a value between 1830 and 2030.";
+        input.style.border = "1px solid rgb(212, 0, 0)";
+        isFieldYearValid = false;
+        return;
+    }
+
+    errorFieldYear.textContent = "";
+    input.style.border = "none";
+    isFieldYearValid = true;
 }
 
 function onBuildingResidentialChange(event) {
@@ -1434,14 +1471,33 @@ function onBuildingStatusChange(event) {
     statusFilter.value = event.target.value;
 }
 
-function onBuildingAreaChange(event) {
-    const value = event.target.value;
+const errorFieldArea = document.getElementById('filterAreaErrorMessage');
+let isFieldAreaValid = false;
 
-    if (!/^\d*\.?\d*$/.test(value)) {
-        event.target.value = value.replace(/[^0-9.]/g, ''); 
+function onBuildingAreaChange(event) {
+    const input = event.target;
+    const value = input.value;
+
+    if (!/^\d*$/.test(value)) {
+        errorFieldArea.textContent = "Please enter only numbers.";
+        input.style.border = "1px solid rgb(212, 0, 0)";
+        input.value = value.slice(0, -1);
+        isFieldAreaValid = false;
+        return;
     }
 
-    area.value = event.target.value;
+    const areaValue = parseFloat(value);
+
+    if (areaValue < 0 || areaValue > 10000) {
+        errorFieldArea.textContent = "Please enter a value between 0 and 10 000.";
+        input.style.border = "1px solid rgb(212, 0, 0)";
+        isFieldAreaValid = false;
+        return;
+    }
+
+    errorFieldArea.textContent = "";
+    input.style.border = "none";
+    isFieldAreaValid = true;
 }
 
 function layerDataTypeDropdownOnchange() {

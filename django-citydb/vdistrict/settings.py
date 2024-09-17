@@ -32,9 +32,12 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "wissen-digital-ewb.de",
     "85.214.114.204",
+    "localhost"
 ]
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8080",
+    "http://127.0.0.1:8001",
+    "http://localhost:8080",
 ]
 # Application definition
 

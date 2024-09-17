@@ -220,12 +220,36 @@
             }
 
             #citydb_layerlistpanel {
-                width: 97.5%;
-                background: rgba(42, 42, 42, 0.8);
-                text-align: left;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                margin-top: 4px;
+                padding: 8px;
+                border-radius: 4px;
+                background-color: #ffffff;
+            }
+
+            #citydb_layerlistpanel label {
+                margin-top: 4px;
+                padding: 2px 4px;
+            }
+
+            #citydb_layerlistpanel div {
+                padding-bottom: 5px;
+                border-bottom: 1px solid gray;
+            }
+
+            #citydb_layerlistpanel div:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            #citydb_layerlistpanel input {
+                margin-right: 6px;
             }
 
             #citydb_layerlistpanel label:hover {
+                border-radius: 2px;
                 background-color: #1e90ff;
             }
 
@@ -257,6 +281,94 @@
             .cesium-viewer-bottom {
                 bottom: 10px !important;
                 left: 0 !important;
+            }
+
+            .row {
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+
+            .row__filters {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .row__filters-item {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .row__filters-item input {
+                border: 1px solid #b0b0b0;
+                border-radius: 4px;
+            }
+
+            .row__filters-item input:not(:placeholder-shown):invalid {
+                border-color: #f84747;
+            }
+
+            .row__filters-submit {
+                padding: 2px;
+                outline: none;
+                border: 1px solid #b0b0b0;
+                border-radius: 4px;
+                background: #ffffff;
+                transition: all 0.2s;
+            }
+
+            .row__filters-submit:hover {
+                border-color: transparent;
+                background-color: #1e90ff;
+            }
+
+            #layerDataTypeDropdown {
+                max-width: fit-content;
+            }
+
+            #formSimulateContainer {
+                display: flex;
+                flex-direction: column;
+                width: 280px;
+                padding: 10px;
+                border: 1px solid #4c4c4c;
+                border-radius: 14px;
+                background-color: rgba(255, 255, 255, 0.7);
+                backdrop-filter: blur(10px);
+            }
+
+            #formSimulateContainer select,
+            #formSimulateContainer input {
+                padding: 4px 8px;
+                border: none;
+                border-radius: 4px;
+                outline: none;
+                text-overflow: ellipsis;
+                background-color: #ffffff;
+            }
+
+            #formSimulateContainer label {
+                margin-bottom: 2px;
+            }
+
+            .row__title {
+                margin-bottom: 12px;
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            .toggle-weather {
+                top: 125px;
+            }
+
+            .error-field {
+                margin-top: 2px;
+                margin-bottom: 6px;
+                font-weight: 500;
+                color: rgb(212, 0, 0);
             }
         </style>
     </head>
@@ -304,9 +416,9 @@
                                         <input type="text" data-bind="value: name">
                                     </td>
                                 </tr>
-                                <tr class="toolbox-modal__row">
-                                    <td>Layer data type</td>
-                                    <td>
+                                <tr class="toolbox-modal__row toolbox-modal__row-buildings">
+                                    <td class="row">
+                                        <span>Layer data type</span>
                                         <select id="layerDataTypeDropdown"
                                                 data-bind="value: layerDataType"
                                                 onchange="layerDataTypeDropdownOnchange()">
@@ -314,6 +426,9 @@
                                             <option value="Cesium 3D Tiles">Cesium 3D Tiles</option>
                                             <option value="Others">Others</option>
                                         </select>
+                                    </td>
+                                    <td class="row">
+                                        <span>Buildings</span>
                                         <div id="citydb_layerlistpanel" />
                                     </td>
                                 </tr>
@@ -835,38 +950,73 @@
                 <br>
             </div>
         </div>
+        <button class="modal__toggle toggle-weather" onclick="toggleWeather()">Show / Hide Weather</button>
         <div id="tryChartContainer" style="display: none; width: 600px;"></div>
-        <div style="background-color: blue; display: none; width: 200px;" id="formSimulateContainer">
-            <ul>
-                <li>
-                    <label for='areaInput'>Area of Building:</label>
-                    <input type='number' min='0' value='200' id='areaInput'>
-                </li>
-                <li>
-                    <label for='constructionYear'>Year of Construction:</label>
-                    <input type='number'
-                           min='1860'
-                           max='2024'
-                           value='2010'
-                           id='constructionYear'>
-                </li>
-                <li>
-                    <label for='typeOfBuilding'>Type of Building:</label>
-                    <input type='text' value='SFH' id='typeOfBuilding'>
-                </li>
-                <li>
-                    <label for='retrofit'>Retrofit:</label>
-                    <input type='range' min='0' max='2' value='0' id='retrofit'>
-                </li>
-                <li>
-                    <button id='simulateButton' onclick='triggerStartSimulation()'>
-                        <svg id='simulateLoader' class="simulate-button__loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#066AC9"></stop><stop offset=".3" stop-color="#066AC9" stop-opacity=".9"></stop><stop offset=".6" stop-color="#066AC9" stop-opacity=".6"></stop><stop offset=".8" stop-color="#066AC9" stop-opacity=".3"></stop><stop offset="1" stop-color="#066AC9" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#066AC9" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>
-                        <span class="simulate-button__label">
-                            Simulate the building
-                        </span>
-                    </button>
-                </li>
-            </ul>
+        <div id="formSimulateContainer">
+            <span class="row__title">Parameters</span>
+            <div class="row__filters">
+                <div class="row__filters-item">
+                    <label for="filterBuildingResidential">Residential buildings</label>
+                    <select id="filterBuildingResidential" onchange="onBuildingResidentialChange(event)">
+                        <option value="">Select an option</option>
+                        <option value="SFH">Single Family Home</option>
+                        <option value="TH">Terraced House</option>
+                        <option value="MFH">Multi Family Home</option>
+                        <option value="AB">Apparment Block</option>
+                        <option value="IWU Hotels Boarding Restaurants or Catering">IWU Hotels, Boarding, Restaurants or Catering</option>
+                        <option value="IWU Office Administrative or Government Buildings">IWU Office, Administrative or Government Buildings</option>
+                        <option value="IWU Technical and Utility">IWU Technical and Utility</option>
+                        <option value="IWU Trade Buildings">IWU Trade Buildings</option>
+                        <option value="IWU Technical and Utility supply and disposal">IWU Technical and Utility (supply and disposal)</option>
+                        <option value="IWU School Day Nursery and other Care">IWU School, Day Nursery and other Care</option>
+                        <option value="IWU Transport">IWU Transport</option>
+                        <option value="IWU Health and Care">IWU Health and Care</option>
+                        <option value="IWU Sports Facilities">IWU Sports Facilities</option>
+                        <option value="IWU Culture and Leisure">IWU Culture and Leisure</option>
+                        <option value="IWU Research and University Teaching">IWU Research and University Teaching</option>
+                        <option value="IWU Technical and Utility supply and disposal">IWU Technical and Utility (supply and disposal)</option>
+                        <option value="IWU Generalized 1 Services building">IWU Generalized (1) Services building</option>
+                        <option value="IWU Generalized 2 Production buildings">IWU Generalized (2) Production buildings</option>
+                        <option value="IWU Production Workshop Warehouse or Operations">IWU Production, Workshop, Warehouse or Operations</option>
+                    </select>
+                </div>
+
+                <div class="row__filters-item">
+                    <label for="filterStatus">Refurbishment status of residential buildings</label>
+                    <select id="filterStatus" onchange="onBuildingStatusChange(event)">
+                        <option value="">Select an option</option>
+                        <option value="0">No Refurbishment</option>
+                        <option value="1">Medium Refurbishment</option>
+                        <option value="2">Advanced Refurbishment</option>
+                    </select>
+                </div>
+
+                <div class="row__filters-item">
+                    <label for="filterArea">Area m&sup2; (0 - 10 000)</label>
+                    <input
+                        id="filterArea"
+                        placeholder="1000"
+                        oninput="onBuildingAreaChange(event)"
+                    />
+                    <div id="filterAreaErrorMessage" class="error-field" />
+                </div>
+
+                <div class="row__filters-item">
+                    <label for="filterYear">Enter year</label>
+                    <input
+                        id="filterYear"
+                        oninput="onBuildingYearChange(event)"
+                    />
+                    <div id="filterYearErrorMessage" class="error-field" />
+                </div>
+
+                <button id='simulateButton' onclick='triggerStartSimulation()'>
+                    <svg id='simulateLoader' class="simulate-button__loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#066AC9"></stop><stop offset=".3" stop-color="#066AC9" stop-opacity=".9"></stop><stop offset=".6" stop-color="#066AC9" stop-opacity=".6"></stop><stop offset=".8" stop-color="#066AC9" stop-opacity=".3"></stop><stop offset="1" stop-color="#066AC9" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#066AC9" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>
+                    <span class="simulate-button__label">
+                        Simulate the building
+                    </span>
+                </button>
+            </div>
         </div>
         <script>
             let isToolboxExpanded = false;
@@ -943,6 +1093,20 @@
                     citydb_addsplashwindow.style.display = "none";
                     expanded5 = false;
                 }
+            }
+
+            let isChartOpened = true;
+
+            function toggleWeather() {
+                const chart = document.getElementById("tryChartContainer");
+
+                if (isChartOpened) {
+                    chart.style.display = 'none';
+                } else {
+                    chart.style.display = 'block';
+                }
+
+                isChartOpened = !isChartOpened;
             }
         </script>
         <script src="/cesium/env.js"></script>

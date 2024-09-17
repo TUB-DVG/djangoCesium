@@ -588,6 +588,7 @@ function addLayerToList(layer) {
 
     var layerOption = document.createElement('div');
     layerOption.id = layer.id;
+    layerOption.className = "gml__building";
     layerOption.appendChild(radio);
     layerOption.appendChild(checkbox);
     layerOption.appendChild(label);
@@ -601,6 +602,13 @@ function addLayerToList(layer) {
 
     var layerlistpanel = document.getElementById("citydb_layerlistpanel")
     layerlistpanel.appendChild(layerOption);
+
+    const buildings = document.getElementsByClassName("gml__building");
+
+    if (buildings.length) {
+        var citydbLayer = webMap.getLayerbyId(buildings[0].id);
+        citydbLayer && citydbLayer.zoomToStartPosition();
+    }
 }
 
 function addEventListeners(layer) {
@@ -1150,7 +1158,7 @@ function createInfoTable(res, citydbLayer) {
         // get the year of construction from the database:
         var yearOfConstructionDate = json["year_of_construction"];
         var yearOfConstruction = yearOfConstructionDate.split("-")[0];
-        document.getElementById("constructionYear").value = yearOfConstruction;
+        document.getElementById("filterYear").value = yearOfConstruction;
         var html = '<table class="cesium-infoBox-defaultTable" style="font-size:10.5pt"><tbody>';
         // html += "<ul><li><label for='areaInput'>Area of Building: </label><input type='number' min='0' value='200' id='areaInput'></li>"
         // html += "<li><label for='constructionYear'>Year of Construction: </label><input type='number' min='1860' max='2024' value='" + yearOfConstruction + "' id='constructionYear'></li>"
@@ -1160,7 +1168,11 @@ function createInfoTable(res, citydbLayer) {
         // html += "<button id='simulateButton' onclick='window.parent.triggerStartSimulation()'>Simulate the building</button>";
         html += "<ul>";
         for (var key in json) {
-            html += "<li>" + key + ": " + json[key] + "</li>";
+            if (json[key] === null) {
+                delete json[key];
+            } else {
+                html += "<li>" + key + ": " + json[key] + "</li>";
+            }
         }
         // html += "<div id='tryChartContainer'></div>"
         html += "</ul>";
@@ -1302,19 +1314,32 @@ function fetchDataFromGoogleFusionTable(gmlid, thematicDataUrl) {
     return deferred.promise;
 }
 function triggerStartSimulation() {
+    var data = {};
+    data["area"] = parseInt(document.getElementById("filterArea").value);
+    data["retrofit"] = document.getElementById("filterStatus").value;
+    data["constructionYear"] = parseInt(document.getElementById("filterYear").value);
+    data["typeOfBuilding"] = document.getElementById("filterBuildingResidential").value;
+
+    if (data["area"] === "" || data["area"] === undefined || data["area"] === "null" || !data["retrofit"] || !data["constructionYear"] || !data["typeOfBuilding"]) { 
+        alert("Please fill out simulation parameters.");
+        return;
+    }
+
+    if (!isFieldAreaValid || !isFieldYearValid) {
+        alert("Please enter corect values.");
+        return;
+    }
+
     const loader = document.getElementById('simulateLoader');
     const button = document.getElementById('simulateButton');
 
     loader.classList.add('simulate-button__loader--visible');
     button.disabled = true;
 
-    var data = {};
-    data["area"] = document.getElementById("areaInput").value;
-    data["constructionYear"] = document.getElementById("constructionYear").value;
-    data["typeOfBuilding"] = document.getElementById("typeOfBuilding").value;
-    data["retrofit"] = document.getElementById("retrofit").value;
+    //  data["typeOfBuildingNonResidential"] = document.getElementById("filterBuildingNonResidential").value;
+    //  data["retrofit"] = document.getElementById("retrofit").value;
 
-    fetch('${baseURL()}/districtgenerator/simulate/', {
+    fetch(`${baseURL()}/districtgenerator/simulate/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -1326,6 +1351,10 @@ function triggerStartSimulation() {
     })
     .then(response => response.json())
     .then(data => {
+        console.log("====================")
+        console.log("Simulation response:")
+        console.log(data);
+        console.log("====================")
         var chart = Highcharts.chart('tryChartContainer', {
         // your chart options here
         });
@@ -1394,6 +1423,81 @@ function showInExternalMaps() {
     }
 
     window.open(mapLink);
+}
+
+const residential = document.getElementById("filterBuildingResidential");
+const nonResidential = document.getElementById("filterBuildingNonResidential");
+const statusFilter = document.getElementById("filterStatus");
+const area = document.getElementById("filterArea");
+const year = document.getElementById("filterYear");
+
+const errorFieldYear = document.getElementById('filterYearErrorMessage');
+let isFieldYearValid = false;
+
+function onBuildingYearChange(event) {
+    const input = event.target;
+    const value = input.value;
+
+    // Check if the value is a valid integer
+    if (!/^\d*$/.test(value)) {
+        errorFieldYear.textContent = "Please enter only numbers.";
+        input.style.border = "1px solid rgb(212, 0, 0)";
+        isFieldYearValid = false;
+        input.value = value.slice(0, -1);
+        return;
+    }
+
+    // Convert to integer
+    const yearValue = parseInt(value, 10);
+
+    // Ensure the value is between 1830 and 2030
+    if (yearValue < 1830 || yearValue > 2030) {
+        errorFieldYear.textContent = "Please enter a value between 1830 and 2030.";
+        input.style.border = "1px solid rgb(212, 0, 0)";
+        isFieldYearValid = false;
+        return;
+    }
+
+    errorFieldYear.textContent = "";
+    input.style.border = "none";
+    isFieldYearValid = true;
+}
+
+function onBuildingResidentialChange(event) {
+    residential.value = event.target.value;
+}
+
+function onBuildingStatusChange(event) {
+    statusFilter.value = event.target.value;
+}
+
+const errorFieldArea = document.getElementById('filterAreaErrorMessage');
+let isFieldAreaValid = false;
+
+function onBuildingAreaChange(event) {
+    const input = event.target;
+    const value = input.value;
+
+    if (!/^\d*$/.test(value)) {
+        errorFieldArea.textContent = "Please enter only numbers.";
+        input.style.border = "1px solid rgb(212, 0, 0)";
+        input.value = value.slice(0, -1);
+        isFieldAreaValid = false;
+        return;
+    }
+
+    const areaValue = parseFloat(value);
+
+    if (areaValue < 0 || areaValue > 10000) {
+        errorFieldArea.textContent = "Please enter a value between 0 and 10 000.";
+        input.style.border = "1px solid rgb(212, 0, 0)";
+        isFieldAreaValid = false;
+        return;
+    }
+
+    errorFieldArea.textContent = "";
+    input.style.border = "none";
+    isFieldAreaValid = true;
 }
 
 function layerDataTypeDropdownOnchange() {
@@ -1674,55 +1778,30 @@ var raumKlimaDaten= cesiumViewer.entities.add({
      
  });
 
- var weatherDataBillboard= cesiumViewer.entities.add({
-    id: "weatherDataBillboard",
-    name: "Wetterdaten",
-    position: Cesium.Cartesian3.fromDegrees(goalLoc.tilesetLon+0.00005, goalLoc.tilesetLat+0.00015, 3),
-    billboard :  {
-        image : '/data/icons/temperatur_outline.png',
-        width : 40,
-        height : 40,
-        color: Cesium.Color.WHITE,
-        height: 40,
-    },
-    label : {
-        text : 'Wetterdaten Potsdam',
-        font : '14pt monospace',
-        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-        outlineWidth: 2.5,
-        outlineColor: new Cesium.Color(0.0, 0.0, 0.0, 1.0),
-        verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
-        pixelOffset : new Cesium.Cartesian2(0, 34),
-        backgroundColor: new Cesium.Color(0.0, 0.0, 0.0, 0.8),
-    },  
-     
- });
+ // var weatherDataBillboard= cesiumViewer.entities.add({
+ //    id: "weatherDataBillboard",
+ //    name: "Wetterdaten",
+ //    position: Cesium.Cartesian3.fromDegrees(goalLoc.tilesetLon+0.00005, goalLoc.tilesetLat+0.00015, 3),
+ //    billboard :  {
+ //        image : '/data/icons/temperatur_outline.png',
+ //        width : 40,
+ //        height : 40,
+ //        color: Cesium.Color.WHITE,
+ //        height: 40,
+ //    },
+ //    label : {
+ //        text : 'Wetterdaten Potsdam',
+ //        font : '14pt monospace',
+ //        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+ //        outlineWidth: 2.5,
+ //        outlineColor: new Cesium.Color(0.0, 0.0, 0.0, 1.0),
+ //        verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
+ //        pixelOffset : new Cesium.Cartesian2(0, 34),
+ //        backgroundColor: new Cesium.Color(0.0, 0.0, 0.0, 0.8),
+ //    },  
+ //     
+ // });
 
- var selectFeatureBillboard= cesiumViewer.entities.add({
-    id: "selectFeatureBillboard",
-    name: "Select Attic Billboard",
-    position: Cesium.Cartesian3.fromDegrees(goalLoc.tilesetLon +0.00065+0.00010, goalLoc.tilesetLat+0.00035+0.00005, 8),
-    billboard :  {
-        image : '/data/icons/gebaeudedaten_outline.png',
-        width : 40,
-        height : 40,
-        color: Cesium.Color.WHITE,
-        height: 40,
-    },
-    label : {
-        text : 'Attic Feature',
-        font : '14pt monospace',
-        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-        outlineWidth: 2.5,
-        outlineColor: new Cesium.Color(0.0, 0.0, 0.0, 1.0),
-        verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
-        pixelOffset : new Cesium.Cartesian2(0, 34),
-        backgroundColor: new Cesium.Color(0.0, 0.0, 0.0, 0.8),
-    },  
-     
- });
-
-  
     raumKlimaDaten.description = 
     '\
         <p>\
@@ -1740,7 +1819,6 @@ var raumKlimaDaten= cesiumViewer.entities.add({
             href="https://www.energiewendebauen.de/publikationen">Weitere Informationen</a>\
                 </p>';
 
-    selectFeatureBillboard.description = ''
 
 document.getElementById("applyGeoloc").onclick = ()=>{
     const lon = Number(document.getElementById("longitudeInput").value);

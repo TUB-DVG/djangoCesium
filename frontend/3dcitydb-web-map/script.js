@@ -1778,29 +1778,29 @@ var raumKlimaDaten= cesiumViewer.entities.add({
      
  });
 
- var weatherDataBillboard= cesiumViewer.entities.add({
-    id: "weatherDataBillboard",
-    name: "Wetterdaten",
-    position: Cesium.Cartesian3.fromDegrees(goalLoc.tilesetLon+0.00005, goalLoc.tilesetLat+0.00015, 3),
-    billboard :  {
-        image : '/data/icons/temperatur_outline.png',
-        width : 40,
-        height : 40,
-        color: Cesium.Color.WHITE,
-        height: 40,
-    },
-    label : {
-        text : 'Wetterdaten Potsdam',
-        font : '14pt monospace',
-        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-        outlineWidth: 2.5,
-        outlineColor: new Cesium.Color(0.0, 0.0, 0.0, 1.0),
-        verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
-        pixelOffset : new Cesium.Cartesian2(0, 34),
-        backgroundColor: new Cesium.Color(0.0, 0.0, 0.0, 0.8),
-    },  
-     
- });
+ // var weatherDataBillboard= cesiumViewer.entities.add({
+ //    id: "weatherDataBillboard",
+ //    name: "Wetterdaten",
+ //    position: Cesium.Cartesian3.fromDegrees(goalLoc.tilesetLon+0.00005, goalLoc.tilesetLat+0.00015, 3),
+ //    billboard :  {
+ //        image : '/data/icons/temperatur_outline.png',
+ //        width : 40,
+ //        height : 40,
+ //        color: Cesium.Color.WHITE,
+ //        height: 40,
+ //    },
+ //    label : {
+ //        text : 'Wetterdaten Potsdam',
+ //        font : '14pt monospace',
+ //        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+ //        outlineWidth: 2.5,
+ //        outlineColor: new Cesium.Color(0.0, 0.0, 0.0, 1.0),
+ //        verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
+ //        pixelOffset : new Cesium.Cartesian2(0, 34),
+ //        backgroundColor: new Cesium.Color(0.0, 0.0, 0.0, 0.8),
+ //    },  
+ //     
+ // });
 
     raumKlimaDaten.description = 
     '\

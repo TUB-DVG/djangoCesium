@@ -37,9 +37,22 @@ class SimulatorView(APIView):
 
         # create a new instance of the district generator
         data = Datahandler()
-        data.generateDistrictComplete(scenario_name="cesiumInput",
-                                      calcUserProfiles=True,
-                                      saveUserProfiles=True)
+        data.setWeatherFile("/app/districtgenerator/AMY_2010_2022_2020.epw")
+ 
+        # Generate Environment for the District
+        data.generateEnvironment()
+
+
+        # Use the created scenario for testing
+        data.initializeBuildings('cesiumInput')
+        data.generateBuildings()
+
+
+        data.generateDemands()       
+
+        # data.generateDistrictComplete(scenario_name="cesiumInput",
+                                      # calcUserProfiles=True,
+                                      # saveUserProfiles=True)
 
         heatProfile = data.district[0]["user"].heat
         electricityProfile = data.district[0]["user"].elec

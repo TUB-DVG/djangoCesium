@@ -484,7 +484,6 @@ function saveLayerSettings() {
     applySaving('maxLodPixels', activeLayer);
     applySaving('maxSizeOfCachedTiles', activeLayer);
     applySaving('maxCountOfVisibleTiles', activeLayer);
-    console.log(activeLayer);
 
     // Update Data Source
     thematicDataSourceAndTableTypeDropdownOnchange();
@@ -1320,14 +1319,16 @@ function triggerStartSimulation() {
     data["constructionYear"] = parseInt(document.getElementById("filterYear").value);
     data["typeOfBuilding"] = document.getElementById("filterBuildingResidential").value;
 
-    if (data["area"] === "" || data["area"] === undefined || data["area"] === "null" || !data["retrofit"] || !data["constructionYear"] || !data["typeOfBuilding"]) { 
+    if (data["area"] === "" || data["area"] === undefined || Number.isNaN(data["area"]) || data["retrofit"] === "" || !data["constructionYear"] || !data["typeOfBuilding"]) { 
         alert("Please fill out simulation parameters.");
         return;
     }
 
-    if (!isFieldAreaValid || !isFieldYearValid) {
-        alert("Please enter corect values.");
-        return;
+    if (data["constructionYear"] || data["area"]) {
+        if (!isFieldAreaValid || !isFieldYearValid) {
+            alert("Please enter corect values.");
+            return;
+        }
     }
 
     const loader = document.getElementById('simulateLoader');

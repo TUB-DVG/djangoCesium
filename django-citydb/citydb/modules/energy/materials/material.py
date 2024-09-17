@@ -153,22 +153,22 @@ class SolidMaterial(AbstractMaterial):
     conductivity_uom = models.CharField(max_length=1000, blank=True, null=True)
     density = models.FloatField(blank=True, null=True)
     density_uom = models.CharField(max_length=1000, blank=True, null=True)
-    embodied_carbon = models.FloatField(
-        db_column="embodiedcarbon", blank=True, null=True
-    )
-    embodied_carbon_uom = models.CharField(
-        db_column="embodiedcarbon_uom", max_length=1000, blank=True, null=True
-    )
-    embodied_energy = models.FloatField(
-        db_column="embodiedenergy", blank=True, null=True
-    )
-    embodied_energy_uom = models.CharField(
-        db_column="embodiedenergy_uom", max_length=1000, blank=True, null=True
-    )
+    # embodied_carbon = models.FloatField(
+    #     db_column="embodiedcarbon", blank=True, null=True
+    # )
+    # embodied_carbon_uom = models.CharField(
+    #     db_column="embodiedcarbon_uom", max_length=1000, blank=True, null=True
+    # )
+    # embodied_energy = models.FloatField(
+    #     db_column="embodiedenergy", blank=True, null=True
+    # )
+    # embodied_energy_uom = models.CharField(
+    #     db_column="embodiedenergy_uom", max_length=1000, blank=True, null=True
+    # )
     permeance = models.FloatField(blank=True, null=True)
     permeance_uom = models.CharField(max_length=1000, blank=True, null=True)
-    porosity = models.FloatField(blank=True, null=True)
-    porosity_uom = models.CharField(max_length=1000, blank=True, null=True)
+    # porosity = models.FloatField(blank=True, null=True)
+    # porosity_uom = models.CharField(max_length=1000, blank=True, null=True)
     specific_heat = models.FloatField(db_column="specificheat", blank=True, null=True)
     specific_heat_uom = models.CharField(
         db_column="specificheat_uom", max_length=1000, blank=True, null=True

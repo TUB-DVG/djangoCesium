@@ -87,7 +87,7 @@ class TestSimulatorView(TestCase):
         data = {
             'building': 'INVALID_TYPE',
             'year': 2020,
-            'retrofit': 'standard',
+            'retrofit': 0,
             'area': 100
         }
 
@@ -98,7 +98,7 @@ class TestSimulatorView(TestCase):
         data = {
             'building': 'SFH',
             'year': 2020,
-            'retrofit': 'standard',
+            'retrofit': 1,
             'area': -100  # Invalid area
         }
 

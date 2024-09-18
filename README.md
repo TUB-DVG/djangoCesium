@@ -17,6 +17,7 @@ CesiumDistrictDjangoCityDB is developed by the DVG institute at TU Berlin for Ci
 
 - Docker
 - Git
+- [3D CityDB Importer/Exporter](https://3dcitydb-docs.readthedocs.io/en/latest/impexp/index.html)
 
 ## Installation and Setup
 

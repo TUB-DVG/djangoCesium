@@ -70,7 +70,7 @@ class TestSimulatorView(TestCase):
                 data = {
                     'building': building_type,
                     'year': 1990,
-                    'retrofit': '0',
+                    'retrofit': 0,
                     'area': 100  # Example area, adjust as needed
                 }
 

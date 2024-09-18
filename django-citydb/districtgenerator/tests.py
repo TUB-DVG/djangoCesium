@@ -70,7 +70,7 @@ class TestSimulatorView(TestCase):
                 data = {
                     'building': building_type,
                     'year': 1990,
-                    'retrofit': 'standard',
+                    'retrofit': '0',
                     'area': 100  # Example area, adjust as needed
                 }
 
@@ -105,12 +105,12 @@ class TestSimulatorView(TestCase):
         response = self.client.post(self.url, data, format='json')
         self.assertEqual(response.status_code, 400)
 
-    def test_missing_required_field(self):
+    def test_invalid_retrofit(self):
         data = {
             'building': 'SFH',
             'year': 2020,
-            'retrofit': 'standard'
-            # Missing 'area' field
+            'retrofit': 'standard',
+            'area' : 100
         }
 
         response = self.client.post(self.url, data, format='json')

@@ -1316,15 +1316,15 @@ function triggerStartSimulation() {
     var data = {};
     data["area"] = parseInt(document.getElementById("filterArea").value);
     data["retrofit"] = document.getElementById("filterStatus").value;
-    data["constructionYear"] = parseInt(document.getElementById("filterYear").value);
-    data["typeOfBuilding"] = document.getElementById("filterBuildingResidential").value;
+    data["year"] = parseInt(document.getElementById("filterYear").value);
+    data["building"] = document.getElementById("filterBuildingResidential").value;
 
-    if (data["area"] === "" || data["area"] === undefined || Number.isNaN(data["area"]) || data["retrofit"] === "" || !data["constructionYear"] || !data["typeOfBuilding"]) { 
+    if (data["area"] === "" || data["area"] === undefined || Number.isNaN(data["area"]) || data["retrofit"] === "" || !data["year"] || !data["building"]) { 
         alert("Please fill out simulation parameters.");
         return;
     }
 
-    if (data["constructionYear"] || data["area"]) {
+    if (data["year"] || data["area"]) {
         if (!isFieldAreaValid || !isFieldYearValid) {
             alert("Please enter corect values.");
             return;

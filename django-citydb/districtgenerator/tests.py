@@ -58,7 +58,7 @@ class TestSimulatorView(TestCase):
         self.url = '/districtgenerator/simulate/'  # Adjust this to match your URL configuration
 
     def test_all_building_types(self):
-        building_types = [ "SFH", "TH", "MFH", "AB" ,"IWU Hotels, Boarding, Restaurants or Catering", "IWU Office, Administrative or Government Buildings", "IWU Technical and Utility",
+        building_types = [ "SFH", "TH", "MFH", "AB" ,"IWU Hotels, Boarding, Restaurants or Catering", "IWU Office, Administrative or Government Buildings",
                                   "IWU Trade Buildings", "IWU Technical and Utility (supply and disposal)", "IWU School, Day Nursery and other Care", "IWU Transport",
                                   "IWU Health and Care", "IWU Sports Facilities", "IWU Culture and Leisure", "IWU Research and University Teaching", "IWU Technical and Utility (supply and disposal)",
                                   "IWU Generalized (1) Services building", "IWU Generalized (2) Production buildings", "IWU Production, Workshop, Warehouse or Operations"

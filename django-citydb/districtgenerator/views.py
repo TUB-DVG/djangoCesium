@@ -32,7 +32,7 @@ class SimulatorView(APIView):
         with open("/app/districtgenerator/districtgenerator/data/scenarios/cesiumInput.csv",
                   "w") as file:
             file.write(
-                f"id;building;year;retrofit;area\n0;{data['typeOfBuilding']};{data['constructionYear']};{data['retrofit']};{data['area']}"
+                f"id;building;year;retrofit;area\n0;{data['building']};{data['year']};{data['retrofit']};{data['area']}"
             )
 
         # create a new instance of the district generator

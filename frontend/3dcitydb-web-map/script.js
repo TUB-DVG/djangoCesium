@@ -1447,7 +1447,6 @@ function triggerStartSimulation() {
         //var chart = Highcharts.chart('tryChartContainer', {
         //// your chart options here
         //});
-        //debugger;
         simulatedTimeseriesData = JSON.parse(data);
         for (var key in simulatedTimeseriesData) {
             if (key != "DATE") {
@@ -1711,7 +1710,7 @@ function writeToDatabase() {
     }).then(response => response.json()).then(data => console.log(data));
 
     // after writing data, fetch the data again to update the chart
-    fetchTimeseriesForBuilding(gmlid);
+    //fetchTimeseriesForBuilding(gmlid);
     document.getElementById("formSimulateContainer").innerHTML = formContentOfSimulateInputContainer;
 
 }
@@ -2045,26 +2044,26 @@ function fetchTimeseriesForBuilding(gmlid) {
                 document.getElementById("tryChartContainer").style = "display: block; width: 400px;";
     
                 document.getElementById("formSimulateContainer").style.display = "block";
-                
-            for (var key in jsonObject) {
+            var seriesDate = undefined;
+            for (var key in jsonObject) { 
                 if (iterator == 0) {
-                    var dateStartStr = jsonObject[key]["time"][0];
+                    
                     chart = Highcharts.chart('tryChartContainer', {
                         title: {
                             text: 'Verbrauchsdaten'
                         },
                         xAxis: {
-                            type: 'datetime'
+                          type: 'datetime',  // Ensure the x-axis type is set to 'datetime'
                         },
                         plotOptions: {
-                            series: {
-                                pointStart: Date.parse(dateStartStr),
-                                pointInterval: 3600000,
-                            }
+                          series: {
+                            pointStart: Date.parse("2020-01-01T00:00:00"),  // Start at January 1, 2020
+                            pointInterval: 3600 * 1000  // One day in milliseconds
+                          }
                         },
                         series: [{
-                            name: key,
-                            data: jsonObject[key]["data"]
+                          name: key,
+                          data: jsonObject[key]["data"]
                         }]
                     });      
                     iterator++;              

@@ -159,6 +159,34 @@ var splashController = new SplashController(addSplashWindowModel);
 
 initClient();
 
+var simulationBox = document.getElementById("formSimulateContainer")
+simulationBox.style.display = "none";
+// Get the element(s) with the class "cesium-infoBox"
+var buildingInfoBox = document.getElementsByClassName("cesium-infoBox");
+
+// Create a callback function that will be triggered when visibility changes
+function onVisibilityChange(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      simulationBox.style.display = "block";     
+    }
+    else {
+      simulationBox.style.display = "none";
+    }
+  });
+}
+
+// Create a new IntersectionObserver instance
+var observer = new IntersectionObserver(onVisibilityChange, {
+  root: null, // Use the viewport as the root
+  threshold: 0.1 // Trigger when 10% of the element is visible
+});
+
+var buildingInfoBox = document.getElementsByClassName("cesium-infoBox")
+if (buildingInfoBox.length > 0) {
+  observer.observe(buildingInfoBox[0]);
+}
+
 // Store clicked entities
 var clickedEntities = {};
 
@@ -327,7 +355,6 @@ function observeActiveLayer() {
         addLayerViewModel.maxCountOfVisibleTiles = selectedLayer.maxCountOfVisibleTiles;
     }
 }
-
 
 
 function adjustIonFeatures() {

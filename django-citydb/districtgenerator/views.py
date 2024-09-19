@@ -32,7 +32,7 @@ class SimulatorView(APIView):
         with open("/app/districtgenerator/districtgenerator/data/scenarios/cesiumInput.csv",
                   "w") as file:
             file.write(
-                f"id;building;year;retrofit;area\n0;{data['typeOfBuilding']};{data['constructionYear']};{data['retrofit']};{data['area']}"
+                f"id;building;year;retrofit;area\n0;{data['building']};{data['year']};{data['retrofit']};{data['area']}"
             )
 
         # create a new instance of the district generator
@@ -57,29 +57,50 @@ class SimulatorView(APIView):
         heatProfile = data.district[0]["user"].heat
         electricityProfile = data.district[0]["user"].elec
         domesticHotWaterProfile = data.district[0]["user"].dhw
-
+        
+        dictToIterate = {
+            "spaceHeating_kWh": heatProfile,
+            "electricalAppliances_kWh": electricityProfile,
+            "domesticHotWater_kWh": domesticHotWaterProfile,
+        }
         dictOfEnergyDemandData = {}
+        # get the time data from the simulation:
+        # breakpoint()
+        timeData = data.timestamp
+        startDate = data.timestamp.values[0]
+        endDate = data.timestamp.values[-1]
+        timeList = []
+        for timestamp in timeData:
+            timeList.append(str(timestamp))    
+        
+        dictOfEnergyDemandData["DATE"] = timeList 
 
-        lengthOfProfiles = len(heatProfile)
-        if lengthOfProfiles >= 8760:
-            timestamps = []
-            startDate = datetime.datetime(2023, 1, 1)
-            endDate = datetime.datetime(2024, 1, 1)
+        for demand in dictToIterate.keys():
+            # timestep = (data.timestamp.values[-1]-data.timestamp.values[0])/len(dictToIterate[demand])
+            # timestamps = np.arange(startDate, endDate, timestep)
+            dictOfEnergyDemandData[demand] = list(dictToIterate[demand]) 
+        
 
-            currentDate = startDate
-            while currentDate < endDate:
-                timestamps.append(currentDate.strftime("%Y-%m-%d %H:%M:%S"))
-                currentDate += datetime.timedelta(hours=1)
-
-            dictOfEnergyDemandData["DATE"] = timestamps
-            dictOfEnergyDemandData["spaceHeating_kWh"] = list(
-                heatProfile[:8760])
-            # print(len(heatProfile[:8760]))
-            dictOfEnergyDemandData["electricalAppliances_kWh"] = list(
-                electricityProfile[:8760])
-            dictOfEnergyDemandData["domesticHotWater_kWh"] = list(
-                domesticHotWaterProfile[:8760])
-
+        # lengthOfProfiles = len(heatProfile)
+        # if lengthOfProfiles >= 8760:
+        #     timestamps = []
+        #     startDate = datetime.datetime(2023, 1, 1)
+        #     endDate = datetime.datetime(2024, 1, 1)
+        #
+        #     currentDate = startDate
+        #     while currentDate < endDate:
+        #         timestamps.append(currentDate.strftime("%Y-%m-%d %H:%M:%S"))
+        #         currentDate += datetime.timedelta(hours=1)
+        #
+        #     dictOfEnergyDemandData["DATE"] = timestamps
+        #     dictOfEnergyDemandData["spaceHeating_kWh"] = list(
+        #         heatProfile[:8760])
+        #     # print(len(heatProfile[:8760]))
+        #     dictOfEnergyDemandData["electricalAppliances_kWh"] = list(
+        #         electricityProfile[:8760])
+        #     dictOfEnergyDemandData["domesticHotWater_kWh"] = list(
+        #         domesticHotWaterProfile[:8760])
+        #
         # optionalMetaInformation = {
         #     "acquisition_method": "estimation",
         #     "source": "VDistrict",

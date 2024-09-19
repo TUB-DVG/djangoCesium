@@ -54,7 +54,7 @@ class TimeseriesView(APIView):
         call_command(
             "read_timeseries",
             "EnergyDemand",
-            "UUID_d281adfc-4901-0f52-540b-4cc1a9325f82",
+            gmlid,
             stdout=out,
         )
         returnDictSerialized = out.getvalue()

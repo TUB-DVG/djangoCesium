@@ -60,6 +60,7 @@ class Command(BaseCommand):
                 energyDemandDict[
                     f"{energyDemand.end_use}_{timeSeriesForDemand.values_uom}"
                 ] = {}
+                # breakpoint()
                 energyDemandDict[
                     f"{energyDemand.end_use}_{timeSeriesForDemand.values_uom}"][
                         "time"] = self._createArrayOfTimings(
@@ -67,8 +68,15 @@ class Command(BaseCommand):
                 energyDemandDict[
                     f"{energyDemand.end_use}_{timeSeriesForDemand.values_uom}"][
                         "data"] = [
-                            float(strElement) for strElement in
-                            timeSeriesForDemand.values.split(" ")
+                            self._safeFloatConversion(strElement) for strElement in timeSeriesForDemand.values.split(" ")
                         ]
         stringifiedOutput = json.dumps(energyDemandDict)
         return stringifiedOutput
+    def _safeFloatConversion(self, strElement):
+        """Return `None` if float-conversion throughs an error.
+
+        """
+        try:
+            return float(strElement)
+        except ValueError:
+            return None  # or some default value if the conversion fails

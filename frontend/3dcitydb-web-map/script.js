@@ -31,9 +31,70 @@
 
 /**-----------------------------------------Separate Line-------------------------------------------------**/
 var mode = "development"
-
+var gmlid = "";
 // URL controller
-var formContentOfSimulateInputContainer;
+var formContentOfSimulateInputContainer = `<span class="row__title">Parameters</span>
+            <div class="row__filters">
+                <div class="row__filters-item">
+                    <label for="filterBuildingResidential">Building Type</label>
+                    <select id="filterBuildingResidential" onchange="onBuildingResidentialChange(event)">
+                        <option value="">Select an option</option>
+                        <option value="SFH">Single Family Home</option>
+                        <option value="TH">Terraced House</option>
+                        <option value="MFH">Multi Family Home</option>
+                        <option value="AB">Appartment Block</option>
+                        <option value="IWU Hotels, Boarding, Restaurants or Catering">IWU Hotels, Boarding, Restaurants or Catering</option>
+                        <option value="IWU Office, Administrative or Government Buildings">IWU Office, Administrative or Government Buildings</option>
+                        <option value="IWU Trade Buildings">IWU Trade Buildings</option>
+                        <option value="IWU Technical and Utility (supply and disposal)">IWU Technical and Utility (supply and disposal)</option>
+                        <option value="IWU School, Day Nursery and other Care">IWU School, Day Nursery and other Care</option>
+                        <option value="IWU Transport">IWU Transport</option>
+                        <option value="IWU Health and Care">IWU Health and Care</option>
+                        <option value="IWU Sports Facilities">IWU Sports Facilities</option>
+                        <option value="IWU Culture and Leisure">IWU Culture and Leisure</option>
+                        <option value="IWU Research and University Teaching">IWU Research and University Teaching</option>
+                        <!--<option value="IWU Generalized (1) Services building">IWU Generalized (1) Services building</option>-->
+                        <option value="IWU Generalized (2) Production buildings">IWU Generalized (2) Production buildings</option>
+                        <option value="IWU Production, Workshop, Warehouse or Operations">IWU Production, Workshop, Warehouse or Operations</option>
+                    </select>
+                </div>
+
+                <div class="row__filters-item">
+                    <label for="filterStatus">Refurbishment status of residential buildings</label>
+                    <select id="filterStatus" onchange="onBuildingStatusChange(event)">
+                        <option value="">Select an option</option>
+                        <option value="0">No Refurbishment</option>
+                        <option value="1">Medium Refurbishment</option>
+                        <option value="2">Advanced Refurbishment</option>
+                    </select>
+                </div>
+
+                <div class="row__filters-item">
+                    <label for="filterArea">Area m&sup2; (0 - 10 000)</label>
+                    <input
+                        id="filterArea"
+                        placeholder="1000"
+                        oninput="onBuildingAreaChange(event)"
+                    />
+                    <div id="filterAreaErrorMessage" class="error-field" />
+                </div>
+
+                <div class="row__filters-item">
+                    <label for="filterYear">Enter year</label>
+                    <input
+                        id="filterYear"
+                        oninput="onBuildingYearChange(event)"
+                    />
+                    <div id="filterYearErrorMessage" class="error-field" />
+                </div>
+
+                <button id='simulateButton' onclick='triggerStartSimulation()'>
+                    <svg id='simulateLoader' class="simulate-button__loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#066AC9"></stop><stop offset=".3" stop-color="#066AC9" stop-opacity=".9"></stop><stop offset=".6" stop-color="#066AC9" stop-opacity=".6"></stop><stop offset=".8" stop-color="#066AC9" stop-opacity=".3"></stop><stop offset="1" stop-color="#066AC9" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#066AC9" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>
+                    <span class="simulate-button__label">
+                        Simulate the building
+                    </span>
+                </button>
+            </div>`;
 var chart = {}; // global variable for charts
 var jsonOfHttpResponse1 = [];
 var urlController = new UrlController();
@@ -1162,7 +1223,7 @@ function createInfoTable(res, citydbLayer) {
     var thematicDataSourceDropdown = document.getElementById("thematicDataSourceDropdown");
     var selectedThematicDataSource = thematicDataSourceDropdown.options[thematicDataSourceDropdown.selectedIndex].value;
     
-    var gmlid = selectedThematicDataSource === "KML" ? res[1]._id : res[0];
+    gmlid = selectedThematicDataSource === "KML" ? res[1]._id : res[0];
     
 
     if (gmlid.includes("_")) {
@@ -1383,10 +1444,10 @@ function triggerStartSimulation() {
         console.log("Simulation response:")
         console.log(data);
         console.log("====================")
-        var chart = Highcharts.chart('tryChartContainer', {
-        // your chart options here
-        });
-
+        //var chart = Highcharts.chart('tryChartContainer', {
+        //// your chart options here
+        //});
+        //debugger;
         simulatedTimeseriesData = JSON.parse(data);
         for (var key in simulatedTimeseriesData) {
             if (key != "DATE") {
@@ -1641,7 +1702,7 @@ function writeToDatabase() {
         interpolation_type: "averageInSucceedingInterval",
         quality_description: "Your quality description", 
     };
-    fetch("${baseURL()}/citydb/timeseries/UUID_d281adfc-4901-0f52-540b-4cc1a9325f82", {
+    fetch(`${baseURL()}/citydb/timeseries/${gmlid}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -1650,7 +1711,7 @@ function writeToDatabase() {
     }).then(response => response.json()).then(data => console.log(data));
 
     // after writing data, fetch the data again to update the chart
-    fetchTimeseriesForBuilding("UUID_d281adfc-4901-0f52-540b-4cc1a9325f82");
+    fetchTimeseriesForBuilding(gmlid);
     document.getElementById("formSimulateContainer").innerHTML = formContentOfSimulateInputContainer;
 
 }

@@ -39,7 +39,7 @@ CesiumDistrictDjangoCityDB is developed by the DVG institute at TU Berlin for Ci
 
 4. Import CityGML data:
    - Download the 3DCityDb importer-Exporter from [here](https://github.com/3dcitydb/importer-exporter)
-   - Import the Energy-ade. You can download the ADE from [here](Please add link)   
+   - Import the Energy-ade. You can download the ADE from [CityGMLWiki](https://www.citygmlwiki.org/index.php?title=CityGML_Energy_ADE_V._2.0)   
    - Use the 3D City Importer tool to load GML data into the database
 
 ## Usage

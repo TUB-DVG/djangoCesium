@@ -32,6 +32,8 @@
 /**-----------------------------------------Separate Line-------------------------------------------------**/
 var mode = "development"
 var gmlid = "";
+var lockedGmlId = "UUID_3acb337b-3655-463b-9080-cd253c5c6cf5";
+
 // URL controller
 var formContentOfSimulateInputContainer = `<span class="row__title">Parameters</span>
             <div class="row__filters">
@@ -1693,6 +1695,7 @@ function toggleSetGeoLoc() {
     At the moment the building gmld-id is still hardcoded into the API-Call.
 */
 function writeToDatabase() {
+    if (gmlid != lockedGmlId) {
     var objToSend = {};
     objToSend["timeseriesDict"] = simulatedTimeseriesData;
     objToSend["metaDataDict"] = {
@@ -1708,7 +1711,11 @@ function writeToDatabase() {
         },
         body: JSON.stringify(objToSend),
     }).then(response => response.json()).then(data => console.log(data));
-
+  
+    }
+    else {
+      alert("The database is locked for that building, so the default demand series are kept in the database.")
+    }
     // after writing data, fetch the data again to update the chart
     //fetchTimeseriesForBuilding(gmlid);
     document.getElementById("formSimulateContainer").innerHTML = formContentOfSimulateInputContainer;

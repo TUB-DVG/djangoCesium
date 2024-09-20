@@ -15,7 +15,7 @@ import os
 
 from influxdb import DataFrameClient
 
-
+import sys
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -56,6 +56,32 @@ INSTALLED_APPS = [
     "citydb.apps.CitydbConfig",
     "districtgenerator",
 ]
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',  # Log level can be changed here (DEBUG/INFO/WARNING/ERROR)
+            'class': 'logging.StreamHandler',
+            'stream': sys.stdout,
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',  # Adjust the logging level here
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',  # Adjust the logging level here for Django logs
+            'propagate': True,
+        },
+        # Include additional loggers as needed
+    },
+}
+
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",

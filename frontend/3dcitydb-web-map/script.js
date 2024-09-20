@@ -1961,7 +1961,7 @@ var change = {
     20: 'Very High'
 };
 async function fetchTryDataAsString() {
-    const response = await fetch("/data/assets/try_one_date_column.csv");
+    const response = await fetch("/cesium/data/assets/try_one_date_column.csv");
     const tryDataString = await response.text();
     console.log(tryDataString);
     return tryDataString; 

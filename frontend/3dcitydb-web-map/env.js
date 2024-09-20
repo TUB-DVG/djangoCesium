@@ -1,3 +1,3 @@
 window.env = {
-  API_ADDRESS: "http://127.0.0.1:8001"
+  API_ADDRESS: "https://wissen-digital-ewb.de"
 };

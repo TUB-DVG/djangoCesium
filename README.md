@@ -33,18 +33,20 @@ CesiumDistrictDjangoCityDB is developed by the DVG institute at TU Berlin for Ci
 
 3. Build and run the Docker containers:
    ```bash
-   docker-compose build
-   docker-compose up
+   docker-compose -f docker-compose.yml -f docker-compose.dev.yml build
+   docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
    ```
 
 4. Import CityGML data:
+   - Download the 3DCityDb importer-Exporter from [here](https://github.com/3dcitydb/importer-exporter)
+   - Import the Energy-ade. You can download the ADE from [here](Please add link)   
    - Use the 3D City Importer tool to load GML data into the database
 
 ## Usage
 
 After setting up the project, you can access the interactive visualization through your web browser at:
 
-http://localhost:8080/cesium/
+http://127.0.0.1:8080/cesium/
 
 ## Contributing
 

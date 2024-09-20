@@ -1018,7 +1018,6 @@
         </div>
         <script>
             let isToolboxExpanded = false;
-
             function showToolbox() {
                 const toolbox = document.getElementById("uiMenu");
 
@@ -1093,7 +1092,7 @@
                 }
             }
 
-            let isChartOpened = true;
+            let isChartOpened = false;
 
             function toggleWeather() {
                 const chart = document.getElementById("tryChartContainer");
@@ -1101,7 +1100,28 @@
                 if (isChartOpened) {
                     chart.style.display = 'none';
                 } else {
-                    chart.style.display = 'block';
+                  // reload weather data:
+                  fetchTryDataAsString().then(tryDataString => {
+                  Highcharts.chart('tryChartContainer', {
+                  title: {
+                    text: 'Test reference year Temperature Chart'
+                  },
+                  yAxis: {
+                  title: {
+                    text: 'Temperature in °C'
+                  }
+                 },
+                /*subtitle: {
+            text: 'Subtitle'
+        },*/
+        data: {
+            csv: tryDataString
+        },
+
+    })
+});
+                  chart.style.display = 'block';
+                    
                 }
 
                 isChartOpened = !isChartOpened;

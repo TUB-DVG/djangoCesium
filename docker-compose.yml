@@ -56,21 +56,7 @@ services:
   #     - frontend
   #   # networks:
     #   - webcentral_default
-    # impexp:
-    #   image: 3dcitydb/3dcitydb-impexp
-    #   environment:
-    #     CITYDB_TYPE: postgresql
-    #     CITYDB_HOST: citydb
-    #     CITYDB_PORT: 5432
-    #     CITYDB_NAME: citydb
-    #     CITYDB_USER: admin
-    #     CITYDB_PASS: admin
-    #   container_name: impexp
-    #   command: 
-    #   volumes:
-    #     - ./impexp:/app
-
-    # districtgenerator:
+        # districtgenerator:
     #   build:
     #     context: ./districtgenerator
     #     dockerfile: Dockerfile

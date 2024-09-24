@@ -1918,8 +1918,47 @@ var raumKlimaDaten= cesiumViewer.entities.add({
             <button id="tabLink" class="tab__link active" onclick="openHouse(event, \'mfh\')">Mehrfamilienhaus</button>\
         </div>\
         <div id="sfh" class="tab__content">\
-            <h3 class="tab__title">Einfamilienhaus</h3>\
-            <table class="tab__table"></table>\
+            <div class="table_component" role="region" tabindex="0">\
+                <table>\
+                    <thead>\
+                        <tr>\
+                            <th>Haushaltsgröße</th>\
+                            <th>Stromverbrauch</th>\
+                            <th>\
+                                <div>Stromverbrauch&nbsp;mit&nbsp;elektr.</div>\
+                                <div>Warmwasserbereitung</div>\
+                            </th>\
+                        </tr>\
+                    </thead>\
+                    <tbody>\
+                        <tr>\
+                            <td>1 Person</td>\
+                            <td>2.400 kWh/Jahr</td>\
+                            <td>2.700 kWh/Jahr </td>\
+                        </tr>\
+                        <tr>\
+                            <td>2 Personen</td>\
+                            <td>3.000 kWh/Jahr</td>\
+                            <td>3.500 kWh/Jahr</td>\
+                        </tr>\
+                        <tr>\
+                            <td>3 Personen</td>\
+                            <td>3.600 kWh/Jahr</td>\
+                            <td>4.500 kWh/Jahr</td>\
+                        </tr>\
+                        <tr>\
+                            <td>4 Personen</td>\
+                            <td>4.000 kWh/Jahr</td>\
+                            <td>5.100 kWh/Jahr</td>\
+                        </tr>\
+                        <tr>\
+                            <td>5 Personen</td>\
+                            <td>5.000 kWh/Jahr</td>\
+                            <td>6.300 kWh/Jahr</td>\
+                        </tr>\
+                    </tbody>\
+                </table>\
+            </div>\
         </div>\
         \
         <div id="mfh" class="tab__content active">\
@@ -1963,28 +2002,28 @@ var raumKlimaDaten= cesiumViewer.entities.add({
                         </tr>\
                     </tbody>\
                 </table>\
+            </div>\
         </div>\
         ';
 
 function openHouse(evt, house) {
+    console.log(house);
+
+    const contents = document.getElementsByClassName("tab__content");
+
+    for (let i = 0; i < contents.length; i++) {
+      contents[i].style.display = "none";
+    }
+
+    const links = document.getElementsByClassName("tab__link");
+
+    for (i = 0; i < links.length; i++) {
+      links[i].className = links[i].className.replace(" active", "");
+    }
+
+    document.getElementById(house).style.display = "block";
+    evt.currentTarget.className += " active";
 } 
-
-document.getElementById("tabLink").onclick = (event) => {
-    const house = event.target.className;
-  const contents = document.getElementsByClassName("tab__content");
-
-  for (let i = 0; i < contents.length; i++) {
-    contents[i].style.display = "none";
-  }
-
-  const links = document.getElementsByClassName("tab__link");
-  for (i = 0; i < links.length; i++) {
-    links[i].className = links[i].className.replace(" active", "");
-  }
-
-  document.getElementById(house).style.display = "block";
-  event.currentTarget.className += " active";
-}
 
 document.getElementById("applyGeoloc").onclick = ()=>{
     const lon = Number(document.getElementById("longitudeInput").value);

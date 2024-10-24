@@ -1873,6 +1873,30 @@ var raumKlimaDaten= cesiumViewer.entities.add({
      
  });
 
+const mfh = cesiumViewer.entities.add({
+    id: "mfh",
+    name: "Energieverbrauchsdaten (EFH)",
+    position: Cesium.Cartesian3.fromDegrees(goalLoc.tilesetLon+0.00065, goalLoc.tilesetLat+0.00055, 12),
+    billboard :  {
+        image : '/data/icons/verbrauchsdaten_outline2.png',
+        width : 40,
+        height : 40,
+        color: Cesium.Color.WHITE,
+        height: 40,
+    },
+    label : {
+        text : 'Jahresverbrauch in einem Mehrfamilienhaus',
+        font : '14pt monospace',
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 2.5,
+        outlineColor: new Cesium.Color(0.0, 0.0, 0.0, 1.0),
+        verticalOrigin : Cesium.VerticalOrigin.BOTTOM,
+        pixelOffset : new Cesium.Cartesian2(0, 34),
+        backgroundColor: new Cesium.Color(0.0, 0.0, 0.0, 0.8),
+    },  
+     
+ });
+
  // var weatherDataBillboard= cesiumViewer.entities.add({
  //    id: "weatherDataBillboard",
  //    name: "Wetterdaten",
@@ -1909,11 +1933,111 @@ var raumKlimaDaten= cesiumViewer.entities.add({
         </p>\
         <p>\
         Source: \
-        <a style="color: WHITE"\
+        <a style="color: #012e5c"\
             target="_blank"\
-            href="https://www.energiewendebauen.de/publikationen">Weitere Informationen</a>\
-                </p>';
+            href="https://www.co2online.de/energie-sparen/strom-sparen/strom-sparen-stromspartipps/stromverbrauch-im-haushalt/">Weitere Informationen</a>\
+                </p>\
+        <div class="table_component" role="region" tabindex="0">\
+            <table>\
+                <thead>\
+                    <tr>\
+                        <th>Haushaltsgröße</th>\
+                        <th>Stromverbrauch</th>\
+                        <th>\
+                            <div>Stromverbrauch&nbsp;mit&nbsp;elektr.</div>\
+                            <div>Warmwasserbereitung</div>\
+                        </th>\
+                    </tr>\
+                </thead>\
+                <tbody>\
+                    <tr>\
+                        <td>1 Person</td>\
+                        <td>2.400 kWh/Jahr</td>\
+                        <td>2.700 kWh/Jahr </td>\
+                    </tr>\
+                    <tr>\
+                        <td>2 Personen</td>\
+                        <td>3.000 kWh/Jahr</td>\
+                        <td>3.500 kWh/Jahr</td>\
+                    </tr>\
+                    <tr>\
+                        <td>3 Personen</td>\
+                        <td>3.600 kWh/Jahr</td>\
+                        <td>4.500 kWh/Jahr</td>\
+                    </tr>\
+                    <tr>\
+                        <td>4 Personen</td>\
+                        <td>4.000 kWh/Jahr</td>\
+                        <td>5.100 kWh/Jahr</td>\
+                    </tr>\
+                    <tr>\
+                        <td>5 Personen</td>\
+                        <td>5.000 kWh/Jahr</td>\
+                        <td>6.300 kWh/Jahr</td>\
+                    </tr>\
+                </tbody>\
+            </table>\
+        </div>\
+        ';
 
+    mfh.description = 
+    '\
+        <p>\
+        Jahresverbrauch - Erstellen einer gebäude oder quartiersspezifischen Verbrauchsprognose\
+        </p>\
+        <p>\
+            Im Mehrfamilienhaus ließe sich etwa rückschließen, zu welcher Uhrzeit Personen gewöhnlich abwesend sind. Das bedeutet konkret, dass jeder mit Zugriff auf diese Daten, potenziell Einblicke in diese Lebensgewohnheiten der Betroffenen erhält – \
+            ungeachtet dessen, wofür die Datenempfänger diese Information (zusätzlich) nutzen könnten. Damit ist also in jedem Fall ihre Privatsphäre des eigenen Wohnraums betroffen. Abstrakt droht aber auch stets das Risiko, \
+            dass diese Information darüber hinaus zum Nachteil der Betroffenen eingesetzt wird. In den falschen Händen könnte sie etwa zur Begehung eines Einbruchs genutzt werden. \
+        </p>\
+        <p>\
+        Source: \
+        <a style="color: #012e5c"\
+            target="_blank"\
+            href="https://www.co2online.de/energie-sparen/strom-sparen/strom-sparen-stromspartipps/stromverbrauch-im-haushalt/">Weitere Informationen</a>\
+                </p>\
+        <div class="table_component" role="region" tabindex="0">\
+            <table>\
+                <thead>\
+                    <tr>\
+                        <th>Haushaltsgröße</th>\
+                        <th>Stromverbrauch</th>\
+                        <th>\
+                            <div>Stromverbrauch&nbsp;mit&nbsp;elektr.</div>\
+                            <div>Warmwasserbereitung</div>\
+                        </th>\
+                    </tr>\
+                </thead>\
+                <tbody>\
+                    <tr>\
+                        <td>1 Person</td>\
+                        <td>1.400 kWh/Jahr</td>\
+                        <td>1.700 kWh/Jahr </td>\
+                    </tr>\
+                    <tr>\
+                        <td>2 Personen</td>\
+                        <td>2.000 kWh/Jahr</td>\
+                        <td>2.800 kWh/Jahr</td>\
+                    </tr>\
+                    <tr>\
+                        <td>3 Personen</td>\
+                        <td>2.600 kWh/Jahr</td>\
+                        <td>3.600 kWh/Jahr</td>\
+                    </tr>\
+                    <tr>\
+                        <td>4 Personen</td>\
+                        <td>2.900 kWh/Jahr</td>\
+                        <td>4.200 kWh/Jahr</td>\
+                    </tr>\
+                    <tr>\
+                        <td>5 Personen</td>\
+                        <td>3.000 kWh/Jahr</td>\
+                        <td>4.500 kWh/Jahr</td>\
+                    </tr>\
+                </tbody>\
+            </table>\
+        </div>\
+        ';
 
 document.getElementById("applyGeoloc").onclick = ()=>{
     const lon = Number(document.getElementById("longitudeInput").value);
